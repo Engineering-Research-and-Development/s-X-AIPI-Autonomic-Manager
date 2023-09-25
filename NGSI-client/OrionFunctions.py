@@ -11,8 +11,8 @@ import json
 # In[ ]:
 
 
-BASE_URL_V2 = "http://136.243.156.113:1026/v2/"
-BASE_URL = "http://136.243.156.113:1026/ngsi-ld/v1/"
+BASE_URL_V2 = "http://localhost:1026/v2/" 
+BASE_URL = "http://localhost:1026/ngsi-ld/v1/"
 
 
 # In[ ]:
