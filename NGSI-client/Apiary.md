@@ -7,6 +7,38 @@ To use the client you need to have JSON library and requests library.
 pip install requests
 ```
 
+## How to use:
+
+Import the library in your code
+
+```python3
+import OrionFunctions.py
+```
+Modify the following fields:
+
+```python3
+# Use IP and port of Orion
+BASE_URL_V2 = "http://localhost:1026/v2/" 
+BASE_URL = "http://localhost:1026/ngsi-ld/v1/"
+
+# Change these values using the correct Orion tenant for your service.
+FIWARE_SERVICE = "" # 
+FIWARE_SERVICEPATH = "/"
+```
+
+Use the following schema to build your attribute list:
+
+```python3
+ATTR_MODIFIED_BODY = '''
+"Attr_name" : { 
+    "value" : val,
+    "type" : Type,
+    "metadata" : {}
+}
+'''
+```
+
+
 ## API:
 
 | Function                        | Description                                                                                                                                                  | Arguments                                                                                                                                                                                                                                                                                                                                                                 |
