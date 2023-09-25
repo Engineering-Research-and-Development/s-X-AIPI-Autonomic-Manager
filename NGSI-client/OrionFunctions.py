@@ -569,26 +569,5 @@ def InsertNewAttributesToentity(url, id, attr_list=None):
     return 
 
 
-# In[ ]:
-
-
-CreateEntity(BASE_URL)
-
-
-# In[ ]:
-
-
-GetAllEntitiesV2(BASE_URL_V2)
-
-
-# In[ ]:
-
-
-InsertNewAttributesToentity(BASE_URL, "urn:ngsi-ld:TestForATTRS")
-
-
-# In[ ]:
-
-
 
 
