@@ -228,6 +228,7 @@ services:
       - "1026:1026"
     depends_on:
       - orion_mongo
+      - draco
     command: -statCounters -dbhost orion_mongo -logLevel INFO -forwarding
     networks:
       sxaipi:
@@ -342,6 +343,47 @@ services:
       - ./mysql-data:/docker-entrypoint-initdb.d/:ro
     secrets:
       - my_secret_data
+      
+      
+  draco:
+    image: ging/fiware-draco:FIWARE_8.1
+    #image: ging/fiware-draco:FIWARE_8.1
+    container_name: draco
+    environment:
+      - NIFI_WEB_HTTP_PORT=9090
+    ports:
+      - "9090:9090"
+      - "5050:5050"
+    depends_on:
+      - dbs
+    networks:
+      sxaipi:
+        ipv4_address: 172.18.10.20
+
+  dbs:
+    image: postgres
+    restart: always
+    container_name: dbs
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+    networks:
+      sxaipi:
+        ipv4_address: 172.18.10.21
+
+ 
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 18080:8080  
+    depends_on:
+      - dbs
+    networks:
+      sxaipi:
+        ipv4_address: 172.18.10.22
    
 
   # You can enable flower by adding "--profile flower" option e.g. docker-compose --profile flower up
