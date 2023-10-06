@@ -1,5 +1,5 @@
 <h1>Autonomic Manager (AM)</h1>
-<img align="right" src="doc/imgs/AM.png" width="250" alt="AM logo">
+<img align="right" src="doc/imgs/AM.png" width="350" alt="AM logo">
 
 In the context of s-X-AIPI Project borns the Autonomic Manager (AM) an innovative toolkit comprising custom, reliable self-X AI technologies and applications. The Autonomic Manager with MAPE-K (Monitor,Analyze, Plan, Execute, Knowledge) methodology is a concept in the field of autonomic computing, which aims to create with a powerful approach a self-managing systems that can adapt to changing conditions, optimize performance, and maintain system health.It is based on open source FIWARE/Apache components, built on top of the <a href="https://github.com/Engineering-Research-and-Development/dida">DIDA</a> (Digital Industries Data Analytics) platform.
 The Autonomic Manager has the role of autonomous AI Data pipeline coordinator and decision maker adopting MAPE-K framework and implementing the actual innovation lying on the Self-X capabilities. It has the possibility also to interact with the applications layer to improve its functionalities and support the AI pipeline processing.
