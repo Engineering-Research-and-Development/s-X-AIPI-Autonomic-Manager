@@ -1,7 +1,6 @@
-#Autonomic Manager (AM)
+<h1>Autonomic Manager (AM)</h1>
 
 <img align="right" src="docs/imgs/AM.png" width="350" alt="AM logo">
-
 
 In the context of s-X-AIPI Project borns the Autonomic Manager (AM) an innovative toolkit comprising custom, reliable self-X AI technologies and applications. The Autonomic Manager with MAPE-K (Monitor,Analyze, Plan, Execute, Knowledge) methodology is a concept in the field of autonomic computing, which aims to create with a powerful approach a self-managing systems that can adapt to changing conditions, optimize performance, and maintain system health.It is based on open source FIWARE/Apache components, built on top of the <a href="https://github.com/Engineering-Research-and-Development/dida">DIDA</a> (Digital Industries Data Analytics) platform.
 The Autonomic Manager has the role of autonomous AI Data pipeline coordinator and decision maker adopting MAPE-K framework and implementing the actual innovation lying on the Self-X capabilities. It has the possibility also to interact with the applications layer to improve its functionalities and support the AI pipeline processing.
@@ -22,28 +21,12 @@ The selected components to allow that kind of behaviours are:
 ## Documentation Contents
 
 -   [Useful tools](docs/usefulTools.md)
-
-<h2>Requirements</h2>
-<ul>
-    <li>Docker Engine</li>
-    <li>Minimum 8GB RAM</li>
-    <li>Docker Compose >= 1.29</li>
-</ul>
+-   [Requirements](docs/requirements.md)
+-   [How to run](docs/howToRun.md)
 
 <br>
-
-<h2>How to run</h2>
-<h3>Run containers:</h3>
-
-<code>cd docker</code>
-<code>docker-compose up -d</code>
-
-<br>
-
-<h2>License</h2>
-
-The Autonomic Manager is licensed under [Affero General Public License (GPL) version 3]
-
-© 2023 Engineering Ingegneria Informatica S.p.A.
 
 Autonomic Manager has received funding from the European Union's HORIZON-CL4-2021-TWIN-TRANSITION-01 programme under grant agreements No  101058715 [s-X-AIPI](https://s-x-aipi-project.eu/).
+© 2023 Engineering Ingegneria Informatica S.p.A.
+
+
