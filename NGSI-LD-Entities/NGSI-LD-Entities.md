@@ -1,0 +1,1 @@
+In this folder are reported the interactions of the different s-X-AIPI domains (Aluminium, Asphalt, Steel and Pharma) with the AM in terms of OCB entities shared where they publish the context information (metadata) will be consumed.
