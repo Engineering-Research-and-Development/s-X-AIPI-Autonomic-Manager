@@ -25,7 +25,7 @@ The selected components to allow that kind of behaviours are:
 -   [Main functionalities](docs/mainFunctionalities.md)
 -   [Useful tools](docs/usefulTools.md)
 -   [Requirements](docs/requirements.md)
--   [Blueprints](docs/NGSI-LD-Entities.md)
+-   [Metadata](docs/NGSI-LD-Entities/NGSI-LD-Entities.md)
 <br>
 
 Autonomic Manager has received funding from the European Union's HORIZON-CL4-2021-TWIN-TRANSITION-01 programme under grant agreements No  101058715 [s-X-AIPI](https://s-x-aipi-project.eu/).
