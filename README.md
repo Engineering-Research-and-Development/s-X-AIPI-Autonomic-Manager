@@ -25,11 +25,11 @@ The selected components to allow that kind of behaviours are:
 -   [Useful tools](docs/usefulTools.md)
 -   [Requirements](docs/requirements.md)
 -   [How to run](docs/howToRun.md)
--   [Metadata](docs/NGSI-LD-Entities/NGSI-LD-Entities.md)
+-   [Metadata](/NGSI-LD-Entities/NGSI-LD-Entities.md)
 
 <br>
-
 Autonomic Manager has received funding from the European Union's HORIZON-CL4-2021-TWIN-TRANSITION-01 programme under grant agreements No  101058715 [s-X-AIPI](https://s-x-aipi-project.eu/).
+<br>
 © 2023 Engineering Ingegneria Informatica S.p.A.
 
 
