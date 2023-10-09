@@ -1,10 +1,12 @@
-<h1>Autonomic Manager (AM)</h1>
+#Autonomic Manager (AM)
 <img align="right" src="doc/imgs/AM.png" width="350" alt="AM logo">
 
+<div align="justify">
 In the context of s-X-AIPI Project borns the Autonomic Manager (AM) an innovative toolkit comprising custom, reliable self-X AI technologies and applications. The Autonomic Manager with MAPE-K (Monitor,Analyze, Plan, Execute, Knowledge) methodology is a concept in the field of autonomic computing, which aims to create with a powerful approach a self-managing systems that can adapt to changing conditions, optimize performance, and maintain system health.It is based on open source FIWARE/Apache components, built on top of the <a href="https://github.com/Engineering-Research-and-Development/dida">DIDA</a> (Digital Industries Data Analytics) platform.
 The Autonomic Manager has the role of autonomous AI Data pipeline coordinator and decision maker adopting MAPE-K framework and implementing the actual innovation lying on the Self-X capabilities. It has the possibility also to interact with the applications layer to improve its functionalities and support the AI pipeline processing.
 
 The idea is to listen to events coming from context information to identify patterns described by rules, in order to immediately react upon them by autonomously triggering actions.
+</div>
 
 The selected components to allow that kind of behaviours are:
 - <b>FIWARE Draco (deprecated)</b>: based on Apache NiFi. NiFi is a data-flow system based on the flow-based concept programming designed to automate the flow of data in systems and support direct and scalable graphics.
@@ -16,9 +18,9 @@ The selected components to allow that kind of behaviours are:
 <img align="center" src="doc/imgs/Architecture.png" alt="AM logo">
 <br>
 
-<h2>Useful tools</h2>
-The architecture has a single entrypoint represented by the OCB, so that it is provided a python based <a href="/NGSI-client">NGSI-client</a> to facilitate the interaction with it for publishing/subscribing mechanisms. Its APIs are described <a href="/NGSI-client/Apiary.md">here</a>.
-<br>
+## Documentation Contents
+
+-   [Useful tools](docs/usefulTools.md)
 
 <h2>Requirements</h2>
 <ul>
