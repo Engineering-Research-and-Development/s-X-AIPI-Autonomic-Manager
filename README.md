@@ -1,7 +1,8 @@
 #Autonomic Manager (AM)
-<img align="right" src="doc/imgs/AM.png" width="350" alt="AM logo">
 
-<div align="justify">
+<img align="right" src="docs/imgs/AM.png" width="350" alt="AM logo">
+
+
 In the context of s-X-AIPI Project borns the Autonomic Manager (AM) an innovative toolkit comprising custom, reliable self-X AI technologies and applications. The Autonomic Manager with MAPE-K (Monitor,Analyze, Plan, Execute, Knowledge) methodology is a concept in the field of autonomic computing, which aims to create with a powerful approach a self-managing systems that can adapt to changing conditions, optimize performance, and maintain system health.It is based on open source FIWARE/Apache components, built on top of the <a href="https://github.com/Engineering-Research-and-Development/dida">DIDA</a> (Digital Industries Data Analytics) platform.
 The Autonomic Manager has the role of autonomous AI Data pipeline coordinator and decision maker adopting MAPE-K framework and implementing the actual innovation lying on the Self-X capabilities. It has the possibility also to interact with the applications layer to improve its functionalities and support the AI pipeline processing.
 
@@ -15,7 +16,7 @@ The selected components to allow that kind of behaviours are:
 - <b>Apache Airflow</b>: an open-source workflow management platform. Creating Airflow allow to programmatically author and schedule workflows and monitor them via the built-in Airflow user interface. It is written in Python, and workflows are created via Python scripts. Airflow is designed under the principle of "configuration as code". While other "configuration as code" workflow platforms exist using markup languages like XML, using Python allows developers to import libraries and classes to help them create their workflows.
 - <b>FIWARE KeyRock</b>: a FIWARE component for Identity Management. Using KeyRock (in conjunction with other security components such as PEP Proxy and Authzforce) it is added OAuth2-based authentication and authorization security to services and applications.
 
-<img align="center" src="doc/imgs/Architecture.png" alt="AM logo">
+<img align="center" src="docs/imgs/Architecture.png" alt="AM logo">
 <br>
 
 ## Documentation Contents
