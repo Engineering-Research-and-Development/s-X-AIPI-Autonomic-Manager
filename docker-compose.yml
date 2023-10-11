@@ -1,56 +1,12 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-#
-
-# Basic Airflow cluster configuration for CeleryExecutor with Redis and PostgreSQL.
-#
-# WARNING: This configuration is for local development. Do not use it in a production deployment.
-#
-# This configuration supports basic configuration using environment variables or an .env file
-# The following variables are supported:
-#
-# AIRFLOW_IMAGE_NAME           - Docker image name used to run Airflow.
-#                                Default: apache/airflow:2.4.3
-# AIRFLOW_UID                  - User ID in Airflow containers
-#                                Default: 50000
-# Those configurations are useful mostly in case of standalone testing/running Airflow in test/try-out mode
-#
-# _AIRFLOW_WWW_USER_USERNAME   - Username for the administrator account (if requested).
-#                                Default: airflow
-# _AIRFLOW_WWW_USER_PASSWORD   - Password for the administrator account (if requested).
-#                                Default: airflow
-# _PIP_ADDITIONAL_REQUIREMENTS - Additional PIP requirements to add when starting all containers.
-#                                Default: ''
-#
-# Feel free to modify this file to suit your needs.
----
-version: '3'
+version: "3.5"
 x-airflow-common:
   &airflow-common
-  # In order to add custom dependencies or upgrade provider packages you can use your extended image.
-  # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
-  # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
   image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.4.3}
   # build: .
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
-    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-    # For backward compatibility, with Airflow <2.3
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow    
     AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
@@ -220,144 +176,147 @@ services:
       - bash
       - -c
       - airflow
-      
-  orion:
-    hostname: orion
-    image: fiware/orion-ld:1.4.0
-    ports:
-      - "1026:1026"
+
+  # Orion is the context broker
+  orionld:
+    image: fiware/orion-ld:${ORION_LD_VERSION}
+    container_name: fiware-orionld
+    hostname: orionld
     depends_on:
-      - orion_mongo
-      - draco
-    command: -statCounters -dbhost orion_mongo -logLevel INFO -forwarding
+      - mongo-db
     networks:
-      sxaipi:
-        ipv4_address: 172.18.10.9
-        
-    
-  orion_mongo:
-    hostname: orion_mongo
-    image: mongo:4.4
+      default:
+        ipv4_address: ${ORION_LD_IP}
+
     ports:
-      - "27017:27017"
-    volumes:
-      - orion_mongo_data:/data/db
-      - orion_mongo_conf:/data/configdb
-    command: --nojournal
+      - "${ORION_LD_PORT}:${ORION_LD_PORT}" # localhost:1026
+    command: -dbhost mongo-db -logLevel DEBUG
+    healthcheck:
+      test: curl --fail -s http://orionld:${ORION_LD_PORT}/version || exit 1
+
+  # Keyrock is an Identity Management Front-End
+  idm:
+    image: fiware/idm:${KEYROCK_VERSION}
+    container_name: fiware-idm
+    hostname: idm
     networks:
-      sxaipi:
-        ipv4_address: 172.18.10.16
-  
-    
-  keyrock:
-    labels:
-      org.fiware: 'tutorial'
-    image: quay.io/fiware/idm:8.4.0-distroless
-    container_name: fiware-keyrock
-    hostname: keyrock
+      default:
+        ipv4_address: ${KEYROCK_IP}
     depends_on:
       - mysql-db
     ports:
-      - "3005:3005" # localhost:3005
-    networks:
-      sxaipi:
-        ipv4_address: 172.18.10.5
+      - "${KEYROCK_PORT}:${KEYROCK_PORT}" # localhost:3005
+    expose:
+      - "${KEYROCK_PORT}"
     environment:
       - DEBUG=idm:*
       - IDM_DB_HOST=mysql-db
       - IDM_DB_PASS_FILE=/run/secrets/my_secret_data
       - IDM_DB_USER=root
-      - IDM_HOST=http://localhost:3005
-      - IDM_PORT=3005
-      - IDM_HTTPS_ENABLED=False
-      - IDM_HTTPS_PORT=3443
-      - IDM_ADMIN_USER=alice
+      - IDM_HOST=http://localhost:${KEYROCK_PORT}
+      - IDM_PORT=${KEYROCK_PORT}
+      - IDM_HTTPS_ENABLED=${IDM_HTTPS_ENABLED}
+      - IDM_HTTPS_PORT=${KEYROCK_HTTPS_PORT}
+      - IDM_ADMIN_USER=Alice
       - IDM_ADMIN_EMAIL=alice-the-admin@test.com
       - IDM_ADMIN_PASS=test
-      - IDM_CSP_FORM_ACTION=*
+      # - IDM_EIDAS_ENABLED=true                               # Enable IdM to allow user authentication in services using their eID (true,false)
+      # - IDM_EIDAS_GATEWAY_HOST=localhost                     # Name of the host in which IdM is running
+      # - IDM_EIDAS_NODE_HOST=https://eidas.node.es/EidasNode  # Name of the host in which is running node eIDAS Service
+      # - IDM_EIDAS_METADATA_LIFETIME=31536000                 # Lifetime of metadata of a service with eIDAS authentication enabled in seconds (1 year)
     secrets:
       - my_secret_data
     healthcheck:
-      interval: 5s
-
+      test: curl --fail -s http://localhost:${KEYROCK_PORT}/version || exit 1
 
   # PEP Proxy for Orion
-  orion-proxy:
-    labels:
-      org.fiware: 'tutorial'
-    image: quay.io/fiware/pep-proxy:8.4.0-distroless
-    container_name: fiware-orion-proxy
-    hostname: orion-proxy
+  orion-pep-proxy:
+    image: fiware/pep-proxy:${WILMA_VERSION}
+    container_name: fiware-orion-pep-proxy
+    hostname: orion-pep-proxy
+    networks:
+      default:
+        ipv4_address: ${ORION_PROXY_IP}
     depends_on:
-      keyrock:
-        condition: service_started
+      - idm
     deploy:
       restart_policy:
         condition: on-failure
     ports:
-      - "1027:1027" # localhost:1027
-    networks:
-      sxaipi:
-        ipv4_address: 172.18.10.10
+      - "${ORION_PROXY_PORT}:${ORION_PROXY_PORT}" # localhost:1027
     expose:
-      - "1027"
+      - "${ORION_PROXY_PORT}"
     environment:
       - DEBUG=pep-proxy:*
       - PEP_PROXY_DEBUG=true
-      - PEP_PROXY_APP_HOST=orion
-      - PEP_PROXY_APP_PORT=1026
-      - PEP_PROXY_PORT=1027
-      - PEP_PROXY_IDM_HOST=keyrock
+      - PEP_PROXY_APP_HOST=orionld
+      - PEP_PROXY_APP_PORT=${ORION_LD_PORT}
+      - PEP_PROXY_PORT=${ORION_PROXY_PORT}
+      - PEP_PROXY_IDM_HOST=idm
       - PEP_PROXY_HTTPS_ENABLED=false
       - PEP_PROXY_AUTH_ENABLED=true
       - PEP_PROXY_IDM_SSL_ENABLED=false
-      - PEP_PROXY_IDM_PORT=3005
-      - PEP_PROXY_APP_ID=e771844b-90b2-4d94-a656-9c2cfd9f2fda #tutorial-dckr-site-0000-xpresswebapp 
-      - PEP_PROXY_USERNAME=pep_proxy_d8f5b5a2-3333-421b-8ca6-b2e8c486ae0b #pep_proxy_00000000-0000-0000-0000-000000000000
-      - PEP_PASSWORD=pep_proxy_0a297969-3b3d-473a-bc2d-cb42402f8aad #pre-pass:test
+      - PEP_PROXY_IDM_PORT=${KEYROCK_PORT}
+      - PEP_PROXY_APP_ID=${PEP_PROXY_APP_ID}
+      - PEP_PROXY_USERNAME=${PEP_PROXY_USERNAME}
+      - PEP_PASSWORD=${PEP_PASSWORD}
       - PEP_PROXY_PDP=idm
       - PEP_PROXY_MAGIC_KEY=1234
       - PEP_PROXY_PUBLIC_PATHS=/version
     healthcheck:
-      interval: 50s
+      test: curl --fail -s http://orion-pep-proxy:${ORION_PROXY_PORT}/version || exit 1
+
+  # Databases
+  mongo-db:
+    image: mongo:${MONGO_DB_VERSION}
+    container_name: mongo-db
+    hostname: mongo-db
+    expose:
+      - "${MONGO_DB_PORT}"
+    ports:
+      - "${MONGO_DB_PORT}:${MONGO_DB_PORT}" # localhost:27017
+    networks:
+      - default
+    command: --bind_ip_all --smallfiles
+    volumes:
+      - mongo-db:/data
+    healthcheck:
+      test: |
+        host=`hostname --ip-address || echo '127.0.0.1'`;
+        mongo --quiet $host/test --eval 'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)' && echo 0 || echo 1
 
   mysql-db:
     restart: always
-    labels:
-      org.fiware: 'tutorial'
-    image: mysql:8.0
+    image: mysql:${MYSQL_DB_VERSION}
     hostname: mysql-db
-    container_name: db-mysql
+    container_name: mysql-db
     expose:
-      - "3308"
+      - "${MYSQL_DB_PORT}"
     ports:
-      - "3308:3306" # localhost:3308
+      - "${MYSQL_DB_PORT}:${MYSQL_DB_PORT}" # localhost:3306
+    networks:
+      default:
+        ipv4_address: ${MYSQL_DB_IP}
     environment:
       - "MYSQL_ROOT_PASSWORD_FILE=/run/secrets/my_secret_data"
-      - "MYSQL_ROOT_HOST=172.18.10.5" # Allow Keyrock to access this database
-    networks:
-      sxaipi:
-        ipv4_address: 172.18.10.6
+      - "MYSQL_ROOT_HOST=${KEYROCK_IP}" # Allow Keyrock to access this database
     volumes:
       - mysql-db:/var/lib/mysql
-      - ./mysql-data:/docker-entrypoint-initdb.d/:ro
     secrets:
       - my_secret_data
       
-      
   draco:
-    image: ging/fiware-draco:FIWARE_8.1
-    #image: ging/fiware-draco:FIWARE_8.1
+    image: ging/fiware-draco:FIWARE_8.1    
     container_name: draco
     environment:
-      - NIFI_WEB_HTTP_PORT=9090
+      - NIFI_WEB_HTTP_PORT=${NIFI_WEB_HTTP_PORT}
     ports:
-      - "9090:9090"
+      - "${NIFI_WEB_HTTP_PORT}:${NIFI_WEB_HTTP_PORT}"
       - "5050:5050"
     depends_on:
       - dbs
     networks:
-      sxaipi:
+      default:
         ipv4_address: 172.18.10.20
 
   dbs:
@@ -367,42 +326,33 @@ services:
     environment:
       POSTGRES_PASSWORD: example
     ports:
-      - 5432:5432
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
     networks:
-      sxaipi:
+      default:
         ipv4_address: 172.18.10.21
-
- 
 
   adminer:
     image: adminer
     restart: always
     ports:
-      - 18080:8080  
+      - ${ADMINER_PORT}:8080  
     depends_on:
       - dbs
     networks:
-      sxaipi:
+      default:
         ipv4_address: 172.18.10.22
-   
-
-  # You can enable flower by adding "--profile flower" option e.g. docker-compose --profile flower up
-  # or by explicitly targeted on the command line e.g. docker-compose up flower.
-  # See: https://docs.docker.com/compose/profiles/
+  
 networks:
-  sxaipi:
+  default:
     ipam:
       config:
-        - subnet: 172.18.10.0/24
+        - subnet: ${SUBNET}
 
 volumes:
+  mysql-db: ~
+  mongo-db: ~
   postgres-db-volume:
-  orion_mongo_data:
-  orion_mongo_conf:
-  mysql-db:
-  
-  
+
 secrets:
   my_secret_data:
-    file: ./secrets.txt
-
+    file: secrets.txt
