@@ -317,7 +317,7 @@ services:
       - dbs
     networks:
       default:
-        ipv4_address: 172.18.10.20
+        ipv4_address: ${DRACO_IP}
 
   dbs:
     image: postgres
@@ -329,7 +329,7 @@ services:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     networks:
       default:
-        ipv4_address: 172.18.10.21
+        ipv4_address: ${POSTGRES_IP}
 
   adminer:
     image: adminer
@@ -340,7 +340,7 @@ services:
       - dbs
     networks:
       default:
-        ipv4_address: 172.18.10.22
+        ipv4_address: ${ADMINER_IP}
   
 networks:
   default:
