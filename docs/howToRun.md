@@ -1,5 +1,3 @@
-#How to run
-
 ## Prerequisites
 
 ### Docker and Docker Compose
