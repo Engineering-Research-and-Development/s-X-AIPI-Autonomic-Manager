@@ -20,3 +20,11 @@ docker version
 ### Postman
 
 **Postman** is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration, therefore you can create better APIs—faster. To install Postman, follow the instructions [here](https://www.postman.com/downloads).
+A postman collection is shared in this folder to facilitate the interaction with the main functionalities of AM.
+
+### Run AM
+Once setup the configuration from .env file, the AM can start to work executing:
+
+```bash
+docker-compose up
+```
