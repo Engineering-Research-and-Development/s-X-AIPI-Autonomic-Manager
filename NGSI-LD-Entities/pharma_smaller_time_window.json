@@ -1,0 +1,12 @@
+{
+        "id": "urn:ngsi-ld:Pharma_smaller_time_window:001",
+        "type": "https://uri.etsi.org/ngsi-ld/default-context/factory",
+        "https://uri.etsi.org/ngsi-ld/default-context/dateObserved": {
+            "type": "Property",
+            "value": {
+                "@type": "DateTime",
+                "@value": "2023-08-07T11:00:00Z"
+            },
+            "metadata": {}
+        }
+}
