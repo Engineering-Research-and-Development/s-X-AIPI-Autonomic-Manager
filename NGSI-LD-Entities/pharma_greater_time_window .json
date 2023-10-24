@@ -1,0 +1,165 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:Pharma_greater_time_window:001",
+    "type": "factory",
+    "DataIngestion_IR_frequency": {
+        "value": {
+            "value": 10.23,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_IR_numberOfValues": {
+        "value": {
+            "value": 10,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_OCT_imageClassification_numBadImg": {
+        "value": {
+            "value": 2,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_OCT_imageClassification_numGoodImg": {
+        "value": {
+            "value": 10,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_OCT_probePositionEvaluation": {
+        "value": {
+            "value": "ok",
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_OCT_probePosition_xPos": {
+        "value": {
+            "value": 0.98123,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_OCT_probePosition_yPos": {
+        "value": {
+            "value": 1.98123,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_OCT_signalQualityCheck_numBad": {
+        "value": {
+            "value": 1,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_OCT_signalQualityCheck_numGood": {
+        "value": {
+            "value": 3,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_PWR_frequency": {
+        "value": {
+            "value": 10.23,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "DataIngestion_PWR_numberOfValues": {
+        "value": {
+            "value": 10,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "ModelLearningOffline_ModelParams_DateFirstExpTraining": {
+        "value": {
+            "value": "2023-03-06T11:00:00Z",
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "ModelLearningOffline_ModelParams_DateLastExpTraining": {
+        "value": {
+            "value": "2023-03-09T11:00:00Z",
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "ModelLearningOffline_ModelParams_ModelUsed": {
+        "value": {
+            "value": "AutoregressiveRNN",
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "ModelLearningOffline_ModelParams_NumberOfDataRows": {
+        "value": {
+            "value": 4200,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "ModelLearningOffline_ModelParams_NumberOfTrainingExp": {
+        "value": {
+            "value": 25,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "ModelLearningOffline_ModelParams_TrainingMSE": {
+        "value": {
+            "value": 0.89,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "ModelLearningOffline_ModelParams_ValidationMSE": {
+        "value": {
+            "value": 0.76,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "RuntimeAIProcessing_Prediction_MSE": {
+        "value": {
+            "value": 0.123,
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    },
+    "RuntimeAIProcessing_Prediction_Status": {
+        "value": {
+            "value": "ok",
+            "dateObserved": "2023-12-10T15:46:00Z",
+            "timeWindowLengthMinutes": "50"
+        },
+        "type": "Property"
+    }
+}
