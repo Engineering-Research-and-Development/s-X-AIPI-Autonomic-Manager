@@ -2,6 +2,30 @@
     "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     "id": "urn:ngsi-ld:sidenor_longer_time_window:001",
     "type": "factory",
+    "exploration_scrap_Nr_outliers_total scrap weight": {
+        "type": "Property",
+        "value": {
+            "value": 2,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
+        }
+    },
+    "exploration_scrap_lower_boundary_total scrap weight": {
+        "type": "Property",
+        "value": {
+            "value": 111698.483598,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
+        }
+    },
+    "exploration_scrap_upper_boundarytotal scrap weight": {
+        "type": "Property",
+        "value": {
+            "value": 176493.824095,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
+        }
+    },
     "transformation_analysis_Cu_max": {
         "type": "Property",
         "value": {
@@ -1938,164 +1962,140 @@
             "timeWindowLengthMinutes": 17280
         }
     },
-    "exploration_scrap_Nr_outliers_total scrap weight": {
-        "type": "Property",
-        "value": {
-            "value": 2,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "exploration_scrap_lower_boundary_total scrap weight": {
-        "type": "Property",
-        "value": {
-            "value": 111698.483598,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "exploration_scrap_upper_boundarytotal scrap weight": {
-        "type": "Property",
-        "value": {
-            "value": 176493.824095,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
     "modeling_LinearRegression_MAE": {
         "type": "Property",
         "value": {
-            "value": 0.025682,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.035431,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_LinearRegression_r2": {
         "type": "Property",
         "value": {
-            "value": 0.547653,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.295288,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_Nr_features": {
         "type": "Property",
         "value": {
             "value": 17,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_Nr_heats": {
         "type": "Property",
         "value": {
-            "value": 227,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 120,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_Nr_targets": {
         "type": "Property",
         "value": {
             "value": 1,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap03": {
         "type": "Property",
         "value": {
-            "value": 0.337571,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap04": {
         "type": "Property",
         "value": {
-            "value": 0.063034,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.433568,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap11": {
         "type": "Property",
         "value": {
-            "value": 0.414815,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.442583,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap12": {
         "type": "Property",
         "value": {
-            "value": 0.320913,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.336245,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap14": {
         "type": "Property",
         "value": {
-            "value": 0.096509,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.013617,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap21": {
         "type": "Property",
         "value": {
-            "value": 0.14489,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap16": {
         "type": "Property",
         "value": {
-            "value": 0.283244,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.118507,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap17": {
         "type": "Property",
         "value": {
-            "value": 0.277831,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.147361,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap18": {
         "type": "Property",
         "value": {
-            "value": 0.228567,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.158802,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap19": {
         "type": "Property",
         "value": {
-            "value": 0.072462,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.157019,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_coff_scrap20": {
         "type": "Property",
         "value": {
-            "value": 0.167991,
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": 0.221124,
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     },
     "modeling_peak_memory": {
         "type": "Property",
         "value": {
-            "value": "553.77",
-            "dateObserved": "2023-09-22T09:45:24.120Z",
-            "timeWindowLengthMinutes": 33120
+            "value": "624.43",
+            "dateObserved": "2023-03-01T00:00:00.000Z",
+            "timeWindowLengthMinutes": 17280
         }
     }
 }
