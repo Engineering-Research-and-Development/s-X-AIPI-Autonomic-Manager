@@ -2,1615 +2,120 @@
     "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     "id": "urn:ngsi-ld:IDALSA_smaller_time_window:001",
     "type": "factory",
-    "dataIngestion_dbfAnalysisGeneral_CPU_Usage": {
-        "value": {
-            "value": 5.8,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_End_Date": {
-        "value": {
-            "value": "2023-04-11T00:00:00",
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_Execution_Time": {
-        "value": {
-            "value": 34.56,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_Memory": {
-        "value": {
-            "value": 0.023,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element1": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element10": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element11": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element12": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element13": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element14": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element15": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element16": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element17": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element18": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element19": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element2": {
-        "value": {
-            "value": 16,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element20": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element21": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element22": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element3": {
-        "value": {
-            "value": 16,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element4": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element5": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element6": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element7": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element8": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element9": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_SID1": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_SID2": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_analysis_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_analysis_time": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_heat_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_modified": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_NaNs_in_quality": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_Start_Date": {
-        "value": {
-            "value": "2023-04-11T00:00:00",
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_dbfAnalysisGeneral_num_rows": {
-        "value": {
-            "value": 16,
-            "dateObserved": "2023-04-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_CPU_Usage": {
-        "value": {
-            "value": 6.3,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_End_Date": {
-        "value": {
-            "value": "2022-10-17T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_Execution_Time": {
-        "value": {
-            "value": 0.652,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_Memory": {
-        "value": {
-            "value": 0.003,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_customer_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_customer_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_furnace_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_heat_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_heat_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_heat_regime": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_obtained_product_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_obtained_product_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_order_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_quantity_obtained": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_fluxes_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_furnace3_4_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_minutes": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_output_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_time": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_trf_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_NaNs_in_theoretical_expected_output_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_Start_Date": {
-        "value": {
-            "value": "2022-10-11T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_coladasProcesadoGeneral_num_rows": {
-        "value": {
-            "value": 56,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_CPU_Usage": {
-        "value": {
-            "value": 8.5,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_End_Date": {
-        "value": {
-            "value": "2022-10-17T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_Execution_Time": {
-        "value": {
-            "value": 0.593,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_Memory": {
-        "value": {
-            "value": -0.002,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_Furnace1": {
-        "value": {
-            "value": 28,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_Furnace2": {
-        "value": {
-            "value": 30,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_Furnace3": {
-        "value": {
-            "value": 56,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_Furnace4": {
-        "value": {
-            "value": 46,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_customer_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_customer_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_gas1_used": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_heat_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_heat_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_heat_regime": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_heat_time": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_order_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_NaNs_in_total_gas": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_Start_Date": {
-        "value": {
-            "value": "2022-10-11T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_consumoDeGasGeneral_num_rows": {
-        "value": {
-            "value": 56,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_CPU_Usage": {
-        "value": {
-            "value": 9.8,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_End_Date": {
-        "value": {
-            "value": "2022-10-17T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_Execution_Time": {
-        "value": {
-            "value": 0.329,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_Memory": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_customer_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_customer_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_deviation": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_expected_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_heat_regime": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_input_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_melting_start_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_order_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_order_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_quantity_obtained": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_NaNs_in_total_yield": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_Start_Date": {
-        "value": {
-            "value": "2022-10-11T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_desviacionesGeneral_num_rows": {
-        "value": {
-            "value": 7,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_CPU_Usage": {
-        "value": {
-            "value": 6.2,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_End_Date": {
-        "value": {
-            "value": "2022-10-17T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_Execution_Time": {
-        "value": {
-            "value": 1.394,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_Memory": {
-        "value": {
-            "value": 0.031,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_NaNs_in_customer_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_NaNs_in_heat_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_NaNs_in_heat_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_NaNs_in_heat_regime": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_NaNs_in_num_raw_materials": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_NaNs_in_order_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_NaNs_in_raw_materials": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_Start_Date": {
-        "value": {
-            "value": "2022-10-11T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_materialFundidoGeneral_num_rows": {
-        "value": {
-            "value": 56,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_CPU_Usage": {
-        "value": {
-            "value": 6.6,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_End_Date": {
-        "value": {
-            "value": "2022-10-18T00:00:00",
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_Execution_Time": {
-        "value": {
-            "value": 1.758,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_Memory": {
-        "value": {
-            "value": 0.001,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_chemical_composition": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_delivery_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_delivery_note_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_dust_level": {
-        "value": {
-            "value": 4,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_grinding": {
-        "value": {
-            "value": 4,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_humidity": {
-        "value": {
-            "value": 4,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_material_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_material_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_material_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_price_per_kilo": {
-        "value": {
-            "value": 5,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_sampling": {
-        "value": {
-            "value": 4,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_storage_zone_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_supplier_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_supplier_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_yield_obtained": {
-        "value": {
-            "value": 13,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_Start_Date": {
-        "value": {
-            "value": "2022-10-18T00:00:00",
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_parteDeRecepcionGeneral_num_rows": {
-        "value": {
-            "value": 14,
-            "dateObserved": "2022-10-18T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_CPU_Usage": {
-        "value": {
-            "value": 6.2,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_End_Date": {
-        "value": {
-            "value": "2022-10-17T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_Execution_Time": {
-        "value": {
-            "value": 0.42,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_Memory": {
-        "value": {
-            "value": -0.017,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_customer_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_furnace_codes": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_heat_regime": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_input_material_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_kilos_per_hour": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_material2_percentage": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_material2es_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_melted_material_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_obtained_material_quantity": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_order_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_order_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_process_time": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_s_materials1": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_salt_percentage": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_start_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_NaNs_in_yield_percentage": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_Start_Date": {
-        "value": {
-            "value": "2022-10-11T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resultadoFusionGeneral_num_rows": {
-        "value": {
-            "value": 7,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_CPU_Usage": {
-        "value": {
-            "value": 7.8,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_End_Date": {
-        "value": {
-            "value": "2022-10-07T00:00:00",
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_Execution_Time": {
-        "value": {
-            "value": 1.052,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_Memory": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_customer_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_customer_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_delivery_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_heat_codes": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_heat_regime": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_materials_per_furnace": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_num_furnaces": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_num_heat_codes": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_num_products": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_num_raw_materials": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_order_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_order_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_products": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_quantity_materials_used": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_NaNs_in_quantity_products": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_Start_Date": {
-        "value": {
-            "value": "2022-10-07T00:00:00",
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_resumenColadasGeneral_num_rows": {
-        "value": {
-            "value": 1,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_CPU_Usage": {
-        "value": {
-            "value": 7.7,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_End_Date": {
-        "value": {
-            "value": "2022-10-17T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_Execution_Time": {
-        "value": {
-            "value": 1.399,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_Memory": {
-        "value": {
-            "value": 0.022,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_NaNs_in_customer_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_NaNs_in_customer_name": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_NaNs_in_heat_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_NaNs_in_heat_date": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_NaNs_in_num_products": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_NaNs_in_num_raw_materials": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_NaNs_in_order_code": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_NaNs_in_products": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_NaNs_in_raw_materials": {
-        "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_Start_Date": {
-        "value": {
-            "value": "2022-10-11T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
-    "dataIngestion_seguimientoColadaGeneral_num_rows": {
-        "value": {
-            "value": 55,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
-    },
     "dataExploration_completePedidosStatistical_CPU_Usage": {
+        "type": "Property",
         "value": {
             "value": 6.7,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_End_Date": {
+        "type": "Property",
         "value": {
             "value": "2022-10-07T00:00:00",
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_Execution_Time": {
+        "type": "Property",
         "value": {
             "value": 4.785,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_Memory": {
+        "type": "Property",
         "value": {
             "value": 16409.469,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_Start_Date": {
+        "type": "Property",
         "value": {
             "value": "2022-10-07T00:00:00",
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_flux_percentage_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_fluxes_quantity_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_input_material_quantity_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_input_material_quantity_Max": {
+        "type": "Property",
         "value": {
             "value": 60470,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_input_material_quantity_Mean": {
+        "type": "Property",
         "value": {
             "value": 60470,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_input_material_quantity_Median": {
+        "type": "Property",
         "value": {
             "value": 60470,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_input_material_quantity_Min": {
+        "type": "Property",
         "value": {
             "value": 60470,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_input_material_quantity_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_input_material_quantity_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_input_material_quantity_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -1621,66 +126,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_kilos_per_hour_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_kilos_per_hour_Max": {
+        "type": "Property",
         "value": {
             "value": 3075,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_kilos_per_hour_Mean": {
+        "type": "Property",
         "value": {
             "value": 3075,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_kilos_per_hour_Median": {
+        "type": "Property",
         "value": {
             "value": 3075,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_kilos_per_hour_Min": {
+        "type": "Property",
         "value": {
             "value": 3075,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_kilos_per_hour_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_kilos_per_hour_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_kilos_per_hour_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -1691,58 +196,58 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2_percentage_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2_percentage_Max": {
+        "type": "Property",
         "value": {
             "value": 0.35,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2_percentage_Mean": {
+        "type": "Property",
         "value": {
             "value": 0.35,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2_percentage_Median": {
+        "type": "Property",
         "value": {
             "value": 0.35,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2_percentage_Min": {
+        "type": "Property",
         "value": {
             "value": 0.35,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2_percentage_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2_percentage_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -1753,58 +258,58 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2es_quantity_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2es_quantity_Max": {
+        "type": "Property",
         "value": {
             "value": 10265,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2es_quantity_Mean": {
+        "type": "Property",
         "value": {
             "value": 10265,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2es_quantity_Median": {
+        "type": "Property",
         "value": {
             "value": 10265,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2es_quantity_Min": {
+        "type": "Property",
         "value": {
             "value": 10265,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2es_quantity_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material2es_quantity_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -1815,58 +320,58 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material3_percentage_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material3_percentage_Max": {
+        "type": "Property",
         "value": {
             "value": 16.98,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material3_percentage_Mean": {
+        "type": "Property",
         "value": {
             "value": 16.98,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material3_percentage_Median": {
+        "type": "Property",
         "value": {
             "value": 16.98,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material3_percentage_Min": {
+        "type": "Property",
         "value": {
             "value": 16.98,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material3_percentage_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_material3_percentage_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -1877,66 +382,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_melted_material_quantity_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_melted_material_quantity_Max": {
+        "type": "Property",
         "value": {
             "value": 60470,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_melted_material_quantity_Mean": {
+        "type": "Property",
         "value": {
             "value": 60470,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_melted_material_quantity_Median": {
+        "type": "Property",
         "value": {
             "value": 60470,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_melted_material_quantity_Min": {
+        "type": "Property",
         "value": {
             "value": 60470,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_melted_material_quantity_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_melted_material_quantity_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_melted_material_quantity_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -1947,66 +452,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_furnaces_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_furnaces_Max": {
+        "type": "Property",
         "value": {
             "value": 1,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_furnaces_Mean": {
+        "type": "Property",
         "value": {
             "value": 1,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_furnaces_Median": {
+        "type": "Property",
         "value": {
             "value": 1,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_furnaces_Min": {
+        "type": "Property",
         "value": {
             "value": 1,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_furnaces_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_furnaces_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_furnaces_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2017,66 +522,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_heat_codes_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_heat_codes_Max": {
+        "type": "Property",
         "value": {
             "value": 3,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_heat_codes_Mean": {
+        "type": "Property",
         "value": {
             "value": 3,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_heat_codes_Median": {
+        "type": "Property",
         "value": {
             "value": 3,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_heat_codes_Min": {
+        "type": "Property",
         "value": {
             "value": 3,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_heat_codes_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_heat_codes_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_heat_codes_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2087,66 +592,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_products_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_products_Max": {
+        "type": "Property",
         "value": {
             "value": 2,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_products_Mean": {
+        "type": "Property",
         "value": {
             "value": 2,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_products_Median": {
+        "type": "Property",
         "value": {
             "value": 2,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_products_Min": {
+        "type": "Property",
         "value": {
             "value": 2,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_products_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_products_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_products_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2157,66 +662,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_raw_materials_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_raw_materials_Max": {
+        "type": "Property",
         "value": {
             "value": 4,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_raw_materials_Mean": {
+        "type": "Property",
         "value": {
             "value": 4,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_raw_materials_Median": {
+        "type": "Property",
         "value": {
             "value": 4,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_raw_materials_Min": {
+        "type": "Property",
         "value": {
             "value": 4,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_raw_materials_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_raw_materials_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_num_raw_materials_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2227,66 +732,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_obtained_material_quantity_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_obtained_material_quantity_Max": {
+        "type": "Property",
         "value": {
             "value": 30755,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_obtained_material_quantity_Mean": {
+        "type": "Property",
         "value": {
             "value": 30755,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_obtained_material_quantity_Median": {
+        "type": "Property",
         "value": {
             "value": 30755,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_obtained_material_quantity_Min": {
+        "type": "Property",
         "value": {
             "value": 30755,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_obtained_material_quantity_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_obtained_material_quantity_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_obtained_material_quantity_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2297,66 +802,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_process_time_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_process_time_Max": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_process_time_Mean": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_process_time_Median": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_process_time_Min": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_process_time_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_process_time_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_process_time_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2367,66 +872,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_materials_used_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_materials_used_Max": {
+        "type": "Property",
         "value": {
             "value": 70735,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_materials_used_Mean": {
+        "type": "Property",
         "value": {
             "value": 70735,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_materials_used_Median": {
+        "type": "Property",
         "value": {
             "value": 70735,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_materials_used_Min": {
+        "type": "Property",
         "value": {
             "value": 70735,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_materials_used_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_materials_used_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_materials_used_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2437,66 +942,66 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_products_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_products_Max": {
+        "type": "Property",
         "value": {
             "value": 30755,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_products_Mean": {
+        "type": "Property",
         "value": {
             "value": 30755,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_products_Median": {
+        "type": "Property",
         "value": {
             "value": 30755,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_products_Min": {
+        "type": "Property",
         "value": {
             "value": 30755,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_products_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_products_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_quantity_products_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2507,74 +1012,74 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_row_count": {
+        "type": "Property",
         "value": {
             "value": 1,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_s_Ale_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_s_materials1_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_s_materials1_Max": {
+        "type": "Property",
         "value": {
             "value": 0.35,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_s_materials1_Mean": {
+        "type": "Property",
         "value": {
             "value": 0.35,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_s_materials1_Median": {
+        "type": "Property",
         "value": {
             "value": 0.35,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_s_materials1_Min": {
+        "type": "Property",
         "value": {
             "value": 0.35,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_s_materials1_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_s_materials1_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2585,74 +1090,74 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_salt_percentage_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_yield_percentage_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_yield_percentage_Max": {
+        "type": "Property",
         "value": {
             "value": 50.86,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_yield_percentage_Mean": {
+        "type": "Property",
         "value": {
             "value": 50.86,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_yield_percentage_Median": {
+        "type": "Property",
         "value": {
             "value": 50.86,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_yield_percentage_Min": {
+        "type": "Property",
         "value": {
             "value": 50.86,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_yield_percentage_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_yield_percentage_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completePedidosStatistical_yield_percentage_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_cliente": 0,
@@ -2663,82 +1168,82 @@
             },
             "dateObserved": "2022-10-07T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_CPU_Usage": {
+        "type": "Property",
         "value": {
             "value": 10.3,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_End_Date": {
+        "type": "Property",
         "value": {
             "value": "2022-10-17T00:00:00",
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Execution_Time": {
+        "type": "Property",
         "value": {
             "value": 11.527,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace1_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace1_Max": {
+        "type": "Property",
         "value": {
             "value": 603,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace1_Mean": {
+        "type": "Property",
         "value": {
             "value": 441.238,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace1_Median": {
+        "type": "Property",
         "value": {
             "value": 420,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace1_Min": {
+        "type": "Property",
         "value": {
             "value": 351,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace1_Std": {
+        "type": "Property",
         "value": {
             "value": 65.003,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace1_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "oxigeno_usado": 1,
@@ -2749,66 +1254,66 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace2_Importance": {
+        "type": "Property",
         "value": {
             "value": 0.006,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace2_Max": {
+        "type": "Property",
         "value": {
             "value": 1173,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace2_Mean": {
+        "type": "Property",
         "value": {
             "value": 417.538,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace2_Median": {
+        "type": "Property",
         "value": {
             "value": 356,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace2_Min": {
+        "type": "Property",
         "value": {
             "value": 189,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace2_NaN_Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace2_Std": {
+        "type": "Property",
         "value": {
             "value": 260.721,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace2_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "oxigeno_usado": 1,
@@ -2819,66 +1324,66 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace3_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace3_Max": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace3_Mean": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace3_Median": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace3_Min": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace3_NaN_Count": {
+        "type": "Property",
         "value": {
             "value": 35,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace3_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace3_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_colada": 0,
@@ -2889,66 +1394,66 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace4_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace4_Max": {
+        "type": "Property",
         "value": {
             "value": 250,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace4_Mean": {
+        "type": "Property",
         "value": {
             "value": 250,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace4_Median": {
+        "type": "Property",
         "value": {
             "value": 250,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace4_Min": {
+        "type": "Property",
         "value": {
             "value": 250,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace4_NaN_Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace4_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Furnace4_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_colada": 0,
@@ -2959,98 +1464,98 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_HM2_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 31,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Memory": {
+        "type": "Property",
         "value": {
             "value": 16449.716,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_Start_Date": {
+        "type": "Property",
         "value": {
             "value": "2022-10-11T00:00:00",
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_TRF1_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 14,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_TRF2_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 22,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_gas1_used_Importance": {
+        "type": "Property",
         "value": {
             "value": 0.012,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_gas1_used_Max": {
+        "type": "Property",
         "value": {
             "value": 2698,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_gas1_used_Mean": {
+        "type": "Property",
         "value": {
             "value": 995.143,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_gas1_used_Median": {
+        "type": "Property",
         "value": {
             "value": 948,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_gas1_used_Min": {
+        "type": "Property",
         "value": {
             "value": 435,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_gas1_used_Std": {
+        "type": "Property",
         "value": {
             "value": 375.267,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_gas1_used_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "TRF2": 1,
@@ -3061,66 +1566,66 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_heat_time_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_heat_time_Max": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_heat_time_Mean": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_heat_time_Median": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_heat_time_Min": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_heat_time_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_heat_time_Std": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_heat_time_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_colada": 0,
@@ -3131,66 +1636,66 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_analysis_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_analysis_Max": {
+        "type": "Property",
         "value": {
             "value": 3,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_analysis_Mean": {
+        "type": "Property",
         "value": {
             "value": 1.171,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_analysis_Median": {
+        "type": "Property",
         "value": {
             "value": 1,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_analysis_Min": {
+        "type": "Property",
         "value": {
             "value": 1,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_analysis_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_analysis_Std": {
+        "type": "Property",
         "value": {
             "value": 0.453,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_analysis_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "TRF2": 0.871,
@@ -3201,66 +1706,66 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_products_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_products_Max": {
+        "type": "Property",
         "value": {
             "value": 3,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_products_Mean": {
+        "type": "Property",
         "value": {
             "value": 1.686,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_products_Median": {
+        "type": "Property",
         "value": {
             "value": 2,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_products_Min": {
+        "type": "Property",
         "value": {
             "value": 1,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_products_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_products_Std": {
+        "type": "Property",
         "value": {
             "value": 0.583,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_products_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "TRF1": 0.384,
@@ -3271,66 +1776,66 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_raw_materials_Importance": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_raw_materials_Max": {
+        "type": "Property",
         "value": {
             "value": 18,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_raw_materials_Mean": {
+        "type": "Property",
         "value": {
             "value": 13.514,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_raw_materials_Median": {
+        "type": "Property",
         "value": {
             "value": 14,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_raw_materials_Min": {
+        "type": "Property",
         "value": {
             "value": 3,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_raw_materials_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_raw_materials_Std": {
+        "type": "Property",
         "value": {
             "value": 3.212,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_num_raw_materials_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "codigo_pedido": 0.837,
@@ -3341,82 +1846,82 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_oxygen_used_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_row_count": {
+        "type": "Property",
         "value": {
             "value": 35,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_total_gas_Importance": {
+        "type": "Property",
         "value": {
             "value": 0.003,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_total_gas_Max": {
+        "type": "Property",
         "value": {
             "value": 1423,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_total_gas_Mean": {
+        "type": "Property",
         "value": {
             "value": 678.371,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_total_gas_Median": {
+        "type": "Property",
         "value": {
             "value": 662,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_total_gas_Min": {
+        "type": "Property",
         "value": {
             "value": 360,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_total_gas_NaN Count": {
+        "type": "Property",
         "value": {
             "value": 0,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_total_gas_Std": {
+        "type": "Property",
         "value": {
             "value": 186.859,
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
     },
     "dataExploration_completeColadasStatistical_total_gas_Top_5_Correlations": {
+        "type": "Property",
         "value": {
             "value": {
                 "TRF2": 0.941,
@@ -3427,486 +1932,1981 @@
             },
             "dateObserved": "2022-10-11T00:00:00",
             "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_CPU_Usage": {
+        "type": "Property",
+        "value": {
+            "value": "9.4",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_End_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2023-03-28T00:00:00Z",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_Execution_Time": {
+        "type": "Property",
+        "value": {
+            "value": "3.354",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_Memory": {
+        "type": "Property",
+        "value": {
+            "value": "0.014",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element1": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element10": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element11": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element12": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element13": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element14": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element15": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element16": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element17": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element18": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element19": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element2": {
+        "type": "Property",
+        "value": {
+            "value": "4",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element20": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element21": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element22": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element3": {
+        "type": "Property",
+        "value": {
+            "value": "3",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element4": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element5": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element6": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element7": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element8": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_Element9": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_SID1": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_SID2": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_analysis_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_analysis_time": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_heat_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_modified": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_NaNs_in_quality": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_Start_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2023-03-28T00:00:00Z",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_dbfAnalysisGeneral_num_rows": {
+        "type": "Property",
+        "value": {
+            "value": "4",
+            "dateObserved": "2023-03-28T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_CPU_Usage": {
+        "type": "Property",
+        "value": {
+            "value": "4.8",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_End_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-17T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_Execution_Time": {
+        "type": "Property",
+        "value": {
+            "value": "0.305",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_Memory": {
+        "type": "Property",
+        "value": {
+            "value": "0.001",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_customer_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_customer_name": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_furnace_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_heat_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_heat_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_heat_regime": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_obtained_product_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_obtained_product_name": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_order_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_quantity_obtained": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_fluxes_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_furnace3_4_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_minutes": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_output_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_time": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_real_trf_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_NaNs_in_theoretical_expected_output_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_Start_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-11T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_coladasProcesadoGeneral_num_rows": {
+        "type": "Property",
+        "value": {
+            "value": "56",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_CPU_Usage": {
+        "type": "Property",
+        "value": {
+            "value": "14.6",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_End_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-17T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_Execution_Time": {
+        "type": "Property",
+        "value": {
+            "value": "0.163",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_Memory": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_customer_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_customer_name": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_deviation": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_expected_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_heat_regime": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_input_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_melting_start_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_order_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_order_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_quantity_obtained": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_NaNs_in_total_yield": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_Start_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-11T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_desviacionesGeneral_num_rows": {
+        "type": "Property",
+        "value": {
+            "value": "7",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_CPU_Usage": {
+        "type": "Property",
+        "value": {
+            "value": "12.5",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_End_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-17T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_Execution_Time": {
+        "type": "Property",
+        "value": {
+            "value": "0.633",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_Memory": {
+        "type": "Property",
+        "value": {
+            "value": "0.036",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_NaNs_in_customer_name": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_NaNs_in_heat_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_NaNs_in_heat_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_NaNs_in_heat_regime": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_NaNs_in_num_raw_materials": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_NaNs_in_order_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_NaNs_in_raw_materials": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_Start_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-11T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_materialFundidoGeneral_num_rows": {
+        "type": "Property",
+        "value": {
+            "value": "56",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_CPU_Usage": {
+        "type": "Property",
+        "value": {
+            "value": "9.1",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_End_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-18T00:00:00Z",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_Execution_Time": {
+        "type": "Property",
+        "value": {
+            "value": "0.943",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_Memory": {
+        "type": "Property",
+        "value": {
+            "value": "0.019",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_chemical_composition": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_delivery_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_delivery_note_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_dust_level": {
+        "type": "Property",
+        "value": {
+            "value": "4",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_grinding": {
+        "type": "Property",
+        "value": {
+            "value": "4",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_humidity": {
+        "type": "Property",
+        "value": {
+            "value": "4",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_material_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_material_name": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_material_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_price_per_kilo": {
+        "type": "Property",
+        "value": {
+            "value": "5",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_sampling": {
+        "type": "Property",
+        "value": {
+            "value": "4",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_storage_zone_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_supplier_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_supplier_name": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_NaNs_in_yield_obtained": {
+        "type": "Property",
+        "value": {
+            "value": "13",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_Start_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-18T00:00:00Z",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_parteDeRecepcionGeneral_num_rows": {
+        "type": "Property",
+        "value": {
+            "value": "14",
+            "dateObserved": "2022-10-18T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_CPU_Usage": {
+        "type": "Property",
+        "value": {
+            "value": "12.5",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_End_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-17T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_Execution_Time": {
+        "type": "Property",
+        "value": {
+            "value": "0.182",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_Memory": {
+        "type": "Property",
+        "value": {
+            "value": "-0.013",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_customer_name": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_furnace_codes": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_heat_regime": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_input_material_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_kilos_per_hour": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_material2_percentage": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_material2es_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_melted_material_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_obtained_material_quantity": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_order_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_order_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_process_time": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_s_materials1": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_salt_percentage": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_start_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_NaNs_in_yield_percentage": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_Start_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-11T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resultadoFusionGeneral_num_rows": {
+        "type": "Property",
+        "value": {
+            "value": "7",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_CPU_Usage": {
+        "type": "Property",
+        "value": {
+            "value": "13.5",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_End_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-07T00:00:00Z",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_Execution_Time": {
+        "type": "Property",
+        "value": {
+            "value": "0.548",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_Memory": {
+        "type": "Property",
+        "value": {
+            "value": "-0.001",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_customer_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_customer_name": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_delivery_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_heat_codes": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_heat_regime": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_materials_per_furnace": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_num_furnaces": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_num_heat_codes": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_num_products": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_num_raw_materials": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_order_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_order_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_products": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_quantity_materials_used": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_NaNs_in_quantity_products": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_Start_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-07T00:00:00Z",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_resumenColadasGeneral_num_rows": {
+        "type": "Property",
+        "value": {
+            "value": "1",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_CPU_Usage": {
+        "type": "Property",
+        "value": {
+            "value": "12.5",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_End_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-17T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_Execution_Time": {
+        "type": "Property",
+        "value": {
+            "value": "0.624",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_Memory": {
+        "type": "Property",
+        "value": {
+            "value": "0.009",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_NaNs_in_customer_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_NaNs_in_customer_name": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_NaNs_in_heat_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_NaNs_in_heat_date": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_NaNs_in_num_products": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_NaNs_in_num_raw_materials": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_NaNs_in_order_code": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_NaNs_in_products": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_NaNs_in_raw_materials": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_Start_Date": {
+        "type": "Property",
+        "value": {
+            "value": "2022-10-11T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_seguimientoColadaGeneral_num_rows": {
+        "type": "Property",
+        "value": {
+            "value": "55",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_CPU_Usage": {
+        "type": "Property",
         "value": {
-            "value": 7.7,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "7.8",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_End_Date": {
+        "type": "Property",
         "value": {
-            "value": "2022-10-17T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "2022-10-17T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_Execution_Time": {
+        "type": "Property",
         "value": {
-            "value": 4.805,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "1.303",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_Memory": {
+        "type": "Property",
         "value": {
-            "value": 0.008,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0.01",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_analysis": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_consumption_per_furnace": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_customer_code": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_customer_name": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_furnace_code": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_gas1_used": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_heat_code": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_heat_date": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_heat_regime": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_heat_time": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_obtained_product_code": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_order_code": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_products": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_quantity_obtained": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_raw_materials": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_real_fluxes_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_real_furnace3_4_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_real_output_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_real_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_real_trf_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_theoretical_expected_output_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_NaNs_in_total_gas": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_Start_Date": {
+        "type": "Property",
         "value": {
-            "value": "2022-10-11T00:00:00",
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "2022-10-11T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_max_nan_per_row": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_mean_nan_per_rows": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0.0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_min_nan_per_rows": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedColadasGeneral_num_rows": {
+        "type": "Property",
         "value": {
-            "value": 35,
-            "dateObserved": "2022-10-11T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "13",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_CPU_Usage": {
+        "type": "Property",
         "value": {
-            "value": 7.4,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "6.2",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_End_Date": {
+        "type": "Property",
         "value": {
-            "value": "2022-10-07T00:00:00",
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "2022-10-07T00:00:00Z",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_Execution_Time": {
+        "type": "Property",
         "value": {
-            "value": 4.219,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "1.646",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_Memory": {
+        "type": "Property",
         "value": {
-            "value": 0.002,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0.002",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_customer_code": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_customer_name": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_delivery_date": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_heat_codes": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_heat_regime": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_input_material_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_kilos_per_hour": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_material2_percentage": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_material2es_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_materials_per_furnace": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_melted_material_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_obtained_material_quantity": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_order_code": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_order_date": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_process_time": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_products": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_s_materials1": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_salt_percentage": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_start_date": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_NaNs_in_yield_percentage": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_Start_Date": {
+        "type": "Property",
         "value": {
-            "value": "2022-10-07T00:00:00",
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "2022-10-07T00:00:00Z",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_max_nan_per_row": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_mean_nan_per_rows": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
-        },
-        "type": "Property"
+            "value": "0.0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
     },
     "dataTransformation_combinedPedidosGeneral_min_nan_per_rows": {
+        "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
+            "value": "0",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataTransformation_combinedPedidosGeneral_num_rows": {
+        "type": "Property",
+        "value": {
+            "value": "1",
+            "dateObserved": "2022-10-07T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "dataIngestion_consumoDeGasGeneral_CPU_Usage": {
+        "value": {
+            "value": "100.0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
         },
         "type": "Property"
     },
-    "dataTransformation_combinedPedidosGeneral_num_rows": {
+    "dataIngestion_consumoDeGasGeneral_End_Date": {
         "value": {
-            "value": 1,
-            "dateObserved": "2022-10-07T00:00:00",
-            "timeWindowLengthMinutes": 10080
+            "value": "2022-10-17T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_Execution_Time": {
+        "value": {
+            "value": "0.67",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_Memory": {
+        "value": {
+            "value": "0.011",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_Furnace1": {
+        "value": {
+            "value": "28",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_Furnace2": {
+        "value": {
+            "value": "30",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_Furnace3": {
+        "value": {
+            "value": "56",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_Furnace4": {
+        "value": {
+            "value": "46",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_customer_code": {
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_customer_name": {
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_gas1_used": {
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_heat_code": {
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_heat_date": {
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_heat_regime": {
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_heat_time": {
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_order_code": {
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_NaNs_in_total_gas": {
+        "value": {
+            "value": "0",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_Start_Date": {
+        "value": {
+            "value": "2022-10-11T00:00:00Z",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
+        },
+        "type": "Property"
+    },
+    "dataIngestion_consumoDeGasGeneral_num_rows": {
+        "value": {
+            "value": "56",
+            "dateObserved": "2022-10-11T00:00:00Z",
+            "timeWindowLengthMinutes": "10080"
         },
         "type": "Property"
     }
