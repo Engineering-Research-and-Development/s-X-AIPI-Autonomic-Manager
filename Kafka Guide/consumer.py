@@ -37,3 +37,13 @@ class Consumer:
         for message in self.consumer:
             print(f"Received message :{message.value}")
             return message.value
+
+
+if name == "__main__":
+    consumer = Consumer()   
+    
+    try:
+        message = consumer.consume_data()
+        # onSuccess flow -> do stuff
+    except ValueError:
+        # On error flow -> manage errors
