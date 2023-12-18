@@ -1,5 +1,7 @@
-from json import loads
+# For further information, please consult the official guide at: https://kafka-python.readthedocs.io/en/master/index.html
+# Before using the consumer class, please, install the library by using "pip install kafka-python"
 
+from json import loads
 from kafka import KafkaConsumer
 
 
