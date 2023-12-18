@@ -20,7 +20,8 @@ About the keyword arguments, here a list of the most used and important ones and
 - client_id: string representing the name for the client. May be useful server-side to understand who is consuming what
 - group_id: string (or None) The name of the consumer group to join for dynamic partition assignment (if enabled), and to use for fetching and committing offsets. 
     If None, auto-partition assignment (via group coordinator) and offset commits are disabled. Default: None
-
+- auto_offset_reset: A policy for resetting offsets on OffsetOutOfRange errors: ‘earliest’ will move to the oldest available message, 
+    ‘latest’ will move to the most recent. Any other value will raise the exception. Default: ‘latest’.
 '''
 
 class Consumer:
