@@ -30,7 +30,7 @@ class Consumer:
         self.consumer = KafkaConsumer('my_topic',
                                       bootstrap_server: 'localhost[:9092]'
                                       value_deserializer=lambda x: loads(x),
-                                      group_id='my_weather_group',
+                                      group_id='my_group_id',
                                       auto_offset_reset='latest')
 
     def consume_data(self):
