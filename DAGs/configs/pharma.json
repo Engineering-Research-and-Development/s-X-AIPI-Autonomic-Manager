@@ -1,8 +1,0 @@
-{ "small" : "Pharma_smaller_time_window:001",
-  "large" : "Pharma_greater_time_window:001",
-  "alarm" : "urn:ngsi-ld:Pharma_alarms:001",
-  "output_1" : "http://136.243.156.113:1026/v2/entities/urn:ngsi-ld:Pharma_sol1:001/attrs",
-  
-  "output_attrs_2_1" : "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_smaller_time_window:001?attrs=DataIngestion_OCT_signalQualityCheck_maxSignalIntensity",
-  "output_attrs_2_2" : "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_smaller_time_window:001?attrs=DataIngestion_OCT_signalQualityCheck_numBad,DataIngestion_OCT_signalQualityCheck_numGood"
-}
