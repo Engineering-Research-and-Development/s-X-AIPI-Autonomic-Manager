@@ -27,9 +27,9 @@ About the keyword arguments, here a list of the most used and important ones and
 class Consumer:
     def __init__(self):
         nums_list = []
-        self.consumer = KafkaConsumer('my_topic',
-                                      bootstrap_server: 'localhost[:9092]'
-                                      value_deserializer=lambda x: loads(x),
+        self.consumer = KafkaConsumer('pharma-alerts-solution1',
+                                      bootstrap_servers = ['136.243.156.113:9092'],
+                                      value_deserializer =lambda x: loads(x),
                                       group_id='my_group_id',
                                       auto_offset_reset='latest')
 
@@ -39,11 +39,12 @@ class Consumer:
             return message.value
 
 
-if name == "__main__":
+if __name__ == "__main__":
     consumer = Consumer()   
-    
-    try:
-        message = consumer.consume_data()
-        # onSuccess flow -> do stuff
-    except ValueError:
-        # On error flow -> manage errors
+    while True:
+        try:
+            message = consumer.consume_data()
+            # onSuccess flow -> do stuff
+        except ValueError:
+            # On error flow -> manage errors
+            pass
