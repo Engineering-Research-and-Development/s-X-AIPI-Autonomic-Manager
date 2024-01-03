@@ -15,7 +15,7 @@ It accepts an optional list of topics and a series of keyword arguments.
 
 From the topic perspective, it is possible to leave it empty and then subscribe to topics by using the "subscribe()" or "assign()" methods before receiving data
 About the keyword arguments, here a list of the most used and important ones and their meaning:
-- bootstrap_servers: ‘host[:port]’ string (or list of ‘host[:port]’ strings) If no servers are specified, will default to localhost:9092.
+- bootstrap_servers: ‘host:port’ string (or list of ‘host:port’ strings) If no servers are specified, will default to localhost:9092.
 - value_deserializer: callback function used to deserialize data. It may be a custom function, if needed.
 - client_id: string representing the name for the client. May be useful server-side to understand who is consuming what
 - group_id: string (or None) The name of the consumer group to join for dynamic partition assignment (if enabled), and to use for fetching and committing offsets. 
@@ -45,6 +45,7 @@ if __name__ == "__main__":
         try:
             message = consumer.consume_data()
             # onSuccess flow -> do stuff
+            # Add your logic for HITL
         except ValueError:
             # On error flow -> manage errors
             pass
