@@ -44,6 +44,7 @@ def analyze_position_status(**kwargs):
     
     ti = kwargs['ti']
     values = ti.xcom_pull(task_ids="monitor_data", key="data")
+    
 
     position_status = values.get("DataIngestion_OCT_probePositionEvaluation", {}).get("value", {}).get("value", "")
     print(position_status)
@@ -60,6 +61,7 @@ def analyze_position(**kwargs):
     
     ti = kwargs['ti']
     values = ti.xcom_pull(task_ids="monitor_data", key="data")
+    print(values)
     
     position_x = values.get("DataIngestion_OCT_probePosition_xPos", {}).get("value", {}).get("value", 0)
     position_y = values.get("DataIngestion_OCT_probePosition_yPos", {}).get("value", {}).get("value", 0)
@@ -79,33 +81,75 @@ def update_position_status_output(**kwargs):
     ti = kwargs['ti']
     alert_status = ti.xcom_pull(task_ids="analyze_probe_position_status", key="prob_status_alert")
     alert_position = ti.xcom_pull(task_ids="analyze_probe_position", key="prob_alert")
+    values = ti.xcom_pull(task_ids="monitor_data", key="data")
+    
+    position_x = values.get("DataIngestion_OCT_probePosition_xPos", {}).get("value", {}).get("value", 0)
+    position_y = values.get("DataIngestion_OCT_probePosition_yPos", {}).get("value", {}).get("value", 0)
+    
     
     body = json.loads('''
-    {"DataIngestion_OCT_probePositionEvaluation": {
+    {
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "DataIngestion_OCT_probePositionEvaluation": {
+        "type": "Property",
         "value": {
             "value": "ok",
-            "dateObserved": "2023-12-10T15:46:00Z",
-            "timeWindowLengthMinutes": "50"
-        },
-        "type": "Property"
-    }}
+            "dateUpdated": "2023-12-10T15:46:00Z"
+        }
+    },
+    "DataIngestion_OCT_probePosition_yPos": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateUpdated": "2023-12-10T15:46:00Z"
+        }
+    },
+    "DataIngestion_OCT_probePosition_xPos": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateUpdated": "2023-12-10T15:46:00Z"
+        }
+    }
+    }
     ''')
     
-    headers = {"Content-Type": "application/json",
-        "Link": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
-    }
+    headers = {"Content-Type": "application/ld+json" }
+    now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
     
-    body["DataIngestion_OCT_probePositionEvaluation"]["value"]["dateObserved"] = datetime.now().strftime("%y-%m-%dT%H:%M:%SZ")
+    body["DataIngestion_OCT_probePositionEvaluation"]["value"]["dateUpdated"] = now
+    body["DataIngestion_OCT_probePosition_yPos"]["value"]["dateUpdated"] = now
+    body["DataIngestion_OCT_probePosition_xPos"]["value"]["dateUpdated"] = now
     
+    body["DataIngestion_OCT_probePosition_yPos"]["value"]["value"] = position_y
+    body["DataIngestion_OCT_probePosition_xPos"]["value"]["value"] = position_x
+    
+    '''
     if alert_status and not(alert_position):
         body["DataIngestion_OCT_probePositionEvaluation"]["value"]["value"] = "ok"
-        r = requests.patch(config["output_1"], headers=headers, data=body)
+        r = requests.patch(config["output_1"], headers=headers, data=json.dumps(body))
     elif alert_position:
         body["DataIngestion_OCT_probePositionEvaluation"]["value"]["value"] = "not ok"
-        r = requests.patch(config["output_1"], headers=headers, data=body)
-     
+        r = requests.patch(config["output_1"], headers=headers, data=json.dumps(body))
+    '''
+    
+    previous_value = json.loads(requests.get(config["solution_1"]).text)["DataIngestion_OCT_probePositionEvaluation"]["value"]["value"]
+    print(previous_value)
+    
+    
+    if previous_value == "ok" and alert_position:
+        body["DataIngestion_OCT_probePositionEvaluation"]["value"]["value"] = "not ok"
+        r = requests.patch(config["output_1"], headers=headers, data=json.dumps(body))
+    elif previous_value == "not ok" and alert_position:
+        body["DataIngestion_OCT_probePositionEvaluation"]["value"]["value"] = "not ok"
+        r = requests.patch(config["output_1"], headers=headers, data=json.dumps(body))
+    elif previous_value == "not ok" and not alert_position:
+        r = requests.patch(config["output_1"], headers=headers, data=json.dumps(body))
         
-    print(r.status_code)
+    print(json.dumps(body))
+    
+
+
     return
 
         
@@ -161,14 +205,14 @@ with DAG(
         if alert_position or alert_status:
             return options[0]
 
-        return options[-1]
+        return options[0]
         
     task3 = plan_action(choices= options)
       
     
     join = EmptyOperator(
     	task_id = "join_after_choice",
-    	trigger_rule="all_done"
+    	trigger_rule="none_failed"
     )
     
     task4 = EmptyOperator(
