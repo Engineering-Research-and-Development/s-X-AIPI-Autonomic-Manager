@@ -1,13 +1,26 @@
 {
     "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-    "id": "urn:ngsi-ld:Pharma_sol1:001",
+    "id": "urn:ngsi-ld:Pharma_solution_output_1:001",
     "type": "Pharma_outputs",
     "DataIngestion_OCT_probePositionEvaluation": {
         "type": "Property",
         "value": {
             "value": "ok",
-            "dateObserved": "2023-12-10T15:46:00Z",
-            "timeWindowLengthMinutes": "5"
+            "dateUpdated": "2024-01-04T09:32:46Z"
+        }
+    },
+    "DataIngestion_OCT_probePosition_yPos": {
+        "type": "Property",
+        "value": {
+            "value": 150,
+            "dateUpdated": "2024-01-04T09:32:46Z"
+        }
+    },
+    "DataIngestion_OCT_probePosition_xPos": {
+        "type": "Property",
+        "value": {
+            "value": 500,
+            "dateUpdated": "2024-01-04T09:32:46Z"
         }
     }
 }
