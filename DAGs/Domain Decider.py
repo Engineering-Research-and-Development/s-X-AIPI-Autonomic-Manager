@@ -76,7 +76,7 @@ def trigger_pharma_monitoring(values):
 def trigger_pharma_alarms(values):
     
     
-    sol2_keys = [key for key in values.keys() if ("_OCT_signalQualityCheck_maxSignalIntensity" in key) or ("OCT_image" in key)]
+    sol2_keys = [key for key in values.keys() if ("OCT_signalQualityCheck_maxSignalIntensity" in key) or ("OCT_image" in key)]
     sol3_keys = [key for key in values.keys() if ("_IR_" in key)]
     sol4_keys = [key for key in values.keys() if ("_PWR_" in key)]
     
@@ -99,6 +99,15 @@ def trigger_pharma_alarms(values):
     
     
 def trigger_pharma_outputs(values):
+
+    sol1_keys = [key for key in values.keys() if "OCT_probe" in key]
+    sol1_dict = {key: values[key] for key in sol1_keys}
+    
+    if len(sol1_keys) == 3:
+        command = '''airflow dags trigger pharma_probe_position_HITL -c ' ''' + json.dumps(sol1_dict) + ''' ' '''
+        print(command)
+        subprocess.run(command, shell=True, check=True)
+    
     return
     
     
@@ -131,8 +140,51 @@ def trigger_aluminium(**kwargs):
     return
     
 ################################################################# Asphalt Section
+def trigger_asphalt_monitoring(values):
+
+    f = open("/opt/airflow/dags/configs/asphalt.json", "r")
+    config = json.load(f)
+    f.close()
     
+    print(values)
+   
+    sol1_keys = config["solution_1_inputs"]
+    sol1_dict = {key: values[key] for key in sol1_keys}
+    
+    if len(sol1_dict) == len(sol1_keys):
+        command = '''airflow dags trigger asphalt_mix_design_monitoring -c ' ''' + json.dumps(sol1_dict) + ''' ' '''
+        print(command)
+        subprocess.run(command, shell=True, check=True)
+    
+        
+    return
+    
+    
+    
+def trigger_asphalt_alarms(values):
+
+    return
+
+
+
+def trigger_asphalt_outputs(values):
+
+    return
+
+
 def trigger_asphalt(**kwargs):
+
+    ti = kwargs['ti']
+    values = ti.xcom_pull(task_ids="read_data", key="data")    
+    
+    entity_name = values["id"]
+    
+    if re.search("alarm", entity_name, re.IGNORECASE):
+       trigger_asphalt_alarms(values)
+    elif re.search("solution_output", entity_name, re.IGNORECASE):
+       trigger_asphalt_outputs(values)
+    else:
+       trigger_asphalt_monitoring(values)
     
     return
     
