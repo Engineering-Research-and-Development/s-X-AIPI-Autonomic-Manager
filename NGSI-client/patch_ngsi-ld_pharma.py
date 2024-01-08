@@ -10,15 +10,17 @@ def update_position_status(pos_x, pos_y):
     "DataIngestion_OCT_probePosition_yPos": {
         "type": "Property",
         "value": {
-            "value": 0,
-            "dateUpdated": "2023-12-10T15:46:00Z"
+            "value": y,
+            "dateObserved": "24-01-03T15:28:17Z",
+            "timeWindowLengthMinutes": "5"
         }
     },
     "DataIngestion_OCT_probePosition_xPos": {
         "type": "Property",
         "value": {
-            "value": 0,
-            "dateUpdated": "2023-12-10T15:46:00Z"
+            "value": x,
+            "dateObserved": "24-01-03T15:28:17Z",
+            "timeWindowLengthMinutes": "5"
         }
     }
     }
@@ -27,8 +29,8 @@ def update_position_status(pos_x, pos_y):
     headers = {"Content-Type": "application/ld+json" }
     now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
     
-    body["DataIngestion_OCT_probePosition_yPos"]["value"]["dateUpdated"] = now
-    body["DataIngestion_OCT_probePosition_xPos"]["value"]["dateUpdated"] = now
+    body["DataIngestion_OCT_probePosition_yPos"]["value"]["dateObserved"] = now
+    body["DataIngestion_OCT_probePosition_xPos"]["value"]["dateObserved"] = now
     
     body["DataIngestion_OCT_probePosition_yPos"]["value"]["value"] = pos_y
     body["DataIngestion_OCT_probePosition_xPos"]["value"]["value"] = pos_x
