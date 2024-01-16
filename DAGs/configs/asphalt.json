@@ -1,0 +1,11 @@
+{ "small" : "urn:ngsi-ld:asphalt_smaller_time_window:001",
+  "large" : "urn:ngsi-ld:asphalt_greater_time_window:001",
+  "alarm" : "urn:ngsi-ld:asphalt_alarms:001",
+  
+  "solution_1_inputs" : ["DataIngestion_production_t_RPBCount", "DataIngestion_production_RPA0700_max",
+  "DataIngestion_production_t_STCount", "DataIngestion_production_t_SPCount", "DataIngestion_production_t_RTCount",
+  "DataIngestion_production_RPA2000_min", "DataIngestion_production_RPA2100_min", "DataIngestion_production_RPA1000_min"],
+  
+  "AM_Alert_Output_1" : "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Asphalt_solution_output_1:001/attrs"
+  
+}

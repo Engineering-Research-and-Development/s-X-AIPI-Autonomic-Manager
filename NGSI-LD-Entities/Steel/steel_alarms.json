@@ -1,0 +1,15 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:sidenor_alarms:001",
+    "type": "sidenor_alarms",
+    "sidenor_exploration_analysis_Nr_heats": {
+        "type": "Property",
+        "value": {
+            "longer_avg_period_value": "214",
+            "smaller_avg_period_value": "250",
+            "dateObserved": "2023-12-01T06:15:09Z",
+            "type": "stabilityAlarm",
+            "percentage": "16.822"
+        }
+    }
+}

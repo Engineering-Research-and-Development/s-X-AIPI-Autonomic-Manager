@@ -1,0 +1,1165 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:asphalt_smaller_time_window:001",
+    "type": "factory",
+    "DataIngestion_production_sensors_bf_s1_shock_count": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2023-11-02T11:45:53Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_sensors_bf_s1_shock_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2023-11-02T11:45:53Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_laboratory_count": {
+        "type": "Property",
+        "value": {
+            "value": "8",
+            "dateObserved": "2024-01-01T06:10:01Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_16mm_count": {
+        "type": "Property",
+        "value": {
+            "value": "7",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_count": {
+        "type": "Property",
+        "value": {
+            "value": "7",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_Vm_count": {
+        "type": "Property",
+        "value": {
+            "value": "4",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_count": {
+        "type": "Property",
+        "value": {
+            "value": "4",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_16mm_mean": {
+        "type": "Property",
+        "value": {
+            "value": "89.571",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_mean": {
+        "type": "Property",
+        "value": {
+            "value": "5.957",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_Vm_mean": {
+        "type": "Property",
+        "value": {
+            "value": "8.625",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_mean": {
+        "type": "Property",
+        "value": {
+            "value": "2.351",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_16mm_std": {
+        "type": "Property",
+        "value": {
+            "value": "11.058",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_std": {
+        "type": "Property",
+        "value": {
+            "value": "1.537",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_Vm_std": {
+        "type": "Property",
+        "value": {
+            "value": "3.899",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.08",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_16mm_min": {
+        "type": "Property",
+        "value": {
+            "value": "70.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_min": {
+        "type": "Property",
+        "value": {
+            "value": "4.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_Vm_min": {
+        "type": "Property",
+        "value": {
+            "value": "5.1",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_min": {
+        "type": "Property",
+        "value": {
+            "value": "2.232",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_16mm_25%": {
+        "type": "Property",
+        "value": {
+            "value": "83.5",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_25%": {
+        "type": "Property",
+        "value": {
+            "value": "4.95",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_Vm_25%": {
+        "type": "Property",
+        "value": {
+            "value": "6.975",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_25%": {
+        "type": "Property",
+        "value": {
+            "value": "2.341",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_16mm_50%": {
+        "type": "Property",
+        "value": {
+            "value": "95.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_50%": {
+        "type": "Property",
+        "value": {
+            "value": "5.5",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_Vm_50%": {
+        "type": "Property",
+        "value": {
+            "value": "7.6",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_50%": {
+        "type": "Property",
+        "value": {
+            "value": "2.384",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_16mm_75%": {
+        "type": "Property",
+        "value": {
+            "value": "97.5",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_75%": {
+        "type": "Property",
+        "value": {
+            "value": "7.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_Vm_75%": {
+        "type": "Property",
+        "value": {
+            "value": "9.25",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_75%": {
+        "type": "Property",
+        "value": {
+            "value": "2.394",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_16mm_max": {
+        "type": "Property",
+        "value": {
+            "value": "100.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_max": {
+        "type": "Property",
+        "value": {
+            "value": "8.3",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_Vm_max": {
+        "type": "Property",
+        "value": {
+            "value": "14.2",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_max": {
+        "type": "Property",
+        "value": {
+            "value": "2.405",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "timeWindowLengthMinutes": "43200"
+        }
+    },
+    "DataIngestion_production_RPA0700_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1000_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1300_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1500_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2000_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2100_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0800_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0900_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1100_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1300_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1400_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA0700_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1000_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1300_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1500_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2000_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2100_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA0700_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1000_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1300_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1500_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2000_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2100_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA0700_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1000_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1300_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1500_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2000_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA0700_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1000_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1300_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1500_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2000_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2100_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA0700_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1000_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1300_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1500_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2000_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2100_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA0700_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1000_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1300_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1500_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2000_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2100_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA0700_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1000_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1300_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA1500_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2000_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2100_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0800_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0900_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1100_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1300_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1400_mean": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0800_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0900_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1100_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1300_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1400_std": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0800_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0900_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1100_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1300_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1400_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0800_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0900_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1100_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1300_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1400_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0800_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0900_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1100_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1300_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1400_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0800_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0900_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1100_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1300_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1400_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0800_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA0900_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1100_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1300_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RTA1400_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_t_RPCount": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:05:03Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_t_RTCount": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:05:03Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_t_STCount": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:05:03Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_t_SPCount": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:05:03Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_t_RPBCount": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:05:03Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_IoTCount": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:05:03Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    },
+    "DataIngestion_production_RPA2100_min": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2024-01-04T06:08:12Z",
+            "timeWindowLengthMinutes": "1440"
+        }
+    }
+}

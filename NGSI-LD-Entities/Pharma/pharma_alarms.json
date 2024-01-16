@@ -1,0 +1,15 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:Pharma_alarms:001",
+    "type": "Pharma_alarms",
+    "Pharma_DataIngestion_IR_frequency": {
+        "type": "Property",
+        "value": {
+            "longer_avg_period_value": "10.23",
+            "smaller_avg_period_value": "10.50",
+            "dateObserved": "2023-12-01T06:15:09Z",
+            "type": "stabilityAlarm",
+            "percentage": "2.639"
+        }
+    }
+}

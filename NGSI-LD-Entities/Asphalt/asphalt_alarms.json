@@ -1,0 +1,15 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:asphalt_alarms:001",
+    "type": "asphalt_alarms",
+    "asphalt_DataIngestion_laboratory_0,063mm_25%": {
+        "type": "Property",
+        "value": {
+            "longer_avg_period_value": "5.400",
+            "smaller_avg_period_value": "4.950",
+            "dateObserved": "2024-01-01T06:12:02Z",
+            "type": "stabilityAlarm",
+            "percentage": "-8.333"
+        }
+    }
+}

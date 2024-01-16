@@ -1,0 +1,1505 @@
+{
+	"info": {
+		"_postman_id": "109a63f1-08c6-4783-8476-364cfe3f48a2",
+		"name": "S-X-AIPI Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20344132"
+	},
+	"item": [
+		{
+			"name": "MISC",
+			"item": [
+				{
+					"name": "Get Entity by ID - LD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response check\", function(){",
+									"",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.have.body('22')",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:asphalt_greater_time_window:001",
+							"protocol": "http",
+							"host": [
+								"136",
+								"243",
+								"156",
+								"113"
+							],
+							"port": "1026",
+							"path": [
+								"ngsi-ld",
+								"v1",
+								"entities",
+								"urn:ngsi-ld:asphalt_greater_time_window:001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Entities - V2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response check\", function(){",
+									"",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.have.body('22')",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://136.243.156.113:1026/v2/entities/",
+							"protocol": "http",
+							"host": [
+								"136",
+								"243",
+								"156",
+								"113"
+							],
+							"port": "1026",
+							"path": [
+								"v2",
+								"entities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Subscriptions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response check\", function(){",
+									"",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.have.body('22')",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+							"protocol": "http",
+							"host": [
+								"136",
+								"243",
+								"156",
+								"113"
+							],
+							"port": "1026",
+							"path": [
+								"ngsi-ld",
+								"v1",
+								"subscriptions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sub",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response check\", function(){",
+									"",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.have.body('22')",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+							"protocol": "http",
+							"host": [
+								"136",
+								"243",
+								"156",
+								"113"
+							],
+							"port": "1026",
+							"path": [
+								"ngsi-ld",
+								"v1",
+								"subscriptions",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pharma",
+			"item": [
+				{
+					"name": "Entities",
+					"item": [
+						{
+							"name": "Get Larger Window",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_greater_time_window:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Pharma_greater_time_window:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Alarm",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_alarms:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Pharma_alarms:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Smaller Window",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_smaller_time_window:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Pharma_smaller_time_window:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Solution1 Output Entity",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_solution_output_1:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Pharma_solution_output_1:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Solution1 Output Entity",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"id\": \"urn:ngsi-ld:Pharma_solution_output_1:001\",\n    \"type\": \"Pharma_outputs\",\n    \"DataIngestion_OCT_probePositionEvaluation\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"ok\",\n            \"dateUpdated\": \"2023-12-10T15:46:00Z\"\n        }\n    },\n    \"DataIngestion_OCT_probePosition_yPos\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": 0,\n            \"dateUpdated\": \"2023-12-10T15:46:00Z\"\n        }\n    },\n    \"DataIngestion_OCT_probePosition_xPos\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": 0,\n            \"dateUpdated\": \"2023-12-10T15:46:00Z\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Solution1 Output",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"DataIngestion_OCT_probePositionEvaluation\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"ok\",\n            \"dateUpdated\": \"2023-12-10T15:46:00Z\"\n        }\n    },\n    \"DataIngestion_OCT_probePosition_yPos\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": 0,\n            \"dateUpdated\": \"2023-12-10T15:46:00Z\"\n        }\n    },\n    \"DataIngestion_OCT_probePosition_xPos\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": 0,\n            \"dateUpdated\": \"2023-12-10T15:46:00Z\"\n        }\n    }}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_solution_output_1:001/attrs",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Pharma_solution_output_1:001",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Orion",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"DataIngestion_OCT_probePosition_yPos\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": 150,\n            \"dateObserved\": \"24-01-03T15:28:17Z\",\n            \"timeWindowLengthMinutes\": \"5\"\n        }\n    },\n    \"DataIngestion_OCT_probePosition_xPos\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": 500,\n            \"dateObserved\": \"24-01-03T15:28:17Z\",\n            \"timeWindowLengthMinutes\": \"5\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_smaller_time_window:001/attrs",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Pharma_smaller_time_window:001",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Update Alert",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"Pharma_DataIngestion_IR_frequency\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"longer_avg_period_value\": \"10.22\",\n            \"smaller_avg_period_value\": \"10.50\",\n            \"dateObserved\": \"2023-12-01T06:15:09Z\",\n            \"type\": \"stabilityAlarm\",\n            \"percentage\": \"2.639\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_alarms:001/attrs",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Pharma_alarms:001",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subscriptions",
+					"item": [
+						{
+							"name": "Subscribe Alerts To Airflow",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Pharma Alerts to Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:Pharma_alarms:001\",\n        \"type\": \"Pharma_alarms\"\n      }\n    ],\n  \"notification\": {\n    \"attributes\": [],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8061\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Solution1 Subscription",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing OCT Position to  Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:Pharma_smaller_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n    \"watchedAttributes\": [\"DataIngestion_OCT_probePositionEvaluation\", \"DataIngestion_OCT_probePosition_xPos\", \"DataIngestion_OCT_probePosition_yPos\"],\n  \"notification\": {\n    \"attributes\": [\"DataIngestion_OCT_probePositionEvaluation\", \"DataIngestion_OCT_probePosition_xPos\", \"DataIngestion_OCT_probePosition_yPos\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8061\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Solution1 Output Subscription",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing OCT Position Outputs to  Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:Pharma_solution_output_1:001\",\n        \"type\": \"Pharma_outputs\"\n      }\n    ],\n  \"notification\": {\n    \"attributes\": [],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8061\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get subs",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true,
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing OCT Position to  Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:Pharma_smaller_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n    \"watchedAttributes\": [\"DataIngestion_OCT_probePositionEvaluation\", \"DataIngestion_OCT_probePosition_xPos\", \"DataIngestion_OCT_probePosition_yPos\"],\n  \"notification\": {\n    \"attributes\": [\"DataIngestion_OCT_probePositionEvaluation\", \"DataIngestion_OCT_probePosition_xPos\", \"DataIngestion_OCT_probePosition_yPos\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8061\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Steel",
+			"item": [
+				{
+					"name": "Entities",
+					"item": [
+						{
+							"name": "Get Larger Window",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_shorter_time_window:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:sidenor_shorter_time_window:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Smaller Window",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_shorter_time_window:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:sidenor_shorter_time_window:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Alarm",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_alarms:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:sidenor_alarms:001"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subscriptions",
+					"item": []
+				}
+			]
+		},
+		{
+			"name": "Asphalt",
+			"item": [
+				{
+					"name": "Entities",
+					"item": [
+						{
+							"name": "Get Larger Window",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:asphalt_greater_time_window:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:asphalt_greater_time_window:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Smaller Window",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:asphalt_smaller_time_window:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:asphalt_smaller_time_window:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Alarm",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:asphalt_alarms:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:asphalt_alarms:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Solution1 AM Alarm Output",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Asphalt_solution_output_1:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Asphalt_solution_output_1:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Solution1 AM Alarm Output",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"AM_Generated_Alarm\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"Test Update Alert\",\n            \"dateUpdated\": \"2023-12-10T15:46:00Z\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Asphalt_solution_output_1:001/attrs",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Asphalt_solution_output_1:001",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Update Entity",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"DataIngestion_production_RPA2100_min\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"0\",\n            \"dateObserved\": \"2024-01-04T06:08:12Z\",\n            \"timeWindowLengthMinutes\": \"1440\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:asphalt_smaller_time_window:001/attrs",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:asphalt_smaller_time_window:001",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Solution1 AM Alarm Outputs",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"id\": \"urn:ngsi-ld:Asphalt_solution_output_1:001\",\n    \"type\": \"Asphalt_outputs\",\n    \"AM_Generated_Alarm\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"Generic Alarm\",\n            \"dateUpdated\": \"2023-12-10T15:46:00Z\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subscriptions",
+					"item": [
+						{
+							"name": "Solution1 AM Alert Subscription",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Asphalt Sensors For Solution 1\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:asphalt_smaller_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n    \"watchedAttributes\": [\"DataIngestion_production_t_RPBCount\", \"DataIngestion_production_RPA0700_max\",\n  \"DataIngestion_production_t_STCount\", \"DataIngestion_production_t_SPCount\", \"DataIngestion_production_t_RTCount\",\n  \"DataIngestion_production_RPA2000_min\", \"DataIngestion_production_RPA2100_min\", \"DataIngestion_production_RPA1000_min\"],\n  \"notification\": {\n    \"attributes\": [\"DataIngestion_production_t_RPBCount\", \"DataIngestion_production_RPA0700_max\",\n  \"DataIngestion_production_t_STCount\", \"DataIngestion_production_t_SPCount\", \"DataIngestion_production_t_RTCount\",\n  \"DataIngestion_production_RPA2000_min\", \"DataIngestion_production_RPA2100_min\", \"DataIngestion_production_RPA1000_min\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8062\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Aluminium",
+			"item": [
+				{
+					"name": "Entities",
+					"item": [
+						{
+							"name": "Get Larger Window",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:IDALSA_greater_time_window:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:IDALSA_greater_time_window:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Smaller Window",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:IDALSA_smaller_time_window:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:IDALSA_smaller_time_window:001"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subscriptions",
+					"item": []
+				}
+			]
+		},
+		{
+			"name": "Local Tests",
+			"item": [
+				{
+					"name": "Update Entity Attrs",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Fiware-Service",
+								"value": "pharma",
+								"type": "text"
+							},
+							{
+								"key": "Fiware-ServicePath",
+								"value": "/cap",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"DataIngestion_OCT_probePositionEvaluation\": {\n        \"value\": {\n            \"value\": \"ok\",\n            \"dateObserved\": \"2023-12-10T15:46:00Z\",\n            \"timeWindowLengthMinutes\": \"50\"\n        },\n        \"type\": \"Property\"\n    },\n    \"DataIngestion_OCT_probePosition_xPos\": {\n        \"value\": {\n            \"value\": 0,\n            \"dateObserved\": \"2023-12-10T15:46:00Z\",\n            \"timeWindowLengthMinutes\": \"50\"\n        },\n        \"type\": \"Property\"\n    },\n    \"DataIngestion_OCT_probePosition_yPos\": {\n        \"value\": {\n            \"value\": 0,\n            \"dateObserved\": \"2023-12-10T15:46:00Z\",\n            \"timeWindowLengthMinutes\": \"50\"\n        },\n        \"type\": \"Property\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:1026/v2/entities/EntityPharma/attrs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "1026",
+							"path": [
+								"v2",
+								"entities",
+								"EntityPharma",
+								"attrs"
+							]
+						},
+						"description": "This example adds a new **Product** entity to the context.\n\nNew entities can be added by making a POST request to the `/v2/entities/` endpoint.\n\nThe request will **fail** if any of the attributes already exist in the context.\n\nAny entity must have a `id` and `type` attributes, each additional attributes are optional \nand will depend on the system being described. Each additional attribute should also have a \ndefined `type` and a `value` attribute. The product has been assigned a unique `id` following\nthe NGSI-LD  [draft recommendation](https://docbox.etsi.org/ISG/CIM/Open/ISG_CIM_NGSI-LD_API_Draft_for_public_review.pdf)  and has been assigned `type=Product`.\n\n---\nSubsequent requests using the same `id` will result in an error response."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Entity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Fiware-Service",
+								"value": "pharma",
+								"type": "text"
+							},
+							{
+								"key": "Fiware-ServicePath",
+								"value": "/cap",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n      \"id\":\"EntityPharma\", \"type\":\"Pharma\",\n      \"DataIngestion_OCT_probePositionEvaluation\": {\n        \"value\": {\n            \"value\": \"ok\",\n            \"dateObserved\": \"2023-12-10T15:46:00Z\",\n            \"timeWindowLengthMinutes\": \"50\"\n        },\n        \"type\": \"Property\"\n    },\n    \"DataIngestion_OCT_probePosition_xPos\": {\n        \"value\": {\n            \"value\": 0.98123,\n            \"dateObserved\": \"2023-12-10T15:46:00Z\",\n            \"timeWindowLengthMinutes\": \"50\"\n        },\n        \"type\": \"Property\"\n    },\n    \"DataIngestion_OCT_probePosition_yPos\": {\n        \"value\": {\n            \"value\": 1.98123,\n            \"dateObserved\": \"2023-12-10T15:46:00Z\",\n            \"timeWindowLengthMinutes\": \"50\"\n        },\n        \"type\": \"Property\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:1026/v2/entities/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "1026",
+							"path": [
+								"v2",
+								"entities",
+								""
+							]
+						},
+						"description": "This example adds a new **Product** entity to the context.\n\nNew entities can be added by making a POST request to the `/v2/entities/` endpoint.\n\nThe request will **fail** if any of the attributes already exist in the context.\n\nAny entity must have a `id` and `type` attributes, each additional attributes are optional \nand will depend on the system being described. Each additional attribute should also have a \ndefined `type` and a `value` attribute. The product has been assigned a unique `id` following\nthe NGSI-LD  [draft recommendation](https://docbox.etsi.org/ISG/CIM/Open/ISG_CIM_NGSI-LD_API_Draft_for_public_review.pdf)  and has been assigned `type=Product`.\n\n---\nSubsequent requests using the same `id` will result in an error response."
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe Airflow",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Fiware-Service",
+								"value": "pharma",
+								"type": "text"
+							},
+							{
+								"key": "Fiware-ServicePath",
+								"value": "/cap",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"A subscription to get info about Moments\",\n  \"subject\": {\n    \"entities\": [\n      {\n        \"id\": \"EntityPharma\",\n        \"type\": \"Pharma\"\n      }\n    ],\n    \"condition\": {\n      \"attrs\": []\n    }\n  },\n  \"notification\": {\n    \"http\": {\n      \"url\": \"http://182.18.1.32:8061\"\n    },\n    \"attrs\": []\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1026/v2/subscriptions",
+							"host": [
+								"localhost"
+							],
+							"port": "1026",
+							"path": [
+								"v2",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Fiware-Service",
+								"value": "pharma",
+								"type": "text"
+							},
+							{
+								"key": "Fiware-ServicePath",
+								"value": "/cap",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:1026/v2/subscriptions/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "1026",
+							"path": [
+								"v2",
+								"subscriptions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Solution1 Output Entity Copy 2",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/ld+json",
+								"type": "text"
+							},
+							{
+								"key": "Fiware-ServicePath",
+								"value": "/cap",
+								"type": "text"
+							},
+							{
+								"key": "Fiware-Service",
+								"value": "pharma",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"id\": \"urn:ngsi-ld:Pharma_sol1:001\",\n    \"type\": \"Pharma_outputs\",\n    \"DataIngestion_OCT_probePositionEvaluation\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"ok\",\n            \"dateUpdated\": \"2023-12-10T15:46:00Z\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_sol1:001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1026",
+							"path": [
+								"ngsi-ld",
+								"v1",
+								"entities",
+								"urn:ngsi-ld:Pharma_sol1:001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
