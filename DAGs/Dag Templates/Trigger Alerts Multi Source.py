@@ -58,7 +58,6 @@ def send_alert(**kwargs):
         
     body = json.loads(''' 
     {
-    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     "AM_Generated_Alarm": {
         "type": "Property",
         "value": {
@@ -67,6 +66,7 @@ def send_alert(**kwargs):
         }
     }
     }''')
+    body["@context"] = config["Alert_entity_context"]
     
     headers = {"Content-Type": "application/ld+json" }
     
