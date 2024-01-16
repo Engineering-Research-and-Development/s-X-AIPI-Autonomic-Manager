@@ -6,10 +6,6 @@ from airflow.operators.empty import EmptyOperator
 from airflow.decorators import dag, task
 from airflow.utils.edgemodifier import Label
 
-from airflow.providers.apache.kafka.operators.produce import ProduceToTopicOperator
-
-
-
 import random
 import re
 import subprocess
