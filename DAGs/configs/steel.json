@@ -1,0 +1,52 @@
+{ "small" : "urn:ngsi-ld:sidenor_shorter_time_window:001",
+  "large" : "urn:ngsi-ld:sidenor_longer_time_window:001",
+  "alarm" : "urn:ngsi-ld:sidenor_alarms:001",
+  
+  "solution_1_zeros_inputs" : ["transformation_scrap_tot_zeros",
+  "transformation_lime_sum_lime_basket_zeros", "transformation_lime_coke_sum_cok_lim_melting_zeros",
+  "transformation_analysis_Mn_zeros", "transformation_analysis_P_zeros", "transformation_analysis_S_zeros", "transformation_analysis_Cr_zeros",
+  "transformation_analysis_Ni_zeros", "transformation_analysis_Mo_zeros", "transformation_analysis_Cu_zeros", "transformation_analysis_Sn_zeros"],
+  
+  "solution_1_nan_inputs" : [
+  "transformation_eaf_eaf14_Nan", "transformation_eaf_kwhorno_Nan", "transformation_eaf_eaf07_Nan", "transformation_eaf_eaf08_Nan",
+  "transformation_eaf_eaf09_Nan", "transformation_eaf_eaf10_Nan", "transformation_eaf_eaf11_Nan", "transformation_eaf_eaf12_Nan",
+  "transformation_eaf_eaf03_Nan", "transformation_eaf_eaf04_Nan", "transformation_eaf_eaf05_Nan", "transformation_eaf_eaf01_Nan",
+  "transformation_eaf_eaf02_Nan", "transformation_eaf_eaf064_Nan", "transformation_eaf_sum_eaf17_Nan", "transformation_eaf_sum_eaf18_Nan",
+  "transformation_eaf_sum_eaf16_Nan", "transformation_eaf_sum_eaf15_Nan"],
+  
+  "solution_1_scrapmax_inputs_0" :  ["transformation_scrap_scrap10_max", "transformation_scrap_scrap09_max", "transformation_scrap_scrap08_max",
+  "transformation_scrap_scrap07_max", "transformation_scrap_scrap06_max", "transformation_scrap_scrap22_max"],
+  
+  "solution_1_scrapmax_inputs_1" :[ "transformation_scrap_scrap19_max", "transformation_scrap_scrap12_max", "transformation_scrap_scrap20_max", "transformation_scrap_scrap16_max", "transformation_scrap_scrap21_max", "transformation_scrap_scrap14_max", "transformation_scrap_scrap11_max", "transformation_scrap_scrap04_max", "transformation_scrap_scrap17_max",
+  "transformation_scrap_scrap03_max", "transformation_scrap_scrap01_max", "transformation_scrap_scrap13_max", "transformation_scrap_scrap15_max", "transformation_scrap_scrap02_max", "transformation_scrap_scrap18_max", "transformation_scrap_Estanado_max"], 
+  
+  "solution_1_scrapmax_inputs_2" : ["transformation_lime_limecoke01_max", "transformation_lime_limecoke02_max"],
+  
+  "solution_1_scrapmax_inputs_3" : ["transformation_lime_coke_limecoke01_max", "transformation_lime_coke_limecoke02_max", "transformation_lime_coke_limecoke03_max",
+  "transformation_lime_coke_limecoke04_max", "transformation_lime_coke_limecoke05_max"],
+  
+  "solution_1_scrapzeros_inputs_0" :  ["transformation_scrap_scrap10_zeros", "transformation_scrap_scrap09_zeros", "transformation_scrap_scrap08_zeros",
+  "transformation_scrap_scrap07_zeros", "transformation_scrap_scrap06_zeros", "transformation_scrap_scrap22_zeros" ],
+  
+  "solution_1_scrapzeros_inputs_1" :  ["transformation_scrap_scrap19_zeros",
+  "transformation_scrap_scrap12_zeros", "transformation_scrap_scrap20_zeros", "transformation_scrap_scrap16_zeros", "transformation_scrap_scrap21_zeros",
+  "transformation_scrap_scrap14_zeros", "transformation_scrap_scrap11_zeros", "transformation_scrap_scrap04_zeros", "transformation_scrap_scrap17_zeros",
+  "transformation_scrap_scrap03_zeros", "transformation_scrap_scrap01_zeros", "transformation_scrap_scrap13_zeros", "transformation_scrap_scrap15_zeros",
+  "transformation_scrap_scrap02_zeros", "transformation_scrap_scrap18_zeros", "transformation_scrap_Estanado_zeros" ],
+  
+  "solution_1_scrapzeros_inputs_2" :  ["transformation_lime_limecoke01_zeros", "transformation_lime_limecoke02_zeros"],
+  
+  "solution_1_scrapzeros_inputs_3" :  ["transformation_lime_coke_limecoke01_zeros", "transformation_lime_coke_limecoke02_zeros", "transformation_lime_coke_limecoke03_zeros",
+  "transformation_lime_coke_limecoke04_zeros", "transformation_lime_coke_limecoke05_zeros"],
+  
+  "solution_1_nrheats_scrap" : "transformation_scrap_Nr_heats",
+  "solution_1_nrheats_lime" : "transformation_lime_Nr_heats",
+  "solution_1_nrheats_limecoke" : "transformation_lime_coke_Nr_heats",
+  
+  
+  "AM_Alert_Output_1" : "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_output_1:001/attrs",
+  "AM_HITL_Status_1" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_1:001/attrs",
+  "AM_HITL_Status_1_GET" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_1:001"
+  
+  
+}

@@ -13,6 +13,7 @@ import random
 import json 
 from utils.orionrcv_pharma import Start_Pharma
 from utils.orionrcv_asphalt import Start_Asphalt
+from utils.orionrcv_steel import Start_Steel
 
 
 from datetime import datetime, timedelta
@@ -54,6 +55,13 @@ def start_asphalt():
     return a
     
     
+def start_steel():
+    
+    a = Start_Steel()
+    
+    return a
+    
+    
 
 #Scope del codice sarà nell'istanza di DAG
 with DAG(
@@ -85,10 +93,15 @@ with DAG(
         task_id = "start_server_asphalt",
         python_callable= start_asphalt
     )
+    
+    task3 = PythonOperator(
+        task_id = "start_server_steel",
+        python_callable= start_steel
+    )
 
 
         
-    task0 >> task_kafka >> [task1, task2]
+    task0 >> task_kafka >> [task1, task2, task3]
    
 
     

@@ -14,6 +14,11 @@ from datetime import datetime
 
 from utils.dag_commons import *
 
+
+
+
+
+
 class ReceiverConfiguration():
     _instance = None
 
@@ -26,10 +31,9 @@ class ReceiverConfiguration():
     def __init__(self):
         # Address and port of the HTTP Endpoint
         self.http_address = socket.gethostbyname(socket.gethostname())
-        self.http_port = 8061
+        self.http_port = 8063
         self.request_completeness = True
 
-       
             
         
 class ServeThread(Thread):
@@ -57,15 +61,13 @@ class ServeThread(Thread):
             dic[key]["type"] = value.type
             dic[key]["value"] = value.value
             
-        
-        
-        
+
         #command = '''airflow dags trigger solution_triggerer -c ' ''' + json.dumps(dic) + ''' ' '''
         #print(command)
         #subprocess.run(command, shell=True, check=True)
         
         
-        command = '''airflow dags trigger pharma_dag -c ' ''' + json.dumps(dic) + ''' ' '''
+        command = '''airflow dags trigger steel_dag -c ' ''' + json.dumps(dic) + ''' ' '''
         print(command)
         subprocess.run(command, shell=True, check=True)
         
@@ -113,7 +115,7 @@ class NotificationRequestHandler(BaseHTTPRequestHandler):
     
     
     
-def Start_Pharma():
+def Start_Steel():
 
     configuration = ReceiverConfiguration()
     
