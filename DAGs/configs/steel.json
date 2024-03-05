@@ -46,7 +46,37 @@
   
   "AM_Alert_Output_1" : "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_output_1:001/attrs",
   "AM_HITL_Status_1" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_1:001/attrs",
-  "AM_HITL_Status_1_GET" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_1:001"
+  "AM_HITL_Status_1_GET" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_1:001",
+  
+  
+ 
+ 
+
+  
+  "solution_2_inputs" : ["exploration_analysis_Nr_anomalies_Cu", "exploration_eaf_Nr_anomalies_eaf14", "exploration_eaf_Nr_anomalies_kwhorno",
+  "exploration_lime_coke_Nr_outliers_sum_lim_melting", "exploration_lime_coke_Nr_outliers_sum_cok_melting", "exploration_analysis_upper_boundary_Cu"],
+  "solution_2_thresholds" : [0,0,0,0,0, 0.4],
+
+
+  "AM_HITL_Status_2" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_2:001/attrs",
+  "AM_HITL_Status_2_GET" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_2:001", 
+  
+  
+  
+  "solution_3_inputs" : ["modeling_LinearRegression_MAE"],
+  "solution_3_thresholds" : ["transformation_analysis_Cu_mean"],
+
+
+
+
+  "solution_4_inputs" : ["train_models_coef_Sustitutivos", "train_models_coef_scrap14", "train_models_coef_scrap19", "train_models_coef_scrap04",
+  "train_models_coef_scrap21", "train_models_coef_scrap16", "train_models_coef_scrap18", "train_models_coef_scrap17", "train_models_coef_scrap03",
+  "train_models_coef_scrap20", "train_models_coef_scrap12", "train_models_coef_scrap11"],
+  
+  "AM_HITL_Status_4" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_4:001/attrs",
+  "AM_HITL_Status_4_GET" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_4:001" 
+
+
   
   
 }
