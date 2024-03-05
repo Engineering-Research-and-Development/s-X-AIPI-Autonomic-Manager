@@ -12,6 +12,7 @@ import re
 import subprocess
 import json
 import requests
+import numpy as np
 
 from datetime import datetime, timedelta
 
@@ -41,53 +42,68 @@ def list_configuration(**kwargs):
     ti.xcom_push(key="data", value=conf_dict)
     
 
+    
 
-##################################################################################### SOLUTION 1 FUNCTIONS ############################################################################
+def raise_transformation_alert(**kwargs):
+
+    values = kwargs['data']
+    
+    values = values.split("'")
+    values = [val for val in values if len(val) > 10]
+    
+
+    for elem in values:
+        params = elem.split("||")
+        body = {}
+        body["Solution"] = params[0]
+        body["Parameter"] = params[1]
+        body["AlertType"] = params[2]
+        body["AlertDescription"] = params[3]
+        body["AlertTimestamp"] = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
+        yield(json.dumps(0), json.dumps(body))
 
 
-def check_scrap_zeros(**kwargs):
+
+
+def add_param_to_body(body, param_name, param_value, now):
+
+    if param_value is not None:
+        body[param_name] = {}
+        body[param_name]["type"] = "Property"
+        body[param_name]["value"] = {}
+        body[param_name]["value"]["value"] = param_value
+        body[param_name]["value"]["dateUpdated"] = now
+    
+    return body
+    
+
+
+# TODO Make a separate step
+def update_HITL_entity(names, values, url):
+
+    
+    headers = {"Content-Type": "application/ld+json" }
+    now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
+    
+    body = {}
+    body['@context'] = "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    
+    for idx, name in enumerate(names):
+        body = add_param_to_body(body, name, values[idx], now)
+
+
+    r = requests.post(url, headers=headers, data=json.dumps(body))
+    print(r.status_code, r.text)
+    return
+
+
+
+
+def notify_anomalies(**kwargs):
 
     ti = kwargs['ti']
-    values = ti.xcom_pull(task_ids="monitor_data", key="data")
-    
-    zero_list = []
-    
-    for scrap in config["solution_1_zeros_inputs"]:
-        try:
-            scrap_val = values[scrap]["value"]["value"]
-            if scrap_val > 0:
-                zero_list.append("Zero values detected in parameter: " +scrap)
-        except Exception as e:
-            print(e)
-            zero_list.append("AM ERROR occurred with variable " + scrap )
-                
-    return zero_list
-    
-    
-def check_scrap_nans(**kwargs):
-
-    ti = kwargs['ti']
-    values = ti.xcom_pull(task_ids="monitor_data", key="data")
-    
-    zero_list = []
-    
-    for scrap in config["solution_1_nan_inputs"]:
-        try:
-            scrap_val = values[scrap]["value"]["value"]
-            if scrap_val > 0:
-                zero_list.append("Missing values detected in parameter: " +scrap)
-        except Exception as e:
-            zero_list.append("AM ERROR occurred with variable " + scrap )
-            print(e)
-                
-    return zero_list
-     
-    
-    
-def notify_anomalies_1(**kwargs):
-
-    ti = kwargs['ti']
-    values = ti.xcom_pull(task_ids = task_ids_solution1)
+    task_ids = kwargs["tasks"]
+    values = ti.xcom_pull(task_ids = task_ids)
     print(values)
         
     body = json.loads(''' 
@@ -106,31 +122,60 @@ def notify_anomalies_1(**kwargs):
     
     l = []
     for lists in values:
-        l.extend(lists)
+        if type(lists) == type(["test"]):
+            l.extend(lists)
+        elif type(lists) == type("string"):
+            l.append(lists)
     
     for alert in l:
-        text = "Solution 1 generated the following alert: " + alert
-        body["AM_Generated_Alarm"]["value"]["value"] = text
+        body["AM_Generated_Alarm"]["value"]["value"] = alert.replace("||", " ")
         body["AM_Generated_Alarm"]["value"]["dateUpdated"] = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
         r = requests.patch(config['AM_Alert_Output_1'], headers=headers, data=json.dumps(body))
         print(r.status_code, r.text)
-        
-         
-        
-        
-def raise_transformation_alert(**kwargs):
-
-    values = kwargs['data']
+    return
     
-    values = values.split("'")
-    values = [val for val in values if len(val) > 10]
     
+##################################################################################### SOLUTION 1 FUNCTIONS ############################################################################
 
-    for elem in values:
-        elem = "Solution 1 generated the following alert: " + elem
-        yield(json.dumps(0), json.dumps(elem))
+
+def check_scrap_zeros(**kwargs):
+
+    ti = kwargs['ti']
+    values = ti.xcom_pull(task_ids="monitor_data", key="data")
     
+    zero_list = []
+    
+    for scrap in config["solution_1_zeros_inputs"]:
+        try:
+            scrap_val = values[scrap]["value"]["value"]
+            if scrap_val > 0:
+                zero_list.append(f"Solution 1||{scrap}||Zero Detected||{scrap_val} zero values detected in {scrap}")
+        except Exception as e:
+            print(e)
+            zero_list.append(f"Solution 1||{scrap}||AM Error||AM ERROR occurred with variable {scrap}")
+                
+    return zero_list
+    
+    
+def check_scrap_nans(**kwargs):
 
+    ti = kwargs['ti']
+    values = ti.xcom_pull(task_ids="monitor_data", key="data")
+    
+    zero_list = []
+    
+    for scrap in config["solution_1_nan_inputs"]:
+        try:
+            scrap_val = values[scrap]["value"]["value"]
+            if scrap_val > 0:
+                zero_list.append(f"Solution 1||{scrap}||Missing Values||{scrap_val} NaN values detected in {scrap}")
+        except Exception as e:
+            zero_list.append(f"Solution 1||{scrap}||AM Error||AM ERROR occurred with variable {scrap}")
+            print(e)
+                
+    return zero_list
+     
+    
 
 
 def get_scrap_params(attr):
@@ -139,8 +184,9 @@ def get_scrap_params(attr):
     param_name_1 = name + "_periods"
     param_name_2 = name + "_status"
     param_name_3 = name + "_previous"
+    param_name_4 = name + "_confirmed"
     
-    return param_name_1, param_name_2, param_name_3
+    return param_name_1, param_name_2, param_name_3, param_name_4
     
     
     
@@ -157,8 +203,7 @@ def get_scrap_name(attr):
 
 def write_if_not_exist(attr, ent):
 
-    param_name_1, param_name_2, param_name_3 = get_scrap_params(attr)
-    
+    param_name_1, param_name_2, param_name_3, param_name_4 = get_scrap_params(attr)
     
     keys = list(ent.keys())
     if param_name_1 in keys : return
@@ -166,37 +211,11 @@ def write_if_not_exist(attr, ent):
     headers = {"Content-Type": "application/ld+json" }
     now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
     
-    body = {}
-    body['@context'] = "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     
-    # Periods of observations
-    body[param_name_1] = {}
-    body[param_name_1]["type"] = "Property"
-    body[param_name_1]["value"] = {}
-    body[param_name_1]["value"]["value"] = 0
-    body[param_name_1]["value"]["dateUpdated"] = now
+    status_update(attr, 1, "Not Used", "Not Used", "No")
     
-    # Previous status: check conditions, if in treshold then it is used, otherwise not used
-    body[param_name_3] = {}
-    body[param_name_3]["type"] = "Property"
-    body[param_name_3]["value"] = {}
-    body[param_name_3]["value"]["value"] = "Not Used"
-    body[param_name_3]["value"]["dateUpdated"] = now
-    
-    # Confirmed status: here the answer from HITL
-    body[param_name_2] = {}
-    body[param_name_2]["type"] = "Property"
-    body[param_name_2]["value"] = {}
-    body[param_name_2]["value"]["value"] = "Not Used"
-    body[param_name_2]["value"]["dateUpdated"] = now
-    
-    url = config["AM_HITL_Status_1"]
-    
-    r = requests.post(url, headers=headers, data=json.dumps(body))
-    print(r.status_code, r.text)
     return
     
-
 
     
 def analyze_materials_used(**kwargs):
@@ -239,28 +258,26 @@ def analyze_materials_used(**kwargs):
 
 
 
+
+
+    
+
 # TODO Make a separate step
-def status_update(param_name_3, prev, param_name_1, periods, **kwargs):
+def status_update(attr, periods, status, is_used, confirmed, **kwargs):
 
-
+    param_name_1, param_name_2, param_name_3, param_name_4 = get_scrap_params(attr)
+    names = [param_name_1, param_name_2, param_name_3, param_name_4]
+    values = [periods, status, is_used, confirmed]
+    
     headers = {"Content-Type": "application/ld+json" }
     now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
     
     body = {}
     body['@context'] = "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     
-    body[param_name_1] = {}
-    body[param_name_1]["type"] = "Property"
-    body[param_name_1]["value"] = {}
-    body[param_name_1]["value"]["value"] = periods
-    body[param_name_1]["value"]["dateUpdated"] = now
-    
-    body[param_name_3] = {}
-    body[param_name_3]["type"] = "Property"
-    body[param_name_3]["value"] = {}
-    body[param_name_3]["value"]["value"] = prev
-    body[param_name_3]["value"]["dateUpdated"] = now
-    
+    for idx, name in enumerate(names):
+        body = add_param_to_body(body, name, values[idx], now)
+
     url = config["AM_HITL_Status_1"]
     
     r = requests.post(url, headers=headers, data=json.dumps(body))
@@ -295,13 +312,14 @@ def check_materials(**kwargs):
         nr_heats = int(values[reference]["value"]["value"])
         
         # Get parameter names for previous state
-        param_name_1, param_name_2, param_name_3 = get_scrap_params(attr)
+        param_name_1, param_name_2, param_name_3, param_name_4 = get_scrap_params(attr)
         name = get_scrap_name(attr)
     
     	# Getting previous status info
         periods = int(entity[param_name_1]["value"]["value"])
-        was_used = entity[param_name_2]["value"]["value"]
+        status = entity[param_name_2]["value"]["value"]
         previous_status = entity[param_name_3]["value"]["value"]
+        confirmed = entity[param_name_4]["value"]["value"]
         
         # First: check if scrap is used (#max > 0 & #zeros < #heats). 
         is_used = "Not Used"
@@ -314,15 +332,16 @@ def check_materials(**kwargs):
         else:
             periods = 1
         
-        status_update(param_name_3, is_used, param_name_1, periods, **kwargs)
+
+        status_update(attr, periods, None, is_used, None)
         
         # If current periods out is > 2, check HITL status
         # If HITL status different, send alert
-        if periods > 2 and is_used != was_used:
-            if "Not" in was_used:
-                return message + "was introduced. Please, send confirmation. Parameter triggering alert: " + name + " for " + str(periods) + " time windows."
+        if periods > 2 and is_used != status and "No" in confirmed:
+            if "Not" in status:
+                return f"Solution 1||{name}||Material Introduction Detection||{message} was introduced: {name} changed values for {periods} time windows. Please send confirmation to autonomic manager"
             else:
-                return message + "was removed. Please, send confirmation. Parameter triggering alert: " + name + " for " + str(periods) + " time windows."
+                return f"Solution 1||{name}||Material Removal Detection||{message} was introduced: {name} changed values for {periods} time windows. Please, send confirmation to autonomic manager"
     
     
     
@@ -332,16 +351,191 @@ def check_materials(**kwargs):
 ##################################################################################### SOLUTION 2 FUNCTIONS ############################################################################
 
 
+
+def update_sol2_HITL(name, value, name_2, value_2):
+
+    
+    headers = {"Content-Type": "application/ld+json" }
+    now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
+    
+    body = {}
+    body['@context'] = "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    
+    body = add_param_to_body(body, name, value, now)
+    body = add_param_to_body(body, name_2, value_2, now)
+
+    url = config["AM_HITL_Status_2"]
+    
+    r = requests.post(url, headers=headers, data=json.dumps(body))
+    print(r.status_code, r.text)
+    return
+    
+
+
+
+def analyze_sol2_anomalies(**kwargs):
+
+    ti = kwargs['ti']
+    values = ti.xcom_pull(task_ids="monitor_data", key="data")
+    
+    conf_standards = ["Unconfirmed", "Confirmed_Anomalies", "Confirmed_Normal"]
+    alert_standards = ["NoAlert", "Alert"]
+    
+       
+    alert_list = []
+    
+    inputs = config["solution_2_inputs"]
+    thresholds = config["solution_2_thresholds"]
+    
+    entity = requests.get(config["AM_HITL_Status_2_GET"]).json()
+    keys = list(entity.keys())
+    print(entity)
+    
+    hitl_url = config["AM_HITL_Status_2"] 
+    
+    # Add OCB entry if not exist yet
+    for attr in inputs:
+        name = attr + "_HITL_anomalies_confirmation"
+        name_2 = attr + "_previous_status"
+        if name_2 in keys: continue
+        update_HITL_entity([name, name_2], [conf_standards[0], alert_standards[0]], hitl_url)
+        #update_sol2_HITL(name, conf_standards[0], name_2, alert_standards[0])    
+        
+    
+        
+    # Check value. Send alert if current status is not confirmed and breaks tresh   
+    entity = requests.get(config["AM_HITL_Status_2_GET"]).json() 
+    for idx, var in enumerate(inputs):
+        name = var + "_HITL_anomalies_confirmation"
+        name_2 = var + "_previous_status"
+        try:
+            var_val = values[var]["value"]["value"]
+            confirmation = entity[name]["value"]["value"]
+            old_val = entity[name_2]["value"]["value"]
+            
+            cur_val = alert_standards[0]
+            
+            if var_val > thresholds[idx]:
+                cur_val = alert_standards[1]
+                
+                
+            if cur_val != old_val:
+                update_HITL_entity([name, name_2], [conf_standards[0], cur_val], hitl_url)
+                #update_sol2_HITL(name, conf_standards[0], name_2, cur_val)
+                confirmation = conf_standards[0]
+            
+            if cur_val == alert_standards[1] and confirmation == conf_standards[0]:
+                alert_list.append(f"Solution 2||{var}||Anomaly Detected||Parameter {var} is out of bound with value {var_val}. Please confirm or deny anomaly to the autonomic manager.")
+            elif cur_val == alert_standards[1] and confirmation == conf_standards[1]:
+                alert_list.append(f"Solution 2||{var}||Anomaly Persistence||Parameter {var} is confirmed as anomaly with {var_val}. Requested HITL intervention.")
+                
+            
+            
+        except Exception as e:
+            print("Exception was:", e)
+            alert_list.append(f"Solution 2||{var}||AM Error||AM ERROR occurred with variable {var}")
+            
+        
+        
+                
+    return alert_list
     
     
+    
+
     
 ##################################################################################### SOLUTION 3 FUNCTIONS ############################################################################
 
 
+
+def check_model_accuracy(**kwargs):
+
+    ti = kwargs['ti']
+    values = ti.xcom_pull(task_ids="monitor_data", key="data")
+    
+
+    inputs = config["solution_3_inputs"]
+    tresholds = config["solution_3_thresholds"]
+    
+  
+    alert_list = []
+        
+    # Check value. Send alert if current status is not confirmed and breaks treshikd    
+    for idx, var in enumerate(inputs):
+        try:
+            var_val = values[var]["value"]["value"]
+            tresh = tresholds[idx]
+            var_tresh = values[tresh]["value"]["value"]
+            
+            if var_val > var_tresh*1.15:
+                alert_list.append(f"Solution 3||{var}||Model Accuracy Decreased||{var} is {var_val*100/var_tresh}% higher than {tresh}")
+
+        except Exception as e:
+            print("Exception was:", e)
+            alert_list.append(f"Solution 3||{var}||AM Error||AM ERROR occurred with variable {var}")
+            
+        
+        
+                
+    return alert_list
     
 
 ##################################################################################### SOLUTION 4 FUNCTIONS ############################################################################
 
+
+def analyze_coefficients_anomalies(**kwargs):
+
+    ti = kwargs['ti']
+    values = ti.xcom_pull(task_ids="monitor_data", key="data")
+    
+      
+    alert_list = []
+    
+    inputs = config["solution_4_inputs"]
+    hitl_names = [inp+"_previous_value" for inp in inputs]
+    
+    entity = requests.get(config["AM_HITL_Status_4_GET"]).json()
+    keys = list(entity.keys())
+    print(entity)
+    
+    hitl_url = config["AM_HITL_Status_4"] 
+    
+    # Add OCB entry if not exist yet
+    for idx, var in enumerate(inputs):
+        name = hitl_names[idx]
+        if name in keys: continue
+        cur_val = values[var]["value"]["value"]
+        update_HITL_entity([name], [cur_val], hitl_url)
+        
+        
+    entity = requests.get(config["AM_HITL_Status_4_GET"]).json()
+        
+    # Check value. Send alert if current status is not confirmed and breaks tresh    
+    for idx, var in enumerate(inputs):
+        name = name = hitl_names[idx]
+        
+        
+        try:
+            old_val = entity[name]["value"]["value"]
+            cur_val = values[var]["value"]["value"]
+            
+            low_thresh = old_val - 0.15*np.abs(old_val)
+            high_thresh = old_val + 0.15*np.abs(old_val)
+            
+            if cur_val < low_thresh or cur_val > high_thresh:
+                alert_list.append(f"Solution 4||{var}||Copper Content Changed||Parameter {var} is out of bounds with value {cur_val} against lower threshold {low_thresh} \
+                and high threshold {low_thresh}. Please update the scrap copper content in database for scrap mix optimizer.")
+        
+            update_HITL_entity([name], [cur_val], hitl_url)
+            
+        except Exception as e:
+            print("Exception was:", e)
+            alert_list.append(f"Solution 4||{var}||AM Error||AM ERROR occurred with variable {var}")
+            
+        
+        
+                
+    return alert_list
 
 
     
@@ -404,13 +598,14 @@ with DAG(
     )
     
     task_1_3 = EmptyOperator(
-        task_id = "end_analysis",
+        task_id = "plan_action_1",
         trigger_rule='none_failed'
     )
     
     task_1_4 = PythonOperator(
-    	task_id = "notify_anomalies_1",
-    	python_callable = notify_anomalies_1,
+    	task_id = "update_am_alert_1",
+    	python_callable = notify_anomalies,
+    	op_kwargs = {"tasks" : task_ids_solution1},
     	dag = dag,
     	provide_context = True,
     	trigger_rule='none_failed'
@@ -419,7 +614,7 @@ with DAG(
     
     task_1_5 = ProduceToTopicOperator(
         kafka_config_id="kafka_broker",
-        task_id="raise_transformation_alert",
+        task_id="raise_transformation_alert_1",
         topic="steel-alerts",
         producer_function=raise_transformation_alert,
         producer_function_kwargs={
@@ -488,10 +683,6 @@ with DAG(
     )
     
 	
-    skip_1 = EmptyOperator(
-    	task_id = "skip_1",
-    )
-	
     
     
     
@@ -502,6 +693,33 @@ with DAG(
     	task_id = "solution_2",
     )
     
+    
+    task_2_1 = PythonOperator(
+    	task_id = "analyze_sol2_anomalies",
+    	python_callable = analyze_sol2_anomalies,
+    	dag = dag,
+    	provide_context = True,
+    	trigger_rule='none_failed'
+    )
+    
+    
+    task_2_2 = EmptyOperator(
+    	task_id = "plan_action_2",
+    	trigger_rule='none_failed'
+    )
+    
+    
+    
+    task_2_3 = ProduceToTopicOperator(
+        kafka_config_id="kafka_broker",
+        task_id="raise_exploration_alert",
+        topic="steel-alerts",
+        producer_function=raise_transformation_alert,
+        producer_function_kwargs={
+            "data": "{{ti.xcom_pull(task_ids=['analyze_sol2_anomalies'])}}"
+        },
+        poll_timeout=10
+    )
       
     
     join_2 = EmptyOperator(
@@ -509,17 +727,41 @@ with DAG(
     	trigger_rule="none_failed"
     )
     
-	
-    skip_2 = EmptyOperator(
-    	task_id = "skip_2",
-    )
-    
+
     
     
     ######################### Solution 3 Taksks ################################
     
     task_3_0 = EmptyOperator(
     	task_id = "solution_3",
+    )
+    
+    
+    task_3_1 = PythonOperator(
+    	task_id = "check_model_accuracy",
+    	python_callable = check_model_accuracy,
+    	dag = dag,
+    	provide_context = True,
+    	trigger_rule='none_failed'
+    )
+    
+    
+    task_3_2 = EmptyOperator(
+    	task_id = "plan_action_3",
+    	trigger_rule='none_failed'
+    )
+    
+    
+    
+    task_3_3 = ProduceToTopicOperator(
+        kafka_config_id="kafka_broker",
+        task_id="raise_modeling_alert",
+        topic="steel-alerts",
+        producer_function=raise_transformation_alert,
+        producer_function_kwargs={
+            "data": "{{ti.xcom_pull(task_ids=['check_model_accuracy'])}}"
+        },
+        poll_timeout=10
     )
      
     
@@ -529,16 +771,40 @@ with DAG(
     	trigger_rule="none_failed"
     )
     
-	
-    skip_3 = EmptyOperator(
-    	task_id = "skip_3",
-    )
-    
+
     
     ######################### Solution 4 Taksks ################################
     
     task_4_0 = EmptyOperator(
     	task_id = "solution_4",
+    )
+    
+    
+    task_4_1 = PythonOperator(
+    	task_id = "analyze_coefficients_anomalies",
+    	python_callable = analyze_coefficients_anomalies,
+    	dag = dag,
+    	provide_context = True,
+    	trigger_rule='none_failed'
+    )
+    
+    
+    task_4_2 = EmptyOperator(
+    	task_id = "plan_action_4",
+    	trigger_rule='none_failed'
+    )
+    
+    
+    
+    task_4_3 = ProduceToTopicOperator(
+        kafka_config_id="kafka_broker",
+        task_id="raise_copper_content_alert",
+        topic="steel-alerts",
+        producer_function=raise_transformation_alert,
+        producer_function_kwargs={
+            "data": "{{ti.xcom_pull(task_ids=['analyze_coefficients_anomalies'])}}"
+        },
+        poll_timeout=10
     )
     
     
@@ -548,10 +814,7 @@ with DAG(
     	trigger_rule="none_failed"
     )
     
-	
-    skip_4 = EmptyOperator(
-    	task_id = "skip_4",
-    )
+
     
     
     
@@ -560,29 +823,24 @@ with DAG(
     
     
     
-    task_0_0 >> [task_1_0, task_2_0, task_3_0, task_4_0]
-
-
+    task_0_0 >> [task_1_0, task_2_0, task_3_0, task_4_0, skip_0]
 
         
     task_1_0 >> [task_1_1, task_1_2] >> task_1_3 >> [task_1_4, task_1_5] >> join_1
     task_1_0 >> task_1_6 >> [task_1_7, task_1_8, task_1_9, task_1_10] >> task_1_3 >> [task_1_4, task_1_5] >> join_1
      
-    #task_2_0 >> task_2_4 >> task_2_3 >> task_2_1 >> join_2
-    #task_2_0 >> task_2_4>> task_2_3 >> task_2_2 >> join_2
-    #task_2_0 >> task_2_4 >> task_2_3 >> skip_2 >> join_2
+    task_2_0 >> task_2_1 >> task_2_2 >> task_2_3 >> join_2
     
-    #task_3_0 >> task_3_3 >> task_3_2 >> task_3_1 >> join_3
-    #task_3_0 >> task_3_3 >> task_3_2 >> skip_3 >> join_3
+    task_3_0 >> task_3_1 >> task_3_2 >> task_3_3 >> join_3
+
+    task_4_0 >> task_4_1 >> task_4_2 >> task_4_3 >> join_4
     
-    #task_4_0 >> task_4_3 >> task_4_2 >> task_4_1 >> join_4
-    #task_4_0 >> task_4_3 >> task_4_2 >> skip_4 >> join_4
-    task_4_0 >> skip_4 >> join_4
     
     join_1 >> join_0
-    #join_2 >> join_0
-    #join_3 >> join_0
+    join_2 >> join_0
+    join_3 >> join_0
     join_4 >> join_0
+    skip_0 >> join_0
     
     
   
