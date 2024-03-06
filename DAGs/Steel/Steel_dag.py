@@ -322,18 +322,18 @@ def check_materials(**kwargs):
         confirmed = entity[param_name_4]["value"]["value"]
         
         # First: check if scrap is used (#max > 0 & #zeros < #heats). 
-        is_used = "Not Used"
+        is_used = "Not_Used"
         if mx > 0 and zero < nr_heats: is_used = "Used"
         
         # Check previous status if is the same of current
         # If is the same, add +1 to periods, otherwise set them to 1
         if is_used == previous_status: 
             periods += 1
+            status_update(attr, periods, None, is_used, None)
         else:
             periods = 1
+            status_update(attr, periods, None, is_used, "No")
         
-
-        status_update(attr, periods, None, is_used, None)
         
         # If current periods out is > 2, check HITL status
         # If HITL status different, send alert
@@ -455,20 +455,58 @@ def check_model_accuracy(**kwargs):
     
 
     inputs = config["solution_3_inputs"]
-    tresholds = config["solution_3_thresholds"]
+    thresholds = config["solution_3_thresholds"]
     
+    
+    hitl_url = config["AM_HITL_Status_3"] 
+    
+    
+    entity = requests.get(config["AM_HITL_Status_3_GET"]).json()
+    keys = list(entity.keys())
+    print(entity)
+    
+    start_names = ["_periods", "_previous_status", "_confirmed"]
+
+    # Add OCB entry if not exist yet
+    for attr in inputs:
+        names = [attr+name for name in start_names]
+        if names[0] in keys: continue
+        update_HITL_entity(names, [0, "Not_Alert", "No"], hitl_url)
+        #update_sol2_HITL(name, conf_standards[0], name_2, alert_standards[0])  
   
+  
+    entity = requests.get(config["AM_HITL_Status_3_GET"]).json()
     alert_list = []
+    
         
     # Check value. Send alert if current status is not confirmed and breaks treshikd    
     for idx, var in enumerate(inputs):
         try:
-            var_val = values[var]["value"]["value"]
-            tresh = tresholds[idx]
-            var_tresh = values[tresh]["value"]["value"]
+            names = [var+name for name in start_names]
             
-            if var_val > var_tresh*1.15:
-                alert_list.append(f"Solution 3||{var}||Model Accuracy Decreased||{var} is {var_val*100/var_tresh}% higher than {tresh}")
+            var_val = values[var]["value"]["value"]
+            thresh = thresholds[idx]
+            var_thresh = values[thresh]["value"]["value"]
+            
+            # Check old values
+            periods = entity[names[0]]["value"]["value"]
+            previous = entity[names[1]]["value"]["value"]
+            confirmed = entity[names[2]]["value"]["value"]
+            
+            # Setting current alert if threshold broken
+            cur_status = "Not_Alert"
+            if var_val > var_thresh*0.15:
+                cur_status = "Alert"
+                periods = periods + 1
+                if periods > 1 and confirmed == "No":
+                    alert_list.append(f"Solution 3||{var}||Model Accuracy Decreased||{var} is {var_val*100/(var_tresh*0.15)}% higher than {tresh}")
+                    
+            new_confirmed = confirmed
+            if cur_status != previous:
+                new_confirmed = "No"
+                periods = 1
+
+            update_HITL_entity(names, [periods, cur_status, new_confirmed], hitl_url)
 
         except Exception as e:
             print("Exception was:", e)
