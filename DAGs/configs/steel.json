@@ -65,6 +65,9 @@
   
   "solution_3_inputs" : ["modeling_LinearRegression_MAE"],
   "solution_3_thresholds" : ["transformation_analysis_Cu_mean"],
+  
+  "AM_HITL_Status_3" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_3:001/attrs",
+  "AM_HITL_Status_3_GET" : " http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_3:001",
 
 
 
