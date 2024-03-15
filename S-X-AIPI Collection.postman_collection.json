@@ -611,6 +611,51 @@
 							"response": []
 						},
 						{
+							"name": "Solution2 Subscription",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Image Quality Check to Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:Pharma_smaller_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n    \"watchedAttributes\": [\"DataIngestion_OCT_signalQualityCheck_numBadImg\", \"DataIngestion_OCT_imageClassification_numGoodImg\"],\n  \"notification\": {\n    \"attributes\": [\"DataIngestion_OCT_signalQualityCheck_numBadImg\", \"DataIngestion_OCT_imageClassification_numGoodImg\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8061\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Solution1 Output Subscription",
 							"protocolProfileBehavior": {
 								"disabledSystemHeaders": {
@@ -883,6 +928,46 @@
 							"response": []
 						},
 						{
+							"name": "Get Sol3 HITL Status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_3:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:sidenor_solution_HITL_Status_3:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Get Sol4 HITL Status",
 							"event": [
 								{
@@ -1058,6 +1143,51 @@
 							"response": []
 						},
 						{
+							"name": "Create Solution3 HITL Questions",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"id\": \"urn:ngsi-ld:sidenor_solution_HITL_Status_3:001\",\n    \"type\": \"sidenor_HITL_Status\",\n    \"modeling_LinearRegression_MAE_periods\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": 0,\n            \"dateUpdated\": \"2024-2-26T11:46:00Z\"\n        }\n    },\n    \"modeling_LinearRegression_MAE_previous_status\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"Alert/NoAlert\",\n            \"dateUpdated\": \"2024-2-26T11:46:00Z\"\n        }\n    },\n\n    \"modeling_LinearRegression_MAE_confirmed\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"Yes/No\",\n            \"dateUpdated\": \"2024-2-26T11:46:00Z\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Create Solution4 HITL Questions",
 							"protocolProfileBehavior": {
 								"disabledSystemHeaders": {
@@ -1188,6 +1318,52 @@
 										"v1",
 										"entities",
 										"urn:ngsi-ld:sidenor_solution_HITL_Status_2:001",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Sol3 HITL Question Attribute",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"modeling_LinearRegression_MAE_periods\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": 0,\n            \"dateUpdated\": \"2024-2-26T11:46:00Z\"\n        }\n    },\n    \"modeling_LinearRegression_MAE_previous_status\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"Not_Alert\",\n            \"dateUpdated\": \"2024-2-26T11:46:00Z\"\n        }\n    },\n\n    \"modeling_LinearRegression_MAE_confirmed\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"No\",\n            \"dateUpdated\": \"2024-2-26T11:46:00Z\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_3:001/attrs",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:sidenor_solution_HITL_Status_3:001",
 										"attrs"
 									]
 								}
@@ -1349,7 +1525,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Asphalt Sensors For Solution 1\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:sidenor_shorter_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n\n  \"notification\": {\n    \"attributes\": [],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8063\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Steel Small Window for Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:sidenor_shorter_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n\n  \"notification\": {\n    \"attributes\": [],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8063\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1610,7 +1786,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"DataIngestion_production_RPA2100_min\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"0\",\n            \"dateObserved\": \"2024-01-04T06:08:12Z\",\n            \"timeWindowLengthMinutes\": \"1440\"\n        }\n    }\n}",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"DataIngestion_production_RPA2100_min\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"0\",\n            \"dateObserved\": \"2024-01-04T06:08:12Z\",\n            \"timeWindowLengthMinutes\": \"1440\"\n        }\n    },\n    \"DataIngestion_laboratory_DAPA_max\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": \"2.392\",\n            \"dateObserved\": \"2024-03-01T06:12:04Z\",\n            \"timeWindowLengthMinutes\": \"43200\"\n        }\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1752,7 +1928,97 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Asphalt Sensors For Solution 1\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:asphalt_smaller_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n    \"watchedAttributes\": [\"DataIngestion_production_t_RPBCount\", \"DataIngestion_production_RPA0700_max\",\n  \"DataIngestion_production_t_STCount\", \"DataIngestion_production_t_SPCount\", \"DataIngestion_production_t_RTCount\",\n  \"DataIngestion_production_RPA2000_min\", \"DataIngestion_production_RPA2100_min\", \"DataIngestion_production_RPA1000_min\"],\n  \"notification\": {\n    \"attributes\": [\"DataIngestion_production_t_RPBCount\", \"DataIngestion_production_RPA0700_max\",\n  \"DataIngestion_production_t_STCount\", \"DataIngestion_production_t_SPCount\", \"DataIngestion_production_t_RTCount\",\n  \"DataIngestion_production_RPA2000_min\", \"DataIngestion_production_RPA2100_min\", \"DataIngestion_production_RPA1000_min\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8062\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Asphalt Sensors For Solution 1\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:asphalt_smaller_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n  \"notification\": {\n    \"attributes\": [\"DataIngestion_production_t_RPBCount\", \"DataIngestion_production_RPA0700_max\",\n  \"DataIngestion_production_t_STCount\", \"DataIngestion_production_t_SPCount\", \"DataIngestion_production_t_RTCount\",\n  \"DataIngestion_production_RPA2000_min\", \"DataIngestion_production_RPA2100_min\", \"DataIngestion_production_RPA1000_min\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8062\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Solution4 AM Alert Subscription",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Asphalt Sensors For Solution 4\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:asphalt_smaller_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n  \"notification\": {\n    \"attributes\": [\"DataIngestion_laboratory_DAPA_max\", \"DataIngestion_laboratory_DAPA_min\", \"DataIngestion_laboratory_16mm_max\", \"DataIngestion_laboratory_0,063mm_max\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8062\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Small window AM subscription",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Asphalt Small Window to Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:asphalt_smaller_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n  \"notification\": {\n    \"attributes\": [],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8062\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1953,12 +2219,411 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Get Alarms",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:IDALSA_smaller_time_window:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:IDALSA_smaller_time_window:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get AM Alarms",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response check\", function(){",
+											"",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.have.body('22')",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:IDALSA_solution_output_1:001",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:IDALSA_solution_output_1:001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Solution1 AM Alarm Outputs Copy",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"id\": \"urn:ngsi-ld:IDALSA_solution_output_1:001\",\n    \"type\": \"IDALSA_outputs\",\n    \"AM_Generated_Alarm\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": {\n                \"solution\": \"2\",\n                \"attribute\": \"modelTraining_mergedheatsGeneral_feedback_model_1\",\n                \"type\": \"Human Dissatisfaction Detected\",\n                \"cause\": \"lower threshold\",\n                \"deviation\": \"50.0\",\n                \"lowerThresh\": \"70\",\n                \"upperThresh\": \"None\"\n            },\n            \"dateUpdated\": \"2024-03-08T13:48:36Z\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Update Small Window",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"dataExploration_mergedheatsGeneral_mean_duration_of_heats\": {\n        \"value\": {\n            \"value\": \"268.023\",\n            \"dateObserved\": \"2024-03-07T10:31:44Z\",\n            \"timeWindowLengthMinutes\": \"10080\"\n        },\n        \"type\": \"Property\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:IDALSA_smaller_time_window:001/attrs",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:IDALSA_smaller_time_window:001",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Update Large Window Copy",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"modelTraining_mergedheatsGeneral_feedback_model_1\": {\n        \"value\": {\n            \"value\": \"100\",\n            \"dateObserved\": \"2024-03-07T10:31:44Z\",\n            \"timeWindowLengthMinutes\": \"43834\"\n        },\n        \"type\": \"Property\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:IDALSA_greater_time_window:001/attrs",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:IDALSA_greater_time_window:001",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Update AM Alert",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n    \"AM_Generated_Alarm\": {\n        \"type\": \"Property\",\n        \"value\": {\n            \"value\": {\"solution\": 2, \"parameter\":\"dataExploration_mergedHeatsGeneral_mean_oxygen_consumption\" },\n            \"dateUpdated\": \"2024-03-08T11:11:27Z\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:IDALSA_solution_output_1:001/attrs",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:IDALSA_solution_output_1:001",
+										"attrs"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
 				{
 					"name": "Subscriptions",
-					"item": []
+					"item": [
+						{
+							"name": "Solution2 Subscription",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing Smaller Window to  Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:IDALSA_smaller_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n  \"notification\": {\n    \"attributes\": [\"dataExploration_mergedheatsGeneral_mean_duration_of_heats\", \"dataExploration_mergedheatsGeneral_mean_consumption_NaCl\", \"dataExploration_mergedheatsGeneral_mean_gas_consumption\", \"dataExploration_mergedheatsGeneral_mean_oxygen_consumption\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8064\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Solution3 Subscription",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing greater window to Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:IDALSA_greater_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n  \"notification\": {\n    \"attributes\": [\"modelTraining_mergedheatsGeneral_feedback_model_1\", \"modelTraining_mergedheatsGeneral_feedback_model_2\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8064\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IDALSA Output Subscription",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"@context\": \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"description\": \"Subscribing greater window to Airflow\",\n  \"type\": \"Subscription\",\n  \"entities\": [\n      {\n        \"id\": \"urn:ngsi-ld:IDALSA_greater_time_window:001\",\n        \"type\": \"factory\"\n      }\n    ],\n  \"notification\": {\n    \"attributes\": [\"modelTraining_mergedheatsGeneral_feedback_model_1\", \"modelTraining_mergedheatsGeneral_feedback_model_2\"],\n    \"format\": \"normalized\",\n    \"endpoint\": {\n      \"uri\": \"http://182.18.1.32:8064\",\n      \"accept\": \"application/json\"\n    }\n  },\n  \"expires\": \"2099-01-01T14:00:00.00Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/",
+									"protocol": "http",
+									"host": [
+										"136",
+										"243",
+										"156",
+										"113"
+									],
+									"port": "1026",
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
