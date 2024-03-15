@@ -760,6 +760,8 @@ with DAG(
     )
       
     
+
+    
     join_2 = EmptyOperator(
     	task_id = "join_for_solution_2",
     	trigger_rule="none_failed"
