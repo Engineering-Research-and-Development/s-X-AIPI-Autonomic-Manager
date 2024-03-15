@@ -6,6 +6,14 @@
   "DataIngestion_production_t_STCount", "DataIngestion_production_t_SPCount", "DataIngestion_production_t_RTCount",
   "DataIngestion_production_RPA2000_min", "DataIngestion_production_RPA2100_min", "DataIngestion_production_RPA1000_min"],
   
-  "AM_Alert_Output_1" : "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Asphalt_solution_output_1:001/attrs"
+  "solution_4_inputs_1" : ["DataIngestion_laboratory_DAPA_max", "DataIngestion_laboratory_DAPA_min"],
+  "solution_4_upper_thresholds_1" : [3, 999],
+  "solution_4_lower_thresholds_1" : [-999, 2],
+  
+  "solution_4_inputs_2" : ["DataIngestion_laboratory_16mm_max", "DataIngestion_laboratory_0,063mm_max"],
+  "solution_4_upper_thresholds_2" : [100, 100],
+
+  
+  "AM_Alert_Output" : "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Asphalt_solution_output_1:001/attrs"
   
 }

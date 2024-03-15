@@ -1,0 +1,25 @@
+{ "base_url": "http://136.243.156.113:1026/ngsi-ld/v1/",
+  "small" : "urn:ngsi-ld:IDALSA_smaller_time_window:001",
+  "large" : "urn:ngsi-ld:IDALSA_greater_time_window:001",
+  "alarm" : "urn:ngsi-ld:IDALSA_alarms:001",
+  "AM_Alert_Output" : "http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:IDALSA_solution_output_1:001/attrs",
+  
+  
+  
+  
+  "solution_2_inputs_1" : ["dataExploration_mergedheatsGeneral_mean_duration_of_heats"],
+  "solution_2_inputs_2" : ["dataExploration_mergedheatsGeneral_mean_consumption_NaCl", "dataExploration_mergedheatsGeneral_mean_gas_consumption",
+  "dataExploration_mergedheatsGeneral_mean_oxygen_consumption"],
+  
+  
+  "solution_2_thresholds_1" : [270],
+  "solution_2_pct_change" : [5],
+  
+  
+  "solution_3_inputs" : ["modelTraining_mergedheatsGeneral_feedback_model_1", "modelTraining_mergedheatsGeneral_feedback_model_2"],
+  "solution_3_thresholds" : [70, 70]
+  
+
+
+  
+}
