@@ -19,8 +19,8 @@ services:
       options:
           max-size : "200m"
     networks:
-      amnet:
-        ipv4_address: 182.18.1.19
+      default:
+        ipv4_address: ${QUANTUMLEAP_IP}
         
         
         
@@ -42,7 +42,7 @@ services:
           max-size : "200m"
     networks:
       amnet:
-        ipv4_address: 182.18.1.14
+        ipv4_address: ${CRATE_IP}
 
 
 
@@ -64,5 +64,5 @@ volumes:
   cratedata:
           
 networks:
-  amnet:
+  default:
     external: true
