@@ -6,8 +6,7 @@ services:
     image: orchestracities/quantumleap:${QL_VERSION:-latest}
     ports:
       - "8668:8668"
-    depends_on:
-      - orion_mongo      
+    depends_on:      
       - crate
     environment:
       - CRATE_HOST=${CRATE_HOST:-crate}
@@ -21,7 +20,7 @@ services:
           max-size : "200m"
     networks:
       amnet:
-        ipv4_address: 182.18.1.13
+        ipv4_address: 182.18.1.19
         
         
         
@@ -60,6 +59,9 @@ services:
       options:
           max-size : "200m"
           
+
+volumes:
+  cratedata:
           
 networks:
   amnet:
