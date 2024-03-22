@@ -10,13 +10,25 @@ Interacting with HITL entities requires the use of POST or PATCH APIs related to
 
 Consider the following scenario: it is necessary to update the NGSI-LD entity with:
 - entity ID **urn:ngsi-ld:test_factory:001**
-- attribute:  **test_attribute**
+- attribute to modify:  **test_attribute**
+- context:  **"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"**
 
-Then it is necessary to use the following endpoint:
+Then it is necessary to use the following endpoint using the **PATCH** HTTP Method:
 ```
 http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_shorter_time_window:001/attrs
 ```
+using the following body:
 
+```json
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "test_attribute": {
+        "type": "Property",
+        "value": "NEW_VALUE"
+        }
+}
+```
+in case of multiple attributes, it is only sufficient to add more attributes in the payload
 
 ### Steel UC
 
