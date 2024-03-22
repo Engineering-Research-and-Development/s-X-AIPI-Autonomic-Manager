@@ -75,8 +75,9 @@ Following, the entity structure related to the HITL for Solution 1 with the allo
 
 ```
 
-Attributes ending with "_confirmed" are used for telling the autonomic manager that the HITL operator received the alert related to the attribute name.
-Attributes ending with "_status" are used for telling the autonomic manager if the related material is currently used or not. In combination with the "_confirmed" attribute, it serves to aknowledge the AM of alerting reception and confirmation of the production status.
+- Attributes ending with **"_confirmed"** are used for telling the autonomic manager that the HITL operator received the alert related to the attribute name.
+- Attributes ending with **"_status"** are used for telling the autonomic manager if the related material is currently used or not. In combination with the "_confirmed" attribute, it serves to aknowledge the AM of alerting reception and confirmation of the production status.
+  
 Using the above example, a possible **PATCH** update for this entity may be:
 URL
 ```
