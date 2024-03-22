@@ -34,6 +34,22 @@ in case of multiple attributes, it is only sufficient to add more attributes in 
 
 #### Solution 1
 
+Currently, the proposed solution is meant to provide information about scrap used in production. For this reason, a HITL entity was defined to check the awareness of the HITL operator about scrap introduction or removal. For this reason, parameters regarding the scrap presences are automatically created in the Autonomic Manager. To generate the attribute names explained below, it is necessary to extract the parameter name from the one used in the "small window" entity by removing the "_zeros" or "_max" ending particle, like the following schema:
+```
+transformation_lime_coke_limecoke01_zeros
+```
+:
+```
+transformation_lime_coke_limecoke01
+```
+So that the attributes needed for the HITL updates (in case of the above example parameter) are:
+
+```
+transformation_lime_coke_limecoke01_status 
+transformation_lime_coke_limecoke01_confirmed
+```
+
+
 ```json
 {
     "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
@@ -56,7 +72,7 @@ in case of multiple attributes, it is only sufficient to add more attributes in 
     "Test_attribute_previous": {
         "type": "Property",
         "value": {
-            "value": "Used / Not Used",
+            "value": "Used/Not Used",
             "dateUpdated": "2024-2-26T11:46:00Z"
         }
     },
