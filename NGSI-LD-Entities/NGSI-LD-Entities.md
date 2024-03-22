@@ -104,3 +104,29 @@ http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HIT
 ```
 This example tells the autonomic manager that the HITL operator received a notification (for example, limecoke01 was introduced in pipeline) and confirmed that limecoke01 is currently used in production (confirmed normal behaviour), so that the AM should not alert the operator again while in this status.
 
+
+
+#### Solution 2
+
+The proposed solution aims to check anomalies in exploration data. The HITL entity is used to store information about aknowledgment of anomalies on behalf of the operator. For simplicity, it is only reported the entity structure and attribute meanings:
+
+```json
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:sidenor_solution_HITL_Status_2:001",
+    "type": "sidenor_HITL_Status",
+    "Test_attribute_HITL_anomalies_confirmation": {
+        "type": "Property",
+        "value": {
+            "value": "Unconfirmed/Confirmed_Anomalies/Confirmed_Normal",
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        }
+    }
+}
+```
+Possible values for "_Status" are:
+- **Unconfirmed**: the alarm does not exist / was sent but HITL has not confirmed yet
+- **Confirmed_Anomalies** the HITL operator received an alarm and aknowledged the AM of an existing anomaly
+- **Confirmed_Normal** the HITL operator received an alarm and aknowledged the AM of a normal behaviour
+
+
