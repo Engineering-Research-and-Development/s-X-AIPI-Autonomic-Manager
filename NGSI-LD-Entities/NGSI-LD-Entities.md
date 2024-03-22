@@ -108,7 +108,9 @@ This example tells the autonomic manager that the HITL operator received a notif
 
 #### Solution 2
 
-The proposed solution aims to check anomalies in exploration data. The HITL entity is used to store information about aknowledgment of anomalies on behalf of the operator. For simplicity, it is only reported the entity structure and attribute meanings:
+The proposed solution aims to check anomalies in exploration data. The HITL entity is used to store information about aknowledgment of anomalies on behalf of the operator. With respect to Solution1, here attribute names are built by taking the whole name of related "small window" parameter without cutting the last particle.
+
+For simplicity, it is only reported the entity structure and attribute meanings:
 
 ```json
 {
@@ -130,3 +132,29 @@ Possible values for "_Status" are:
 - **Confirmed_Normal** the HITL operator received an alarm and aknowledged the AM of a normal behaviour
 
 
+
+#### Solution 3
+
+The proposed solution checks if Mean Absolute Error of the AI model is in defined thresholds related to predicted parameter.
+In this structure, only this attribute is selected, so attribute name should not be built
+
+```json
+{
+    "modeling_LinearRegression_MAE_confirmed": {
+        "type": "Property",
+        "value": {
+            "value": "Yes/No",
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        }
+    }
+}
+```
+Possible values for "_confirmed" are:
+- **No**: the alarm does not exist / was sent but HITL has not confirmed yet
+- **Yes** the HITL operator received an alarm
+
+
+
+#### Solution 4
+
+Solution 4 does not need any HITL entity
