@@ -15,7 +15,7 @@ Consider the following scenario: it is necessary to update the NGSI-LD entity wi
 
 Then it is necessary to use the following endpoint using the **PATCH** HTTP Method:
 ```
-http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_shorter_time_window:001/attrs
+http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:urn:ngsi-ld:test_factory:001/attrs
 ```
 using the following body:
 
@@ -49,7 +49,8 @@ transformation_lime_coke_limecoke01_status
 transformation_lime_coke_limecoke01_confirmed
 ```
 
-Following, the entity structure related to the HITL for Solution 1
+Following, the entity structure related to the HITL for Solution 1 with the allowed values.
+
 
 ```json
 {
@@ -73,3 +74,32 @@ Following, the entity structure related to the HITL for Solution 1
 }
 
 ```
+
+Attributes ending with "_confirmed" are used for telling the autonomic manager that the HITL operator received the alert related to the attribute name.
+Attributes ending with "_status" are used for telling the autonomic manager if the related material is currently used or not. In combination with the "_confirmed" attribute, it serves to aknowledge the AM of alerting reception and confirmation of the production status.
+Using the above example, a possible **PATCH** update for this entity may be:
+URL
+```
+http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_1:001/attrs
+```
+```json
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "transformation_lime_coke_limecoke01_status": {
+        "type": "Property",
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        }
+    },
+    "transformation_lime_coke_limecoke01_confirmed": {
+        "type": "Property",
+        "value": {
+            "value": "Yes",
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        }
+    }
+}
+```
+This example tells the autonomic manager that the HITL operator received a notification (for example, limecoke01 was introduced in pipeline) and confirmed that limecoke01 is currently used in production (confirmed normal behaviour), so that the AM should not alert the operator again while in this status.
+
