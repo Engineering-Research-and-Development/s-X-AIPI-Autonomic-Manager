@@ -49,27 +49,14 @@ transformation_lime_coke_limecoke01_status
 transformation_lime_coke_limecoke01_confirmed
 ```
 
+Following, the entity structure related to the HITL for Solution 1
 
 ```json
 {
     "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     "id": "urn:ngsi-ld:sidenor_solution_HITL_Status_1:001",
     "type": "sidenor_HITL_Status",
-    "Test_attribute_periods": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateUpdated": "2024-2-26T11:46:00Z"
-        }
-    }, 
     "Test_attribute_status": {
-        "type": "Property",
-        "value": {
-            "value": "Used/Not Used",
-            "dateUpdated": "2024-2-26T11:46:00Z"
-        }
-    },
-    "Test_attribute_previous": {
         "type": "Property",
         "value": {
             "value": "Used/Not Used",
