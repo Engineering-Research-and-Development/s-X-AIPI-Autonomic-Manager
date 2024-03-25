@@ -24,9 +24,9 @@
                 "uri": "http://182.18.1.32:8061",
                 "accept": "application/json"
             },
-            "timesSent": 4155,
-            "lastNotification": "2024-01-16T08:23:50.755Z"
+            "timesSent": 19,
+            "lastNotification": "2024-03-20T15:14:40.367Z"
         },
         "expires": "2099-01-01T14:00:00.000Z",
         "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
-  }
+    }
