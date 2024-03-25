@@ -1,0 +1,20 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:IDALSA_solution_output_1:001",
+    "type": "IDALSA_outputs",
+    "AM_Generated_Alarm": {
+        "type": "Property",
+        "value": {
+            "value": {
+                "solution": "2",
+                "attribute": "dataExploration_mergedheatsGeneral_mean_oxygen_consumption",
+                "type": "Material Deviation Detected",
+                "cause": "upper threshold",
+                "deviation": "994.144",
+                "lowerThresh": "898.472",
+                "upperThresh": "993.048"
+            },
+            "dateUpdated": "2024-03-11T09:51:14Z"
+        }
+    }
+}
