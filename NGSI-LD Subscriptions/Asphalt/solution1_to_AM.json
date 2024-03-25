@@ -1,0 +1,20 @@
+{
+        "id": "urn:ngsi-ld:Subscription:65dcb45196a9c15cb2e8100f",
+        "type": "Subscription",
+        "description": "Subscribing Asphalt Sensors For Solution 1",
+        "entities": [
+            {
+                "id": "urn:ngsi-ld:sidenor_shorter_time_window:001",
+                "type": "factory"
+            }
+        ],
+        "notification": {
+            "format": "normalized",
+            "endpoint": {
+                "uri": "http://182.18.1.32:8063",
+                "accept": "application/json"
+            }
+        },
+        "expires": "2099-01-01T14:00:00.000Z",
+        "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    }
