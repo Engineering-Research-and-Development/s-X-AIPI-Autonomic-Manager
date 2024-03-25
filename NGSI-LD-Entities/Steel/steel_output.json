@@ -1,0 +1,12 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:sidenor_solution_output_1:001",
+    "type": "sidenor_outputs",
+    "AM_Generated_Alarm": {
+        "type": "Property",
+        "value": {
+            "value": "Solution 1 transformation_lime_coke_limecoke01 Material Introduction Detection Lime coke content  was introduced: transformation_lime_coke_limecoke01 changed values for 57 time windows. Please send confirmation to autonomic manager",
+            "dateUpdated": "2024-03-15T14:47:34Z"
+        }
+    }
+}
