@@ -1,0 +1,22 @@
+{
+        "id": "urn:ngsi-ld:Subscription:65eaecc7b432d3e28cdaf196",
+        "type": "Subscription",
+        "description": "Subscribing greater window to Airflow",
+        "entities": [
+            {
+                "id": "urn:ngsi-ld:IDALSA_greater_time_window:001",
+                "type": "factory"
+            }
+        ],
+        "notification": {
+            "attributes": [
+                "modelTraining_mergedheatsGeneral_feedback_model_1",
+                "modelTraining_mergedheatsGeneral_feedback_model_2"
+            ],
+            "format": "normalized",
+            "endpoint": {
+                "uri": "http://182.18.1.32:8064",
+                "accept": "application/json"
+            }
+        }
+}
