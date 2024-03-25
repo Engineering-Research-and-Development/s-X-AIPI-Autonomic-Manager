@@ -5,22 +5,22 @@
     "DataIngestion_OCT_probePositionEvaluation": {
         "type": "Property",
         "value": {
-            "value": "ok",
-            "dateUpdated": "2024-01-04T09:32:46Z"
+            "value": 0,
+            "dateUpdated": "2024-03-20T15:14:52Z"
         }
     },
     "DataIngestion_OCT_probePosition_yPos": {
         "type": "Property",
         "value": {
-            "value": 150,
-            "dateUpdated": "2024-01-04T09:32:46Z"
+            "value": 1.98123,
+            "dateUpdated": "2024-03-20T15:14:52Z"
         }
     },
     "DataIngestion_OCT_probePosition_xPos": {
         "type": "Property",
         "value": {
-            "value": 500,
-            "dateUpdated": "2024-01-04T09:32:46Z"
+            "value": 0.98123,
+            "dateUpdated": "2024-03-20T15:14:52Z"
         }
     }
 }
