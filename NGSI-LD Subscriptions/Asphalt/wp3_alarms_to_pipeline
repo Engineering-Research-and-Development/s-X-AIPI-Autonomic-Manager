@@ -1,0 +1,21 @@
+{
+        "id": "urn:ngsi-ld:Subscription:65f035ddb432d3e28cdaf789",
+        "type": "Subscription",
+        "description": "Subscription for asphalt_alarms entity updates",
+        "entities": [
+            {
+                "id": "urn:ngsi-ld:asphalt_alarms:001",
+                "type": "asphalt_alarms"
+            }
+        ],
+        "notification": {
+            "format": "normalized",
+            "endpoint": {
+                "uri": "https://sxaipi.cartif.com/alarms",
+                "accept": "application/json"
+            },
+            "timesSent": 310,
+            "lastNotification": "2024-03-25T06:17:39.139Z"
+        },
+        "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    }
