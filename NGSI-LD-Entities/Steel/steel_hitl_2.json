@@ -1,0 +1,110 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:sidenor_solution_HITL_Status_2:001",
+    "type": "sidenor_HITL_Status",
+    "Test_attribute_HITL_anomalies_confirmation": {
+        "value": {
+            "value": "Unconfirmed/Confirmed_Anomalies/Confirmed_Normal",
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        },
+        "type": "Property"
+    },
+    "Test_attribute_previous_status": {
+        "value": {
+            "value": "Alert/NotAlert",
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        },
+        "type": "Property"
+    },
+    "exploration_analysis_Nr_anomalies_Cu_HITL_anomalies_confirmation": {
+        "value": {
+            "value": "Unconfirmed",
+            "dateUpdated": "2024-03-04T13:35:01Z"
+        },
+        "type": "Property"
+    },
+    "exploration_analysis_Nr_anomalies_Cu_previous_status": {
+        "value": {
+            "value": "NoAlert",
+            "dateUpdated": "2024-03-04T13:35:01Z"
+        },
+        "type": "Property"
+    },
+    "exploration_lime_coke_Nr_outliers_sum_lim_melting_HITL_anomalies_confirmation": {
+        "value": {
+            "value": "Unconfirmed",
+            "dateUpdated": "2024-03-04T13:35:01Z"
+        },
+        "type": "Property"
+    },
+    "exploration_lime_coke_Nr_outliers_sum_lim_melting_previous_status": {
+        "value": {
+            "value": "NoAlert",
+            "dateUpdated": "2024-03-04T13:35:01Z"
+        },
+        "type": "Property"
+    },
+    "exploration_lime_coke_Nr_outliers_sum_cok_melting_HITL_anomalies_confirmation": {
+        "value": {
+            "value": "Unconfirmed",
+            "dateUpdated": "2024-03-04T13:35:01Z"
+        },
+        "type": "Property"
+    },
+    "exploration_lime_coke_Nr_outliers_sum_cok_melting_previous_status": {
+        "value": {
+            "value": "NoAlert",
+            "dateUpdated": "2024-03-04T13:35:01Z"
+        },
+        "type": "Property"
+    },
+    "exploration_eaf_Nr_anomalies_eaf14_HITL_anomalies_confirmation": {
+        "value": {
+            "value": "Unconfirmed",
+            "dateUpdated": "2024-03-04T13:41:51Z"
+        },
+        "type": "Property"
+    },
+    "exploration_eaf_Nr_anomalies_eaf14_previous_status": {
+        "value": {
+            "value": "Alert",
+            "dateUpdated": "2024-03-04T13:41:51Z"
+        },
+        "type": "Property"
+    },
+    "exploration_eaf_Nr_anomalies_kwhorno_HITL_anomalies_confirmation": {
+        "value": {
+            "value": "Unconfirmed",
+            "dateUpdated": "2024-03-04T13:41:51Z"
+        },
+        "type": "Property"
+    },
+    "exploration_eaf_Nr_anomalies_kwhorno_previous_status": {
+        "value": {
+            "value": "Alert",
+            "dateUpdated": "2024-03-04T13:41:51Z"
+        },
+        "type": "Property"
+    },
+    "exploration_analysis_upper_boundary_Cu_HITL_anomalies_confirmation": {
+        "value": {
+            "value": "Unconfirmed",
+            "dateUpdated": "2024-03-04T13:41:51Z"
+        },
+        "type": "Property"
+    },
+    "exploration_analysis_upper_boundary_Cu_previous_status": {
+        "value": {
+            "value": "NoAlert",
+            "dateUpdated": "2024-03-04T13:41:51Z"
+        },
+        "type": "Property"
+    },
+    "Test_attribute_previous_value": {
+        "value": {
+            "value": 0,
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        },
+        "type": "Property"
+    }
+}
