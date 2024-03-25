@@ -15,7 +15,7 @@ Consider the following scenario: it is necessary to update the NGSI-LD entity wi
 
 Then it is necessary to use the following endpoint using the **PATCH** HTTP Method:
 ```
-http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:urn:ngsi-ld:test_factory:001/attrs
+http://{{URL}}:1026/ngsi-ld/v1/entities/urn:ngsi-ld:urn:ngsi-ld:test_factory:001/attrs
 ```
 using the following body:
 
@@ -81,7 +81,7 @@ Following, the entity structure related to the HITL for Solution 1 with the allo
 Using the above example, a possible **PATCH** update for this entity may be:
 URL
 ```
-http://136.243.156.113:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_1:001/attrs
+http://{{URL}}:1026/ngsi-ld/v1/entities/urn:ngsi-ld:sidenor_solution_HITL_Status_1:001/attrs
 ```
 ```json
 {
