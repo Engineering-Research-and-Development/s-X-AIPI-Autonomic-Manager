@@ -1,0 +1,845 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:sidenor_solution_HITL_Status_1:001",
+    "type": "sidenor_HITL_Status",
+    "Test_attribute_periods": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        }
+    },
+    "Test_attribute_status": {
+        "type": "Property",
+        "value": {
+            "value": "Used/Not Used",
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        }
+    },
+    "Test_attribute_previous": {
+        "type": "Property",
+        "value": {
+            "value": "Used / Not Used",
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        }
+    },
+    "Test_attribute_confirmed": {
+        "type": "Property",
+        "value": {
+            "value": "Yes/No",
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        }
+    },
+    "transformation_scrap_scrap10_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap09_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap08_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap07_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap06_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap22_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap19_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap19_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap12_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap12_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap20_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap20_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap16_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap16_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap21_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap21_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap14_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap14_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap11_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap11_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap04_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap04_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap17_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap17_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap03_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap03_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap01_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap01_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap13_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap13_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap15_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap15_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap02_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap02_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap18_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap18_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_Estanado_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_Estanado_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_limecoke01_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_limecoke02_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_limecoke02_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke01_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke01_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke02_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke02_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke03_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke03_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke04_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke04_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke05_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke05_status": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:38:26Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap12_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap12_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap20_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap20_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap16_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap16_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap21_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap21_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap14_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap14_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap11_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap11_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap04_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap04_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap17_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap17_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap03_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap03_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap01_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap01_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap13_periods": {
+        "value": {
+            "value": 3,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap13_previous": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap15_periods": {
+        "value": {
+            "value": 3,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap15_previous": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap02_periods": {
+        "value": {
+            "value": 3,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap02_previous": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap18_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap18_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_Estanado_periods": {
+        "value": {
+            "value": 3,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_Estanado_previous": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke02_periods": {
+        "value": {
+            "value": 3,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke02_previous": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke03_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke03_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke04_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke04_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke05_periods": {
+        "value": {
+            "value": 3,
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke05_previous": {
+        "value": {
+            "value": "Not Used",
+            "dateUpdated": "2024-02-28T10:50:51Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap10_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-03-05T15:45:06Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap09_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-03-05T15:45:07Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap08_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-03-05T15:45:07Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap07_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-03-05T15:45:07Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap06_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-03-05T15:45:07Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap22_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-03-05T15:45:07Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap09_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap09_previous": {
+        "value": {
+            "value": "Not_Used",
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap08_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap08_previous": {
+        "value": {
+            "value": "Not_Used",
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap07_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap07_previous": {
+        "value": {
+            "value": "Not_Used",
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap06_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap06_previous": {
+        "value": {
+            "value": "Not_Used",
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap22_periods": {
+        "value": {
+            "value": 2,
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap22_previous": {
+        "value": {
+            "value": "Not_Used",
+            "dateUpdated": "2024-03-05T15:50:27Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_limecoke01_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-03-13T14:15:06Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_limecoke02_periods": {
+        "value": {
+            "value": 8,
+            "dateUpdated": "2024-03-13T14:18:10Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_limecoke02_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-03-13T14:18:10Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap19_periods": {
+        "value": {
+            "value": 56,
+            "dateUpdated": "2024-03-15T14:47:29Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap19_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-03-15T14:47:29Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap10_periods": {
+        "value": {
+            "value": 28,
+            "dateUpdated": "2024-03-15T14:47:29Z"
+        },
+        "type": "Property"
+    },
+    "transformation_scrap_scrap10_previous": {
+        "value": {
+            "value": "Not_Used",
+            "dateUpdated": "2024-03-15T14:47:29Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke01_periods": {
+        "value": {
+            "value": 57,
+            "dateUpdated": "2024-03-15T14:47:29Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_coke_limecoke01_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-03-15T14:47:29Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_limecoke01_periods": {
+        "value": {
+            "value": 3,
+            "dateUpdated": "2024-03-15T14:47:29Z"
+        },
+        "type": "Property"
+    },
+    "transformation_lime_limecoke01_previous": {
+        "value": {
+            "value": "Used",
+            "dateUpdated": "2024-03-15T14:47:29Z"
+        },
+        "type": "Property"
+    }
+}
