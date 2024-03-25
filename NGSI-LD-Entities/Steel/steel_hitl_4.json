@@ -1,0 +1,96 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:sidenor_solution_HITL_Status_4:001",
+    "type": "sidenor_HITL_Status",
+    "Test_attribute_previous_value": {
+        "value": {
+            "value": 0,
+            "dateUpdated": "2024-2-26T11:46:00Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_Sustitutivos_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap14_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap19_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap04_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap21_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap16_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap18_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap17_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap03_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap20_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap12_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    },
+    "train_models_coef_scrap11_previous_value": {
+        "value": {
+            "value": -999999,
+            "dateUpdated": "2024-03-15T14:47:23Z"
+        },
+        "type": "Property"
+    }
+}
