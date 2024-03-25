@@ -1,0 +1,28 @@
+{
+        "id": "urn:ngsi-ld:Subscription:65eae6c796a9c15cb2e81b3d",
+        "type": "Subscription",
+        "description": "Subscribing Smaller Window to  Airflow",
+        "entities": [
+            {
+                "id": "urn:ngsi-ld:IDALSA_smaller_time_window:001",
+                "type": "factory"
+            }
+        ],
+        "notification": {
+            "attributes": [
+                "dataExploration_mergedheatsGeneral_mean_duration_of_heats",
+                "dataExploration_mergedheatsGeneral_mean_consumption_NaCl",
+                "dataExploration_mergedheatsGeneral_mean_gas_consumption",
+                "dataExploration_mergedheatsGeneral_mean_oxygen_consumption"
+            ],
+            "format": "normalized",
+            "endpoint": {
+                "uri": "http://182.18.1.32:8064",
+                "accept": "application/json"
+            },
+            "timesSent": 10,
+            "lastNotification": "2024-03-25T13:50:23.864Z"
+        },
+        "expires": "2099-01-01T14:00:00.000Z",
+        "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    }
