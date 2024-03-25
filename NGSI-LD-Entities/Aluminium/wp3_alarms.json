@@ -1,0 +1,15 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:IDALSA_alarms:001",
+    "type": "IDALSA_alarms",
+    "IDALSA_dataExploration_mergedheatsGeneral_min_oxygen_consumption": {
+        "type": "Property",
+        "value": {
+            "longer_avg_period_value": "435.000",
+            "smaller_avg_period_value": "435.000",
+            "dateObserved": "2024-03-10T00:00:00Z",
+            "type": "stabilityAlarm",
+            "percentage": "0.000"
+        }
+    }
+}
