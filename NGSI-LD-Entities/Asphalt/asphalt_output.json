@@ -1,0 +1,20 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:Asphalt_solution_output_1:001",
+    "type": "Asphalt_outputs",
+    "AM_Generated_Alarm": {
+        "type": "Property",
+        "value": {
+            "value": {
+                "solution": "1",
+                "attribute": "['DataIngestion_production_t_RPBCount', 'DataIngestion_production_RPA0700_max']",
+                "type": "Sensor Error",
+                "cause": "rule broken",
+                "deviation": "[1233.0, 0.0]",
+                "lowerThresh": "None",
+                "upperThresh": "None"
+            },
+            "dateUpdated": "2024-03-24T06:11:48Z"
+        }
+    }
+}
