@@ -1,0 +1,22 @@
+{
+        "id": "urn:ngsi-ld:Subscription:65f4567e780af558bf836675",
+        "type": "Subscription",
+        "description": "Subscribing Steel WP3 Alarms for Airflow",
+        "entities": [
+            {
+                "id": "urn:ngsi-ld:sidenor_alarms:001",
+                "type": "sidenor_alarms"
+            }
+        ],
+        "notification": {
+            "format": "normalized",
+            "endpoint": {
+                "uri": "http://182.18.1.32:8063",
+                "accept": "application/json"
+            },
+            "timesSent": 4,
+            "lastNotification": "2024-03-20T14:24:53.293Z"
+        },
+        "expires": "2099-01-01T14:00:00.000Z",
+        "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    }
