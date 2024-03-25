@@ -7,6 +7,16 @@ A KafkaConsumer is a client that consumes data from a kafka topic.
 The base constructor of this client does not require any mandatory field, as explained in the docs: kafka.KafkaConsumer(*topics, **configs)
 It accepts an optional list of topics and a series of keyword arguments.
 
+```python
+class Consumer:
+    def __init__(self):
+        nums_list = []
+        self.consumer = KafkaConsumer('my_topic',
+                                      bootstrap_servers = ['URL:9092'],
+                                      value_deserializer =lambda x: loads(x),
+                                      auto_offset_reset='latest')
+```
+
 Here a list of the possible arguments accepted by the class:
  - **topics**: a topic or a list of topics to subscribe to. It is possible to leave it empty and then subscribe to topics by using the "subscribe()" or "assign()" methods before receiving data
 
@@ -18,6 +28,15 @@ Here a list of the possible arguments accepted by the class:
     ‘latest’ will move to the most recent. Any other value will raise the exception. Default: ‘latest’.
 
 The code is provided with almost every correct configuration. The only exceptions are the topic list and the URL which need to be modified based on your needs
+
+
+```python
+    def consume_data(self):
+        for message in self.consumer:
+            print(f"Received message :{message.value}")
+            return message.value
+
+```
 
 The **consume_data** method prints the value of the received message and return it
 
