@@ -2,2100 +2,3644 @@
     "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     "id": "urn:ngsi-ld:sidenor_shorter_time_window:001",
     "type": "factory",
-    "transformation_analysis_Cu_max": {
+    "exploration_analysis_End_date": {
         "type": "Property",
         "value": {
-            "value": 0.362,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
-    "transformation_analysis_Cu_mean": {
+    "exploration_analysis_Nr_anomalies_Cu": {
         "type": "Property",
         "value": {
-            "value": 0.183226,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_analysis_Cu_min": {
-        "type": "Property",
-        "value": {
-            "value": 0.082,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_analysis_Cu_std": {
-        "type": "Property",
-        "value": {
-            "value": 0.044383,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_analysis_Nr_SBQ_heats": {
-        "type": "Property",
-        "value": {
-            "value": 208,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_analysis_Nr_heats": {
-        "type": "Property",
-        "value": {
-            "value": 214,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_Nr_SBQ_heats": {
-        "type": "Property",
-        "value": {
-            "value": 208,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_Nr_heats": {
-        "type": "Property",
-        "value": {
-            "value": 214,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf01_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 23,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf01_max": {
-        "type": "Property",
-        "value": {
-            "value": 2750,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf01_mean": {
-        "type": "Property",
-        "value": {
-            "value": 536.600962,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf01_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf01_std": {
-        "type": "Property",
-        "value": {
-            "value": 504.361728,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf02_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 17,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf02_max": {
-        "type": "Property",
-        "value": {
-            "value": 2219,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf02_mean": {
-        "type": "Property",
-        "value": {
-            "value": 1047.057692,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf02_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf02_std": {
-        "type": "Property",
-        "value": {
-            "value": 441.890402,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf03_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 1,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf03_max": {
-        "type": "Property",
-        "value": {
-            "value": 71,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf03_mean": {
-        "type": "Property",
-        "value": {
-            "value": 57.634615,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf03_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf03_std": {
-        "type": "Property",
-        "value": {
-            "value": 5.422369,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf04_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf04_max": {
-        "type": "Property",
-        "value": {
-            "value": 71,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf04_mean": {
-        "type": "Property",
-        "value": {
-            "value": 58.096154,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf04_min": {
-        "type": "Property",
-        "value": {
-            "value": 29,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf04_std": {
-        "type": "Property",
-        "value": {
-            "value": 3.479461,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf05_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 1,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf05_max": {
-        "type": "Property",
-        "value": {
-            "value": 70,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf05_mean": {
-        "type": "Property",
-        "value": {
-            "value": 57.451923,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf05_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf05_std": {
-        "type": "Property",
-        "value": {
-            "value": 5.232525,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf06_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 12,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf06_max": {
-        "type": "Property",
-        "value": {
-            "value": 1750,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf06_mean": {
-        "type": "Property",
-        "value": {
-            "value": 360.913462,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf06_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf06_std": {
-        "type": "Property",
-        "value": {
-            "value": 305.721167,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_kwhorno_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_kwhorno_max": {
-        "type": "Property",
-        "value": {
-            "value": 99105,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_kwhorno_mean": {
-        "type": "Property",
-        "value": {
-            "value": 57749.519231,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_kwhorno_min": {
-        "type": "Property",
-        "value": {
-            "value": 38824,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_kwhorno_std": {
-        "type": "Property",
-        "value": {
-            "value": 4201.804494,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf07_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf07_max": {
-        "type": "Property",
-        "value": {
-            "value": 1347,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf07_mean": {
-        "type": "Property",
-        "value": {
-            "value": 868.274038,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf07_min": {
-        "type": "Property",
-        "value": {
-            "value": 2,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf07_std": {
-        "type": "Property",
-        "value": {
-            "value": 121.96886,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf08_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf08_max": {
-        "type": "Property",
-        "value": {
-            "value": 2586,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf08_mean": {
-        "type": "Property",
-        "value": {
-            "value": 1109.783654,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf08_min": {
-        "type": "Property",
-        "value": {
-            "value": 599,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf08_std": {
-        "type": "Property",
-        "value": {
-            "value": 176.890196,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf09_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf09_max": {
-        "type": "Property",
-        "value": {
-            "value": 1582,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf09_mean": {
-        "type": "Property",
-        "value": {
-            "value": 871.625,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf09_min": {
-        "type": "Property",
-        "value": {
-            "value": 3,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf09_std": {
-        "type": "Property",
-        "value": {
-            "value": 146.39614,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf10_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf10_max": {
-        "type": "Property",
-        "value": {
-            "value": 392,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf10_mean": {
-        "type": "Property",
-        "value": {
-            "value": 134.341346,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf10_min": {
-        "type": "Property",
-        "value": {
-            "value": 77,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf10_std": {
-        "type": "Property",
-        "value": {
-            "value": 31.219711,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf11_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf11_max": {
-        "type": "Property",
-        "value": {
-            "value": 411,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf11_mean": {
-        "type": "Property",
-        "value": {
-            "value": 136.658654,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf11_min": {
-        "type": "Property",
-        "value": {
-            "value": 113,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf11_std": {
-        "type": "Property",
-        "value": {
-            "value": 32.80603,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf12_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf12_max": {
-        "type": "Property",
-        "value": {
-            "value": 398,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf12_mean": {
-        "type": "Property",
-        "value": {
-            "value": 133.894231,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf12_min": {
-        "type": "Property",
-        "value": {
-            "value": 94,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf12_std": {
-        "type": "Property",
-        "value": {
-            "value": 26.896085,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_sum_concok_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_sum_congas_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_sum_oxipri_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_sum_oxisec_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf14_Nan": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf14_max": {
-        "type": "Property",
-        "value": {
-            "value": 103,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf14_mean": {
-        "type": "Property",
-        "value": {
-            "value": 45.451923,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf14_min": {
-        "type": "Property",
-        "value": {
-            "value": 34,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_eaf_eaf14_std": {
-        "type": "Property",
-        "value": {
-            "value": 5.129963,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime01_max": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime01_mean": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime01_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime01_std": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime01_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 203,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime02_max": {
-        "type": "Property",
-        "value": {
-            "value": 3090,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime02_mean": {
-        "type": "Property",
-        "value": {
-            "value": 2105.123153,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime02_min": {
-        "type": "Property",
-        "value": {
-            "value": 960,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime02_std": {
-        "type": "Property",
-        "value": {
-            "value": 266.442199,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_lime02_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_Nr_SBQ_heats": {
-        "type": "Property",
-        "value": {
-            "value": 203,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_Nr_heats": {
-        "type": "Property",
-        "value": {
-            "value": 209,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_sum_lime_basket_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke01_max": {
-        "type": "Property",
-        "value": {
-            "value": 6750,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke01_mean": {
-        "type": "Property",
-        "value": {
-            "value": 2157.365854,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke01_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke01_std": {
-        "type": "Property",
-        "value": {
-            "value": 1222.438854,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke01_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 9,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke02_max": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke02_mean": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke02_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke02_std": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke02_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 205,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke03_max": {
-        "type": "Property",
-        "value": {
-            "value": 3000,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke03_mean": {
-        "type": "Property",
-        "value": {
-            "value": 19.02439,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke03_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke03_std": {
-        "type": "Property",
-        "value": {
-            "value": 218.459456,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke03_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 203,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke04_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 38,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke05_max": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke05_mean": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke05_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke05_std": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_limecoke05_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 205,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_Nr_SBQ_heats": {
-        "type": "Property",
-        "value": {
-            "value": 205,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_Nr_heats": {
-        "type": "Property",
-        "value": {
-            "value": 211,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_lim_melting_max": {
-        "type": "Property",
-        "value": {
-            "value": 6960,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_lim_melting_mean": {
-        "type": "Property",
-        "value": {
-            "value": 2365.756098,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_lim_melting_min": {
-        "type": "Property",
-        "value": {
-            "value": 110,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_lim_melting_std": {
-        "type": "Property",
-        "value": {
-            "value": 1219.742435,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_lim_melting_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_melting_max": {
-        "type": "Property",
-        "value": {
-            "value": 950,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_melting_mean": {
-        "type": "Property",
-        "value": {
-            "value": 189.365854,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_melting_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_melting_std": {
-        "type": "Property",
-        "value": {
-            "value": 121.03349,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_cok_melting_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 38,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_lim_melting_max": {
-        "type": "Property",
-        "value": {
-            "value": 6750,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_lim_melting_mean": {
-        "type": "Property",
-        "value": {
-            "value": 2176.390244,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_lim_melting_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_lim_melting_std": {
-        "type": "Property",
-        "value": {
-            "value": 1215.054927,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_lime_coke_sum_lim_melting_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 8,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap01_max": {
-        "type": "Property",
-        "value": {
-            "value": 13800,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap01_mean": {
-        "type": "Property",
-        "value": {
-            "value": 2048.076923,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap01_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap01_std": {
-        "type": "Property",
-        "value": {
-            "value": 4155.236049,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap01_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 165,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap02_max": {
-        "type": "Property",
-        "value": {
-            "value": 8600,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap02_mean": {
-        "type": "Property",
-        "value": {
-            "value": 41.346154,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap02_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap02_std": {
-        "type": "Property",
-        "value": {
-            "value": 596.302711,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap02_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 207,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap03_max": {
-        "type": "Property",
-        "value": {
-            "value": 18700,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap03_mean": {
-        "type": "Property",
-        "value": {
-            "value": 138.461538,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap03_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap03_std": {
-        "type": "Property",
-        "value": {
-            "value": 1470.666988,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap03_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 206,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap04_max": {
-        "type": "Property",
-        "value": {
-            "value": 24200,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap04_mean": {
-        "type": "Property",
-        "value": {
-            "value": 2220.192308,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap04_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap04_std": {
-        "type": "Property",
-        "value": {
-            "value": 5543.214153,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap04_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 176,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap05_max": {
-        "type": "Property",
-        "value": {
-            "value": 11400,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap05_mean": {
-        "type": "Property",
-        "value": {
-            "value": 103.365385,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap05_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap05_std": {
-        "type": "Property",
-        "value": {
-            "value": 1053.51412,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap05_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 206,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap07_max": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap07_mean": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap07_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap07_std": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap07_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 208,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap11_max": {
-        "type": "Property",
-        "value": {
-            "value": 44600,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap11_mean": {
-        "type": "Property",
-        "value": {
-            "value": 10521.634615,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap11_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap11_std": {
-        "type": "Property",
-        "value": {
-            "value": 10993.044055,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap11_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 85,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_Nr_SBQ_heats": {
-        "type": "Property",
-        "value": {
-            "value": 208,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_Nr_heats": {
-        "type": "Property",
-        "value": {
-            "value": 214,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_Nr_scrap_type": {
-        "type": "Property",
-        "value": {
-            "value": 23,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_Nr_stainless_heats": {
-        "type": "Property",
-        "value": {
-            "value": 6,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap12_max": {
-        "type": "Property",
-        "value": {
-            "value": 59300,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap12_mean": {
-        "type": "Property",
-        "value": {
-            "value": 20695.192308,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap12_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap12_std": {
-        "type": "Property",
-        "value": {
-            "value": 14681.273226,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap12_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 35,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap13_max": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap13_mean": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap13_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap13_std": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap13_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 208,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap14_max": {
-        "type": "Property",
-        "value": {
-            "value": 59300,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap14_mean": {
-        "type": "Property",
-        "value": {
-            "value": 6309.134615,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap14_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap14_std": {
-        "type": "Property",
-        "value": {
-            "value": 10498.408585,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap14_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 144,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap21_max": {
-        "type": "Property",
-        "value": {
-            "value": 57400,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap21_mean": {
-        "type": "Property",
-        "value": {
-            "value": 15496.634615,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap21_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap21_std": {
-        "type": "Property",
-        "value": {
-            "value": 13151.739409,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap21_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 62,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap15_max": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap15_mean": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap15_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap15_std": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap15_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 208,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap16_max": {
-        "type": "Property",
-        "value": {
-            "value": 66400,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap16_mean": {
-        "type": "Property",
-        "value": {
-            "value": 11232.211538,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap16_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap16_std": {
-        "type": "Property",
-        "value": {
-            "value": 11375.020132,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap16_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 82,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap17_max": {
-        "type": "Property",
-        "value": {
-            "value": 67700,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap17_mean": {
-        "type": "Property",
-        "value": {
-            "value": 2799.519231,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap17_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap17_std": {
-        "type": "Property",
-        "value": {
-            "value": 8264.372622,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap17_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 177,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap18_max": {
-        "type": "Property",
-        "value": {
-            "value": 70400,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap18_mean": {
-        "type": "Property",
-        "value": {
-            "value": 8334.615385,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap18_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap18_std": {
-        "type": "Property",
-        "value": {
-            "value": 20515.794642,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap18_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 174,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap19_max": {
-        "type": "Property",
-        "value": {
-            "value": 90100,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap19_mean": {
-        "type": "Property",
-        "value": {
-            "value": 57825.961538,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap19_min": {
-        "type": "Property",
-        "value": {
-            "value": 28100,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap19_std": {
-        "type": "Property",
-        "value": {
-            "value": 10398.685305,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap19_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap20_max": {
-        "type": "Property",
-        "value": {
-            "value": 25700,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap20_mean": {
-        "type": "Property",
-        "value": {
-            "value": 6329.807692,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap20_min": {
-        "type": "Property",
-        "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap20_std": {
-        "type": "Property",
-        "value": {
-            "value": 7606.638085,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
-        }
-    },
-    "transformation_scrap_scrap20_zeros": {
-        "type": "Property",
-        "value": {
-            "value": 110,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_analysis_Nr_heats": {
         "type": "Property",
         "value": {
-            "value": 214,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": 229,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
         }
     },
     "exploration_analysis_Nr_outliers_Cu": {
         "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_analysis_Start_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_analysis_lower_boundary_Cu": {
         "type": "Property",
         "value": {
-            "value": 0.005694,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_analysis_percent_Nr_anomalies_Nr_heats_Cu": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_analysis_percent_Nr_outliers_Nr_heats_Cu": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_analysis_upper_boundary_Cu": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_eaf_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_eaf_Nr_anomalies_eaf14": {
+        "type": "Property",
+        "value": {
+            "value": 1,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_Nr_anomalies_kwhorno": {
+        "type": "Property",
+        "value": {
+            "value": 1,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
         }
     },
     "exploration_eaf_Nr_heats": {
         "type": "Property",
         "value": {
-            "value": 214,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": 229,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_Nr_outliers_eaf14": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
         }
     },
     "exploration_eaf_Nr_outliers_kwhorno": {
         "type": "Property",
         "value": {
-            "value": 1,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": 0,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
         }
     },
-    "exploration_eaf_Nr_outliers_ttensi": {
+    "exploration_eaf_Nr_outliers_sum_eaf15": {
         "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": 1,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_Nr_outliers_sum_eaf16": {
+        "type": "Property",
+        "value": {
+            "value": 1,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_Nr_outliers_sum_eaf17": {
+        "type": "Property",
+        "value": {
+            "value": 1,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_Nr_outliers_sum_eaf18": {
+        "type": "Property",
+        "value": {
+            "value": 1,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_Start_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_eaf_lower_boundary_eaf14": {
+        "type": "Property",
+        "value": {
+            "value": 29.736376,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
         }
     },
     "exploration_eaf_lower_boundary_kwhorno": {
         "type": "Property",
         "value": {
-            "value": 40942.301255,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": 40983.586131,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
         }
     },
-    "exploration_eaf_lower_boundary_ttensi": {
+    "exploration_eaf_lower_boundary_sum_eaf15": {
         "type": "Property",
         "value": {
-            "value": 24.932072,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -585.834921,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_lower_boundary_sum_eaf16": {
+        "type": "Property",
+        "value": {
+            "value": 131.387669,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_lower_boundary_sum_eaf17": {
+        "type": "Property",
+        "value": {
+            "value": 1452.392557,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_lower_boundary_sum_eaf18": {
+        "type": "Property",
+        "value": {
+            "value": -86.493053,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_percent_Nr_anomalies_Nr_heats_eaf14": {
+        "type": "Property",
+        "value": {
+            "value": 0.436681,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_percent_Nr_anomalies_Nr_heats_kwhorno": {
+        "type": "Property",
+        "value": {
+            "value": 0.436681,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_percent_Nr_outliers_Nr_heats_eaf14": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_percent_Nr_outliers_Nr_heats_kwhorno": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_percent_Nr_outliers_Nr_heats_sum_eaf15": {
+        "type": "Property",
+        "value": {
+            "value": 0.436681,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_percent_Nr_outliers_Nr_heats_sum_eaf16": {
+        "type": "Property",
+        "value": {
+            "value": 0.436681,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_percent_Nr_outliers_Nr_heats_sum_eaf17": {
+        "type": "Property",
+        "value": {
+            "value": 0.436681,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_percent_Nr_outliers_Nr_heats_sum_eaf18": {
+        "type": "Property",
+        "value": {
+            "value": 0.436681,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_upper_boundary_eaf14": {
+        "type": "Property",
+        "value": {
+            "value": 57.923013,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_upper_boundary_kwhorno": {
+        "type": "Property",
+        "value": {
+            "value": 74374.361467,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_upper_boundary_sum_eaf15": {
+        "type": "Property",
+        "value": {
+            "value": 3876.944091,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_upper_boundary_sum_eaf16": {
+        "type": "Property",
+        "value": {
+            "value": 216.865607,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_upper_boundary_sum_eaf17": {
+        "type": "Property",
+        "value": {
+            "value": 4116.559409,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_eaf_upper_boundary_sum_eaf18": {
+        "type": "Property",
+        "value": {
+            "value": 907.934101,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "exploration_lime_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_lime_Nr_heats": {
         "type": "Property",
         "value": {
-            "value": 209,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": 226,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
         }
     },
     "exploration_lime_Nr_outliers_sum_lime_basket": {
         "type": "Property",
         "value": {
-            "value": 1,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
-    "exploration_lime_lower_boundary_sum_lime_basket": {
+    "exploration_lime_Start_date": {
         "type": "Property",
         "value": {
-            "value": 1039.354359,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
-    "exploration_lime_upper_boundary_sum_lime_basket": {
+    "exploration_lime_coke_End_date": {
         "type": "Property",
         "value": {
-            "value": 3170.891947,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_lime_coke_Nr_heats": {
         "type": "Property",
         "value": {
-            "value": 211,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": 229,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
         }
     },
     "exploration_lime_coke_Nr_outliers_sum_cok_melting": {
         "type": "Property",
         "value": {
-            "value": 1,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_lime_coke_Nr_outliers_sum_lim_melting": {
         "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_lime_coke_Start_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_lime_coke_lower_boundary_sum_cok_melting": {
         "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_lime_coke_lower_boundary_sum_lim_melting": {
         "type": "Property",
         "value": {
-            "value": 0,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_lime_coke_percent_Nr_outliers_Nr_heats_sum_cok_melting": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_lime_coke_percent_Nr_outliers_Nr_heats_sum_lim_melting": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_lime_coke_upper_boundary_sum_cok_melting": {
         "type": "Property",
         "value": {
-            "value": 673.499813,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_lime_coke_upper_boundary_sum_lim_melting": {
         "type": "Property",
         "value": {
-            "value": 7036.60995,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_lime_lower_boundary_sum_lime_basket": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_lime_percent_Nr_outliers_Nr_heats_sum_lime_basket": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_lime_upper_boundary_sum_lime_basket": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_scrap_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "exploration_scrap_Nr_heats": {
         "type": "Property",
         "value": {
-            "value": 214,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": 229,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
         }
     },
-    "exploration_scrap_Nr_outliers_total_scrap_weight": {
+    "exploration_scrap_Nr_outliers_tot": {
         "type": "Property",
         "value": {
-            "value": 2,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
-    "exploration_scrap_lower_boundary_total_scrap_weight": {
+    "exploration_scrap_Start_date": {
         "type": "Property",
         "value": {
-            "value": 111698.483598,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
-    "exploration_scrap_upper_boundarytotal_scrap_weight": {
+    "exploration_scrap_lower_boundary_tot": {
         "type": "Property",
         "value": {
-            "value": 176493.824095,
-            "dateObserved": "2023-03-01T00:00:00.000Z",
-            "timeWindowLengthMinutes": 17280
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_scrap_percent_Nr_outliers_Nr_heats_tot": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "exploration_scrap_upper_boundary_tot": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "modeling_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
     "modeling_LinearRegression_MAE": {
         "type": "Property",
         "value": {
-            "value": 0.022733,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
+            "value": 0.026562,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "modeling_LinearRegression_RMSE": {
+        "type": "Property",
+        "value": {
+            "value": 0.031217,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
             "timeWindowLengthMinutes": 15840
         }
     },
     "modeling_LinearRegression_r2": {
         "type": "Property",
         "value": {
-            "value": 0.435087,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
-            "timeWindowLengthMinutes": 15840
-        }
-    },
-    "modeling_Nr_features": {
-        "type": "Property",
-        "value": {
-            "value": 17,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
+            "value": -0.008271,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
             "timeWindowLengthMinutes": 15840
         }
     },
     "modeling_Nr_heats": {
         "type": "Property",
         "value": {
-            "value": 45,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
+            "value": 229,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
             "timeWindowLengthMinutes": 15840
         }
     },
-    "modeling_Nr_targets": {
+    "modeling_Start_date": {
         "type": "Property",
         "value": {
-            "value": 1,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
-            "timeWindowLengthMinutes": 15840
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
         }
     },
-    "modeling_coff_scrap03": {
+    "train_models_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_Nr_features": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_Nr_samples": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_Start_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_Sustitutivos": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap03": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap04": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap11": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap12": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap14": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap16": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap17": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap18": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap19": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap20": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_coef_scrap21": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_model_name": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_train_MAE": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_train_R2": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_train_RMSE": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "train_models_train_memory_used": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_analysis_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_analysis_Start_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_eaf_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_eaf_Start_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_lime_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_lime_Start_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_lime_coke_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_lime_coke_Start_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_scrap_End_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_scrap_Start_date": {
+        "type": "Property",
+        "value": {
+            "value": -999999,
+            "dateObserved": "2020-01-08T00:00:00.000Z",
+            "timeWindowLengthMinutes": 10080
+        }
+    },
+    "transformation_analysis_Cr_Nan": {
         "type": "Property",
         "value": {
             "value": 0,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
-            "timeWindowLengthMinutes": 15840
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
         }
     },
-    "modeling_coff_scrap04": {
+    "transformation_analysis_Cr_max": {
         "type": "Property",
         "value": {
-            "value": 0.304252,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
-            "timeWindowLengthMinutes": 15840
+            "value": 18.45,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
         }
     },
-    "modeling_coff_scrap11": {
+    "transformation_analysis_Cr_mean": {
         "type": "Property",
         "value": {
-            "value": 0.400674,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
-            "timeWindowLengthMinutes": 15840
+            "value": 0.38852,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
         }
     },
-    "modeling_coff_scrap12": {
+    "transformation_analysis_Cr_min": {
         "type": "Property",
         "value": {
-            "value": 0.339322,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
-            "timeWindowLengthMinutes": 15840
+            "value": 0.035,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
         }
     },
-    "modeling_coff_scrap14": {
+    "transformation_analysis_Cr_std": {
         "type": "Property",
         "value": {
-            "value": 0.020819,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
-            "timeWindowLengthMinutes": 15840
+            "value": 2.314387,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
         }
     },
-    "modeling_coff_scrap21": {
-        "type": "Property",
-        "value": {
-            "value": 0.124853,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
-            "timeWindowLengthMinutes": 15840
-        }
-    },
-    "modeling_coff_scrap16": {
-        "type": "Property",
-        "value": {
-            "value": 0.199504,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
-            "timeWindowLengthMinutes": 15840
-        }
-    },
-    "modeling_coff_scrap17": {
+    "transformation_analysis_Cr_zeros": {
         "type": "Property",
         "value": {
             "value": 0,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Cu_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Cu_max": {
+        "type": "Property",
+        "value": {
+            "value": 0.532,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Cu_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0.155881,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Cu_min": {
+        "type": "Property",
+        "value": {
+            "value": 0.066,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Cu_std": {
+        "type": "Property",
+        "value": {
+            "value": 0.053517,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Cu_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mn_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mn_max": {
+        "type": "Property",
+        "value": {
+            "value": 1.25,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mn_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0.099996,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mn_min": {
+        "type": "Property",
+        "value": {
+            "value": 0.051,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mn_std": {
+        "type": "Property",
+        "value": {
+            "value": 0.153234,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mn_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mo_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mo_max": {
+        "type": "Property",
+        "value": {
+            "value": 1.63,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mo_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0.054828,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mo_min": {
+        "type": "Property",
+        "value": {
+            "value": 0.011,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mo_std": {
+        "type": "Property",
+        "value": {
+            "value": 0.131209,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Mo_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Ni_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Ni_max": {
+        "type": "Property",
+        "value": {
+            "value": 9.4,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Ni_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0.278216,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Ni_min": {
+        "type": "Property",
+        "value": {
+            "value": 0.045,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Ni_std": {
+        "type": "Property",
+        "value": {
+            "value": 1.053689,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Ni_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Nr_heats": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_P_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_P_max": {
+        "type": "Property",
+        "value": {
+            "value": 0.042,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_P_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0.009308,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_P_min": {
+        "type": "Property",
+        "value": {
+            "value": 0.004,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_P_std": {
+        "type": "Property",
+        "value": {
+            "value": 0.00489,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_P_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_S_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_S_max": {
+        "type": "Property",
+        "value": {
+            "value": 0.045,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_S_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0.024436,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_S_min": {
+        "type": "Property",
+        "value": {
+            "value": 0.009,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_S_std": {
+        "type": "Property",
+        "value": {
+            "value": 0.006131,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_S_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Sn_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Sn_max": {
+        "type": "Property",
+        "value": {
+            "value": 0.036,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Sn_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0.009233,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Sn_min": {
+        "type": "Property",
+        "value": {
+            "value": 0.005,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Sn_std": {
+        "type": "Property",
+        "value": {
+            "value": 0.002939,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_analysis_Sn_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf02_max": {
+        "type": "Property",
+        "value": {
+            "value": 2283,
+            "dateObserved": "2023-09-07T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf02_mean": {
+        "type": "Property",
+        "value": {
+            "value": 1047.868794,
+            "dateObserved": "2023-09-07T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf02_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-09-07T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf02_std": {
+        "type": "Property",
+        "value": {
+            "value": 361.190362,
+            "dateObserved": "2023-09-07T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf064_max": {
+        "type": "Property",
+        "value": {
+            "value": 1009,
+            "dateObserved": "2023-09-07T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf064_mean": {
+        "type": "Property",
+        "value": {
+            "value": 156.269504,
+            "dateObserved": "2023-09-07T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf064_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-09-07T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf064_std": {
+        "type": "Property",
+        "value": {
+            "value": 163.288378,
+            "dateObserved": "2023-09-07T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_Nr_heats": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf01_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 11,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf01_max": {
+        "type": "Property",
+        "value": {
+            "value": 2684,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf01_mean": {
+        "type": "Property",
+        "value": {
+            "value": 641.718062,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf01_min": {
+        "type": "Property",
+        "value": {
+            "value": -19,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf01_std": {
+        "type": "Property",
+        "value": {
+            "value": 440.272432,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf02_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf03_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf03_max": {
+        "type": "Property",
+        "value": {
+            "value": 71,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf03_mean": {
+        "type": "Property",
+        "value": {
+            "value": 57.101322,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf03_min": {
+        "type": "Property",
+        "value": {
+            "value": 12,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf03_std": {
+        "type": "Property",
+        "value": {
+            "value": 6.91947,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf04_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf04_max": {
+        "type": "Property",
+        "value": {
+            "value": 71,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf04_mean": {
+        "type": "Property",
+        "value": {
+            "value": 57.39207,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf04_min": {
+        "type": "Property",
+        "value": {
+            "value": 12,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf04_std": {
+        "type": "Property",
+        "value": {
+            "value": 6.917371,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf05_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf05_max": {
+        "type": "Property",
+        "value": {
+            "value": 71,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf05_mean": {
+        "type": "Property",
+        "value": {
+            "value": 56.867841,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf05_min": {
+        "type": "Property",
+        "value": {
+            "value": 12,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf05_std": {
+        "type": "Property",
+        "value": {
+            "value": 6.920546,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf064_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_kwhorno_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_kwhorno_max": {
+        "type": "Property",
+        "value": {
+            "value": 73478,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_kwhorno_mean": {
+        "type": "Property",
+        "value": {
+            "value": 57917.154185,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_kwhorno_min": {
+        "type": "Property",
+        "value": {
+            "value": 51448,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_kwhorno_std": {
+        "type": "Property",
+        "value": {
+            "value": 3061.836796,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf07_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf07_max": {
+        "type": "Property",
+        "value": {
+            "value": 1436,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf07_mean": {
+        "type": "Property",
+        "value": {
+            "value": 924.801762,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf07_min": {
+        "type": "Property",
+        "value": {
+            "value": 467,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf07_std": {
+        "type": "Property",
+        "value": {
+            "value": 112.047913,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf08_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf08_max": {
+        "type": "Property",
+        "value": {
+            "value": 1730,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf08_mean": {
+        "type": "Property",
+        "value": {
+            "value": 940.198238,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf08_min": {
+        "type": "Property",
+        "value": {
+            "value": 460,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf08_std": {
+        "type": "Property",
+        "value": {
+            "value": 128.047835,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf09_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf09_max": {
+        "type": "Property",
+        "value": {
+            "value": 1404,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf09_mean": {
+        "type": "Property",
+        "value": {
+            "value": 848.991189,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf09_min": {
+        "type": "Property",
+        "value": {
+            "value": 461,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf09_std": {
+        "type": "Property",
+        "value": {
+            "value": 94.582688,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf10_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf10_max": {
+        "type": "Property",
+        "value": {
+            "value": 383,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf10_mean": {
+        "type": "Property",
+        "value": {
+            "value": 135.286344,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf10_min": {
+        "type": "Property",
+        "value": {
+            "value": 108,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf10_std": {
+        "type": "Property",
+        "value": {
+            "value": 28.674276,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf11_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf11_max": {
+        "type": "Property",
+        "value": {
+            "value": 382,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf11_mean": {
+        "type": "Property",
+        "value": {
+            "value": 136.136564,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf11_min": {
+        "type": "Property",
+        "value": {
+            "value": 108,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf11_std": {
+        "type": "Property",
+        "value": {
+            "value": 29.424627,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf12_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf12_max": {
+        "type": "Property",
+        "value": {
+            "value": 380,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf12_mean": {
+        "type": "Property",
+        "value": {
+            "value": 134.264317,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf12_min": {
+        "type": "Property",
+        "value": {
+            "value": 107,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf12_std": {
+        "type": "Property",
+        "value": {
+            "value": 28.508665,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf15_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 11,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf15_max": {
+        "type": "Property",
+        "value": {
+            "value": 2684,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf15_mean": {
+        "type": "Property",
+        "value": {
+            "value": 641.718062,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf15_min": {
+        "type": "Property",
+        "value": {
+            "value": -19,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf15_std": {
+        "type": "Property",
+        "value": {
+            "value": 440.272432,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf16_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf16_max": {
+        "type": "Property",
+        "value": {
+            "value": 213,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf16_mean": {
+        "type": "Property",
+        "value": {
+            "value": 171.361233,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf16_min": {
+        "type": "Property",
+        "value": {
+            "value": 36,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf16_std": {
+        "type": "Property",
+        "value": {
+            "value": 20.740322,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf17_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf17_max": {
+        "type": "Property",
+        "value": {
+            "value": 4570,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf17_mean": {
+        "type": "Property",
+        "value": {
+            "value": 2713.991189,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf17_min": {
+        "type": "Property",
+        "value": {
+            "value": 1388,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf17_std": {
+        "type": "Property",
+        "value": {
+            "value": 300.000782,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf18_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf18_max": {
+        "type": "Property",
+        "value": {
+            "value": 1145,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf18_mean": {
+        "type": "Property",
+        "value": {
+            "value": 405.687225,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf18_min": {
+        "type": "Property",
+        "value": {
+            "value": 323,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_sum_eaf18_std": {
+        "type": "Property",
+        "value": {
+            "value": 86.405014,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf14_max": {
+        "type": "Property",
+        "value": {
+            "value": 90,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf14_mean": {
+        "type": "Property",
+        "value": {
+            "value": 44.312775,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf14_min": {
+        "type": "Property",
+        "value": {
+            "value": 37,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf14_std": {
+        "type": "Property",
+        "value": {
+            "value": 5.281791,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke01_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke01_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke01_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_Nr_heats": {
+        "type": "Property",
+        "value": {
+            "value": 215,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke01_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke01_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke02_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke02_max": {
+        "type": "Property",
+        "value": {
+            "value": 4390,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke02_mean": {
+        "type": "Property",
+        "value": {
+            "value": 2689.953488,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke02_min": {
+        "type": "Property",
+        "value": {
+            "value": 1320,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke02_std": {
+        "type": "Property",
+        "value": {
+            "value": 324.812667,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_limecoke02_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_sum_lime_basket_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_sum_lime_basket_max": {
+        "type": "Property",
+        "value": {
+            "value": 4390,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_sum_lime_basket_mean": {
+        "type": "Property",
+        "value": {
+            "value": 2689.953488,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_sum_lime_basket_min": {
+        "type": "Property",
+        "value": {
+            "value": 1320,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_sum_lime_basket_std": {
+        "type": "Property",
+        "value": {
+            "value": 324.812667,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_sum_lime_basket_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke01_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 148,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke01_max": {
+        "type": "Property",
+        "value": {
+            "value": 6750,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke01_mean": {
+        "type": "Property",
+        "value": {
+            "value": 930.148148,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke01_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke01_std": {
+        "type": "Property",
+        "value": {
+            "value": 1304.679587,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke02_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 270,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke02_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke02_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke02_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke02_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke02_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 270,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke03_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 269,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke03_max": {
+        "type": "Property",
+        "value": {
+            "value": 3000,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke03_mean": {
+        "type": "Property",
+        "value": {
+            "value": 11.111111,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke03_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke03_std": {
+        "type": "Property",
+        "value": {
+            "value": 182.574186,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke03_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 269,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke05_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 270,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke05_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke05_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke05_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke05_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke05_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 270,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke04_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 46,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke04_max": {
+        "type": "Property",
+        "value": {
+            "value": 520,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke04_mean": {
+        "type": "Property",
+        "value": {
+            "value": 187.222222,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke04_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke04_std": {
+        "type": "Property",
+        "value": {
+            "value": 103.068474,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_limecoke04_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 46,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_lim_melting_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 5,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_lim_melting_max": {
+        "type": "Property",
+        "value": {
+            "value": 6960,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_lim_melting_mean": {
+        "type": "Property",
+        "value": {
+            "value": 1128.481481,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_lim_melting_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_lim_melting_std": {
+        "type": "Property",
+        "value": {
+            "value": 1300.65565,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_lim_melting_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 5,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_melting_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 46,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_melting_max": {
+        "type": "Property",
+        "value": {
+            "value": 520,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_melting_mean": {
+        "type": "Property",
+        "value": {
+            "value": 187.222222,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_melting_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_melting_std": {
+        "type": "Property",
+        "value": {
+            "value": 103.068474,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_cok_melting_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 46,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_lim_melting_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 147,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_lim_melting_max": {
+        "type": "Property",
+        "value": {
+            "value": 6750,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_lim_melting_mean": {
+        "type": "Property",
+        "value": {
+            "value": 941.259259,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_lim_melting_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_lim_melting_std": {
+        "type": "Property",
+        "value": {
+            "value": 1309.494315,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_sum_lim_melting_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 147,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap10_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap10_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap10_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap10_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap15_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
             "timeWindowLengthMinutes": 15840
         }
     },
-    "modeling_coff_scrap18": {
+    "transformation_scrap_scrap15_mean": {
         "type": "Property",
         "value": {
-            "value": 0.122401,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
+            "value": 0,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
             "timeWindowLengthMinutes": 15840
         }
     },
-    "modeling_coff_scrap19": {
+    "transformation_scrap_scrap15_min": {
         "type": "Property",
         "value": {
-            "value": 0.134839,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
+            "value": 0,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
             "timeWindowLengthMinutes": 15840
         }
     },
-    "modeling_coff_scrap20": {
+    "transformation_scrap_scrap15_std": {
         "type": "Property",
         "value": {
-            "value": 0.54932,
-            "dateObserved": "2020-08-03T00:00:00.000Z",
+            "value": 0,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
             "timeWindowLengthMinutes": 15840
         }
     },
-    "modeling_peak_memory": {
+    "transformation_scrap_scrap01_Nan": {
         "type": "Property",
         "value": {
-            "value": "624.21",
-            "dateObserved": "2020-08-03T00:00:00.000Z",
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap01_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap01_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap01_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap01_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap01_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap02_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap02_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap02_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap02_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap02_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap02_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap03_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 202,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap03_max": {
+        "type": "Property",
+        "value": {
+            "value": 32500,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap03_mean": {
+        "type": "Property",
+        "value": {
+            "value": 1718.942731,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap03_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap03_std": {
+        "type": "Property",
+        "value": {
+            "value": 5205.710167,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap03_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 202,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_Estanado_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_Estanado_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_Estanado_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_Estanado_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_Estanado_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_Estanado_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap04_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 143,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap04_max": {
+        "type": "Property",
+        "value": {
+            "value": 31400,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap04_mean": {
+        "type": "Property",
+        "value": {
+            "value": 4859.911894,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap04_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap04_std": {
+        "type": "Property",
+        "value": {
+            "value": 7374.599194,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap04_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 143,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap05_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 224,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap05_max": {
+        "type": "Property",
+        "value": {
+            "value": 17300,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap05_mean": {
+        "type": "Property",
+        "value": {
+            "value": 183.700441,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap05_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap05_std": {
+        "type": "Property",
+        "value": {
+            "value": 1619.419884,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap05_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 224,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap06_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap06_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap06_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap06_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap06_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap06_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap22_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap22_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap22_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap22_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap22_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap22_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap07_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 225,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap07_max": {
+        "type": "Property",
+        "value": {
+            "value": 113600,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap07_mean": {
+        "type": "Property",
+        "value": {
+            "value": 994.273128,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap07_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap07_std": {
+        "type": "Property",
+        "value": {
+            "value": 10569.400347,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap07_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 225,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap08_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 225,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap08_max": {
+        "type": "Property",
+        "value": {
+            "value": 115500,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap08_mean": {
+        "type": "Property",
+        "value": {
+            "value": 1014.096916,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap08_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap08_std": {
+        "type": "Property",
+        "value": {
+            "value": 10779.958233,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap08_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 225,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap09_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap09_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap09_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap09_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap09_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap09_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap11_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 61,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap11_max": {
+        "type": "Property",
+        "value": {
+            "value": 48800,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap11_mean": {
+        "type": "Property",
+        "value": {
+            "value": 16037.444934,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap11_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap11_std": {
+        "type": "Property",
+        "value": {
+            "value": 12218.347534,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap11_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 61,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_Nr_heats": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap12_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 79,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap12_max": {
+        "type": "Property",
+        "value": {
+            "value": 63200,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap12_mean": {
+        "type": "Property",
+        "value": {
+            "value": 15003.964758,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap12_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap12_std": {
+        "type": "Property",
+        "value": {
+            "value": 14339.487906,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap12_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 79,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap13_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap13_max": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap13_mean": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap13_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap13_std": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap13_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 227,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap14_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 176,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap14_max": {
+        "type": "Property",
+        "value": {
+            "value": 87500,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap14_mean": {
+        "type": "Property",
+        "value": {
+            "value": 6620.704846,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap14_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap14_std": {
+        "type": "Property",
+        "value": {
+            "value": 15717.263026,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap14_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 176,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap21_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 94,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap21_max": {
+        "type": "Property",
+        "value": {
+            "value": 55100,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap21_mean": {
+        "type": "Property",
+        "value": {
+            "value": 15447.577093,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap21_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap21_std": {
+        "type": "Property",
+        "value": {
+            "value": 15971.23606,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap21_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 94,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap10_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap10_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap15_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap15_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap16_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 121,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap16_max": {
+        "type": "Property",
+        "value": {
+            "value": 32200,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap16_mean": {
+        "type": "Property",
+        "value": {
+            "value": 9070.044053,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap16_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap16_std": {
+        "type": "Property",
+        "value": {
+            "value": 10812.872593,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap16_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 121,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap17_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 168,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap17_max": {
+        "type": "Property",
+        "value": {
+            "value": 71100,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap17_mean": {
+        "type": "Property",
+        "value": {
+            "value": 10466.519824,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap17_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap17_std": {
+        "type": "Property",
+        "value": {
+            "value": 19581.59529,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap17_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 168,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap18_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 179,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap18_max": {
+        "type": "Property",
+        "value": {
+            "value": 74600,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap18_mean": {
+        "type": "Property",
+        "value": {
+            "value": 5631.718062,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap18_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap18_std": {
+        "type": "Property",
+        "value": {
+            "value": 14746.112677,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap18_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 179,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap19_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 4,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap19_max": {
+        "type": "Property",
+        "value": {
+            "value": 88200,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap19_mean": {
+        "type": "Property",
+        "value": {
+            "value": 52887.22467,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap19_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap19_std": {
+        "type": "Property",
+        "value": {
+            "value": 13320.240928,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap19_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 4,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap20_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 104,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap20_max": {
+        "type": "Property",
+        "value": {
+            "value": 25400,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap20_mean": {
+        "type": "Property",
+        "value": {
+            "value": 6633.480176,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap20_min": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap20_std": {
+        "type": "Property",
+        "value": {
+            "value": 6822.85512,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_scrap20_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 104,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_tot_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_tot_max": {
+        "type": "Property",
+        "value": {
+            "value": 162800,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_tot_mean": {
+        "type": "Property",
+        "value": {
+            "value": 146569.603524,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_tot_min": {
+        "type": "Property",
+        "value": {
+            "value": 112100,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_tot_std": {
+        "type": "Property",
+        "value": {
+            "value": 6620.837401,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_scrap_tot_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2024-01-16T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_eaf_eaf14_Nan": {
+        "type": "Property",
+        "value": {
+            "value": 0,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
             "timeWindowLengthMinutes": 15840
+        }
+    },
+    "transformation_lime_limecoke01_max": {
+        "type": "Property",
+        "value": {
+            "value": 6750,
+            "dateObserved": "2023-07-27T00:00:00.000Z",
+            "timeWindowLengthMinutes": 15840
+        }
+    },
+    "transformation_lime_coke_limecoke01_zeros": {
+        "type": "Property",
+        "value": {
+            "value": 148,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
+        }
+    },
+    "transformation_lime_coke_Nr_heats": {
+        "type": "Property",
+        "value": {
+            "value": 270,
+            "dateObserved": "2023-03-09T00:00:00.000Z",
+            "timeWindowLengthMinutes": 18720
         }
     }
 }
