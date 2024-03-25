@@ -1,0 +1,30 @@
+{
+        "id": "urn:ngsi-ld:Subscription:65f2e3dfb432d3e28cdb049f",
+        "type": "Subscription",
+        "description": "Subscribing Image Quality Check to Airflow",
+        "entities": [
+            {
+                "id": "urn:ngsi-ld:Pharma_smaller_time_window:001",
+                "type": "factory"
+            }
+        ],
+        "watchedAttributes": [
+            "DataIngestion_OCT_signalQualityCheck_numBadImg",
+            "DataIngestion_OCT_imageClassification_numGoodImg"
+        ],
+        "notification": {
+            "attributes": [
+                "DataIngestion_OCT_signalQualityCheck_numBadImg",
+                "DataIngestion_OCT_imageClassification_numGoodImg"
+            ],
+            "format": "normalized",
+            "endpoint": {
+                "uri": "http://182.18.1.32:8061",
+                "accept": "application/json"
+            },
+            "timesSent": 19,
+            "lastNotification": "2024-03-20T15:14:40.367Z"
+        },
+        "expires": "2099-01-01T14:00:00.000Z",
+        "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    }
