@@ -1,0 +1,26 @@
+{
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:sidenor_solution_HITL_Status_3:001",
+    "type": "sidenor_HITL_Status",
+    "modeling_LinearRegression_MAE_confirmed": {
+        "value": {
+            "value": "No",
+            "dateUpdated": "2024-03-13T10:45:23Z"
+        },
+        "type": "Property"
+    },
+    "modeling_LinearRegression_MAE_periods": {
+        "value": {
+            "value": 1,
+            "dateUpdated": "2024-03-13T10:45:23Z"
+        },
+        "type": "Property"
+    },
+    "modeling_LinearRegression_MAE_previous_status": {
+        "value": {
+            "value": "Not_Alert",
+            "dateUpdated": "2024-03-13T10:45:23Z"
+        },
+        "type": "Property"
+    }
+}
