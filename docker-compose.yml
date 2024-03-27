@@ -1,358 +1,118 @@
-version: "3.5"
-x-airflow-common:
-  &airflow-common
-  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.4.3}
-  # build: .
-  environment:
-    &airflow-common-env
-    AIRFLOW__CORE__EXECUTOR: LocalExecutor
-    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow    
-    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-    AIRFLOW__CORE__FERNET_KEY: ''
-    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
-  volumes:
-    - ./dags:/opt/airflow/dags
-    - ./logs:/opt/airflow/logs
-    - ./plugins:/opt/airflow/plugins
+version: "3.7"
+name: s-x-aipi-service
 
-  user: "${AIRFLOW_UID:-50000}:0"
-  depends_on:
-    &airflow-common-depends-on
-    postgres:
-      condition: service_healthy
+networks:
+  s-x-aipi:
+    driver: bridge
+
+volumes:
+  redpanda-0: null
+  postgres-db-volume:
+  orion_mongo_data:
+  orion_mongo_conf:
 
 services:
-  
+
+
+  orion:
+    hostname: orion
+    image: fiware/orion-ld:0.7.0
+    networks:
+      - s-x-aipi
+    ports:
+      - "1026:1026"
+    depends_on:
+      - orion_mongo
+    command: -statCounters -dbhost orion_mongo -logLevel INFO -forwarding
+    restart: always
+
+
+  orion_mongo:
+      hostname: orion_mongo
+      image: mongo:4.4
+      networks:
+        - s-x-aipi
+      ports:
+        - "27017:27017"
+      volumes:
+        - orion_mongo_data:/data/db
+        - orion_mongo_conf:/data/configdb
+      command: --nojournal
+
+
   postgres:
-    image: postgres:13
+    image: postgres:16
     environment:
-      POSTGRES_USER: airflow
-      POSTGRES_PASSWORD: airflow
-      POSTGRES_DB: airflow
+      POSTGRES_USER: s-x-aipi
+      POSTGRES_PASSWORD: s-x-aipi
+      POSTGRES_DB: s-x-aipi
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "airflow"]
+      test: [ "CMD", "pg_isready", "-U", "airflow" ]
       interval: 5s
       retries: 5
     restart: always
+    networks:
+      - s-x-aipi
 
 
-  airflow-webserver:
-    <<: *airflow-common
-    command: webserver
-    ports:
-      - 8888:8080
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
-      interval: 10s
-      timeout: 10s
-      retries: 5
-    restart: always
-    depends_on:
-      <<: *airflow-common-depends-on
-      airflow-init:
-        condition: service_completed_successfully
-
-  airflow-scheduler:
-    <<: *airflow-common
-    command: scheduler
-    healthcheck:
-      test: ["CMD-SHELL", 'airflow jobs check --job-type SchedulerJob --hostname "$${HOSTNAME}"']
-      interval: 10s
-      timeout: 10s
-      retries: 5
-    restart: always
-    depends_on:
-      <<: *airflow-common-depends-on
-      airflow-init:
-        condition: service_completed_successfully
-
-
-  airflow-triggerer:
-    <<: *airflow-common
-    command: triggerer
-    healthcheck:
-      test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
-      interval: 10s
-      timeout: 10s
-      retries: 5
-    restart: always
-    depends_on:
-      <<: *airflow-common-depends-on
-      airflow-init:
-        condition: service_completed_successfully
-
-  airflow-init:
-    <<: *airflow-common
-    entrypoint: /bin/bash
-    # yamllint disable rule:line-length
+  redpanda-0:
     command:
-      - -c
-      - |
-        function ver() {
-          printf "%04d%04d%04d%04d" $${1//./ }
-        }
-        airflow_version=$$(AIRFLOW__LOGGING__LOGGING_LEVEL=INFO && gosu airflow airflow version)
-        airflow_version_comparable=$$(ver $${airflow_version})
-        min_airflow_version=2.2.0
-        min_airflow_version_comparable=$$(ver $${min_airflow_version})
-        if (( airflow_version_comparable < min_airflow_version_comparable )); then
-          echo
-          echo -e "\033[1;31mERROR!!!: Too old Airflow version $${airflow_version}!\e[0m"
-          echo "The minimum Airflow version supported: $${min_airflow_version}. Only use this or higher!"
-          echo
-          exit 1
-        fi
-        if [[ -z "${AIRFLOW_UID}" ]]; then
-          echo
-          echo -e "\033[1;33mWARNING!!!: AIRFLOW_UID not set!\e[0m"
-          echo "If you are on Linux, you SHOULD follow the instructions below to set "
-          echo "AIRFLOW_UID environment variable, otherwise files will be owned by root."
-          echo "For other operating systems you can get rid of the warning with manually created .env file:"
-          echo "    See: https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#setting-the-right-airflow-user"
-          echo
-        fi
-        one_meg=1048576
-        mem_available=$$(($$(getconf _PHYS_PAGES) * $$(getconf PAGE_SIZE) / one_meg))
-        cpus_available=$$(grep -cE 'cpu[0-9]+' /proc/stat)
-        disk_available=$$(df / | tail -1 | awk '{print $$4}')
-        warning_resources="false"
-        if (( mem_available < 4000 )) ; then
-          echo
-          echo -e "\033[1;33mWARNING!!!: Not enough memory available for Docker.\e[0m"
-          echo "At least 4GB of memory required. You have $$(numfmt --to iec $$((mem_available * one_meg)))"
-          echo
-          warning_resources="true"
-        fi
-        if (( cpus_available < 2 )); then
-          echo
-          echo -e "\033[1;33mWARNING!!!: Not enough CPUS available for Docker.\e[0m"
-          echo "At least 2 CPUs recommended. You have $${cpus_available}"
-          echo
-          warning_resources="true"
-        fi
-        if (( disk_available < one_meg * 10 )); then
-          echo
-          echo -e "\033[1;33mWARNING!!!: Not enough Disk space available for Docker.\e[0m"
-          echo "At least 10 GBs recommended. You have $$(numfmt --to iec $$((disk_available * 1024 )))"
-          echo
-          warning_resources="true"
-        fi
-        if [[ $${warning_resources} == "true" ]]; then
-          echo
-          echo -e "\033[1;33mWARNING!!!: You have not enough resources to run Airflow (see above)!\e[0m"
-          echo "Please follow the instructions to increase amount of resources available:"
-          echo "   https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#before-you-begin"
-          echo
-        fi
-        mkdir -p /sources/logs /sources/dags /sources/plugins
-        #chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
-        exec /entrypoint airflow version
-    # yamllint enable rule:line-length
-    environment:
-      <<: *airflow-common-env
-      _AIRFLOW_DB_UPGRADE: 'true'
-      _AIRFLOW_WWW_USER_CREATE: 'true'
-      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
-      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
-      _PIP_ADDITIONAL_REQUIREMENTS: ''
-    user: "0:0"
+      - redpanda
+      - start
+      - --kafka-addr internal://0.0.0.0:9092,external://0.0.0.0:19092
+      # Address the broker advertises to clients that connect to the Kafka API.
+      # Use the internal addresses to connect to the Redpanda brokers'
+      # from inside the same Docker network.
+      # Use the external addresses to connect to the Redpanda brokers'
+      # from outside the Docker network.
+      - --advertise-kafka-addr internal://redpanda-0:9092,external://localhost:19092
+      - --pandaproxy-addr internal://0.0.0.0:8082,external://0.0.0.0:18082
+      # Address the broker advertises to clients that connect to the HTTP Proxy.
+      - --advertise-pandaproxy-addr internal://redpanda-0:8082,external://localhost:18082
+      - --schema-registry-addr internal://0.0.0.0:8081,external://0.0.0.0:18081
+      # Redpanda brokers use the RPC API to communicate with each other internally.
+      - --rpc-addr redpanda-0:33145
+      - --advertise-rpc-addr redpanda-0:33145
+      # Mode dev-container uses well-known configuration properties for development in containers.
+      - --mode dev-container
+      # Tells Seastar (the framework Redpanda uses under the hood) to use 1 core on the system.
+      - --smp 1
+      - --default-log-level=info
+    image: docker.redpanda.com/redpandadata/redpanda:v23.3.9
+    container_name: redpanda-0
     volumes:
-      - .:/sources
+      - redpanda-0:/var/lib/redpanda/data
+    networks:
+      - s-x-aipi
+    ports:
+      - 18081:18081
+      - 18082:18082
+      - 19092:19092
+      - 19644:9644
 
-  airflow-cli:
-    <<: *airflow-common
-    profiles:
-      - debug
+
+  redpanda-console:
+    container_name: redpanda-console
+    image: docker.redpanda.com/redpandadata/console:v2.4.5
+    networks:
+      - s-x-aipi
+    entrypoint: /bin/sh
+    command: -c 'echo "$$CONSOLE_CONFIG_FILE" > /tmp/config.yml; /app/console'
     environment:
-      <<: *airflow-common-env
-      CONNECTION_CHECK_MAX_COUNT: "0"
-    # Workaround for entrypoint issue. See: https://github.com/apache/airflow/issues/16252
-    command:
-      - bash
-      - -c
-      - airflow
-
-  # Orion is the context broker
-  orionld:
-    image: fiware/orion-ld:${ORION_LD_VERSION}
-    container_name: fiware-orionld
-    hostname: orionld
+      CONFIG_FILEPATH: /tmp/config.yml
+      CONSOLE_CONFIG_FILE: |
+        kafka:
+          brokers: ["redpanda-0:9092"]
+          schemaRegistry:
+            enabled: true
+            urls: ["http://redpanda-0:8081"]
+        redpanda:
+          adminApi:
+            enabled: true
+            urls: ["http://redpanda-0:9644"]
+    ports:
+      - 8080:8080
     depends_on:
-      - mongo-db
-    networks:
-      default:
-        ipv4_address: ${ORION_LD_IP}
-
-    ports:
-      - "${ORION_LD_PORT}:${ORION_LD_PORT}" # localhost:1026
-    command: -dbhost mongo-db -logLevel DEBUG
-    healthcheck:
-      test: curl --fail -s http://orionld:${ORION_LD_PORT}/version || exit 1
-
-  # Keyrock is an Identity Management Front-End
-  idm:
-    image: fiware/idm:${KEYROCK_VERSION}
-    container_name: fiware-idm
-    hostname: idm
-    networks:
-      default:
-        ipv4_address: ${KEYROCK_IP}
-    depends_on:
-      - mysql-db
-    ports:
-      - "${KEYROCK_PORT}:${KEYROCK_PORT}" # localhost:3005
-    expose:
-      - "${KEYROCK_PORT}"
-    environment:
-      - DEBUG=idm:*
-      - IDM_DB_HOST=mysql-db
-      - IDM_DB_PASS_FILE=/run/secrets/my_secret_data
-      - IDM_DB_USER=root
-      - IDM_HOST=http://localhost:${KEYROCK_PORT}
-      - IDM_PORT=${KEYROCK_PORT}
-      - IDM_HTTPS_ENABLED=${IDM_HTTPS_ENABLED}
-      - IDM_HTTPS_PORT=${KEYROCK_HTTPS_PORT}
-      - IDM_ADMIN_USER=Alice
-      - IDM_ADMIN_EMAIL=alice-the-admin@test.com
-      - IDM_ADMIN_PASS=test
-      # - IDM_EIDAS_ENABLED=true                               # Enable IdM to allow user authentication in services using their eID (true,false)
-      # - IDM_EIDAS_GATEWAY_HOST=localhost                     # Name of the host in which IdM is running
-      # - IDM_EIDAS_NODE_HOST=https://eidas.node.es/EidasNode  # Name of the host in which is running node eIDAS Service
-      # - IDM_EIDAS_METADATA_LIFETIME=31536000                 # Lifetime of metadata of a service with eIDAS authentication enabled in seconds (1 year)
-    secrets:
-      - my_secret_data
-    healthcheck:
-      test: curl --fail -s http://localhost:${KEYROCK_PORT}/version || exit 1
-
-  # PEP Proxy for Orion
-  orion-pep-proxy:
-    image: fiware/pep-proxy:${WILMA_VERSION}
-    container_name: fiware-orion-pep-proxy
-    hostname: orion-pep-proxy
-    networks:
-      default:
-        ipv4_address: ${ORION_PROXY_IP}
-    depends_on:
-      - idm
-    deploy:
-      restart_policy:
-        condition: on-failure
-    ports:
-      - "${ORION_PROXY_PORT}:${ORION_PROXY_PORT}" # localhost:1027
-    expose:
-      - "${ORION_PROXY_PORT}"
-    environment:
-      - DEBUG=pep-proxy:*
-      - PEP_PROXY_DEBUG=true
-      - PEP_PROXY_APP_HOST=orionld
-      - PEP_PROXY_APP_PORT=${ORION_LD_PORT}
-      - PEP_PROXY_PORT=${ORION_PROXY_PORT}
-      - PEP_PROXY_IDM_HOST=idm
-      - PEP_PROXY_HTTPS_ENABLED=false
-      - PEP_PROXY_AUTH_ENABLED=true
-      - PEP_PROXY_IDM_SSL_ENABLED=false
-      - PEP_PROXY_IDM_PORT=${KEYROCK_PORT}
-      - PEP_PROXY_APP_ID=${PEP_PROXY_APP_ID}
-      - PEP_PROXY_USERNAME=${PEP_PROXY_USERNAME}
-      - PEP_PASSWORD=${PEP_PASSWORD}
-      - PEP_PROXY_PDP=idm
-      - PEP_PROXY_MAGIC_KEY=1234
-      - PEP_PROXY_PUBLIC_PATHS=/version
-    healthcheck:
-      test: curl --fail -s http://orion-pep-proxy:${ORION_PROXY_PORT}/version || exit 1
-
-  # Databases
-  mongo-db:
-    image: mongo:${MONGO_DB_VERSION}
-    container_name: mongo-db
-    hostname: mongo-db
-    expose:
-      - "${MONGO_DB_PORT}"
-    ports:
-      - "${MONGO_DB_PORT}:${MONGO_DB_PORT}" # localhost:27017
-    networks:
-      - default
-    command: --bind_ip_all --smallfiles
-    volumes:
-      - mongo-db:/data
-    healthcheck:
-      test: |
-        host=`hostname --ip-address || echo '127.0.0.1'`;
-        mongo --quiet $host/test --eval 'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)' && echo 0 || echo 1
-
-  mysql-db:
-    restart: always
-    image: mysql:${MYSQL_DB_VERSION}
-    hostname: mysql-db
-    container_name: mysql-db
-    expose:
-      - "${MYSQL_DB_PORT}"
-    ports:
-      - "${MYSQL_DB_PORT}:${MYSQL_DB_PORT}" # localhost:3306
-    networks:
-      default:
-        ipv4_address: ${MYSQL_DB_IP}
-    environment:
-      - "MYSQL_ROOT_PASSWORD_FILE=/run/secrets/my_secret_data"
-      - "MYSQL_ROOT_HOST=${KEYROCK_IP}" # Allow Keyrock to access this database
-    volumes:
-      - mysql-db:/var/lib/mysql
-    secrets:
-      - my_secret_data
-      
-  draco:
-    image: ging/fiware-draco:FIWARE_8.1    
-    container_name: draco
-    environment:
-      - NIFI_WEB_HTTP_PORT=${NIFI_WEB_HTTP_PORT}
-    ports:
-      - "${NIFI_WEB_HTTP_PORT}:${NIFI_WEB_HTTP_PORT}"
-      - "5050:5050"
-    depends_on:
-      - dbs
-    networks:
-      default:
-        ipv4_address: ${DRACO_IP}
-
-  dbs:
-    image: postgres
-    restart: always
-    container_name: dbs
-    environment:
-      POSTGRES_PASSWORD: example
-    ports:
-      - ${POSTGRES_PORT}:${POSTGRES_PORT}
-    networks:
-      default:
-        ipv4_address: ${POSTGRES_IP}
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - ${ADMINER_PORT}:8080  
-    depends_on:
-      - dbs
-    networks:
-      default:
-        ipv4_address: ${ADMINER_IP}
-  
-networks:
-  default:
-    ipam:
-      config:
-        - subnet: ${SUBNET}
-
-volumes:
-  mysql-db: ~
-  mongo-db: ~
-  postgres-db-volume:
-
-secrets:
-  my_secret_data:
-    file: secrets.txt
+      - redpanda-0
