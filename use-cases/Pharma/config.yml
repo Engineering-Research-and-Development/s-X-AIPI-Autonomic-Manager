@@ -1,0 +1,7 @@
+entity: "EntityType"
+notification:
+  url: "http://your.callback.url"
+  attrs: ["attribute1", "attribute2"]
+  metadata: ["dateCreated", "dateModified"]
+
+orion_endpoint: "http://your_orion_host:port/v2/subscriptions"

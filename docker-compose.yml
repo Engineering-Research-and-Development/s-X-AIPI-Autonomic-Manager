@@ -116,3 +116,7 @@ services:
       - 8080:8080
     depends_on:
       - redpanda-0
+
+  s-x-aipi-pharma:
+      container_name: s-x-aipi-pharma
+      build: use-cases/Pharma
