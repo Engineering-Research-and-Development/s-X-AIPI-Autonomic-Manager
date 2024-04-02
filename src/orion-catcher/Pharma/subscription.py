@@ -68,7 +68,7 @@ def subscribe():
             "attrs": config["notification"]["attrs"],
             "metadata": config["notification"]["metadata"]
         },
-        "throttling": 5
+        "throttling": 60
     }
 
     headers = {

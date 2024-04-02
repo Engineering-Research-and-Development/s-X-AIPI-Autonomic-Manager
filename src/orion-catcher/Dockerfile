@@ -1,10 +1,6 @@
 FROM python:3.11-slim-bullseye
 LABEL authors="fabcassano"
 
-# Set environment variables
-ENV DAGSTER_HOME /opt/dagster
-ENV PYTHONPATH /opt/dagster
-
 WORKDIR /home
 
 COPY . .

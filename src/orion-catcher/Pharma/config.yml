@@ -1,5 +1,5 @@
 notification:
-  url: "http://localhost:8000/pharma-endpoint"
+  url: "http://0.0.0.0:8000/pharma"
   attrs: ["attribute1", "attribute2"]
   metadata: ["dateCreated", "dateModified"]
 

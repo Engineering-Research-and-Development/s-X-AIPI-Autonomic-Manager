@@ -48,10 +48,6 @@ services:
       POSTGRES_DB: s-x-aipi
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
-    healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "airflow" ]
-      interval: 5s
-      retries: 5
     restart: always
     networks:
       - s-x-aipi
@@ -120,3 +116,60 @@ services:
   s-x-aipi-orion-catcher:
     container_name: s-x-aipi-orion-catcher
     build: src/orion-catcher
+    networks:
+      - s-x-aipi
+
+
+  # This service runs dagster-webserver, which loads your user code from the user code container.
+  # Since our instance uses the QueuedRunCoordinator, any runs submitted from the webserver will be put on
+  # a queue and later dequeued and launched by dagster-daemon.
+  dagster_webservice:
+    build:
+      context: .
+      dockerfile: src/dagster/Dockerfile_dagster
+    entrypoint:
+      - dagster-webserver
+      - -h
+      - "0.0.0.0"
+      - -p
+      - "3000"
+
+    container_name: dagster_webserver
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    environment:
+      DAGSTER_POSTGRES_USER: s-x-aipi
+      DAGSTER_POSTGRES_PASSWORD: s-x-aipi
+      DAGSTER_POSTGRES_DB: s-x-aipi
+    volumes: # Make docker client accessible, so we can terminate containers from the webserver
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/io_manager_storage:/tmp/io_manager_storage
+    networks:
+      - s-x-aipi
+    depends_on:
+      - postgres
+
+  # This service runs the dagster-daemon process, which is responsible for taking runs
+  # off of the queue and launching them, as well as creating runs from schedules or sensors.
+  dagster_daemon:
+    build:
+      context: .
+      dockerfile: src/dagster/Dockerfile_dagster
+    entrypoint:
+      - dagster-daemon
+      - run
+    container_name: dagster_daemon
+    restart: on-failure
+    environment:
+      DAGSTER_POSTGRES_USER: s-x-aipi
+      DAGSTER_POSTGRES_PASSWORD: s-x-aipi
+      DAGSTER_POSTGRES_DB: s-x-aipi
+    volumes: # Make docker client accessible, so we can launch containers using host docker
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/io_manager_storage:/tmp/io_manager_storage
+    networks:
+      - s-x-aipi
+    depends_on:
+      - postgres
