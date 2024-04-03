@@ -1,12 +1,11 @@
 from fastapi import FastAPI
-
 from Pharma.main import process_message
 orion_catcher = FastAPI()
 
 
 @orion_catcher.post("/pharma")
 async def webhook_handler(data: dict):
-    process_message(context={}, message=data)
+    process_message.execute_in_process(input_values=data)
     return {"message": "Pipeline triggered successfully!"}
 
 
