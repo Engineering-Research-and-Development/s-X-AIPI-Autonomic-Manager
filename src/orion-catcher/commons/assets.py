@@ -39,9 +39,9 @@ def discriminate_thresholds(
 
     broken_rule_list = []
     try:
-        for index, attr in enumerate(attrs):
+        for attr, low, up in zip(attrs, lower_thresholds, upper_thresholds):
             attr_value = values[attr]['value']['value']
-            rule = ThresholdRule(attr, attr_value, upper_thresholds[index], lower_thresholds[index])
+            rule = ThresholdRule(attr, attr_value, up, low)
             if rule.is_broken: broken_rule_list.append(rule)
     except Exception as e:
         # TODO: decide if insert error alarm or not
