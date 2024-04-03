@@ -23,7 +23,7 @@ def discriminate_thresholds(
         lower_thresholds: List[float],
         upper_thresholds: List[float],
         attrs: List[str]
-) -> List[Union[BrokenRule, AmAlarm]]:
+) -> List[Union[ThresholdRule, AmRuleBasedEngineAlarm]]:
     """
     :param solution_name: solution name
     :param values: dictionary of values from OCB
@@ -40,17 +40,9 @@ def discriminate_thresholds(
     broken_rule_list = []
     try:
         for index, attr in enumerate(attrs):
-            lower_threshold = -99999999 if lower_thresholds[index] is not None else lower_thresholds[index]
-            upper_threshold = 99999999 if upper_thresholds[index] is not None else upper_thresholds[index]
             attr_value = values[attr]['value']['value']
-            cause = None
-            if attr_value < lower_threshold:
-                cause = "lower threshold"
-            elif attr_value > upper_threshold:
-                cause = "upper threshold"
-            if cause:
-                broken_rule = BrokenRule(attr, attr_value, upper_threshold, lower_threshold, cause)
-                broken_rule_list.append(broken_rule)
+            rule = ThresholdRule(attr, attr_value, upper_thresholds[index], lower_thresholds[index])
+            if rule.is_broken: broken_rule_list.append(rule)
     except Exception as e:
         # TODO: decide if insert error alarm or not
         '''
