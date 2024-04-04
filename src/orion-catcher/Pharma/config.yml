@@ -1,7 +1,0 @@
-notification:
-  url: "http://0.0.0.0:8000/pharma"
-  attrs: ["attribute1", "attribute2"]
-  metadata: ["dateCreated", "dateModified"]
-
-entity: "EntityType"
-orion_endpoint: "http://your_orion_host:port/v2/subscriptions"

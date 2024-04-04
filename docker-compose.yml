@@ -115,20 +115,20 @@ services:
 
   s-x-aipi-orion-catcher:
     container_name: s-x-aipi-orion-catcher
-    build: src/orion-catcher
+    build: src/orion_catcher
     networks:
       - s-x-aipi
 
 
-  # This service runs dagster-webserver, which loads your user code from the user code container.
+  # This service runs dagster_service-webserver, which loads your user code from the user code container.
   # Since our instance uses the QueuedRunCoordinator, any runs submitted from the webserver will be put on
-  # a queue and later dequeued and launched by dagster-daemon.
+  # a queue and later dequeued and launched by dagster_service-daemon.
   dagster_webservice:
     build:
       context: .
-      dockerfile: src/dagster/Dockerfile_dagster
+      dockerfile: src/dagster_service/Dockerfile_dagster
     entrypoint:
-      - dagster-webserver
+      - dagster_service-webserver
       - -h
       - "0.0.0.0"
       - -p
@@ -151,14 +151,14 @@ services:
     depends_on:
       - postgres
 
-  # This service runs the dagster-daemon process, which is responsible for taking runs
+  # This service runs the dagster_service-daemon process, which is responsible for taking runs
   # off of the queue and launching them, as well as creating runs from schedules or sensors.
   dagster_daemon:
     build:
       context: .
-      dockerfile: src/dagster/Dockerfile_dagster
+      dockerfile: src/dagster_service/Dockerfile_dagster
     entrypoint:
-      - dagster-daemon
+      - dagster_service-daemon
       - run
     container_name: dagster_daemon
     restart: on-failure

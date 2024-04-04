@@ -1,8 +1,5 @@
 import requests
-import yaml
-
-with ("config.yml", "r") as f:
-    config = yaml.safe_load(f)
+import logging
 
 
 def check_existing_subscriptions(orion_endpoint: str, entity_type: str, callback_url: str) -> bool:
@@ -44,48 +41,56 @@ def check_existing_subscriptions(orion_endpoint: str, entity_type: str, callback
                 return True
         return False
     else:
-        print("Failed to retrieve subscriptions. Status code:", response.status_code)
-        print("Response:", response.text)
+        logging.error(f"Failed to retrieve subscriptions. Status code: {response.status_code}")
+        logging.debug(f"Response: {response.text}")
         return False
 
 
-def subscribe():
+def subscribe(entity: str, attrs: str, notification_url: str, notification_attrs: str, notification_metadata: str,
+              orion_host: str, throttling: int = 60) -> None:
     """
     Perform the subscription to the entity using the parameters in the 'config' yaml file
+
+    Parameters:
+        entity: the entity to subscribe
+
+        attrs: the condition attributes
+
+        notification_url: the URL where to get the notifications
+
+        notification_attrs: the attributes of the notification
+
+        notification_metadata: the notification metadata
+
+        orion_host: the Orion endpoint
+
+        throttling: the throttling timing, default 60
     """
     subscription_payload = {
         "description": "Pharma subscription",
         "subject": {
-            "entities": [{"idPattern": ".*", "type": config["entity"]}],
+            "entities": [{"idPattern": ".*", "type": entity}],
             "condition": {
-                "attrs": config["attrs"]
+                "attrs": attrs
             }
         },
         "notification": {
             "http": {
-                "url": config["notification"]["url"]
+                "url": notification_url
             },
-            "attrs": config["notification"]["attrs"],
-            "metadata": config["notification"]["metadata"]
+            "attrs": notification_attrs,
+            "metadata": notification_metadata
         },
-        "throttling": 60
+        "throttling": throttling
     }
 
     headers = {
         "Content-Type": "application/json",
     }
 
-    response = requests.post(config["orion-host"], json=subscription_payload, headers=headers)
+    response = requests.post(orion_host, json=subscription_payload, headers=headers)
 
     if response.status_code == 201:
-        print("Subscription created successfully.")
+        logging.info("Subscription created successfully.")
     else:
-        print(f"Failed to create subscription: {response.text}")
-
-
-if __name__ == "__main__":
-    """
-    Check if the subscription is active and if not, subscribe to it
-    """
-    if not check_existing_subscriptions(config["orion_endpoint"], config["entities"], config["notification"]["url"]):
-        subscribe()
+        logging.error(f"Failed to create subscription: {response.text}")

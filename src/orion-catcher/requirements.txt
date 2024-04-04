@@ -1,5 +1,0 @@
-pyyaml
-requests
-fastapi
-dagster
-uvicorn
