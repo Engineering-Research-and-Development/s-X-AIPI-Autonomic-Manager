@@ -7,18 +7,18 @@ orion_catcher = FastAPI()
 config_file = "config.yml"
 
 
-@orion_catcher.on_event("startup")
-async def subscribe():
-    with open(config_file, "r") as f:
-        config = yaml.safe_load(f)
-
-    for k in config.keys():
-        service = config[k]
-        if not check_existing_subscriptions(service["orion_endpoint"], service["entity"],
-                                            service["notification"]["url"]):
-            await subscribe(service["entity"], service["attrs"], service["notification"]["url"],
-                            service["notification"]["attrs"], service["notification"]["metadata"],
-                            service["orion-host"])
+# @orion_catcher.on_event("startup")
+# async def subscribe():
+#     with open(config_file, "r") as f:
+#         config = yaml.safe_load(f)
+#
+#     for k in config.keys():
+#         service = config[k]
+#         if not check_existing_subscriptions(service["orion_endpoint"], service["entity"],
+#                                             service["notification"]["url"]):
+#             await subscribe(service["entity"], service["attrs"], service["notification"]["url"],
+#                             service["notification"]["attrs"], service["notification"]["metadata"],
+#                             service["orion-host"])
 
 
 @orion_catcher.post("/pharma")

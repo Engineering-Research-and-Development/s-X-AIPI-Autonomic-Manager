@@ -9,15 +9,7 @@ BAD = "Bad"
 GOOD = "Good"
 
 
-def add_param_to_body(body, param_name, param_value, now):
-    if param_value is not None:
-        body[param_name] = {}
-        body[param_name]["type"] = "Property"
-        body[param_name]["value"] = {}
-        body[param_name]["value"]["value"] = param_value
-        body[param_name]["value"]["dateUpdated"] = now
 
-    return body
 
 
 class HistoricDataComparer:
