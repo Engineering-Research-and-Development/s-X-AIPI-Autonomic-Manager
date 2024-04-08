@@ -13,33 +13,6 @@ volumes:
 
 services:
 
-
-  orion:
-    hostname: orion
-    image: fiware/orion-ld:0.7.0
-    networks:
-      - s-x-aipi
-    ports:
-      - "1026:1026"
-    depends_on:
-      - orion_mongo
-    command: -statCounters -dbhost orion_mongo -logLevel INFO -forwarding
-    restart: always
-
-
-  orion_mongo:
-      hostname: orion_mongo
-      image: mongo:4.4
-      networks:
-        - s-x-aipi
-      ports:
-        - "27017:27017"
-      volumes:
-        - orion_mongo_data:/data/db
-        - orion_mongo_conf:/data/configdb
-      command: --nojournal
-
-
   postgres:
     image: postgres:16
     environment:
@@ -83,10 +56,10 @@ services:
     networks:
       - s-x-aipi
     ports:
-      - 18081:18081
-      - 18082:18082
-      - 19092:19092
-      - 19644:9644
+      - "18081:18081"
+      - "18082:18082"
+      - "19092:19092"
+      - "19644:9644"
 
 
   redpanda-console:
@@ -109,15 +82,26 @@ services:
             enabled: true
             urls: ["http://redpanda-0:9644"]
     ports:
-      - 8080:8080
+      - "8080:8080"
     depends_on:
       - redpanda-0
 
   s-x-aipi-orion-catcher:
     container_name: s-x-aipi-orion-catcher
-    build: src/orion_catcher
+    build: src
     networks:
       - s-x-aipi
+    command:
+      - "uvicorn"
+      - "orion_catcher.main:orion_catcher"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "8001"
+    ports:
+      - "8001:8001"
+    expose:
+      - "8001"
 
 
   # This service runs dagster_service-webserver, which loads your user code from the user code container.
@@ -128,7 +112,7 @@ services:
       context: .
       dockerfile: src/dagster_service/Dockerfile_dagster
     entrypoint:
-      - dagster_service-webserver
+      - dagster-webserver
       - -h
       - "0.0.0.0"
       - -p
@@ -158,7 +142,7 @@ services:
       context: .
       dockerfile: src/dagster_service/Dockerfile_dagster
     entrypoint:
-      - dagster_service-daemon
+      - dagster-daemon
       - run
     container_name: dagster_daemon
     restart: on-failure

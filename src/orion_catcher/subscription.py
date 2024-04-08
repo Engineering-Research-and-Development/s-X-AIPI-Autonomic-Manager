@@ -20,10 +20,6 @@ def check_existing_subscriptions(orion_endpoint: str, entity_type: str, callback
         True if an active subscription matching the provided entity_type and callback_url is found.
         False if no active subscription matching the provided criteria is found or if there was an error while
         retrieving the subscriptions.
-
-    Dependencies:
-
-        requests: This function relies on the requests library to send HTTP requests.
     """
     headers = {
         'Content-Type': 'application/json',

@@ -1,7 +1,7 @@
 import yaml
 from fastapi import FastAPI
 from dagster_service.Pharma.main import process_message
-from subscription import check_existing_subscriptions, subscribe
+from .subscription import check_existing_subscriptions, subscribe
 
 orion_catcher = FastAPI()
 config_file = "config.yml"
@@ -49,4 +49,3 @@ async def webhook_handler(data: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(orion_catcher, host="0.0.0.0", port=8000)
-
