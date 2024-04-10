@@ -6,6 +6,7 @@ pharma:
 
   entity: "EntityType"
   orion_endpoint: "http://orion_host:port/v2/subscriptions"
+  kafka_topic: "pharma"
 
 asphalt:
   notification:
@@ -15,6 +16,7 @@ asphalt:
 
   entity: "EntityType"
   orion_endpoint: "http://orion_host:port/v2/subscriptions"
+  kafka_topic: "asphalt"
 
 steel:
   notification:
@@ -24,6 +26,7 @@ steel:
 
   entity: "EntityType"
   orion_endpoint: "http://orion_host:port/v2/subscriptions"
+  kafka_topic: "steel"
 
 aluminium:
   notification:
@@ -33,3 +36,4 @@ aluminium:
 
   entity: "EntityType"
   orion_endpoint: "http://orion_host:port/v2/subscriptions"
+  kafka_topic: "aluminium"
