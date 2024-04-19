@@ -1,14 +1,18 @@
 from datetime import datetime
-from typing import Any, List
+from typing import Any, List, Union
 
-THRESHOLD_OK = "ok"
-THRESHOLD_LOW = "lower_threshold"
-THRESHOLD_HIGH = "upper_threshold"
+THRESHOLD_OK = "Ok"
+THRESHOLD_LOW = "Lower_Threshold"
+THRESHOLD_HIGH = "Upper_Threshold"
 THRESHOLD_ERROR = "AM_Error"
 
 UNCONFIRMED = "Unconfirmed"
 STATUS_BAD = "Bad"
 STATUS_GOOD = "Good"
+
+HISTORY_BAD = "Deteriorating_Change"
+HISTORY_GOOD = "Improving_Change"
+
 
 HISTORICAL_DATA_SUFFIXES = ["_periods", "_status", "_previous"]
 
@@ -61,7 +65,8 @@ def update_data(values: List[Any], names: List[str], context: str):
     :param values: contains values for a body to be updated
     :param names: contains names of parameters
     :param context: NGSI-LD context
-    values contains updated period, acknowledgement status and status
+
+    values contains updated period, acknowledgement status and status (if historical data)
     """
 
     now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")

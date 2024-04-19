@@ -37,7 +37,6 @@ def discriminate_thresholds(
                 result_list.append(THRESHOLD_OK)
     except IndexError as e:
         # TODO: decide if insert error alarm or not
-        # alarm = AmRuleBasedEngineAlarm(solution_name, "AM Error", "Generic", None, str(e))
         logger.error(e)
 
     return result_list
@@ -68,10 +67,10 @@ def analyze_historical_data(periods_in_state_list: List[float],
         if periods_in_state > patience:
             if current_status not in acknowledgement_status or acknowledgement_status == UNCONFIRMED:
                 if current_status == STATUS_BAD:
-                    alarm_list.append(STATUS_BAD + " Change")
+                    alarm_list.append(HISTORY_BAD)
                 elif current_status == STATUS_GOOD:
-                    alarm_list.append(STATUS_GOOD + " Change")
+                    alarm_list.append(HISTORY_GOOD)
                 else:
-                    alarm_list.append("No Alarm")
+                    alarm_list.append(THRESHOLD_OK)
 
     return alarm_list
