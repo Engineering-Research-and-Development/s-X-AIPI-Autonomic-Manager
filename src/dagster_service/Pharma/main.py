@@ -9,12 +9,6 @@ from dagster import OpExecutionContext, job, op
 import yaml
 import os
 
-config_file = os.getenv('PHARMA-CONFIG', "./pharma_config.yml")
-with open(config_file, "r") as f:
-    config = yaml.safe_load(f)
-
-producer = KafkaProducer(bootstrap_servers=os.getenv('KAFKA-BROKER'))
-
 
 @op
 def make_elaboration(context: OpExecutionContext, message: dict):
@@ -25,6 +19,7 @@ def make_elaboration(context: OpExecutionContext, message: dict):
     return data, context
 
 
+'''
 @op
 def read_configuration(context: OpExecutionContext, message: dict):
     attrs_solution_1 = config["solution_1"]["inputs"]
@@ -39,18 +34,17 @@ def read_configuration(context: OpExecutionContext, message: dict):
     attrs_solution_3 = config["solution_3"]["inputs"]
 
     attrs_solution_4 = config["solution_4"]["inputs"]
+'''
 
 
 @job
-def process_message(message: str):
+def process_message(message: str, producer: KafkaProducer, config: dict):
     data, context = make_elaboration(message)
 
     # SOLUTION 1
     attrs_solution_1 = config["solution_1"]["inputs"]
     lowers_1 = config["solution_1"]["lower_thresholds"]
     uppers_1 = config["solution_1"]["upper_thresholds"]
-    solution_name_1 = "Solution 1"
-    alarm_type_1 = config["solution_1"]["alarm_type"]
     topic = config["solution_1"]["kafka_topic"]
     values_1 = monitor_operations.get_data_from_notification(data, attrs_solution_1)
     if len(values_1) > 1:
@@ -58,4 +52,4 @@ def process_message(message: str):
         status = compute_OCT_probe_status(alarms)
         values_1[0] = status
         payload = create_probe_status_payload(values_1, attrs_solution_1, context)
-        execute_operations.produce_kafka(producer, config, payload)
+        execute_operations.produce_kafka(producer, topic, payload)
