@@ -6,8 +6,6 @@ from src.dagster_service.commons import (monitor_operations,
                                          execute_operations)
 from pharma_operations import *
 from dagster import OpExecutionContext, job, op
-import yaml
-import os
 
 
 @op
@@ -38,7 +36,7 @@ def read_configuration(context: OpExecutionContext, message: dict):
 
 
 @job
-def process_message(message: str, producer: KafkaProducer, config: dict):
+def process_pharma(message: str, producer: KafkaProducer, config: dict):
     data, context = make_elaboration(message)
 
     # SOLUTION 1

@@ -2,7 +2,7 @@ import os
 import yaml
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from src.dagster_service.Pharma.main import process_message
+from src.dagster_service.Pharma.main import process_pharma
 from kafka import KafkaProducer
 from src.orion_catcher.subscription import check_existing_subscriptions, subscribe
 
@@ -35,7 +35,7 @@ orion_catcher = FastAPI(lifespan=lifespan)
 
 @orion_catcher.post("/pharma")
 async def webhook_handler(data: dict):
-    process_message.execute_in_process(input_values={"message": data,
+    process_pharma.execute_in_process(input_values={"message": data,
                                                      "producer": producer,
                                                      "config": service_config["pharma"]}
                                        )
