@@ -9,11 +9,11 @@ pharma:
   kafka_topic: "pharma"
 
   dag_config:
-    base_url: !secret base_url
-    small_window: "/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_smaller_time_window:001"
-    large_window: "/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_greater_time_window:001"
-    wp3_alarms: "/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_alarms:001"
-    output_entity: "/ngsi-ld/v1/entities/urn:ngsi-ld:Pharma_solution_output_1:001"
+    base_url: "http://0.0.0.0:2016/ngsi-ld/v1/entities/"
+    small_window: "urn:ngsi-ld:Pharma_smaller_time_window:001"
+    large_window: "urn:ngsi-ld:Pharma_greater_time_window:001"
+    wp3_alarms: "urn:ngsi-ld:Pharma_alarms:001"
+    output_entity: "urn:ngsi-ld:Pharma_solution_output_1:001"
     solution_1:
       inputs: [ "DataIngestion_OCT_probePositionEvaluation", "DataIngestion_OCT_probePosition_xPos", "DataIngestion_OCT_probePosition_yPos" ]
       lower_thresholds: [ 0.5, 400, 50 ]
@@ -25,6 +25,9 @@ pharma:
       inputs_2: [ "DataIngestion_OCT_signalQualityCheck_numBadImg" ]
       upper_thresholds_2: [ "DataIngestion_OCT_imageClassification_numGoodImg" ]
       pct_change_2: [ 10 ]
+      alarm_type_1: "Poor Signal Quality"
+      alarm_type_2: "Bad Image increase"
+      kafka_topic: "pharma_alerts-solution2"
     solution_3:
       inputs: [ "DataIngestion_OCT_signalQualityCheck_maxSignalIntensity" ]
     solution_4:

@@ -1,5 +1,4 @@
 from dagster import op, OpExecutionContext
-from typing import List
 from src.dagster_service.commons.utils import *
 
 
