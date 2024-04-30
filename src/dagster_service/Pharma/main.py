@@ -61,7 +61,7 @@ def process_pharma(message: str, producer: KafkaProducer, config: dict):
     topic_2 = config["solution_2"]["kafka_topic"]
     values_2_1 = monitor_operations.get_data_from_notification(data, attrs_solution_2_1)
     values_2_2 = monitor_operations.get_data_from_notification(data, attrs_solution_2_2)
-    alarm_type_2 = config["alarm_type_2"]
+    alarm_type_2 = config["solution_2"]["alarm_type_2"]
 
     if len(values_2_1) > 1 and data['id'] == config["wp3_alarms"]:
         payload = update_data([values_2_1], [attrs_solution_2_1], context)
@@ -69,13 +69,28 @@ def process_pharma(message: str, producer: KafkaProducer, config: dict):
 
     if len(values_2_2) > 1 and data['id'] == config["small"]:
         _, upper_thresh_2 = transform_operations.get_threshold_values_from_entity(data, [], uppers_2)
-        up_val = upper_thresh_2[0] * pct_2[0]/100
+        up_val = upper_thresh_2[0] * pct_2[0] / 100
         lowers_2_2 = [None]
         uppers_2_2 = [up_val]
         alarms_2_2 = analysis_operations.discriminate_thresholds(lowers_2_2, uppers_2_2, values_2_2)
         payloads_2_2 = plan_operations.create_alarm_threshold("Solution 2", alarm_type_2, attrs_solution_2_2,
-                                                          alarms_2_2, values_2_2, lowers_2_2, uppers_2_2)
-        payloads_2_2 = plan_operations.create_alarm_payloads(payloads_2_2, context)
-        url = config["base_url"] + config["output_entity"]
-        execute_operations.produce_orion_multi_message(url, payloads_2_2)
+                                                              alarms_2_2, values_2_2, lowers_2_2, uppers_2_2)
+        execute_operations.produce_kafka(producer, topic_2, payloads_2_2)
 
+    # SOLUTION 3
+    attrs_solution_3 = config["solution_3"]["inputs"]
+    topic_3 = config["solution_3"]["kafka_topic"]
+    values_3 = monitor_operations.get_data_from_notification(data, attrs_solution_3)
+
+    if len(values_3) > 1 and data['id'] == config["wp3_alarms"]:
+        payload = update_data([values_3], [attrs_solution_3], context)
+        execute_operations.produce_kafka(producer, topic_3, payload)
+
+    # SOLUTION 4
+    attrs_solution_4 = config["solution_4"]["inputs"]
+    topic_4 = config["solution_4"]["kafka_topic"]
+    values_4 = monitor_operations.get_data_from_notification(data, attrs_solution_4)
+
+    if len(values_4) > 1 and data['id'] == config["wp3_alarms"]:
+        payload = update_data([values_4], [attrs_solution_4], context)
+        execute_operations.produce_kafka(producer, topic_4, payload)
