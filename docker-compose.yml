@@ -8,8 +8,6 @@ networks:
 volumes:
   redpanda-0: null
   postgres-db-volume:
-  orion_mongo_data:
-  orion_mongo_conf:
 
 services:
 

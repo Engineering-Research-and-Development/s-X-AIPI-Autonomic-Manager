@@ -14,12 +14,14 @@ pharma:
     large_window: "urn:ngsi-ld:Pharma_greater_time_window:001"
     wp3_alarms: "urn:ngsi-ld:Pharma_alarms:001"
     output_entity: "urn:ngsi-ld:Pharma_solution_output_1:001"
+
     solution_1:
       inputs: [ "DataIngestion_OCT_probePositionEvaluation", "DataIngestion_OCT_probePosition_xPos", "DataIngestion_OCT_probePosition_yPos" ]
       lower_thresholds: [ 0.5, 400, 50 ]
       upper_thresholds: [ null, 900, 200 ]
       alarm_type: "OCT Position Deviation"
       kafka_topic: "pharma_alerts-solution1"
+
     solution_2:
       inputs_1: [ "DataIngestion_OCT_signalQualityCheck_maxSignalIntensity" ]
       inputs_2: [ "DataIngestion_OCT_signalQualityCheck_numBadImg" ]
@@ -28,12 +30,15 @@ pharma:
       alarm_type_1: "Poor Signal Quality"
       alarm_type_2: "Bad Image increase"
       kafka_topic: "pharma_alerts-solution2"
+
     solution_3:
       inputs: [ "DataIngestion_IR_numberOfValues", "DataIngestion_IR_plsModelReliability", "DataIngestion_IR_frequency"]
       kafka_topic: "pharma_alerts-solution3"
+
     solution_4:
       inputs: [ "DataIngestion_PWR_numberOfValues", "DataIngestion_PWR_frequency"]
       kafka_topic: "pharma_alerts-solution4"
+
     solution_5:
       inputs_1: ["RuntimeAIProcessing_Prediction_timeframe", "RuntimeAIProcessing_Prediction_timestep",
       "RuntimeAIProcessing_Prediction_status" ]

@@ -36,9 +36,9 @@ orion_catcher = FastAPI(lifespan=lifespan)
 @orion_catcher.post("/pharma")
 async def webhook_handler(data: dict):
     process_pharma.execute_in_process(input_values={"message": data,
-                                                     "producer": producer,
-                                                     "config": service_config["pharma"]}
-                                       )
+                                                    "producer": producer,
+                                                    "config": service_config["pharma"]}
+                                      )
     # producer.send(topics["pharma"], "Pharma pipeline triggered successfully!".encode())
     return {"message": "Pharma pipeline triggered successfully!"}
 

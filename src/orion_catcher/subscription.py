@@ -48,22 +48,23 @@ def subscribe(entity: str, attrs: str, notification_url: str, notification_attrs
     Perform the subscription to the entity using the parameters in the 'config' yaml file
 
     Parameters:
-        entity: the entity to subscribe
+        entity (str): the entity to subscribe
 
-        attrs: the condition attributes
+        attrs (str): the condition attributes
 
-        notification_url: the URL where to get the notifications
+        notification_url (str): the URL where to get the notifications
 
-        notification_attrs: the attributes of the notification
+        notification_attrs (str): the attributes of the notification
 
-        notification_metadata: the notification metadata
+        notification_metadata (str): the notification metadata
 
-        orion_host: the Orion endpoint
+        orion_host (str): the Orion endpoint
 
-        throttling: the throttling timing, default 60
+        throttling (int): the throttling timing, default 60
     """
+    subscription_name = f"{entity} subscription"
     subscription_payload = {
-        "description": "Pharma subscription",
+        "description": subscription_name,
         "subject": {
             "entities": [{"idPattern": ".*", "type": entity}],
             "condition": {
