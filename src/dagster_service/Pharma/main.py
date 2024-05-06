@@ -1,10 +1,10 @@
 from kafka import KafkaProducer
-from src.dagster_service.commons import (monitor_operations,
-                                         analysis_operations,
-                                         transform_operations,
-                                         plan_operations,
-                                         execute_operations)
-from pharma_operations import *
+from commons import (monitor_operations,
+                     analysis_operations,
+                     transform_operations,
+                     plan_operations,
+                     execute_operations)
+from .pharma_operations import *
 from dagster import OpExecutionContext, job, op
 
 

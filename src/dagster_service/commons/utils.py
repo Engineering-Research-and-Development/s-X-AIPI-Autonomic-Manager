@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import Any, List, Union
 
 THRESHOLD_OK = "Ok"
 THRESHOLD_LOW = "Lower_Threshold"
@@ -17,7 +16,7 @@ HISTORY_GOOD = "Improving_Change"
 HISTORICAL_DATA_SUFFIXES = ["_periods", "_status", "_previous"]
 
 
-def build_historical_data_attribute_names(attribute_name) -> List[str]:
+def build_historical_data_attribute_names(attribute_name) -> list[str]:
     """
     Programmatically builds attribute names from the historical data to gather
 
@@ -26,7 +25,7 @@ def build_historical_data_attribute_names(attribute_name) -> List[str]:
     return names
 
 
-def pick_historical_data_values(names: List[str], entity: dict) -> List[float]:
+def pick_historical_data_values(names: list[str], entity: dict) -> list[float]:
     """
 
     @param names: list of names from which to pick data
@@ -39,7 +38,7 @@ def pick_historical_data_values(names: List[str], entity: dict) -> List[float]:
         raise KeyError
 
 
-def add_param_to_body(body: dict, param_name: str, param_value: Any, now: str):
+def add_param_to_body(body: dict, param_name: str, param_value, now: str):
     """
     Updates an NGSI-LD payload with new attributes
     :param body: starting object to populate
@@ -58,7 +57,7 @@ def add_param_to_body(body: dict, param_name: str, param_value: Any, now: str):
     return body
 
 
-def update_data(values: List[Any], names: List[str], context: str):
+def update_data(values: [], names: [str], context: str):
     """
     Update data in Orion Context Broker upon change detection
 

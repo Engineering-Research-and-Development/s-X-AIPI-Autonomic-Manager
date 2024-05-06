@@ -1,9 +1,9 @@
 from dagster import op, OpExecutionContext
-from src.dagster_service.commons.utils import *
+from commons.utils import *
 
 
 @op
-def compute_OCT_probe_status(context: OpExecutionContext, status_list: List[str]) -> int:
+def compute_OCT_probe_status(context: OpExecutionContext, status_list: list[str]) -> int:
     status = 1
     for status in status_list:
         if status != THRESHOLD_OK:
@@ -15,8 +15,8 @@ def compute_OCT_probe_status(context: OpExecutionContext, status_list: List[str]
 
 @op
 def create_probe_status_payload(context: OpExecutionContext,
-                                values: List[float],
-                                names: List[str],
+                                values: list[float],
+                                names: list[str],
                                 payload_context: str) -> dict:
 
     return update_data(values, names, payload_context)

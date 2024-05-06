@@ -1,18 +1,18 @@
 from dagster import op, OpExecutionContext
 from logging import Logger
 
-from utils import *
+from .utils import *
 
 logger = Logger(__name__)
 
 
 @op
 def update_historical_data(context: OpExecutionContext,
-                           current_status_list: List(str),
-                           periods_in_state_list: List[float],
-                           acknowledgement_status_list: List[str],
-                           previous_status_list: List[str],
-                           attribute_names: List[str],
+                           current_status_list: list[str],
+                           periods_in_state_list: list[float],
+                           acknowledgement_status_list: list[str],
+                           previous_status_list: list[str],
+                           attribute_names: list[str],
                            payload_context: str,
                            ) -> dict:
     """
@@ -29,7 +29,7 @@ def update_historical_data(context: OpExecutionContext,
                 len(attribute_names) != len(acknowledgement_status_list) or
                 len(attribute_names) != len(previous_status_list) or
                 len(attribute_names) != len(current_status_list)):
-            raise IndexError("List values are not the same")
+            raise IndexError("list values are not the same")
     except IndexError as e:
         logger.error(e)
 
@@ -57,13 +57,13 @@ def update_historical_data(context: OpExecutionContext,
 @op
 def create_alarm_threshold(context: OpExecutionContext,
                            solution_name: str,
-                           alarm_type: List[str],
-                           attribute_names: List[str],
-                           rule_results: List[str],
-                           values: List[float],
-                           lower_thresholds: List[float],
-                           upper_thresholds: List[float]
-                           ) -> List[dict]:
+                           alarm_type: list[str],
+                           attribute_names: list[str],
+                           rule_results: list[str],
+                           values: list[float],
+                           lower_thresholds: list[float],
+                           upper_thresholds: list[float]
+                           ) -> list[dict]:
     """
 
     Args:
@@ -75,7 +75,7 @@ def create_alarm_threshold(context: OpExecutionContext,
         lower_thresholds: lower threshold of attributes
         upper_thresholds: upper threshold of attributes
 
-    Returns: List[dict] list of alarms to send
+    Returns: list[dict] list of alarms to send
 
     """
 
@@ -102,13 +102,13 @@ def create_alarm_threshold(context: OpExecutionContext,
 @op
 def create_alarm_history(context: OpExecutionContext,
                          solution_name: str,
-                         alarm_type: List[str],
-                         attribute_names: List[str],
-                         rule_results: List[str],
-                         values: List[float],
-                         periods: List[int],
-                         acknowledged_status_list : List[str]
-                         ) -> List[dict]:
+                         alarm_type: list[str],
+                         attribute_names: list[str],
+                         rule_results: list[str],
+                         values: list[float],
+                         periods: list[int],
+                         acknowledged_status_list: list[str]
+                         ) -> list[dict]:
     """
 
     Args:
@@ -118,15 +118,15 @@ def create_alarm_history(context: OpExecutionContext,
         rule_results: results of RBE
         values: current values of attributes
         periods: periods in which the current status changed
-        acknowledged_status_list: List of acknowledge status
+        acknowledged_status_list: list of acknowledge status
 
-    Returns: List[dict] list of alarms to send
+    Returns: list[dict] list of alarms to send
 
     """
 
     list_results = []
     for attr, value, period, ack, result in zip(attribute_names, values, periods,
-                                           acknowledged_status_list, rule_results):
+                                                acknowledged_status_list, rule_results):
         if result == THRESHOLD_OK:
             continue
 
@@ -146,8 +146,8 @@ def create_alarm_history(context: OpExecutionContext,
 
 @op
 def create_alarm_payloads(context: OpExecutionContext,
-                          values: List[dict],
-                          payload_context: str) -> List[dict]:
+                          values: list[dict],
+                          payload_context: str) -> list[dict]:
     """
     Takes a list of alarm results [any] and returns a list of payloads for OCB
     Args:

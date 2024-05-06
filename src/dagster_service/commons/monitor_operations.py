@@ -1,5 +1,4 @@
 from dagster import op, OpExecutionContext
-from typing import List
 import requests
 
 
@@ -27,8 +26,8 @@ def get_data(context: OpExecutionContext,
 @op
 def get_data_from_notification(context: OpExecutionContext,
                                data_source: dict,
-                               attributes: List[str]
-                               ) -> List[float]:
+                               attributes: list[str]
+                               ) -> list[float]:
     """
     Get data from received notification, returning valuable information
     @param data_source: dictionary containing data payload from notification

@@ -1,3 +1,4 @@
 dagster~=1.6.14
 numpy~=1.26.4
 dagster-webserver
+kafka-python

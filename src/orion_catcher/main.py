@@ -45,19 +45,19 @@ async def webhook_handler(data: dict):
 
 @orion_catcher.post("/asphalt")
 async def webhook_handler(data: dict):
-    process_message(context={}, message=data)
+    # process_message(context={}, message=data)
     return {"message": "Pipeline triggered successfully!"}
 
 
 @orion_catcher.post("/steel")
 async def webhook_handler(data: dict):
-    process_message(context={}, message=data)
+    # process_message(context={}, message=data)
     return {"message": "Pipeline triggered successfully!"}
 
 
 @orion_catcher.post("/aluminium")
 async def webhook_handler(data: dict):
-    process_message(context={}, message=data)
+    # process_message(context={}, message=data)
     return {"message": "Pipeline triggered successfully!"}
 
 

@@ -2,7 +2,7 @@ from dagster import op, OpExecutionContext
 import numpy as np
 from logging import Logger
 
-from utils import *
+from .utils import *
 
 logger = Logger(__name__)
 
@@ -10,9 +10,9 @@ logger = Logger(__name__)
 @op
 def get_threshold_values_from_entity(context: OpExecutionContext,
                                      data_source: dict,
-                                     lower_names: List[str],
-                                     upper_names: List[str]
-                                     ) -> tuple[List[float], List[float]]:
+                                     lower_names: list[str],
+                                     upper_names: list[str]
+                                     ) -> tuple[list[float], list[float]]:
     """
     Get data from received notification, returning valuable information
     @param upper_names: names of attributes containing upper thresholds
@@ -31,9 +31,9 @@ def get_threshold_values_from_entity(context: OpExecutionContext,
 
 @op
 def get_threshold_from_pct_range(context: OpExecutionContext,
-                                 values: List[float],
-                                 pct_list: List[float]
-                                 ) -> tuple[List[float], List[float]]:
+                                 values: list[float],
+                                 pct_list: list[float]
+                                 ) -> tuple[list[float], list[float]]:
     """
 
     @param values: list of values from which to compute percentage
@@ -58,14 +58,14 @@ def get_threshold_from_pct_range(context: OpExecutionContext,
 @op
 def retrieve_values_from_historical_data(context: OpExecutionContext,
                                          historical_data: dict,
-                                         attribute_names: List[str],
-                                         ) -> tuple[List[float], List[str], List[str], str]:
+                                         attribute_names: list[str],
+                                         ) -> tuple[list[float], list[str], list[str], str]:
     """
     Function to gather values for historical data given retrieved payload
 
     @param historical_data: historical entity data
     @param attribute_names: attributes to search in the historical entity
-    @return: List of values (periods_in_state, acknowledgement_status, previous_state) and its context value
+    @return: list of values (periods_in_state, acknowledgement_status, previous_state) and its context value
     """
     periods_list = []
     ack_list = []

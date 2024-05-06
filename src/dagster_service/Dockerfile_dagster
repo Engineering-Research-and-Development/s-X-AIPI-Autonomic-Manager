@@ -11,11 +11,15 @@ RUN pip install \
     dagster-docker
 
 # Set $DAGSTER_HOME and copy dagster instance and workspace YAML there
-ENV DAGSTER_HOME=/opt/dagster/dagster_home/
+ENV DAGSTER_HOME=/opt/dagster/dagster_home/dagster_service
 
 RUN mkdir -p $DAGSTER_HOME
 
 COPY src/dagster_service/dagster.yaml $DAGSTER_HOME
 COPY src/dagster_service/workspace.yaml $DAGSTER_HOME
+COPY src/dagster_service* $DAGSTER_HOME
+
+RUN pip install -r $DAGSTER_HOME/requirements.txt
+RUN pip install -e $DAGSTER_HOME
 
 WORKDIR $DAGSTER_HOME

@@ -1,26 +1,25 @@
 from dagster import op, OpExecutionContext
-from typing import List
 from logging import Logger
 
-from utils import *
+from .utils import *
 
 logger = Logger(__name__)
 
 
 @op
 def discriminate_thresholds(context: OpExecutionContext,
-                            lower_thresholds: List[float],
-                            upper_thresholds: List[float],
-                            values: List[float]
-                            ) -> List[str]:
+                            lower_thresholds: list[float],
+                            upper_thresholds: list[float],
+                            values: list[float]
+                            ) -> list[str]:
     """
     Function to discriminate if values are in threshold
 
-    :param values: (List[float]) values from OCB entity to be checked
-    :param lower_thresholds: (List[float]) list of ordered lower thresholds to be respected
-    :param upper_thresholds: (List[float]) list of ordered upper thresholds to be respected
+    :param values: (list[float]) values from OCB entity to be checked
+    :param lower_thresholds: (list[float]) list of ordered lower thresholds to be respected
+    :param upper_thresholds: (list[float]) list of ordered upper thresholds to be respected
 
-    :return result_list: (List[str]) list of results from the previous analysis
+    :return result_list: (list[str]) list of results from the previous analysis
 
     """
 
@@ -45,11 +44,11 @@ def discriminate_thresholds(context: OpExecutionContext,
 
 @op
 def analyze_historical_data(context: OpExecutionContext,
-                            periods_in_state_list: List[float],
-                            acknowledgement_status_list: List[str],
-                            rules_status: List[str],
+                            periods_in_state_list: list[float],
+                            acknowledgement_status_list: list[str],
+                            rules_status: list[str],
                             patience: int
-                            ) -> List[str]:
+                            ) -> list[str]:
     """
     Confront current values versus previous value to check for alarm generation
 
@@ -57,7 +56,7 @@ def analyze_historical_data(context: OpExecutionContext,
     @param periods_in_state_list: list of values for periods_in_state status for each attribute
     @param rules_status: results from threshold analysis
     @param patience: number of periods for status
-    @return: List(str) It might return "No Alarm", "Good Change", "Bad Change"
+    @return: list(str) It might return "No Alarm", "Good Change", "Bad Change"
     """
 
     alarm_list = []

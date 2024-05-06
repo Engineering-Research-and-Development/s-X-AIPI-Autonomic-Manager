@@ -3,7 +3,6 @@ import requests
 import json
 from logging import Logger
 from kafka import KafkaProducer
-from typing import List, Union
 
 logger = Logger(__name__)
 
@@ -29,13 +28,13 @@ def patch_orion(context: OpExecutionContext, url: str, payload):
 def produce_kafka(context: OpExecutionContext,
                   producer: KafkaProducer,
                   topic: str,
-                  messages: Union[List[dict], dict]):
+                  messages: list[dict]):
     """
     :param producer: Instance of Kafka Broker
     :param topic: Topic in which to write message
-    :param messages: List of dict message to be written in Kafka topic
+    :param messages: list of dict message to be written in Kafka topic
     """
-    if type(messages) is not List:
+    if type(messages) is not list:
         producer.send(topic, json.dumps(messages))
         return
 
@@ -46,10 +45,10 @@ def produce_kafka(context: OpExecutionContext,
 @op
 def produce_orion_multi_message(context: OpExecutionContext,
                                 url: str,
-                                messages: List[dict]):
+                                messages: list[dict]):
     """
     :param url: url of alarm entity on OCB
-    :param messages: List of dict message to be written in Kafka topic
+    :param messages: list of dict message to be written in Kafka topic
     """
     url = url + "/attrs/"
     headers = {"Content-Type": "application/ld+json"}
