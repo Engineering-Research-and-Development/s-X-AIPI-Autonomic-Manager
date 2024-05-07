@@ -5,8 +5,10 @@ from dagster_service.commons import (monitor_operations,
                                      transform_operations,
                                      plan_operations,
                                      execute_operations)
-from .pharma_operations import *
-from dagster import job, multi_asset, AssetOut, Output
+from .pharma_operations import compute_OCT_probe_status, create_probe_status_payload
+from dagster import job, multi_asset, AssetOut, Output, op
+
+from dagster_service.commons.utils import update_data
 
 
 @multi_asset(outs={"incoming_data": AssetOut(), "producer": AssetOut(), "service_config": AssetOut()})
@@ -50,12 +52,12 @@ def elaborate_solution2(data: dict, producer: KafkaProducer, config: dict):
     if len(values_2) > 1 and data['id'] == config["small"]:
         _, upper_thresh_2 = transform_operations.get_threshold_values_from_entity(data, [], uppers)
         up_val = upper_thresh_2[0] * pct[0] / 100
-        lowers_2_2 = [None]
-        uppers_2_2 = [up_val]
-        alarms_2_2 = analysis_operations.discriminate_thresholds(lowers_2_2, uppers_2_2, values_2)
-        payloads_2_2 = plan_operations.create_alarm_threshold("Solution 2", alarm_type_2, attrs_2,
-                                                              alarms_2_2, values_2, lowers_2_2, uppers_2_2)
-        execute_operations.produce_kafka(producer, topic, payloads_2_2)
+        lowers = [None]
+        uppers = [up_val]
+        alarms = analysis_operations.discriminate_thresholds(lowers, uppers, values_2)
+        payloads = plan_operations.create_alarm_threshold("Solution 2", alarm_type_2, attrs_2,
+                                                          alarms, values_2, lowers, uppers)
+        execute_operations.produce_kafka(producer, topic, payloads)
 
 
 @op
