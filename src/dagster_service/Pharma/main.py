@@ -1,98 +1,97 @@
 from kafka import KafkaProducer
+
 from dagster_service.commons import (monitor_operations,
                                      analysis_operations,
                                      transform_operations,
                                      plan_operations,
                                      execute_operations)
-from dagster_service.commons.utils import update_data
 from .pharma_operations import *
-from dagster import OpExecutionContext, job, op
+from dagster import job, multi_asset, AssetOut, Output
 
+
+@multi_asset(outs={"incoming_data": AssetOut(), "producer": AssetOut(), "service_config": AssetOut()})
+def unpack_data(data: dict):
+    yield Output(data["incoming_data"], output_name="incoming_data")
+    yield Output(data["producer"], output_name="producer")
+    yield Output(data["service_config"], output_name="service_config")
 
 
 @op
-def make_elaboration(context: OpExecutionContext, message: dict):
-    # Process the received message
-    context.log.info(f"Received message: {message}")
-    data = message["data"]
-    context = data['@context']
-    return data, context
+def elaborate_solution1(data: dict, producer: KafkaProducer, config: dict):
+    attrs = config["solution_1"]["inputs"]
+    lowers = config["solution_1"]["lower_thresholds"]
+    uppers = config["solution_1"]["upper_thresholds"]
+    topic = config["solution_1"]["kafka_topic"]
+    values = monitor_operations.get_data_from_notification(data, attrs)
+
+    if len(values) > 1:
+        alarms = analysis_operations.discriminate_thresholds(lowers, uppers, values)
+        new_status = compute_OCT_probe_status(alarms)
+        values[0] = new_status
+        payload = create_probe_status_payload(values, attrs)
+        execute_operations.produce_kafka(producer, topic, payload)
 
 
-'''
 @op
-def read_configuration(context: OpExecutionContext, message: dict):
-    attrs_solution_1 = config["solution_1"]["inputs"]
-    attrs_lowers_1 = config["solution_1"]["lower_thresholds"]
-    attrs_uppers_1 = config["solution_1"]["upper_thresholds"]
+def elaborate_solution2(data: dict, producer: KafkaProducer, config: dict):
+    attrs_1 = config["solution_2"]["inputs_1"]
+    attrs_2 = config["solution_2"]["inputs_2"]
+    uppers = config["solution_2"]["upper_thresholds_2"]
+    pct = config["solution_2"]["pct_change_2"]
+    topic = config["solution_2"]["kafka_topic"]
+    values_1 = monitor_operations.get_data_from_notification(data, attrs_1)
+    values_2 = monitor_operations.get_data_from_notification(data, attrs_2)
+    alarm_type_2 = config["solution_2"]["alarm_type_2"]
 
-    attrs_solution_2_1 = config["solution_2"]["inputs_1"]
-    attrs_solution_2_2 = config["solution_2"]["inputs_2"]
-    attrs_uppers_2_2 = config["solution_2"]["upper_thresholds_2"]
-    attrs_pct_change2_2 = config["solution_2"]["pct_change_2"]
+    if len(values_1) > 1 and data['id'] == config["wp3_alarms"]:
+        payload = update_data([values_1], [attrs_1])
+        execute_operations.produce_kafka(producer, topic, payload)
 
-    attrs_solution_3 = config["solution_3"]["inputs"]
+    if len(values_2) > 1 and data['id'] == config["small"]:
+        _, upper_thresh_2 = transform_operations.get_threshold_values_from_entity(data, [], uppers)
+        up_val = upper_thresh_2[0] * pct[0] / 100
+        lowers_2_2 = [None]
+        uppers_2_2 = [up_val]
+        alarms_2_2 = analysis_operations.discriminate_thresholds(lowers_2_2, uppers_2_2, values_2)
+        payloads_2_2 = plan_operations.create_alarm_threshold("Solution 2", alarm_type_2, attrs_2,
+                                                              alarms_2_2, values_2, lowers_2_2, uppers_2_2)
+        execute_operations.produce_kafka(producer, topic, payloads_2_2)
 
-    attrs_solution_4 = config["solution_4"]["inputs"]
-'''
+
+@op
+def elaborate_solution3(data: dict, producer: KafkaProducer, config: dict):
+    attrs = config["solution_3"]["inputs"]
+    topic = config["solution_3"]["kafka_topic"]
+    values = monitor_operations.get_data_from_notification(data, attrs)
+
+    if len(values) > 1 and data['id'] == config["wp3_alarms"]:
+        payload = update_data([values], [attrs])
+        execute_operations.produce_kafka(producer, topic, payload)
+
+
+@op
+def elaborate_solution4(data: dict, producer: KafkaProducer, config: dict):
+    attrs = config["solution_4"]["inputs"]
+    topic = config["solution_4"]["kafka_topic"]
+    values = monitor_operations.get_data_from_notification(data, attrs)
+
+    if len(values) > 1 and data['id'] == config["wp3_alarms"]:
+        payload = update_data([values], [attrs])
+        execute_operations.produce_kafka(producer, topic, payload)
 
 
 @job
-def process_pharma(message: str, producer: KafkaProducer, config: dict):
-    data, context = make_elaboration(message)
+def process_pharma():
+    incoming_data, producer, config = unpack_data()
 
     # SOLUTION 1
-    attrs_solution_1 = config["solution_1"]["inputs"]
-    lowers_1 = config["solution_1"]["lower_thresholds"]
-    uppers_1 = config["solution_1"]["upper_thresholds"]
-    topic_1 = config["solution_1"]["kafka_topic"]
-    values_1 = monitor_operations.get_data_from_notification(data, attrs_solution_1)
-
-    if len(values_1) > 1:
-        alarms = analysis_operations.discriminate_thresholds(lowers_1, uppers_1, values_1)
-        new_status = compute_OCT_probe_status(alarms)
-        values_1[0] = new_status
-        payload = create_probe_status_payload(values_1, attrs_solution_1, context)
-        execute_operations.produce_kafka(producer, topic_1, payload)
+    elaborate_solution1(incoming_data, producer, config)
 
     # SOLUTION 2
-    attrs_solution_2_1 = config["solution_2"]["inputs_1"]
-    attrs_solution_2_2 = config["solution_2"]["inputs_2"]
-    uppers_2 = config["solution_2"]["upper_thresholds_2"]
-    pct_2 = config["solution_2"]["pct_change_2"]
-    topic_2 = config["solution_2"]["kafka_topic"]
-    values_2_1 = monitor_operations.get_data_from_notification(data, attrs_solution_2_1)
-    values_2_2 = monitor_operations.get_data_from_notification(data, attrs_solution_2_2)
-    alarm_type_2 = config["solution_2"]["alarm_type_2"]
-
-    if len(values_2_1) > 1 and data['id'] == config["wp3_alarms"]:
-        payload = update_data([values_2_1], [attrs_solution_2_1], context)
-        execute_operations.produce_kafka(producer, topic_2, payload)
-
-    if len(values_2_2) > 1 and data['id'] == config["small"]:
-        _, upper_thresh_2 = transform_operations.get_threshold_values_from_entity(data, [], uppers_2)
-        up_val = upper_thresh_2[0] * pct_2[0] / 100
-        lowers_2_2 = [None]
-        uppers_2_2 = [up_val]
-        alarms_2_2 = analysis_operations.discriminate_thresholds(lowers_2_2, uppers_2_2, values_2_2)
-        payloads_2_2 = plan_operations.create_alarm_threshold("Solution 2", alarm_type_2, attrs_solution_2_2,
-                                                              alarms_2_2, values_2_2, lowers_2_2, uppers_2_2)
-        execute_operations.produce_kafka(producer, topic_2, payloads_2_2)
+    elaborate_solution2(incoming_data, producer, config)
 
     # SOLUTION 3
-    attrs_solution_3 = config["solution_3"]["inputs"]
-    topic_3 = config["solution_3"]["kafka_topic"]
-    values_3 = monitor_operations.get_data_from_notification(data, attrs_solution_3)
-
-    if len(values_3) > 1 and data['id'] == config["wp3_alarms"]:
-        payload = update_data([values_3], [attrs_solution_3], context)
-        execute_operations.produce_kafka(producer, topic_3, payload)
+    elaborate_solution3(incoming_data, producer, config)
 
     # SOLUTION 4
-    attrs_solution_4 = config["solution_4"]["inputs"]
-    topic_4 = config["solution_4"]["kafka_topic"]
-    values_4 = monitor_operations.get_data_from_notification(data, attrs_solution_4)
-
-    if len(values_4) > 1 and data['id'] == config["wp3_alarms"]:
-        payload = update_data([values_4], [attrs_solution_4], context)
-        execute_operations.produce_kafka(producer, topic_4, payload)
+    elaborate_solution4(incoming_data, producer, config)

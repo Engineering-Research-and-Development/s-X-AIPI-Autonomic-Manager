@@ -15,8 +15,7 @@ def compute_OCT_probe_status(context: OpExecutionContext, status_list: list[str]
 
 
 @op
-def create_probe_status_payload(context: OpExecutionContext,
-                                values: list[float],
+def create_probe_status_payload(values: list[float],
                                 names: list[str],
                                 payload_context: str) -> dict:
 

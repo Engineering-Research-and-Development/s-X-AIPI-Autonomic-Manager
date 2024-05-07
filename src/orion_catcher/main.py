@@ -1,6 +1,6 @@
 import os
 import yaml
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from contextlib import asynccontextmanager
 from src.dagster_service.Pharma.main import process_pharma
 from kafka import KafkaProducer
@@ -35,12 +35,14 @@ orion_catcher = FastAPI(lifespan=lifespan)
 
 @orion_catcher.post("/pharma")
 async def webhook_handler(data: dict):
-    process_pharma.execute_in_process(input_values={"message": data,
-                                                    "producer": producer,
-                                                    "config": service_config["pharma"]}
-                                      )
-    # producer.send(topics["pharma"], "Pharma pipeline triggered successfully!".encode())
-    return {"message": "Pharma pipeline triggered successfully!"}
+
+    result = process_pharma.execute_in_process(input_values={"incoming_data": data,
+                                                             "producer": producer,
+                                                             "service_config": service_config["pharma"]})
+    if result.success:
+        return {"message": "Pipeline executed successfully", "details": str(result)}
+    else:
+        raise HTTPException(status_code=500, detail="Failed to execute pipeline")
 
 
 @orion_catcher.post("/asphalt")
