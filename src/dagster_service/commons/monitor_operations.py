@@ -24,10 +24,9 @@ def get_data(context: OpExecutionContext,
 
 
 @op
-def get_data_from_notification(context: OpExecutionContext,
-                               data_source: dict,
+def get_data_from_notification(data_source: dict,
                                attributes: list[str]
-                               ) -> list[float]:
+                               ) -> list[float] | None:
     """
     Get data from received notification, returning valuable information
     @param data_source: dictionary containing data payload from notification
@@ -35,14 +34,13 @@ def get_data_from_notification(context: OpExecutionContext,
 
     @return: relevant attribute values
     """
-    context = data_source["@context"]
 
     try:
         values = [data_source[attribute]["value"]["value"] for attribute in attributes]
         return values
     except KeyError as e:
         print(e)
-        return []
+        return None
 
 
 

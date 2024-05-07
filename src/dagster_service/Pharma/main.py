@@ -19,11 +19,11 @@ def unpack_data(data: dict):
 
 
 @op
-def elaborate_solution1(data: dict, producer: KafkaProducer, config: dict):
-    attrs = config["solution_1"]["inputs"]
-    lowers = config["solution_1"]["lower_thresholds"]
-    uppers = config["solution_1"]["upper_thresholds"]
-    topic = config["solution_1"]["kafka_topic"]
+def elaborate_solution1(data: dict, producer: KafkaProducer, service_config: dict):
+    attrs = service_config["solution_1"]["inputs"]
+    lowers = service_config["solution_1"]["lower_thresholds"]
+    uppers = service_config["solution_1"]["upper_thresholds"]
+    topic = service_config["solution_1"]["kafka_topic"]
     values = monitor_operations.get_data_from_notification(data, attrs)
 
     if len(values) > 1:
@@ -35,21 +35,21 @@ def elaborate_solution1(data: dict, producer: KafkaProducer, config: dict):
 
 
 @op
-def elaborate_solution2(data: dict, producer: KafkaProducer, config: dict):
-    attrs_1 = config["solution_2"]["inputs_1"]
-    attrs_2 = config["solution_2"]["inputs_2"]
-    uppers = config["solution_2"]["upper_thresholds_2"]
-    pct = config["solution_2"]["pct_change_2"]
-    topic = config["solution_2"]["kafka_topic"]
+def elaborate_solution2(data: dict, producer: KafkaProducer, service_config: dict):
+    attrs_1 = service_config["solution_2"]["inputs_1"]
+    attrs_2 = service_config["solution_2"]["inputs_2"]
+    uppers = service_config["solution_2"]["upper_thresholds_2"]
+    pct = service_config["solution_2"]["pct_change_2"]
+    topic = service_config["solution_2"]["kafka_topic"]
     values_1 = monitor_operations.get_data_from_notification(data, attrs_1)
     values_2 = monitor_operations.get_data_from_notification(data, attrs_2)
-    alarm_type_2 = config["solution_2"]["alarm_type_2"]
+    alarm_type_2 = service_config["solution_2"]["alarm_type_2"]
 
-    if len(values_1) > 1 and data['id'] == config["wp3_alarms"]:
+    if len(values_1) > 1 and data['id'] == service_config["wp3_alarms"]:
         payload = update_data([values_1], [attrs_1])
         execute_operations.produce_kafka(producer, topic, payload)
 
-    if len(values_2) > 1 and data['id'] == config["small"]:
+    if len(values_2) > 1 and data['id'] == service_config["small"]:
         _, upper_thresh_2 = transform_operations.get_threshold_values_from_entity(data, [], uppers)
         up_val = upper_thresh_2[0] * pct[0] / 100
         lowers = [None]
@@ -61,39 +61,39 @@ def elaborate_solution2(data: dict, producer: KafkaProducer, config: dict):
 
 
 @op
-def elaborate_solution3(data: dict, producer: KafkaProducer, config: dict):
-    attrs = config["solution_3"]["inputs"]
-    topic = config["solution_3"]["kafka_topic"]
+def elaborate_solution3(data: dict, producer: KafkaProducer, service_config: dict):
+    attrs = service_config["solution_3"]["inputs"]
+    topic = service_config["solution_3"]["kafka_topic"]
     values = monitor_operations.get_data_from_notification(data, attrs)
 
-    if len(values) > 1 and data['id'] == config["wp3_alarms"]:
+    if len(values) > 1 and data['id'] == service_config["wp3_alarms"]:
         payload = update_data([values], [attrs])
         execute_operations.produce_kafka(producer, topic, payload)
 
 
 @op
-def elaborate_solution4(data: dict, producer: KafkaProducer, config: dict):
-    attrs = config["solution_4"]["inputs"]
-    topic = config["solution_4"]["kafka_topic"]
+def elaborate_solution4(data: dict, producer: KafkaProducer, service_config: dict):
+    attrs = service_config["solution_4"]["inputs"]
+    topic = service_config["solution_4"]["kafka_topic"]
     values = monitor_operations.get_data_from_notification(data, attrs)
 
-    if len(values) > 1 and data['id'] == config["wp3_alarms"]:
+    if values is not None and data['id'] == service_config["wp3_alarms"]:
         payload = update_data([values], [attrs])
         execute_operations.produce_kafka(producer, topic, payload)
 
 
 @job
 def process_pharma():
-    incoming_data, producer, config = unpack_data()
+    incoming_data, producer, service_config = unpack_data()
 
     # SOLUTION 1
-    elaborate_solution1(incoming_data, producer, config)
+    elaborate_solution1(incoming_data, producer, service_config)
 
     # SOLUTION 2
-    elaborate_solution2(incoming_data, producer, config)
+    elaborate_solution2(incoming_data, producer, service_config)
 
     # SOLUTION 3
-    elaborate_solution3(incoming_data, producer, config)
+    elaborate_solution3(incoming_data, producer, service_config)
 
     # SOLUTION 4
-    elaborate_solution4(incoming_data, producer, config)
+    elaborate_solution4(incoming_data, producer, service_config)

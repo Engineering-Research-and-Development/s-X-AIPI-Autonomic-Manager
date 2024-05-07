@@ -21,7 +21,7 @@ def patch_orion(context: OpExecutionContext, url: str, payload):
     try:
         requests.post(url, headers=headers, data=json.dumps(payload))
     except requests.exceptions.RequestException as e:
-        logger.error(e)
+        context.log.error(e)
 
 
 @op
