@@ -1,7 +1,7 @@
 from dagster import op, OpExecutionContext
 import requests
 
-
+'''
 @op
 def get_data(context: OpExecutionContext,
              source_url: str
@@ -21,6 +21,7 @@ def get_data(context: OpExecutionContext,
         print("Failed to retrieve data. Status code:", response.status_code)
         print("Response:", response.text)
         return {}
+'''
 
 
 @op
@@ -41,7 +42,3 @@ def get_data_from_notification(data_source: dict,
     except KeyError as e:
         print(e)
         return None
-
-
-
-

@@ -3,7 +3,6 @@ from logging import Logger
 
 from .utils import *
 
-logger = Logger(__name__)
 
 
 @op
@@ -31,7 +30,7 @@ def update_historical_data(context: OpExecutionContext,
                 len(attribute_names) != len(current_status_list)):
             raise IndexError("list values are not the same")
     except IndexError as e:
-        logger.error(e)
+        context.log.error(e)
 
     payload = {}
     for idx, attribute_name in enumerate(attribute_names):
@@ -55,8 +54,7 @@ def update_historical_data(context: OpExecutionContext,
 
 
 @op
-def create_alarm_threshold(context: OpExecutionContext,
-                           solution_name: str,
+def create_alarm_threshold(solution_name: str,
                            alarm_type: list[str],
                            attribute_names: list[str],
                            rule_results: list[str],
@@ -100,8 +98,7 @@ def create_alarm_threshold(context: OpExecutionContext,
 
 
 @op
-def create_alarm_history(context: OpExecutionContext,
-                         solution_name: str,
+def create_alarm_history(solution_name: str,
                          alarm_type: list[str],
                          attribute_names: list[str],
                          rule_results: list[str],
@@ -145,8 +142,7 @@ def create_alarm_history(context: OpExecutionContext,
 
 
 @op
-def create_alarm_payloads(context: OpExecutionContext,
-                          values: list[dict],
+def create_alarm_payloads(values: list[dict],
                           payload_context: str) -> list[dict]:
     """
     Takes a list of alarm results [any] and returns a list of payloads for OCB

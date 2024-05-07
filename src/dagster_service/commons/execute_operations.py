@@ -1,10 +1,7 @@
 from dagster import op, OpExecutionContext
 import requests
 import json
-from logging import Logger
 from kafka import KafkaProducer
-
-logger = Logger(__name__)
 
 
 @op
@@ -25,8 +22,7 @@ def patch_orion(context: OpExecutionContext, url: str, payload):
 
 
 @op
-def produce_kafka(context: OpExecutionContext,
-                  producer: KafkaProducer,
+def produce_kafka(producer: KafkaProducer,
                   topic: str,
                   messages: list[dict]):
     """
@@ -57,4 +53,4 @@ def produce_orion_multi_message(context: OpExecutionContext,
         try:
             requests.post(url, headers=headers, data=json.dumps(message))
         except requests.exceptions.RequestException as e:
-            logger.error(e)
+            context.log.error(e)

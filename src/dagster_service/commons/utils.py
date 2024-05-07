@@ -57,19 +57,19 @@ def add_param_to_body(body: dict, param_name: str, param_value, now: str):
     return body
 
 
-def update_data(values: [], names: [str]):
+def update_data(values: [], names: [str], payload_context: str):
     """
     Update data in Orion Context Broker upon change detection
 
     :param values: contains values for a body to be updated
     :param names: contains names of parameters
-    :param context: NGSI-LD context
+    :param payload_context: NGSI-LD context
 
     values contains updated period, acknowledgement status and status (if historical data)
     """
 
     now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
-    body = {'@context': None}
+    body = {'@context': payload_context}
 
     for name, value in zip(names, values):
         body = add_param_to_body(body, name, value, now)
