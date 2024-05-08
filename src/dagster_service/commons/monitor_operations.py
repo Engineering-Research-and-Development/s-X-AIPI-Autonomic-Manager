@@ -25,7 +25,7 @@ def get_data(context: OpExecutionContext,
 
 @op
 def get_data_from_notification(data_source: dict,
-                               attributes: list[str]
+                               attributes: list[str],
                                ) -> list[float]:
     """
     Get data from received notification, returning valuable information
@@ -34,12 +34,34 @@ def get_data_from_notification(data_source: dict,
 
     @return: relevant attribute values
     """
+    values = []
+    for attribute in attributes:
+        try:
+            values.append(data_source[attribute]["value"]["value"])
+        except KeyError as e:
+            print(e)
 
-    try:
-        for attribute in attributes:
-            print(data_source[attribute]["value"]["value"], attribute)
-        values = [float(data_source[attribute]["value"]["value"]) for attribute in attributes]
-        return values
-    except KeyError as e:
-        print(e)
-        return []
+    return values
+
+
+
+@op
+def get_data_from_wp3(data_source: dict,
+                      attributes: list[str]
+                      ) -> list[dict]:
+    """
+    Get data from received notification, returning valuable information
+    @param data_source: dictionary containing data payload from notification
+    @param attributes: list of attribute names from which to gather values
+
+    @return: relevant attribute values
+    """
+
+    values = []
+    for attribute in attributes:
+        try:
+            values.append(data_source[attribute]["value"])
+        except KeyError as e:
+            print(e)
+
+    return values

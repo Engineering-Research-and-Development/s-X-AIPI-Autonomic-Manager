@@ -24,7 +24,7 @@ pharma:
 
     solution_2:
       inputs_1: [ "DataIngestion_OCT_signalQualityCheck_maxSignalIntensity" ]
-      inputs_2: [ "DataIngestion_OCT_signalQualityCheck_numBadImg" ]
+      inputs_2: [ "DataIngestion_OCT_imageClassification_numBadImg" ]
       upper_thresholds_2: [ "DataIngestion_OCT_imageClassification_numGoodImg" ]
       pct_change_2: [ 10 ]
       alarm_type_1: "Poor Signal Quality"
@@ -32,16 +32,16 @@ pharma:
       kafka_topic: "pharma_alerts-solution2"
 
     solution_3:
-      inputs: [ "DataIngestion_IR_numberOfValues", "DataIngestion_IR_plsModelReliability", "DataIngestion_IR_frequency"]
+      inputs: [ "Pharma_DataIngestion_IR_numberOfValues", "Pharma_DataIngestion_IR_plsModelReliability", "Pharma_DataIngestion_IR_frequency"]
       kafka_topic: "pharma_alerts-solution3"
 
     solution_4:
-      inputs: [ "DataIngestion_PWR_numberOfValues", "DataIngestion_PWR_frequency"]
+      inputs: [ "Pharma_DataIngestion_PWR_numberOfValues", "Pharma_DataIngestion_PWR_frequency"]
       kafka_topic: "pharma_alerts-solution4"
 
     solution_5:
-      inputs_1: ["RuntimeAIProcessing_Prediction_timeframe", "RuntimeAIProcessing_Prediction_timestep",
-      "RuntimeAIProcessing_Prediction_status" ]
+      inputs_1: ["Pharma_RuntimeAIProcessing_Prediction_timeframe", "Pharma_RuntimeAIProcessing_Prediction_timestep",
+      "Pharma_RuntimeAIProcessing_Prediction_status" ]
       inputs_2: ["RuntimeAIProcessing_Prediction_MSE"]
       upper_thresholds_2: ["RuntimeAIProcessing_Prediction_MSE_Target"]
       kafka_topic: "pharma_alerts-solution5"

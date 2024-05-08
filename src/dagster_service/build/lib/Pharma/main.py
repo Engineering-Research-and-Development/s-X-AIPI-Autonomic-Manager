@@ -1,3 +1,4 @@
+import numpy as np
 from kafka import KafkaProducer
 
 from commons import (monitor_operations,
@@ -41,18 +42,19 @@ def elaborate_solution2(data: dict, producer: KafkaProducer, service_config: dic
     uppers = service_config["solution_2"]["upper_thresholds_2"]
     pct = service_config["solution_2"]["pct_change_2"]
     topic = service_config["solution_2"]["kafka_topic"]
-    values_1 = monitor_operations.get_data_from_notification(data, attrs_1)
+    values_1 = monitor_operations.get_data_from_wp3(data, attrs_1)
     values_2 = monitor_operations.get_data_from_notification(data, attrs_2)
     alarm_type_2 = service_config["solution_2"]["alarm_type_2"]
 
-    if len(values_1) > 1 and data['id'] == service_config["wp3_alarms"]:
+    if len(values_1) > 0 and data['id'] == service_config["wp3_alarms"]:
         payload = update_data([values_1], [attrs_1], data['@context'])
         execute_operations.produce_kafka(producer, topic, payload)
 
-    if len(values_2) > 1 and data['id'] == service_config["small"]:
+    print(values_2)
+    if len(values_2) > 0 and data['id'] == service_config["small_window"]:
         _, upper_thresh_2 = transform_operations.get_threshold_values_from_entity(data, [], uppers)
         up_val = upper_thresh_2[0] * pct[0] / 100
-        lowers = [None]
+        lowers = [-np.inf]
         uppers = [up_val]
         alarms = analysis_operations.discriminate_thresholds(lowers, uppers, values_2)
         payloads = plan_operations.create_alarm_threshold("Solution 2", alarm_type_2, attrs_2,
@@ -64,10 +66,12 @@ def elaborate_solution2(data: dict, producer: KafkaProducer, service_config: dic
 def elaborate_solution3(data: dict, producer: KafkaProducer, service_config: dict):
     attrs = service_config["solution_3"]["inputs"]
     topic = service_config["solution_3"]["kafka_topic"]
-    values = monitor_operations.get_data_from_notification(data, attrs)
+    values = monitor_operations.get_data_from_wp3(data, attrs)
+    print(values)
 
-    if len(values) > 1 and data['id'] == service_config["wp3_alarms"]:
-        payload = update_data([values], [attrs])
+    if len(values) > 0 and data['id'] == service_config["wp3_alarms"]:
+
+        payload = update_data([values], [attrs], data['@context'])
         execute_operations.produce_kafka(producer, topic, payload)
 
 
@@ -75,9 +79,9 @@ def elaborate_solution3(data: dict, producer: KafkaProducer, service_config: dic
 def elaborate_solution4(data: dict, producer: KafkaProducer, service_config: dict):
     attrs = service_config["solution_4"]["inputs"]
     topic = service_config["solution_4"]["kafka_topic"]
-    values = monitor_operations.get_data_from_notification(data, attrs)
+    values = monitor_operations.get_data_from_wp3(data, attrs)
 
-    if values is not None and data['id'] == service_config["wp3_alarms"]:
+    if len(values) > 0 and data['id'] == service_config["wp3_alarms"]:
         payload = update_data([values], [attrs], data['@context'])
         execute_operations.produce_kafka(producer, topic, payload)
 
@@ -90,10 +94,10 @@ def process_pharma(incoming_data, producer, service_config):
     elaborate_solution1(incoming_data, producer, service_config)
 
     # SOLUTION 2
-    #elaborate_solution2(incoming_data, producer, service_config)
+    elaborate_solution2(incoming_data, producer, service_config)
 
     # SOLUTION 3
-    #elaborate_solution3(incoming_data, producer, service_config)
+    elaborate_solution3(incoming_data, producer, service_config)
 
     # SOLUTION 4
-    #elaborate_solution4(incoming_data, producer, service_config)
+    elaborate_solution4(incoming_data, producer, service_config)

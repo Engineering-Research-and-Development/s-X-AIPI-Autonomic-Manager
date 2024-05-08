@@ -53,7 +53,7 @@ def update_historical_data(current_status_list: list[str],
 
 @op
 def create_alarm_threshold(solution_name: str,
-                           alarm_type: list[str],
+                           alarm_type: str,
                            attribute_names: list[str],
                            rule_results: list[str],
                            values: list[float],
