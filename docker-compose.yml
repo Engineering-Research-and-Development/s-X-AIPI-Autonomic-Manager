@@ -91,7 +91,7 @@ services:
       - s-x-aipi
     environment:
        KAFKA-BROKER: redpanda-0:9092
-       ORION-CONFIG: "orion_catcher/config.yml"
+       ORION-CONFIG: "orion_catcher/solutions_config.yml"
     command:
       - "uvicorn"
       - "orion_catcher.main:orion_catcher"

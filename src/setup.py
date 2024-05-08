@@ -1,5 +1,6 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='s-x-aipi service',
       version='0.0.1',
-      packages=['dagster_service', 'orion_catcher'])
+      packages=find_packages()
+      )

@@ -1,12 +1,12 @@
 from kafka import KafkaProducer
 
 from commons import (monitor_operations,
-                                     analysis_operations,
-                                     transform_operations,
-                                     plan_operations,
-                                     execute_operations)
+                     analysis_operations,
+                     transform_operations,
+                     plan_operations,
+                     execute_operations)
 from .pharma_operations import compute_OCT_probe_status, create_probe_status_payload
-from dagster import job, multi_asset, AssetOut, Output, op
+from dagster import job, multi_asset, AssetOut, Output, op, graph
 
 from commons.utils import update_data
 
@@ -77,14 +77,14 @@ def elaborate_solution4(data: dict, producer: KafkaProducer, service_config: dic
     topic = service_config["solution_4"]["kafka_topic"]
     values = monitor_operations.get_data_from_notification(data, attrs)
 
-    if values is not None and data['id'] == service_config["wp3_alarms"]:
+    if len(values) > 1 and data['id'] == service_config["wp3_alarms"]:
         payload = update_data([values], [attrs], data['@context'])
         execute_operations.produce_kafka(producer, topic, payload)
 
 
-@job(config={'ops': {'unpack_data': {'inputs': {'data': {}}}}})
-def process_pharma():
-    incoming_data, producer, service_config = unpack_data()
+@job
+def process_pharma(data: dict):
+    incoming_data, producer, service_config = unpack_data(data)
 
     # SOLUTION 1
     elaborate_solution1(incoming_data, producer, service_config)

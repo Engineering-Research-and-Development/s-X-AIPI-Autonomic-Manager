@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 .experimental_playground
 *.egg-info
+
+src/orion_catcher/config.env
