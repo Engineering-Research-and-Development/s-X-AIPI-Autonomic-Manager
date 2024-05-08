@@ -1,5 +1,4 @@
 from dagster import op, OpExecutionContext
-from logging import Logger
 
 from .utils import *
 

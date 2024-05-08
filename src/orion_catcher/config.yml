@@ -48,32 +48,3 @@ pharma:
 
 
 
-asphalt:
-  notification:
-    url: "http://0.0.0.0:8000/asphalt"
-    attrs: ["attribute1", "attribute2"]
-    metadata: ["dateCreated", "dateModified"]
-
-  entity: "EntityType"
-  orion_endpoint: "http://orion_host:port/v2/subscriptions"
-  kafka_topic: "asphalt"
-
-steel:
-  notification:
-    url: "http://0.0.0.0:8000/steel"
-    attrs: ["attribute1", "attribute2"]
-    metadata: ["dateCreated", "dateModified"]
-
-  entity: "EntityType"
-  orion_endpoint: "http://orion_host:port/v2/subscriptions"
-  kafka_topic: "steel"
-
-aluminium:
-  notification:
-    url: "http://0.0.0.0:8000/aluminium"
-    attrs: ["attribute1", "attribute2"]
-    metadata: ["dateCreated", "dateModified"]
-
-  entity: "EntityType"
-  orion_endpoint: "http://orion_host:port/v2/subscriptions"
-  kafka_topic: "aluminium"

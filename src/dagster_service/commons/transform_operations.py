@@ -30,7 +30,7 @@ def get_threshold_values_from_entity(context: OpExecutionContext,
 def get_threshold_from_pct_range(context: OpExecutionContext,
                                  values: list[float],
                                  pct_list: list[float]
-                                 ) -> tuple[list[float], list[float]] | tuple[None, None]:
+                                 ) -> tuple[list[float], list[float]]:
     """
 
     @param values: list of values from which to compute percentage
@@ -53,7 +53,7 @@ def get_threshold_from_pct_range(context: OpExecutionContext,
         return lowers, uppers
     except ValueError as e:
         context.log.error(e)
-        return None, None
+        return [], []
 
 
 
@@ -63,7 +63,7 @@ def get_threshold_from_pct_range(context: OpExecutionContext,
 def retrieve_values_from_historical_data(context: OpExecutionContext,
                                          historical_data: dict,
                                          attribute_names: list[str],
-                                         ) -> tuple[list[float], list[str], list[str], str] | tuple[None, None, None, None]:
+                                         ) -> tuple[list[float], list[str], list[str], str]:
     """
     Function to gather values for historical data given retrieved payload
 
@@ -86,4 +86,4 @@ def retrieve_values_from_historical_data(context: OpExecutionContext,
 
     except KeyError as e:
         context.log.error(e)
-        return None, None, None, None
+        return [], [], [], "None"

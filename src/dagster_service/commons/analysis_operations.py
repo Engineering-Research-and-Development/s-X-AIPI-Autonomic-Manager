@@ -43,8 +43,7 @@ def discriminate_thresholds(context: OpExecutionContext,
 
 
 @op
-def analyze_historical_data(context: OpExecutionContext,
-                            periods_in_state_list: list[float],
+def analyze_historical_data(periods_in_state_list: list[float],
                             acknowledgement_status_list: list[str],
                             rules_status: list[str],
                             patience: int

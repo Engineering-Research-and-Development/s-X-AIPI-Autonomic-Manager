@@ -2,9 +2,9 @@ import os
 import yaml
 from fastapi import FastAPI, HTTPException
 from contextlib import asynccontextmanager
-from src.dagster_service.Pharma.main import process_pharma
+from dagster_service.Pharma.main import process_pharma
 from kafka import KafkaProducer
-from src.orion_catcher.subscription import check_existing_subscriptions, subscribe
+from orion_catcher.subscription import check_existing_subscriptions, subscribe
 
 config_file = os.getenv('ORION-CONFIG')
 producer = KafkaProducer(bootstrap_servers=os.getenv('KAFKA-BROKER'))
