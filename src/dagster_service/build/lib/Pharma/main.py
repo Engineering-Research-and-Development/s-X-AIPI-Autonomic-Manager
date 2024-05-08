@@ -77,6 +77,7 @@ def elaborate_solution4(data: dict, producer: KafkaProducer, service_config: dic
     topic = service_config["solution_4"]["kafka_topic"]
     values = monitor_operations.get_data_from_notification(data, attrs)
 
+    print(data)
     if values is not None and data['id'] == service_config["wp3_alarms"]:
         payload = update_data([values], [attrs], data['@context'])
         execute_operations.produce_kafka(producer, topic, payload)
