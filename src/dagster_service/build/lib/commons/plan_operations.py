@@ -1,12 +1,11 @@
-from dagster import op, OpExecutionContext
+from dagster import op
 
 from .utils import *
 
 
 
 @op
-def update_historical_data(context: OpExecutionContext,
-                           current_status_list: list[str],
+def update_historical_data(current_status_list: list[str],
                            periods_in_state_list: list[float],
                            acknowledgement_status_list: list[str],
                            previous_status_list: list[str],
@@ -29,7 +28,7 @@ def update_historical_data(context: OpExecutionContext,
                 len(attribute_names) != len(current_status_list)):
             raise IndexError("list values are not the same")
     except IndexError as e:
-        context.log.error(e)
+        print(e)
 
     payload = {}
     for idx, attribute_name in enumerate(attribute_names):

@@ -1,5 +1,4 @@
-from dagster import op, OpExecutionContext
-import requests
+from dagster import op
 
 '''
 @op

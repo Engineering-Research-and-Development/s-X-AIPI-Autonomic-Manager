@@ -4,14 +4,14 @@ from commons.utils import THRESHOLD_OK, update_data
 
 
 @op
-def compute_OCT_probe_status(context: OpExecutionContext, status_list: list[str]) -> int:
+def compute_OCT_probe_status(status_list: list[str]) -> float:
     status = 1
     for status in status_list:
         if status != THRESHOLD_OK:
             status = 0
             break
 
-    return status
+    return float(status)
 
 
 @op

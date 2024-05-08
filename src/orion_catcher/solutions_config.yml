@@ -17,8 +17,8 @@ pharma:
 
     solution_1:
       inputs: [ "DataIngestion_OCT_probePositionEvaluation", "DataIngestion_OCT_probePosition_xPos", "DataIngestion_OCT_probePosition_yPos" ]
-      lower_thresholds: [ 0.5, 400, 50 ]
-      upper_thresholds: [ null, 900, 200 ]
+      lower_thresholds: [ 0.5, 400.0, 50.0 ]
+      upper_thresholds: [ 999.9, 900.0, 200.0 ]
       alarm_type: "OCT Position Deviation"
       kafka_topic: "pharma_alerts-solution1"
 

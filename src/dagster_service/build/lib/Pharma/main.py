@@ -31,7 +31,7 @@ def elaborate_solution1(data: dict, producer: KafkaProducer, service_config: dic
         new_status = compute_OCT_probe_status(alarms)
         values[0] = new_status
         payload = create_probe_status_payload(values, attrs, data['@context'])
-        execute_operations.produce_kafka(producer, topic, payload)
+        execute_operations.produce_kafka(producer, topic, [payload])
 
 
 @op
@@ -77,11 +77,9 @@ def elaborate_solution4(data: dict, producer: KafkaProducer, service_config: dic
     topic = service_config["solution_4"]["kafka_topic"]
     values = monitor_operations.get_data_from_notification(data, attrs)
 
-    print(data)
     if values is not None and data['id'] == service_config["wp3_alarms"]:
         payload = update_data([values], [attrs], data['@context'])
         execute_operations.produce_kafka(producer, topic, payload)
-
 
 
 @job

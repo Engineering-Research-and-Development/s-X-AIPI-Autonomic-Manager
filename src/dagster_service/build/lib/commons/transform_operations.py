@@ -1,12 +1,11 @@
-from dagster import op, OpExecutionContext
+from dagster import op
 import numpy as np
 
 from .utils import *
 
 
 @op
-def get_threshold_values_from_entity(context: OpExecutionContext,
-                                     data_source: dict,
+def get_threshold_values_from_entity(data_source: dict,
                                      lower_names: list[str],
                                      upper_names: list[str]
                                      ) -> tuple[list[float], list[float]]:
@@ -18,17 +17,16 @@ def get_threshold_values_from_entity(context: OpExecutionContext,
     @return: relevant attribute values
     """
     try:
-        upper_thresholds = [data_source[attribute]["value"]["value"] for attribute in upper_names]
-        lower_thresholds = [data_source[attribute]["value"]["value"] for attribute in lower_names]
+        upper_thresholds = [float(data_source[attribute]["value"]["value"]) for attribute in upper_names]
+        lower_thresholds = [float(data_source[attribute]["value"]["value"]) for attribute in lower_names]
         return lower_thresholds, upper_thresholds
     except KeyError as e:
-        context.log.error(e)
+        print(e)
         return [], []
 
 
 @op
-def get_threshold_from_pct_range(context: OpExecutionContext,
-                                 values: list[float],
+def get_threshold_from_pct_range(values: list[float],
                                  pct_list: list[float]
                                  ) -> tuple[list[float], list[float]]:
     """
@@ -52,7 +50,7 @@ def get_threshold_from_pct_range(context: OpExecutionContext,
 
         return lowers, uppers
     except ValueError as e:
-        context.log.error(e)
+        print(e)
         return [], []
 
 
@@ -60,8 +58,7 @@ def get_threshold_from_pct_range(context: OpExecutionContext,
 
 
 @op
-def retrieve_values_from_historical_data(context: OpExecutionContext,
-                                         historical_data: dict,
+def retrieve_values_from_historical_data(historical_data: dict,
                                          attribute_names: list[str],
                                          ) -> tuple[list[float], list[str], list[str], str]:
     """
@@ -85,5 +82,5 @@ def retrieve_values_from_historical_data(context: OpExecutionContext,
         return periods_list, ack_list, previous_list, historical_context
 
     except KeyError as e:
-        context.log.error(e)
+        print(e)
         return [], [], [], "None"

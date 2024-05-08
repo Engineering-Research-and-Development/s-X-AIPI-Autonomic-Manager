@@ -1,14 +1,10 @@
-from dagster import op, OpExecutionContext
-from logging import Logger
-
-from .utils import *
-
-logger = Logger(__name__)
+from commons.utils import THRESHOLD_HIGH, THRESHOLD_LOW, THRESHOLD_OK, STATUS_GOOD, STATUS_BAD, HISTORY_BAD, \
+    HISTORY_GOOD, UNCONFIRMED
+from dagster import op
 
 
 @op
-def discriminate_thresholds(context: OpExecutionContext,
-                            lower_thresholds: list[float],
+def discriminate_thresholds(lower_thresholds: list[float],
                             upper_thresholds: list[float],
                             values: list[float]
                             ) -> list[str]:
@@ -37,7 +33,7 @@ def discriminate_thresholds(context: OpExecutionContext,
                 result_list.append(THRESHOLD_OK)
     except IndexError as e:
         # TODO: decide if insert error alarm or not
-        logger.error(e)
+        print(e)
 
     return result_list
 
