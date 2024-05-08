@@ -1,6 +1,6 @@
 from dagster import op, OpExecutionContext
 
-from dagster_service.commons.utils import THRESHOLD_OK, update_data
+from commons.utils import THRESHOLD_OK, update_data
 
 
 @op

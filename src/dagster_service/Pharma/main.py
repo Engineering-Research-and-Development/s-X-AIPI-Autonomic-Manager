@@ -1,6 +1,6 @@
 from kafka import KafkaProducer
 
-from dagster_service.commons import (monitor_operations,
+from commons import (monitor_operations,
                                      analysis_operations,
                                      transform_operations,
                                      plan_operations,
@@ -8,7 +8,7 @@ from dagster_service.commons import (monitor_operations,
 from .pharma_operations import compute_OCT_probe_status, create_probe_status_payload
 from dagster import job, multi_asset, AssetOut, Output, op
 
-from dagster_service.commons.utils import update_data
+from commons.utils import update_data
 
 
 @multi_asset(outs={"incoming_data": AssetOut(), "producer": AssetOut(), "service_config": AssetOut()})
@@ -82,7 +82,7 @@ def elaborate_solution4(data: dict, producer: KafkaProducer, service_config: dic
         execute_operations.produce_kafka(producer, topic, payload)
 
 
-@job
+@job(config={'ops': {'unpack_data': {'inputs': {'data': {}}}}})
 def process_pharma():
     incoming_data, producer, service_config = unpack_data()
 

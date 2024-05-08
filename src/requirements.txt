@@ -4,3 +4,4 @@ fastapi~=0.110.1
 kafka-python
 dagster
 uvicorn
+numpy
