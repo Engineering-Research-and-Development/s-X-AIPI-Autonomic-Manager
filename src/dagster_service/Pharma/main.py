@@ -12,11 +12,11 @@ from dagster import job, multi_asset, AssetOut, Output, op
 from commons.utils import update_data
 
 
-@multi_asset(outs={"incoming_data": AssetOut(), "producer": AssetOut(), "service_config": AssetOut()})
-def unpack_data(data: dict):
-    yield Output(data["incoming_data"], output_name="incoming_data")
-    yield Output(data["producer"], output_name="producer")
-    yield Output(data["service_config"], output_name="service_config")
+# @multi_asset(outs={"incoming_data": AssetOut(), "producer": AssetOut(), "service_config": AssetOut()})
+# def unpack_data(data: dict):
+#     yield Output(data["incoming_data"], output_name="incoming_data")
+#     yield Output(data["producer"], output_name="producer")
+#     yield Output(data["service_config"], output_name="service_config")
 
 
 @op
@@ -70,7 +70,6 @@ def elaborate_solution3(data: dict, producer: KafkaProducer, service_config: dic
     print(values)
 
     if len(values) > 0 and data['id'] == service_config["wp3_alarms"]:
-
         payload = update_data(values, attrs, data['@context'])
         execute_operations.produce_kafka(producer, topic, [payload])
 
