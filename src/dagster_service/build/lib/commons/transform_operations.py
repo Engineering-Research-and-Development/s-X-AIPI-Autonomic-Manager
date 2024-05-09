@@ -5,6 +5,16 @@ from .utils import *
 
 
 @op
+def expand_threshold(value: float, number: int) -> list[float]:
+    '''
+
+    @param value: threshold value
+    @param number: number of times threshold should be repeated
+    @return: list of threshold
+    '''
+    return [value] * number
+
+@op
 def get_threshold_values_from_entity(data_source: dict,
                                      lower_names: list[str],
                                      upper_names: list[str]

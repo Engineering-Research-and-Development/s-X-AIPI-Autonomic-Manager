@@ -1,5 +1,5 @@
 from commons.utils import THRESHOLD_HIGH, THRESHOLD_LOW, THRESHOLD_OK, STATUS_GOOD, STATUS_BAD, HISTORY_BAD, \
-    HISTORY_GOOD, UNCONFIRMED
+    HISTORY_GOOD, UNCONFIRMED, THRESHOLD_BROKEN
 from dagster import op
 
 
@@ -19,11 +19,11 @@ def discriminate_thresholds(lower_thresholds: list[float],
 
     """
 
-    if any(var is not len(values) for var in (len(lower_thresholds), len(upper_thresholds))):
-        raise IndexError("Misconfiguration: list lengths are not equal")
-
     result_list = []
     try:
+        if any(var is not len(values) for var in (len(lower_thresholds), len(upper_thresholds))):
+            raise IndexError("Misconfiguration: list lengths are not equal")
+
         for attr_value, low, up in zip(values, lower_thresholds, upper_thresholds):
             if attr_value > up:
                 result_list.append(THRESHOLD_HIGH)
@@ -31,6 +31,38 @@ def discriminate_thresholds(lower_thresholds: list[float],
                 result_list.append(THRESHOLD_LOW)
             else:
                 result_list.append(THRESHOLD_OK)
+    except IndexError as e:
+        # TODO: decide if insert error alarm or not
+        print(e)
+
+    return result_list
+
+
+@op
+def merge_thresholds_and(first_group: list[str],
+                         second_group: list[str],
+                         ) -> list[str]:
+    """
+    Checks two groups of threshold results applying a logical AND
+
+    @param first_group:
+    @param second_group:
+
+    :return result_list: (list[str]) list of results from the previous analysis
+
+
+    """
+    result_list = []
+    try:
+        if len(first_group) != len(second_group):
+            raise IndexError("Misconfiguration: list lengths are not equal")
+
+        for first_result, second_result in zip(first_group, second_group):
+            if first_result == second_result and first_result == THRESHOLD_OK:
+                result_list.append(THRESHOLD_OK)
+            else:
+                result_list.append(THRESHOLD_BROKEN)
+
     except IndexError as e:
         # TODO: decide if insert error alarm or not
         print(e)

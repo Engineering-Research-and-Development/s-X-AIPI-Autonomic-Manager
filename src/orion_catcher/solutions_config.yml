@@ -9,7 +9,7 @@ pharma:
   kafka_topic: "pharma"
 
   dag_config:
-    base_url: "http://0.0.0.0:2016/ngsi-ld/v1/entities/"
+    base_url: "http://0.0.0.0:1026/ngsi-ld/v1/entities/"
     small_window: "urn:ngsi-ld:Pharma_smaller_time_window:001"
     large_window: "urn:ngsi-ld:Pharma_greater_time_window:001"
     wp3_alarms: "urn:ngsi-ld:Pharma_alarms:001"
@@ -58,7 +58,7 @@ steel:
   kafka_topic: "steel"
 
   dag_config:
-    base_url: "http://0.0.0.0:2016/ngsi-ld/v1/entities/"
+    base_url: "http://0.0.0.0:1026/ngsi-ld/v1/entities/"
     small_window: "urn:ngsi-ld:sidenor_shorter_time_window:001"
     large_window: "urn:ngsi-ld:sidenor_longer_time_window:001"
     wp3_alarms: "urn:ngsi-ld:sidenor_alarms:001"
@@ -72,6 +72,9 @@ steel:
          "transformation_analysis_Mn_zeros", "transformation_analysis_P_zeros", "transformation_analysis_S_zeros", "transformation_analysis_Cr_zeros",
          "transformation_analysis_Ni_zeros", "transformation_analysis_Mo_zeros", "transformation_analysis_Cu_zeros", "transformation_analysis_Sn_zeros"
       ]
+      "zero_inputs_upper_threshold" : [0.0]
+      "zero_inputs_lower_threshold": [-1.0]
+      "alarm_type_zeros" : "Zero Detected"
       "nan_inputs": [
         "transformation_eaf_eaf14_Nan", "transformation_eaf_kwhorno_Nan", "transformation_eaf_eaf07_Nan", "transformation_eaf_eaf08_Nan",
         "transformation_eaf_eaf09_Nan", "transformation_eaf_eaf10_Nan", "transformation_eaf_eaf11_Nan", "transformation_eaf_eaf12_Nan",
@@ -79,6 +82,10 @@ steel:
         "transformation_eaf_eaf02_Nan", "transformation_eaf_eaf064_Nan", "transformation_eaf_sum_eaf17_Nan", "transformation_eaf_sum_eaf18_Nan",
         "transformation_eaf_sum_eaf16_Nan", "transformation_eaf_sum_eaf15_Nan"
       ]
+      "nan_inputs_upper_threshold": [ 0.0 ]
+      "nan_inputs_lower_threshold": [ -1.0 ]
+      "alarm_type_nans" : "Missing Values Detected"
+
       "scrapmax_inputs_0": [
         "transformation_scrap_scrap10_max", "transformation_scrap_scrap09_max", "transformation_scrap_scrap08_max",
         "transformation_scrap_scrap07_max", "transformation_scrap_scrap06_max", "transformation_scrap_scrap22_max"
@@ -106,16 +113,17 @@ steel:
         "transformation_scrap_scrap17_zeros", "transformation_scrap_scrap03_zeros", "transformation_scrap_scrap01_zeros", "transformation_scrap_scrap13_zeros",
         "transformation_scrap_scrap15_zeros", "transformation_scrap_scrap02_zeros", "transformation_scrap_scrap18_zeros", "transformation_scrap_Estanado_zeros"
       ]
-      "solution_1_scrapzeros_inputs_2": [
+      "scrapzeros_inputs_2": [
         "transformation_lime_limecoke01_zeros", "transformation_lime_limecoke02_zeros"
       ]
-      "solution_1_scrapzeros_inputs_3": [
+      "scrapzeros_inputs_3": [
         "transformation_lime_coke_limecoke01_zeros", "transformation_lime_coke_limecoke02_zeros", "transformation_lime_coke_limecoke03_zeros",
         "transformation_lime_coke_limecoke04_zeros", "transformation_lime_coke_limecoke05_zeros"
       ]
-      "solution_1_nrheats_scrap": "transformation_scrap_Nr_heats",
-      "solution_1_nrheats_lime": "transformation_lime_Nr_heats",
-      "solution_1_nrheats_limecoke": "transformation_lime_coke_Nr_heats",
+
+      "nrheats_scrap": "transformation_scrap_Nr_heats",
+      "nrheats_lime": "transformation_lime_Nr_heats",
+      "nrheats_limecoke": "transformation_lime_coke_Nr_heats",
 
 
 

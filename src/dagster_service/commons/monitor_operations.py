@@ -1,9 +1,9 @@
 from dagster import op
+import requests
 
-'''
+
 @op
-def get_data(context: OpExecutionContext,
-             source_url: str
+def get_data(source_url: str
              ) -> dict:
     """
     Function taking as input an entity url and retrieving data
@@ -20,7 +20,7 @@ def get_data(context: OpExecutionContext,
         print("Failed to retrieve data. Status code:", response.status_code)
         print("Response:", response.text)
         return {}
-'''
+
 
 
 @op

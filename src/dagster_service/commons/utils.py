@@ -3,6 +3,7 @@ from datetime import datetime
 THRESHOLD_OK = "Ok"
 THRESHOLD_LOW = "Lower_Threshold"
 THRESHOLD_HIGH = "Upper_Threshold"
+THRESHOLD_BROKEN = "Rule_Broken"
 THRESHOLD_ERROR = "AM_Error"
 
 UNCONFIRMED = "Unconfirmed"
@@ -33,7 +34,7 @@ def pick_historical_data_values(names: list[str], entity: dict) -> list[float]:
     @return: List[float] containing periods_in_state, acknowledgement_status, previous_state
     """
     try:
-        return [entity[name]["value"]["value"] for name in names]
+        return [float(entity[name]["value"]["value"]) for name in names]
     except KeyError as e:
         raise KeyError
 
