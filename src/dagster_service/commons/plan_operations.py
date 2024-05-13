@@ -8,6 +8,7 @@ def update_historical_data(current_status_list: list[str],
                            periods_in_state_list: list[float],
                            acknowledgement_status_list: list[str],
                            previous_status_list: list[str],
+                           old_value_list: list[float],
                            attribute_names: list[str],
                            payload_context: str,
                            ) -> dict:
@@ -17,6 +18,7 @@ def update_historical_data(current_status_list: list[str],
         :param periods_in_state_list: periods in which current status is hold
         :param acknowledgement_status_list: current acknowledgement status from HITL
         :param previous_status_list: previous status to confront
+        :param old_value_list: list of new values
         :param attribute_names: base attribute name to "develop" into history parameters
         """
 
@@ -24,7 +26,8 @@ def update_historical_data(current_status_list: list[str],
         if (len(attribute_names) != len(periods_in_state_list) or
                 len(attribute_names) != len(acknowledgement_status_list) or
                 len(attribute_names) != len(previous_status_list) or
-                len(attribute_names) != len(current_status_list)):
+                len(attribute_names) != len(current_status_list) or
+                len(attribute_names) != len(old_value_list)):
             raise IndexError("list values are not the same")
     except IndexError as e:
         print(e)
@@ -37,6 +40,7 @@ def update_historical_data(current_status_list: list[str],
         previous_status = previous_status_list[idx]
         acknowledgement_status = acknowledgement_status_list[idx]
         periods_in_state = periods_in_state_list[idx]
+        old_value = old_value_list[idx]
 
         if current_status != previous_status:
             periods_in_state = 1
@@ -44,7 +48,7 @@ def update_historical_data(current_status_list: list[str],
         else:
             periods_in_state += 1
 
-        new_values = [periods_in_state, acknowledgement_status, current_status]
+        new_values = [periods_in_state, acknowledgement_status, current_status, old_value]
         payload = update_data(new_values, update_names, payload_context)
 
     return payload

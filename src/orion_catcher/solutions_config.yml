@@ -47,6 +47,8 @@ pharma:
       kafka_topic: "pharma_alerts-solution5"
 
 
+
+
 steel:
   notification:
     url: "http://0.0.0.0:8000/steel"
@@ -62,93 +64,97 @@ steel:
     small_window: "urn:ngsi-ld:sidenor_shorter_time_window:001"
     large_window: "urn:ngsi-ld:sidenor_longer_time_window:001"
     wp3_alarms: "urn:ngsi-ld:sidenor_alarms:001"
-    output_entity: "urn:ngsi-ld:sidenor_solution_output_1:001/attrs"
+    output_entity: "urn:ngsi-ld:sidenor_solution_output_1:001"
     kafka_topic: "steel-alerts"
     kafka_wp3: "steel-alerts-wp3"
 
     solution_1:
-      "zeros_inputs": [
+      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_1:001"
+      historical_patience: 1
+      zeros_inputs: [
         "transformation_scrap_tot_zeros", "transformation_lime_sum_lime_basket_zeros", "transformation_lime_coke_sum_cok_lim_melting_zeros",
          "transformation_analysis_Mn_zeros", "transformation_analysis_P_zeros", "transformation_analysis_S_zeros", "transformation_analysis_Cr_zeros",
          "transformation_analysis_Ni_zeros", "transformation_analysis_Mo_zeros", "transformation_analysis_Cu_zeros", "transformation_analysis_Sn_zeros"
       ]
-      "zero_inputs_upper_threshold" : [0.0]
-      "zero_inputs_lower_threshold": [-1.0]
-      "alarm_type_zeros" : "Zero Detected"
-      "nan_inputs": [
+      zero_inputs_upper_threshold : [0.0]
+      zero_inputs_lower_threshold: [-1.0]
+
+      alarm_type_zeros: "Zero Detected"
+      nan_inputs: [
         "transformation_eaf_eaf14_Nan", "transformation_eaf_kwhorno_Nan", "transformation_eaf_eaf07_Nan", "transformation_eaf_eaf08_Nan",
         "transformation_eaf_eaf09_Nan", "transformation_eaf_eaf10_Nan", "transformation_eaf_eaf11_Nan", "transformation_eaf_eaf12_Nan",
         "transformation_eaf_eaf03_Nan", "transformation_eaf_eaf04_Nan", "transformation_eaf_eaf05_Nan", "transformation_eaf_eaf01_Nan",
         "transformation_eaf_eaf02_Nan", "transformation_eaf_eaf064_Nan", "transformation_eaf_sum_eaf17_Nan", "transformation_eaf_sum_eaf18_Nan",
         "transformation_eaf_sum_eaf16_Nan", "transformation_eaf_sum_eaf15_Nan"
       ]
-      "nan_inputs_upper_threshold": [ 0.0 ]
-      "nan_inputs_lower_threshold": [ -1.0 ]
-      "alarm_type_nans" : "Missing Values Detected"
+      nan_inputs_upper_threshold: [ 0.0 ]
+      nan_inputs_lower_threshold: [ -1.0 ]
 
-      "scrapmax_inputs_0": [
+      alarm_type_nans : "Missing Values Detected"
+      scrapmax_inputs_0: [
         "transformation_scrap_scrap10_max", "transformation_scrap_scrap09_max", "transformation_scrap_scrap08_max",
         "transformation_scrap_scrap07_max", "transformation_scrap_scrap06_max", "transformation_scrap_scrap22_max"
       ]
-      "scrapmax_inputs_1": [
+      scrapmax_inputs_1: [
         "transformation_scrap_scrap19_max", "transformation_scrap_scrap12_max", "transformation_scrap_scrap20_max", "transformation_scrap_scrap16_max",
         "transformation_scrap_scrap21_max", "transformation_scrap_scrap14_max", "transformation_scrap_scrap11_max", "transformation_scrap_scrap04_max",
         "transformation_scrap_scrap17_max", "transformation_scrap_scrap03_max", "transformation_scrap_scrap01_max", "transformation_scrap_scrap13_max",
         "transformation_scrap_scrap15_max", "transformation_scrap_scrap02_max", "transformation_scrap_scrap18_max", "transformation_scrap_Estanado_max"
       ]
-      "scrapmax_inputs_2": [
+      scrapmax_inputs_2: [
         "transformation_lime_limecoke01_max", "transformation_lime_limecoke02_max"
       ]
-      "scrapmax_inputs_3": [
+      scrapmax_inputs_3: [
         "transformation_lime_coke_limecoke01_max", "transformation_lime_coke_limecoke02_max", "transformation_lime_coke_limecoke03_max",
         "transformation_lime_coke_limecoke04_max", "transformation_lime_coke_limecoke05_max"
       ]
-      "scrapzeros_inputs_0": [
+      scrapzeros_inputs_0: [
         "transformation_scrap_scrap10_zeros", "transformation_scrap_scrap09_zeros", "transformation_scrap_scrap08_zeros",
         "transformation_scrap_scrap07_zeros", "transformation_scrap_scrap06_zeros", "transformation_scrap_scrap22_zeros"
       ]
-      "scrapzeros_inputs_1": [
+      scrapzeros_inputs_1: [
         "transformation_scrap_scrap19_zeros", "transformation_scrap_scrap12_zeros", "transformation_scrap_scrap20_zeros", "transformation_scrap_scrap16_zeros",
         "transformation_scrap_scrap21_zeros", "transformation_scrap_scrap14_zeros", "transformation_scrap_scrap11_zeros", "transformation_scrap_scrap04_zeros",
         "transformation_scrap_scrap17_zeros", "transformation_scrap_scrap03_zeros", "transformation_scrap_scrap01_zeros", "transformation_scrap_scrap13_zeros",
         "transformation_scrap_scrap15_zeros", "transformation_scrap_scrap02_zeros", "transformation_scrap_scrap18_zeros", "transformation_scrap_Estanado_zeros"
       ]
-      "scrapzeros_inputs_2": [
+      scrapzeros_inputs_2: [
         "transformation_lime_limecoke01_zeros", "transformation_lime_limecoke02_zeros"
       ]
-      "scrapzeros_inputs_3": [
+      scrapzeros_inputs_3: [
         "transformation_lime_coke_limecoke01_zeros", "transformation_lime_coke_limecoke02_zeros", "transformation_lime_coke_limecoke03_zeros",
         "transformation_lime_coke_limecoke04_zeros", "transformation_lime_coke_limecoke05_zeros"
       ]
-
-      "nrheats_scrap": "transformation_scrap_Nr_heats",
-      "nrheats_lime": "transformation_lime_Nr_heats",
-      "nrheats_limecoke": "transformation_lime_coke_Nr_heats",
-
+      scapmax_lower: [0.0]
+      nrheats_scrap: "transformation_scrap_Nr_heats",
+      nrheats_lime: "transformation_lime_Nr_heats",
+      nrheats_limecoke: "transformation_lime_coke_Nr_heats",
+      alarm_type_materials: "Material Content Changed"
 
 
     solution_2:
-      inputs_1: [ "DataIngestion_OCT_signalQualityCheck_maxSignalIntensity" ]
-      inputs_2: [ "DataIngestion_OCT_imageClassification_numBadImg" ]
-      upper_thresholds_2: [ "DataIngestion_OCT_imageClassification_numGoodImg" ]
-      pct_change_2: [ 10 ]
-      alarm_type_1: "Poor Signal Quality"
-      alarm_type_2: "Bad Image increase"
-      kafka_topic: "pharma_alerts-solution2"
+      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_2:001"
+      historical_patience: 0
+      inputs: [ "exploration_analysis_Nr_anomalies_Cu", "exploration_eaf_Nr_anomalies_eaf14", "exploration_eaf_Nr_anomalies_kwhorno",
+      "exploration_lime_coke_Nr_outliers_sum_lim_melting", "exploration_lime_coke_Nr_outliers_sum_cok_melting", "exploration_analysis_upper_boundary_Cu" ]
+      "thresholds": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.4]
 
     solution_3:
-      inputs: [ "Pharma_DataIngestion_IR_numberOfValues", "Pharma_DataIngestion_IR_plsModelReliability", "Pharma_DataIngestion_IR_frequency"]
-      kafka_topic: "pharma_alerts-solution3"
+      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_3:001"
+      historical_patience: 1
+      inputs: [ "modeling_LinearRegression_MAE" ]
+      thresholds: ["transformation_analysis_Cu_mean"]
+      pct_change: [15]
 
     solution_4:
-      inputs: [ "Pharma_DataIngestion_PWR_numberOfValues", "Pharma_DataIngestion_PWR_frequency"]
-      kafka_topic: "pharma_alerts-solution4"
+      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_4:001"
+      historical_patience: 1
+      alarm_type: "Coefficient Instability"
+      service_config: ["train_models_coef_Sustitutivos", "train_models_coef_scrap14", "train_models_coef_scrap19", "train_models_coef_scrap04",
+        "train_models_coef_scrap21", "train_models_coef_scrap16", "train_models_coef_scrap18", "train_models_coef_scrap17", "train_models_coef_scrap03",
+        "train_models_coef_scrap20", "train_models_coef_scrap12", "train_models_coef_scrap11"]
+      pct_change: [15]
 
-    solution_5:
-      inputs_1: ["Pharma_RuntimeAIProcessing_Prediction_timeframe", "Pharma_RuntimeAIProcessing_Prediction_timestep",
-      "Pharma_RuntimeAIProcessing_Prediction_status" ]
-      inputs_2: ["RuntimeAIProcessing_Prediction_MSE"]
-      upper_thresholds_2: ["RuntimeAIProcessing_Prediction_MSE_Target"]
-      kafka_topic: "pharma_alerts-solution5"
+
 
 

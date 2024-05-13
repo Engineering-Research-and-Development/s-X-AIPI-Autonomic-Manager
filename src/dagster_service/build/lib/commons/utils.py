@@ -14,7 +14,7 @@ HISTORY_BAD = "Deteriorating_Change"
 HISTORY_GOOD = "Improving_Change"
 
 
-HISTORICAL_DATA_SUFFIXES = ["_periods", "_status", "_previous"]
+HISTORICAL_DATA_SUFFIXES = ["_periods", "_status", "_previous", "old_val"]
 
 
 def build_historical_data_attribute_names(attribute_name) -> list[str]:

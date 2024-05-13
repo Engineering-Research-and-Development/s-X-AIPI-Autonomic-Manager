@@ -14,6 +14,7 @@ def expand_threshold(value: float, number: int) -> list[float]:
     '''
     return [value] * number
 
+
 @op
 def get_threshold_values_from_entity(data_source: dict,
                                      lower_names: list[str],
@@ -64,13 +65,10 @@ def get_threshold_from_pct_range(values: list[float],
         return [], []
 
 
-
-
-
 @op
 def retrieve_values_from_historical_data(historical_data: dict,
                                          attribute_names: list[str],
-                                         ) -> tuple[list[int], list[str], list[str], str]:
+                                         ) -> tuple[list[int], list[str], list[str], list[float], str]:
     """
     Function to gather values for historical data given retrieved payload
 
@@ -81,19 +79,21 @@ def retrieve_values_from_historical_data(historical_data: dict,
     periods_list = []
     ack_list = []
     previous_list = []
+    old_value_list = []
     try:
         historical_context = historical_data["@context"]
         for attribute_name in attribute_names:
             names = [n for n in build_historical_data_attribute_names(attribute_name)]
-            periods, ack, previous = pick_historical_data_values(names, historical_data)
+            periods, ack, previous, old_value = pick_historical_data_values(names, historical_data)
             periods_list.append(periods)
             ack_list.append(ack)
             previous_list.append(previous)
-        return periods_list, ack_list, previous_list, historical_context
+            old_value_list.append(old_value)
+        return periods_list, ack_list, previous_list, old_value_list, historical_context
 
     except KeyError as e:
         print(e)
-        return [], [], [], "None"
+        return [], [], [], [], "None"
 
 
 @op
