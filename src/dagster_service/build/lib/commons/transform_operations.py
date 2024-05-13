@@ -70,7 +70,7 @@ def get_threshold_from_pct_range(values: list[float],
 @op
 def retrieve_values_from_historical_data(historical_data: dict,
                                          attribute_names: list[str],
-                                         ) -> tuple[list[float], list[str], list[str], str]:
+                                         ) -> tuple[list[int], list[str], list[str], str]:
     """
     Function to gather values for historical data given retrieved payload
 
@@ -94,3 +94,23 @@ def retrieve_values_from_historical_data(historical_data: dict,
     except KeyError as e:
         print(e)
         return [], [], [], "None"
+
+
+@op
+def create_alarm_payloads(values: list[dict],
+                          payload_context: str) -> list[dict]:
+    """
+    Takes a list of alarm results [any] and returns a list of payloads for OCB
+    Args:
+        values: list of alarm value dictionaries
+        payload_context: inject context of alarm entity
+
+    Returns: list of payloads
+
+    """
+    payloads = []
+
+    for val in values:
+        obj = update_data([val], ["AM_Generated_Alarm"], payload_context)
+        payloads.append(obj)
+    return payloads

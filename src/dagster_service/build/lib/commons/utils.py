@@ -26,7 +26,7 @@ def build_historical_data_attribute_names(attribute_name) -> list[str]:
     return names
 
 
-def pick_historical_data_values(names: list[str], entity: dict) -> list[float]:
+def pick_historical_data_values(names: list[str], entity: dict) -> list[int | str]:
     """
 
     @param names: list of names from which to pick data
@@ -34,8 +34,8 @@ def pick_historical_data_values(names: list[str], entity: dict) -> list[float]:
     @return: List[float] containing periods_in_state, acknowledgement_status, previous_state
     """
     try:
-        return [float(entity[name]["value"]["value"]) for name in names]
-    except KeyError as e:
+        return [entity[name]["value"]["value"] for name in names]
+    except KeyError:
         raise KeyError
 
 
@@ -76,3 +76,6 @@ def update_data(values: [], names: [str], payload_context: str):
         body = add_param_to_body(body, name, value, now)
 
     return body
+
+
+

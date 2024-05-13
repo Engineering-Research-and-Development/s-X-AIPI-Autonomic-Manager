@@ -45,8 +45,8 @@ def merge_thresholds_and(first_group: list[str],
     """
     Checks two groups of threshold results applying a logical AND
 
-    @param first_group:
-    @param second_group:
+    @param first_group: first set of results from threhshold
+    @param second_group: second set of results from threshold
 
     :return result_list: (list[str]) list of results from the previous analysis
 
@@ -75,7 +75,7 @@ def analyze_historical_data(periods_in_state_list: list[float],
                             acknowledgement_status_list: list[str],
                             rules_status: list[str],
                             patience: int
-                            ) -> list[str]:
+                            ) -> tuple[list[str], list[str]]:
     """
     Confront current values versus previous value to check for alarm generation
 
@@ -87,11 +87,13 @@ def analyze_historical_data(periods_in_state_list: list[float],
     """
 
     alarm_list = []
+    current_status_list = []
 
     for periods_in_state, acknowledgement_status, result in zip(periods_in_state_list, acknowledgement_status_list,
                                                                 rules_status):
 
         current_status = STATUS_GOOD if result == THRESHOLD_OK else STATUS_BAD
+        current_status_list.append(current_status)
 
         if periods_in_state > patience:
             if current_status not in acknowledgement_status or acknowledgement_status == UNCONFIRMED:
@@ -102,4 +104,4 @@ def analyze_historical_data(periods_in_state_list: list[float],
                 else:
                     alarm_list.append(THRESHOLD_OK)
 
-    return alarm_list
+    return alarm_list, current_status_list

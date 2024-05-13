@@ -3,7 +3,6 @@ from dagster import op
 from .utils import *
 
 
-
 @op
 def update_historical_data(current_status_list: list[str],
                            periods_in_state_list: list[float],
@@ -100,7 +99,6 @@ def create_alarm_history(solution_name: str,
                          alarm_type: list[str],
                          attribute_names: list[str],
                          rule_results: list[str],
-                         values: list[float],
                          periods: list[int],
                          acknowledged_status_list: list[str]
                          ) -> list[dict]:
@@ -111,7 +109,6 @@ def create_alarm_history(solution_name: str,
         alarm_type: type or types of the caused alarm. Some solution may have multiple alarm types
         attribute_names: names of attributes from solution
         rule_results: results of RBE
-        values: current values of attributes
         periods: periods in which the current status changed
         acknowledged_status_list: list of acknowledge status
 
@@ -120,8 +117,8 @@ def create_alarm_history(solution_name: str,
     """
 
     list_results = []
-    for attr, value, period, ack, result in zip(attribute_names, values, periods,
-                                                acknowledged_status_list, rule_results):
+    for attr, period, ack, result in zip(attribute_names, periods,
+                                         acknowledged_status_list, rule_results):
         if result == THRESHOLD_OK:
             continue
 
@@ -130,30 +127,9 @@ def create_alarm_history(solution_name: str,
             "type": alarm_type,
             "attribute": attr,
             "cause": result,
-            "deviation": value,
             "periods": period,
             "last_acknowledged": ack
         }
         list_results.append(obj)
 
     return list_results
-
-
-@op
-def create_alarm_payloads(values: list[dict],
-                          payload_context: str) -> list[dict]:
-    """
-    Takes a list of alarm results [any] and returns a list of payloads for OCB
-    Args:
-        values: list of alarm value dictionaries
-        payload_context: inject context of alarm entity
-
-    Returns: list of payloads
-
-    """
-    payloads = []
-
-    for val in values:
-        obj = update_data([val], ["AM_Generated_Alarm"], payload_context)
-        payloads.append(obj)
-    return payloads

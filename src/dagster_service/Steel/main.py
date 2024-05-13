@@ -8,7 +8,10 @@ from commons import (monitor_operations,
                      execute_operations)
 from dagster import job, multi_asset, AssetOut, Output, op
 
-from commons.utils import update_data
+
+def clean_names(names: [str]):
+    new_names = [name.split("_zero")[0] if "_zero" in name else name for name in names]
+    return new_names
 
 
 @op
@@ -21,7 +24,6 @@ def sub_solution_check_zero_nans(incoming_data: dict,
                                  upper_threshold: str,
                                  alarm_type: str,
                                  kafka_topic: str):
-
     values = monitor_operations.get_data_from_notification(incoming_data, attrs)
     upper_thresholds = transform_operations.expand_threshold(service_config[solution][upper_threshold], len(values))
     lower_thresholds = transform_operations.expand_threshold(service_config[solution][lower_threshold], len(values))
@@ -29,6 +31,7 @@ def sub_solution_check_zero_nans(incoming_data: dict,
     payloads_zeros = plan_operations.create_alarm_threshold("Solution 1", alarm_type, attrs, results, values,
                                                             lower_thresholds, upper_thresholds)
     execute_operations.produce_kafka(producer, kafka_topic, payloads_zeros)
+
 
 @op
 def sub_solution_material_used(incoming_data: dict,
@@ -38,13 +41,15 @@ def sub_solution_material_used(incoming_data: dict,
                                attrs_max: list[str],
                                attrs_zeros: list[str],
                                nr_heats: str,
+                               patience: int,
                                solution: str,
                                alarm_type: str,
                                kafka_topic: str
                                ):
-
     LOWER_THRESHOLD_MAX = 0.0
     UPPER_THRESHOLD_MAX = np.inf
+    context = incoming_data["@context"]
+
     values_max = monitor_operations.get_data_from_notification(incoming_data, attrs_max)
     lower_threshold_max = transform_operations.expand_threshold(LOWER_THRESHOLD_MAX, len(values_max))
     upper_threshold_max = transform_operations.expand_threshold(UPPER_THRESHOLD_MAX, len(values_max))
@@ -60,17 +65,30 @@ def sub_solution_material_used(incoming_data: dict,
     results_threshold = analysis_operations.merge_thresholds_and(results_max, results_nrheats)
 
     historical_data = monitor_operations.get_data(historical_data_url)
+    attrs_clean = clean_names(attrs_zeros)
+
     periods_list, ack_list, previous_list, historical_context = (
-        transform_operations.retrieve_values_from_historical_data(historical_data))
-    #TODO CONTINUA
+        transform_operations.retrieve_values_from_historical_data(historical_data, attrs_clean))
 
+    historical_alarms_analysis, historical_current_status = analysis_operations.analyze_historical_data(
+        periods_list, ack_list, results_threshold, patience
+    )
 
-    pass
+    update_payload = plan_operations.update_historical_data(
+        historical_current_status, periods_list, ack_list, previous_list, attrs_clean, historical_context
+    )
+    execute_operations.patch_orion(historical_data_url, update_payload)
+
+    historical_alarms = plan_operations.create_alarm_history(
+        solution, alarm_type, attrs_clean, historical_alarms_analysis, periods_list, ack_list
+    )
+    historical_alarms = transform_operations.create_alarm_payloads(historical_alarms, context)
+    execute_operations.produce_kafka(producer, kafka_topic, historical_alarms)
+
 
 
 @op
 def elaborate_solution1(incoming_data, producer, service_config):
-
     kafka_topic = service_config["kafka_topic"]
 
     # Checking for zeros
@@ -86,8 +104,6 @@ def elaborate_solution1(incoming_data, producer, service_config):
     sub_solution_check_zero_nans(incoming_data, producer, service_config, attr_nan, "solution_1",
                                  "nan_inputs_lower_threshold", "nan_inputs_upper_threshold", alarm_type_nan,
                                  kafka_topic)
-
-
 
 
 def elaborate_solution2(incoming_data, producer, service_config):
