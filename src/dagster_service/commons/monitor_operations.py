@@ -37,7 +37,7 @@ def get_data_from_notification(data_source: dict,
     values = []
     for attribute in attributes:
         try:
-            values.append(data_source[attribute]["value"]["value"])
+            values.append(float(data_source[attribute]["value"]["value"]))
         except KeyError as e:
             print(e)
 

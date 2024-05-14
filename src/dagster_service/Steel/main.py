@@ -44,14 +44,14 @@ def sub_solution_material_used(incoming_data: dict,
                                historical_data_url: str,
                                attrs_max: list[str],
                                attrs_zeros: list[str],
-                               nr_heats: str,
+                               nr_heats: list[str],
                                patience: int,
                                solution: str,
                                alarm_type: str,
                                kafka_topic: str
                                ):
     # Setting useful values
-    lower_threshold_max = -np.inf
+    lower_threshold_max = [-np.inf]
     upper_threshold_max = service_config[solution]['scapmax_lower']
     context = incoming_data["@context"]
 
@@ -64,7 +64,7 @@ def sub_solution_material_used(incoming_data: dict,
     # Checking rules for number of zeros
     values_zeros = monitor_operations.get_data_from_notification(incoming_data, attrs_zeros)
     values_nrheats = monitor_operations.get_data_from_notification(incoming_data, nr_heats)
-    upper_threshold_nrheats = transform_operations.expand_threshold(np.inf, len(values_zeros))
+    upper_threshold_nrheats = transform_operations.expand_threshold([np.inf], len(values_zeros))
     lower_threshold_nrheats = transform_operations.expand_threshold(values_nrheats, len(values_zeros))
     results_nrheats = analysis_operations.discriminate_thresholds(
         lower_threshold_nrheats, upper_threshold_nrheats, values_zeros)
@@ -84,7 +84,7 @@ def sub_solution_material_used(incoming_data: dict,
     )
 
     # Update Historical Data
-    mock_values = transform_operations.expand_threshold(0.0, len(values_zeros))
+    mock_values = transform_operations.expand_threshold([0.0], len(values_zeros))
     update_payload = plan_operations.update_historical_data(
         historical_current_status, periods_list, ack_list, previous_list,
         mock_values, attrs_clean, historical_context
@@ -117,7 +117,7 @@ def elaborate_solution1(incoming_data, producer, service_config):
 
     # Checking for NaNs
     attr_nan = service_config["solution_1"]["nan_inputs"]
-    alarm_type_nan = service_config["solution_1"]["alarm_type_nan"]
+    alarm_type_nan = service_config["solution_1"]["alarm_type_nans"]
     sub_solution_check_zero_nans(incoming_data, producer, service_config, attr_nan, "solution_1",
                                  "nan_inputs_lower_threshold", "nan_inputs_upper_threshold", alarm_type_nan,
                                  kafka_topic)
@@ -126,7 +126,7 @@ def elaborate_solution1(incoming_data, producer, service_config):
     attr_group_0_zeros = service_config["solution_1"]["scrapzeros_inputs_0"]
     attr_group_0_max = service_config["solution_1"]["scrapmax_inputs_0"]
     attr_heats_0 = service_config["solution_1"]["nrheats_scrap"]
-    sub_solution_material_used(incoming_data, producer, service_config, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
                                attr_group_0_max, attr_group_0_zeros, attr_heats_0, patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
@@ -134,7 +134,7 @@ def elaborate_solution1(incoming_data, producer, service_config):
     attr_group_1_zeros = service_config["solution_1"]["scrapzeros_inputs_1"]
     attr_group_1_max = service_config["solution_1"]["scrapmax_inputs_1"]
     attr_heats_1 = service_config["solution_1"]["nrheats_scrap"]
-    sub_solution_material_used(incoming_data, producer, service_config, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
                                attr_group_1_max, attr_group_1_zeros, attr_heats_1, patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
@@ -142,7 +142,7 @@ def elaborate_solution1(incoming_data, producer, service_config):
     attr_group_2_zeros = service_config["solution_1"]["scrapzeros_inputs_2"]
     attr_group_2_max = service_config["solution_1"]["scrapmax_inputs_2"]
     attr_heats_2 = service_config["solution_1"]["nrheats_lime"]
-    sub_solution_material_used(incoming_data, producer, service_config, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
                                attr_group_2_max, attr_group_2_zeros, attr_heats_2, patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
@@ -150,7 +150,7 @@ def elaborate_solution1(incoming_data, producer, service_config):
     attr_group_3_zeros = service_config["solution_1"]["scrapzeros_inputs_3"]
     attr_group_3_max = service_config["solution_1"]["scrapmax_inputs_3"]
     attr_heats_3 = service_config["solution_1"]["nrheats_limecoke"]
-    sub_solution_material_used(incoming_data, producer, service_config, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
                                attr_group_3_max, attr_group_3_zeros, attr_heats_3, patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
