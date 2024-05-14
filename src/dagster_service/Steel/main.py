@@ -154,7 +154,7 @@ def elaborate_solution1(incoming_data, producer, service_config):
                                attr_group_3_max, attr_group_3_zeros, attr_heats_3, patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
-
+@op
 def elaborate_solution2(incoming_data, producer, service_config):
     solution = "solution_2"
     attrs = service_config[solution]["inputs"]
@@ -172,7 +172,7 @@ def elaborate_solution2(incoming_data, producer, service_config):
     payloads = transform_operations.create_alarm_payloads(alarms, context)
     execute_operations.produce_kafka(producer, kafka_topic, payloads)
 
-
+@op
 def elaborate_solution3(incoming_data, producer, service_config):
     solution = "solution_3"
     attrs = service_config[solution]["inputs"]
@@ -214,7 +214,7 @@ def elaborate_solution3(incoming_data, producer, service_config):
     historical_alarms = transform_operations.create_alarm_payloads(historical_alarms, context)
     execute_operations.produce_kafka(producer, kafka_topic, historical_alarms)
 
-
+@op
 def elaborate_solution4(incoming_data, producer, service_config):
 
     solution = "solution_4"

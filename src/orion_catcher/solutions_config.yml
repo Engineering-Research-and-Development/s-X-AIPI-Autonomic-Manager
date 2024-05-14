@@ -126,14 +126,13 @@ steel:
         "transformation_lime_coke_limecoke04_zeros", "transformation_lime_coke_limecoke05_zeros"
       ]
       scapmax_lower: [0.0]
-      nrheats_scrap: "transformation_scrap_Nr_heats",
-      nrheats_lime: "transformation_lime_Nr_heats",
-      nrheats_limecoke: "transformation_lime_coke_Nr_heats",
+      nrheats_scrap: "transformation_scrap_Nr_heats"
+      nrheats_lime: "transformation_lime_Nr_heats"
+      nrheats_limecoke: "transformation_lime_coke_Nr_heats"
       alarm_type_materials: "Material Content Changed"
 
 
     solution_2:
-      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_2:001"
       inputs: [ "exploration_analysis_Nr_anomalies_Cu", "exploration_eaf_Nr_anomalies_eaf14", "exploration_eaf_Nr_anomalies_kwhorno",
       "exploration_lime_coke_Nr_outliers_sum_lim_melting", "exploration_lime_coke_Nr_outliers_sum_cok_melting", "exploration_analysis_upper_boundary_Cu" ]
       "thresholds": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.4]
