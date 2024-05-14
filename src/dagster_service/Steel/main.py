@@ -168,6 +168,7 @@ def elaborate_solution3(incoming_data, producer, service_config):
 
 def elaborate_solution4(incoming_data, producer, service_config):
 
+    #Test
     solution = "solution_4"
     attrs = service_config[solution]["inputs"]
     pct_change = service_config[solution]["pct_change"]
