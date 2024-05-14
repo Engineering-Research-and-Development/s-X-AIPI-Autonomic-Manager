@@ -134,7 +134,6 @@ steel:
 
     solution_2:
       historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_2:001"
-      historical_patience: 0
       inputs: [ "exploration_analysis_Nr_anomalies_Cu", "exploration_eaf_Nr_anomalies_eaf14", "exploration_eaf_Nr_anomalies_kwhorno",
       "exploration_lime_coke_Nr_outliers_sum_lim_melting", "exploration_lime_coke_Nr_outliers_sum_cok_melting", "exploration_analysis_upper_boundary_Cu" ]
       "thresholds": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.4]
@@ -142,6 +141,7 @@ steel:
     solution_3:
       historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_3:001"
       historical_patience: 1
+      alarm_type: "Model Accuracy Degradation"
       inputs: [ "modeling_LinearRegression_MAE" ]
       thresholds: ["transformation_analysis_Cu_mean"]
       pct_change: [15]
@@ -150,7 +150,7 @@ steel:
       historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_4:001"
       historical_patience: 1
       alarm_type: "Coefficient Instability"
-      service_config: ["train_models_coef_Sustitutivos", "train_models_coef_scrap14", "train_models_coef_scrap19", "train_models_coef_scrap04",
+      inputs: ["train_models_coef_Sustitutivos", "train_models_coef_scrap14", "train_models_coef_scrap19", "train_models_coef_scrap04",
         "train_models_coef_scrap21", "train_models_coef_scrap16", "train_models_coef_scrap18", "train_models_coef_scrap17", "train_models_coef_scrap03",
         "train_models_coef_scrap20", "train_models_coef_scrap12", "train_models_coef_scrap11"]
       pct_change: [15]
