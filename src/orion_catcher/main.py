@@ -51,7 +51,7 @@ async def webhook_handler(data: dict):
 async def webhook_handler(data: dict):
     result = process_asphalt.execute_in_process(input_values={"incoming_data": data,
                                                               "producer": producer,
-                                                              "service_config": service_config["steel"]})
+                                                              "service_config": service_config["asphalt"]})
     if result.success:
         return {"message": "Pipeline executed successfully", "details": str(result)}
     else:
