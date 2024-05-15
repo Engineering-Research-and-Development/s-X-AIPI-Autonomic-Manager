@@ -60,7 +60,7 @@ steel:
   kafka_topic: "steel"
 
   dag_config:
-    base_url: "http://136.243.156.113:1026/ngsi-ld/v1/entities/"
+    base_url: "http://0.0.0.0:1026/ngsi-ld/v1/entities/"
     small_window: "urn:ngsi-ld:sidenor_shorter_time_window:001"
     large_window: "urn:ngsi-ld:sidenor_longer_time_window:001"
     wp3_alarms: "urn:ngsi-ld:sidenor_alarms:001"
@@ -157,4 +157,56 @@ steel:
 
 
 
+asphalt:
+  notification:
+    url: "http://0.0.0.0:8000/asphalt"
+    attrs: ["attribute1", "attribute2"]
+    metadata: ["dateCreated", "dateModified"]
+
+  entity: "EntityType"
+  orion_endpoint: "http://orion_host:port/v2/subscriptions"
+  kafka_topic: "asphalt"
+
+  dag_config:
+    base_url: "http://0.0.0.0:1026/ngsi-ld/v1/entities/"
+    small_window: "urn:ngsi-ld:asphalt_smaller_time_window:001"
+    large_window: "urn:ngsi-ld:asphalt_greater_time_window:001"
+    wp3_alarms: "urn:ngsi-ld:asphalt_alarms:001"
+    output_entity: "urn:ngsi-ld:Asphalt_solution_output_1:001"
+
+    solution_1:
+      alarm_type: "Sensor Error"
+      inputs:
+        rpa_0700:
+          attrs: ["DataIngestion_production_t_RPBCount", "DataIngestion_production_RPA0700_max"]
+          uppers: [0.0, 0.0]
+          lowers: [-.inf, 0.0]
+        st_frames:
+          attrs: ["DataIngestion_production_t_SPCount", "DataIngestion_production_t_STCount"]
+          uppers: [ 0.0, 0.0 ]
+          lowers: [ -.inf, 0.0 ]
+        rt_frames:
+          attrs: ["DataIngestion_production_t_RTCount", "DataIngestion_production_t_RPBCount" ]
+          uppers: [ 0.0, 0.0 ]
+          lowers: [ -.inf, 0.0 ]
+        rpa_2000:
+          attrs: ["DataIngestion_production_RPA2000_min"]
+          uppers: [.inf]
+          lowers: [0.0]
+        rpa_2100:
+          attrs: [ "DataIngestion_production_RPA2100_min" ]
+          uppers: [ .inf ]
+          lowers: [ 0.0 ]
+        rpa_1000:
+          attrs: [ "DataIngestion_production_RPA1000_min" ]
+          uppers: [ .inf ]
+          lowers: [ 0.0 ]
+
+
+    solution_4:
+      alarm_type: "Coefficient Instability"
+      inputs: ["train_models_coef_Sustitutivos", "train_models_coef_scrap14", "train_models_coef_scrap19", "train_models_coef_scrap04",
+        "train_models_coef_scrap21", "train_models_coef_scrap16", "train_models_coef_scrap18", "train_models_coef_scrap17", "train_models_coef_scrap03",
+        "train_models_coef_scrap20", "train_models_coef_scrap12", "train_models_coef_scrap11"]
+      pct_change: [15]
 

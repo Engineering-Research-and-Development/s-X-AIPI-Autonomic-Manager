@@ -6,15 +6,17 @@ from commons import (monitor_operations,
                      transform_operations,
                      plan_operations,
                      execute_operations)
-from dagster import job, multi_asset, AssetOut, Output, op
+from dagster import job, op
 
 
 def clean_names(names: [str]):
     new_names = [name.split("_zero")[0] if "_zero" in name else name for name in names]
     return new_names
 
+
 def adjust_alarm_type(alarms: [str]):
-    new_names = ["Material Introduction Detection" if "Good" in alarm else "Material Removal Detection" for alarm in alarms]
+    new_names = ["Material Introduction Detection" if "Good" in alarm else "Material Removal Detection" for alarm in
+                 alarms]
     return new_names
 
 
@@ -100,7 +102,6 @@ def sub_solution_material_used(incoming_data: dict,
     execute_operations.produce_kafka(producer, kafka_topic, historical_alarms)
 
 
-
 @op
 def elaborate_solution1(incoming_data, producer, service_config):
     kafka_topic = service_config["kafka_topic"]
@@ -154,6 +155,7 @@ def elaborate_solution1(incoming_data, producer, service_config):
                                attr_group_3_max, attr_group_3_zeros, attr_heats_3, patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
+
 @op
 def elaborate_solution2(incoming_data, producer, service_config):
     solution = "solution_2"
@@ -171,6 +173,7 @@ def elaborate_solution2(incoming_data, producer, service_config):
         "Solution 2", alarm_type, attrs, results_threshold, values, lower_thresholds, upper_thresholds)
     payloads = transform_operations.create_alarm_payloads(alarms, context)
     execute_operations.produce_kafka(producer, kafka_topic, payloads)
+
 
 @op
 def elaborate_solution3(incoming_data, producer, service_config):
@@ -214,9 +217,9 @@ def elaborate_solution3(incoming_data, producer, service_config):
     historical_alarms = transform_operations.create_alarm_payloads(historical_alarms, context)
     execute_operations.produce_kafka(producer, kafka_topic, historical_alarms)
 
+
 @op
 def elaborate_solution4(incoming_data, producer, service_config):
-
     solution = "solution_4"
     attrs = service_config[solution]["inputs"]
     pct_change = service_config[solution]["pct_change"]
@@ -257,7 +260,6 @@ def elaborate_solution4(incoming_data, producer, service_config):
     )
     historical_alarms = transform_operations.create_alarm_payloads(historical_alarms, context)
     execute_operations.produce_kafka(producer, kafka_topic, historical_alarms)
-
 
 
 @job
