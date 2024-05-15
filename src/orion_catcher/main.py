@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 from dagster_service.Pharma.main import process_pharma
 from dagster_service.Steel.main import process_steel
 from dagster_service.Asphalt.main import process_asphalt
+from dagster_service.Aluminium.main import process_aluminium
 
 from kafka import KafkaProducer
 from orion_catcher.subscription import check_existing_subscriptions, subscribe
@@ -71,8 +72,13 @@ async def webhook_handler(data: dict):
 
 @orion_catcher.post("/aluminium")
 async def webhook_handler(data: dict):
-    # process_message(context={}, message=data)
-    return {"message": "Pipeline triggered successfully!"}
+    result = process_aluminium.execute_in_process(input_values={"incoming_data": data,
+                                                                "producer": producer,
+                                                                "service_config": service_config["aluminium"]})
+    if result.success:
+        return {"message": "Pipeline executed successfully", "details": str(result)}
+    else:
+        raise HTTPException(status_code=500, detail="Failed to execute pipeline")
 
 
 # For debug purposes

@@ -32,18 +32,16 @@ pharma:
       kafka_topic: "pharma_alerts-solution2"
 
     solution_3:
-      inputs: [ "Pharma_DataIngestion_IR_numberOfValues", "Pharma_DataIngestion_IR_plsModelReliability", "Pharma_DataIngestion_IR_frequency"]
+      inputs: [ "DataIngestion_IR_numberOfValues", "DataIngestion_IR_plsModelReliability", "DataIngestion_IR_frequency"]
       kafka_topic: "pharma_alerts-solution3"
 
     solution_4:
-      inputs: [ "Pharma_DataIngestion_PWR_numberOfValues", "Pharma_DataIngestion_PWR_frequency"]
+      inputs: [ "DataIngestion_PWR_numberOfValues", "DataIngestion_PWR_frequency"]
       kafka_topic: "pharma_alerts-solution4"
 
     solution_5:
-      inputs_1: ["Pharma_RuntimeAIProcessing_Prediction_timeframe", "Pharma_RuntimeAIProcessing_Prediction_timestep",
-      "Pharma_RuntimeAIProcessing_Prediction_status" ]
-      inputs_2: ["RuntimeAIProcessing_Prediction_MSE"]
-      upper_thresholds_2: ["RuntimeAIProcessing_Prediction_MSE_Target"]
+      inputs: ["RuntimeAIProcessing_Prediction_MSE", "RuntimeAIProcessing_Prediction_time",
+      "RuntimeAIProcessing_Prediction_steps" ]
       kafka_topic: "pharma_alerts-solution5"
 
 
@@ -204,10 +202,48 @@ asphalt:
 
 
     solution_4:
-      alarm_type: "Coefficient Instability"
+      alarm_type: "D.APA Change Error / Laboratory Error"
       inputs: [ "DataIngestion_laboratory_DAPA_max", "DataIngestion_laboratory_DAPA_min",
                   "DataIngestion_laboratory_16mm_max", "DataIngestion_laboratory_0,063mm_max" ]
       upper_thresholds: [ 3.0, .inf, 100.0, 100.0 ]
       lower_thresholds: [ -.inf, 2.0, -.inf, -.inf]
+
+
+
+aluminium:
+  notification:
+    url: "http://0.0.0.0:8000/asphalt"
+    attrs: ["attribute1", "attribute2"]
+    metadata: ["dateCreated", "dateModified"]
+
+  entity: "EntityType"
+  orion_endpoint: "http://orion_host:port/v2/subscriptions"
+  kafka_topic: "aluminium"
+
+  dag_config:
+    base_url: "http://136.243.156.113:1026/ngsi-ld/v1/entities/"
+    small_window: "urn:ngsi-ld:IDALSA_smaller_time_window:001"
+    large_window: "urn:ngsi-ld:IDALSA_greater_time_window:001"
+    wp3_alarms: "urn:ngsi-ld:IDALSA_alarms:001"
+    output_entity: "urn:ngsi-ld:IDALSA_solution_output_1:001"
+
+    solution_2:
+      alarm_type_heats: "Heat Lenght Error"
+      alarm_type_materials: "Material Deviation Error"
+
+      inputs_heats: ["dataExploration_mergedheatsGeneral_mean_duration_of_heats"]
+      upper_threshold_heats: [270.0]
+      lower_threshold_heats : [-.inf]
+
+      input_materials: ["dataExploration_mergedheatsGeneral_mean_consumption_NaCl", "dataExploration_mergedheatsGeneral_mean_gas_consumption",
+        "dataExploration_mergedheatsGeneral_mean_oxygen_consumption"]
+      pct_change_materials: 5
+
+
+    solution_3:
+      alarm_type: "Human Dissatisfaction Detected"
+      inputs: ["modelTraining_mergedheatsGeneral_feedback_model_1", "modelTraining_mergedheatsGeneral_feedback_model_2"]
+      upper_thresholds: [ .inf, .inf ]
+      lower_thresholds: [ 70.0 70.0]
 
 

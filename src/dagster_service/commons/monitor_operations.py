@@ -1,5 +1,6 @@
 from dagster import op
 import requests
+import re
 
 
 @op
@@ -59,8 +60,9 @@ def get_data_from_wp3(data_source: dict,
 
     values = []
     for attribute in attributes:
+        attr = [re.search(attribute, key, re.IGNORECASE) for key in data_source.keys()][0]
         try:
-            values.append(data_source[attribute]["value"])
+            values.append(data_source[attr]["value"])
         except KeyError as e:
             print(e)
 

@@ -6,11 +6,13 @@ from commons import (monitor_operations,
                      plan_operations,
                      execute_operations)
 from dagster import job, op
+from kafka import KafkaProducer
+
 from dagster_service.commons.utils import THRESHOLD_OK
 
 
 @op
-def elaborate_solution1(incoming_data, producer, service_config):
+def elaborate_solution1(incoming_data: dict, producer: KafkaProducer, service_config: dict):
     solution = "solution_1"
     alarm_type = service_config[solution]["alarm_type"]
     inputs = service_config[solution]["inputs"]
@@ -43,7 +45,7 @@ def elaborate_solution1(incoming_data, producer, service_config):
 
 
 @op
-def elaborate_solution4(incoming_data, producer, service_config):
+def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_config: dict):
     solution = "solution_4"
     alarm_type = service_config[solution]["alarm_type"]
     attrs = service_config[solution]["inputs"]
@@ -54,7 +56,7 @@ def elaborate_solution4(incoming_data, producer, service_config):
 
     values = monitor_operations.get_data_from_notification(incoming_data, attrs)
     thresholds = analysis_operations.discriminate_thresholds(lowers, uppers, values)
-    alarms = plan_operations.create_alarm_threshold("Solution 1", alarm_type, attrs, thresholds,
+    alarms = plan_operations.create_alarm_threshold("Solution 4", alarm_type, attrs, thresholds,
                                                     values, lowers, uppers)
     payloads = transform_operations.create_alarm_payloads(alarms, context)
     execute_operations.produce_orion_multi_message(update_url, payloads)
