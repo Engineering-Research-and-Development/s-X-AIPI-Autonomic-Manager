@@ -23,7 +23,6 @@ def get_data(source_url: str
         return {}
 
 
-
 @op
 def get_data_from_notification(data_source: dict,
                                attributes: list[str],
@@ -43,7 +42,6 @@ def get_data_from_notification(data_source: dict,
             print(e)
 
     return values
-
 
 
 @op

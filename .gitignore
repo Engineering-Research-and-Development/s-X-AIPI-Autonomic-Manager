@@ -6,3 +6,5 @@ __pycache__/
 *.egg-info
 
 src/orion_catcher/config.env
+/src/dagster_service/dist/
+/src/dagster_service/build/

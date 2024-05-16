@@ -64,7 +64,6 @@ def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_co
 
 @job
 def process_asphalt(incoming_data, producer, service_config):
-    # incoming_data, producer, service_config = unpack_data()
 
     # SOLUTION 1
     elaborate_solution1(incoming_data, producer, service_config)
