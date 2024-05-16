@@ -1,12 +1,14 @@
 import numpy as np
 from kafka import KafkaProducer
-
-from commons import (monitor_operations,
-                     analysis_operations,
-                     transform_operations,
-                     plan_operations,
-                     execute_operations)
 from dagster import job, op
+
+from dagster_service.commons.analysis_operations import discriminate_thresholds, merge_thresholds_and, \
+    analyze_historical_data
+from dagster_service.commons.execute_operations import produce_kafka, patch_orion
+from dagster_service.commons.monitor_operations import get_data_from_notification, get_data
+from dagster_service.commons.plan_operations import create_alarm_threshold, update_historical_data, create_alarm_history
+from dagster_service.commons.transform_operations import expand_threshold, retrieve_values_from_historical_data, \
+    create_alarm_payloads, get_threshold_values_from_entity, get_threshold_from_pct_range
 
 
 def clean_names(names: [str]):
@@ -24,19 +26,23 @@ def adjust_alarm_type(alarms: [str]):
 def sub_solution_check_zero_nans(incoming_data: dict,
                                  producer: KafkaProducer,
                                  service_config: dict,
-                                 attrs: list[str],
+                                 attrs_name: str,
                                  solution: str,
                                  lower_threshold: str,
                                  upper_threshold: str,
-                                 alarm_type: str,
+                                 alarm_type_name: str,
                                  kafka_topic: str):
-    values = monitor_operations.get_data_from_notification(incoming_data, attrs)
-    upper_thresholds = transform_operations.expand_threshold(service_config[solution][upper_threshold], len(values))
-    lower_thresholds = transform_operations.expand_threshold(service_config[solution][lower_threshold], len(values))
-    results = analysis_operations.discriminate_thresholds(lower_thresholds, upper_thresholds, values)
-    payloads_zeros = plan_operations.create_alarm_threshold("Solution 1", alarm_type, attrs, results, values,
+
+    attrs = service_config[solution][attrs_name]
+    alarm_type = service_config[solution][alarm_type_name]
+
+    values = get_data_from_notification(incoming_data, attrs)
+    upper_thresholds = expand_threshold(service_config[solution][upper_threshold], len(values))
+    lower_thresholds = expand_threshold(service_config[solution][lower_threshold], len(values))
+    results = discriminate_thresholds(lower_thresholds, upper_thresholds, values)
+    payloads_zeros = create_alarm_threshold("Solution 1", alarm_type, attrs, results, values,
                                                             lower_thresholds, upper_thresholds)
-    execute_operations.produce_kafka(producer, kafka_topic, payloads_zeros)
+    produce_kafka(producer, kafka_topic, payloads_zeros)
 
 
 @op
@@ -44,83 +50,85 @@ def sub_solution_material_used(incoming_data: dict,
                                producer: KafkaProducer,
                                service_config: dict,
                                historical_data_url: str,
-                               attrs_max: list[str],
-                               attrs_zeros: list[str],
-                               nr_heats: list[str],
+                               attrs_max_name: str,
+                               attrs_zeros_name: str,
+                               nr_heats_name: str,
                                patience: int,
                                solution: str,
                                alarm_type: str,
                                kafka_topic: str
                                ):
+
+    attrs_zeros = service_config[solution][attrs_zeros_name]
+    attrs_max = service_config[solution][attrs_max_name]
+    nr_heats = service_config[solution][nr_heats_name]
+
     # Setting useful values
     lower_threshold_max = [-np.inf]
     upper_threshold_max = service_config[solution]['scapmax_lower']
     context = incoming_data["@context"]
 
     # Checking rules for max content values
-    values_max = monitor_operations.get_data_from_notification(incoming_data, attrs_max)
-    lower_threshold_max = transform_operations.expand_threshold(lower_threshold_max, len(values_max))
-    upper_threshold_max = transform_operations.expand_threshold(upper_threshold_max, len(values_max))
-    results_max = analysis_operations.discriminate_thresholds(lower_threshold_max, upper_threshold_max, values_max)
+    values_max = get_data_from_notification(incoming_data, attrs_max)
+    lower_threshold_max = expand_threshold(lower_threshold_max, len(values_max))
+    upper_threshold_max = expand_threshold(upper_threshold_max, len(values_max))
+    results_max = discriminate_thresholds(lower_threshold_max, upper_threshold_max, values_max)
 
     # Checking rules for number of zeros
-    values_zeros = monitor_operations.get_data_from_notification(incoming_data, attrs_zeros)
-    values_nrheats = monitor_operations.get_data_from_notification(incoming_data, nr_heats)
-    upper_threshold_nrheats = transform_operations.expand_threshold([np.inf], len(values_zeros))
-    lower_threshold_nrheats = transform_operations.expand_threshold(values_nrheats, len(values_zeros))
-    results_nrheats = analysis_operations.discriminate_thresholds(
+    values_zeros = get_data_from_notification(incoming_data, attrs_zeros)
+    values_nrheats = get_data_from_notification(incoming_data, nr_heats)
+    upper_threshold_nrheats = expand_threshold([np.inf], len(values_zeros))
+    lower_threshold_nrheats = expand_threshold(values_nrheats, len(values_zeros))
+    results_nrheats = discriminate_thresholds(
         lower_threshold_nrheats, upper_threshold_nrheats, values_zeros)
 
     # Merging rules from two sources
-    results_threshold = analysis_operations.merge_thresholds_and(results_max, results_nrheats)
+    results_threshold = merge_thresholds_and(results_max, results_nrheats)
 
     # Retrieving the data from historical storage
-    historical_data = monitor_operations.get_data(historical_data_url)
+    historical_data = get_data(historical_data_url)
     attrs_clean = clean_names(attrs_zeros)
     periods_list, ack_list, previous_list, old_values, historical_context = (
-        transform_operations.retrieve_values_from_historical_data(historical_data, attrs_clean))
+        retrieve_values_from_historical_data(historical_data, attrs_clean))
 
     # Analyze Historical Data
-    historical_alarms_analysis, historical_current_status = analysis_operations.analyze_historical_data(
+    historical_alarms_analysis, historical_current_status = analyze_historical_data(
         periods_list, ack_list, results_threshold, patience
     )
 
     # Update Historical Data
-    mock_values = transform_operations.expand_threshold([0.0], len(values_zeros))
-    update_payload = plan_operations.update_historical_data(
+    mock_values = expand_threshold([0.0], len(values_zeros))
+    update_payload = update_historical_data(
         historical_current_status, periods_list, ack_list, previous_list,
         mock_values, attrs_clean, historical_context
     )
-    execute_operations.patch_orion(historical_data_url, update_payload)
+    patch_orion(historical_data_url, update_payload)
 
     # Send Alarm To Kafka
     historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
-    historical_alarms = plan_operations.create_alarm_history(
+    historical_alarms = create_alarm_history(
         "Solution 1", alarm_type, attrs_clean, historical_alarms_analysis, periods_list, ack_list
     )
-    historical_alarms = transform_operations.create_alarm_payloads(historical_alarms, context)
-    execute_operations.produce_kafka(producer, kafka_topic, historical_alarms)
+    historical_alarms = create_alarm_payloads(historical_alarms, context)
+    produce_kafka(producer, kafka_topic, historical_alarms)
 
 
 @op
 def elaborate_solution1(incoming_data, producer, service_config):
+    solution = "solution_1"
     kafka_topic = service_config["kafka_topic"]
-    alarm_type_materials = service_config["solution_1"]["alarm_type_materials"]
+    alarm_type_materials = service_config[solution]["alarm_type_materials"]
     historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity"]
-    patience = service_config["solution_1"]["historical_patience"]
+    patience = service_config[solution]["historical_patience"]
 
     # Checking for zeros
-    attr_zeros = service_config["solution_1"]["zeros_inputs"]
-    alarm_type_zeros = service_config["solution_1"]["alarm_type_zeros"]
-    sub_solution_check_zero_nans(incoming_data, producer, service_config, attr_zeros, "solution_1",
-                                 "zero_inputs_lower_threshold", "zero_inputs_upper_threshold", alarm_type_zeros,
+    sub_solution_check_zero_nans(incoming_data, producer, service_config, "zeros_inputs", "solution_1",
+                                 "zero_inputs_lower_threshold", "zero_inputs_upper_threshold", "alarm_type_zeros",
                                  kafka_topic)
 
     # Checking for NaNs
-    attr_nan = service_config["solution_1"]["nan_inputs"]
-    alarm_type_nan = service_config["solution_1"]["alarm_type_nans"]
-    sub_solution_check_zero_nans(incoming_data, producer, service_config, attr_nan, "solution_1",
-                                 "nan_inputs_lower_threshold", "nan_inputs_upper_threshold", alarm_type_nan,
+    sub_solution_check_zero_nans(incoming_data, producer, service_config, "nan_inputs", "solution_1",
+                                 "nan_inputs_lower_threshold", "nan_inputs_upper_threshold", "alarm_type_nan",
                                  kafka_topic)
 
     # Checking first scrap group
@@ -132,27 +140,18 @@ def elaborate_solution1(incoming_data, producer, service_config):
                                alarm_type_materials, kafka_topic)
 
     # Checking second scrap group
-    attr_group_1_zeros = service_config["solution_1"]["scrapzeros_inputs_1"]
-    attr_group_1_max = service_config["solution_1"]["scrapmax_inputs_1"]
-    attr_heats_1 = service_config["solution_1"]["nrheats_scrap"]
     sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
-                               attr_group_1_max, attr_group_1_zeros, attr_heats_1, patience, "solution_1",
+                               "scrapmax_inputs_1", "scrapzeros_inputs_1", "nrheats_scrap", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking lime content
-    attr_group_2_zeros = service_config["solution_1"]["scrapzeros_inputs_2"]
-    attr_group_2_max = service_config["solution_1"]["scrapmax_inputs_2"]
-    attr_heats_2 = service_config["solution_1"]["nrheats_lime"]
     sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
-                               attr_group_2_max, attr_group_2_zeros, attr_heats_2, patience, "solution_1",
+                               "scrapmax_inputs_2", "scrapzeros_inputs_2", "nrheats_lime", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking lime content
-    attr_group_3_zeros = service_config["solution_1"]["scrapzeros_inputs_3"]
-    attr_group_3_max = service_config["solution_1"]["scrapmax_inputs_3"]
-    attr_heats_3 = service_config["solution_1"]["nrheats_limecoke"]
     sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
-                               attr_group_3_max, attr_group_3_zeros, attr_heats_3, patience, "solution_1",
+                               "scrapmax_inputs_3", "scrapzeros_inputs_3", "nrheats_limecoke", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
 
@@ -164,15 +163,15 @@ def elaborate_solution2(incoming_data, producer, service_config):
     kafka_topic = service_config["kafka_topic"]
 
     context = incoming_data["@context"]
-    values = monitor_operations.get_data_from_notification(incoming_data, attrs)
+    values = get_data_from_notification(incoming_data, attrs)
     upper_thresholds = service_config[solution]["thresholds"]
-    lower_thresholds = transform_operations.expand_threshold([-np.inf], len(upper_thresholds))
-    results_threshold = analysis_operations.discriminate_thresholds(lower_thresholds, upper_thresholds, values)
+    lower_thresholds = expand_threshold([-np.inf], len(upper_thresholds))
+    results_threshold = discriminate_thresholds(lower_thresholds, upper_thresholds, values)
 
-    alarms = plan_operations.create_alarm_threshold(
+    alarms = create_alarm_threshold(
         "Solution 2", alarm_type, attrs, results_threshold, values, lower_thresholds, upper_thresholds)
-    payloads = transform_operations.create_alarm_payloads(alarms, context)
-    execute_operations.produce_kafka(producer, kafka_topic, payloads)
+    payloads = create_alarm_payloads(alarms, context)
+    produce_kafka(producer, kafka_topic, payloads)
 
 
 @op
@@ -185,37 +184,37 @@ def elaborate_solution3(incoming_data, producer, service_config):
     kafka_topic = service_config["kafka_topic"]
 
     context = incoming_data["@context"]
-    values = monitor_operations.get_data_from_notification(incoming_data, attrs)
+    values = get_data_from_notification(incoming_data, attrs)
     threshold_names = service_config[solution]["thresholds"]
-    _, threshold_high = transform_operations.get_threshold_values_from_entity(
+    _, threshold_high = get_threshold_values_from_entity(
         incoming_data, threshold_names, threshold_names)
-    _, threshold_high = transform_operations.get_threshold_from_pct_range(threshold_high, pct_change)
-    results_threshold = analysis_operations.discriminate_thresholds([-np.inf], threshold_high, values)
+    _, threshold_high = get_threshold_from_pct_range(threshold_high, pct_change)
+    results_threshold = discriminate_thresholds([-np.inf], threshold_high, values)
 
     historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity"]
-    historical_data = monitor_operations.get_data(historical_data_url)
+    historical_data = get_data(historical_data_url)
 
     periods_list, ack_list, previous_list, old_values, historical_context = (
-        transform_operations.retrieve_values_from_historical_data(historical_data, attrs))
+        retrieve_values_from_historical_data(historical_data, attrs))
 
-    historical_alarms_analysis, historical_current_status = analysis_operations.analyze_historical_data(
+    historical_alarms_analysis, historical_current_status = analyze_historical_data(
         periods_list, ack_list, results_threshold, patience
     )
 
     # Update Historical Data
-    update_payload = plan_operations.update_historical_data(
+    update_payload = update_historical_data(
         historical_current_status, periods_list, ack_list, previous_list,
         values, attrs, historical_context
     )
-    execute_operations.patch_orion(historical_data_url, update_payload)
+    patch_orion(historical_data_url, update_payload)
 
     # Send Alarm To Kafka
     historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
-    historical_alarms = plan_operations.create_alarm_history(
+    historical_alarms = create_alarm_history(
         "Solution 3", alarm_type, attrs, historical_alarms_analysis, periods_list, ack_list
     )
-    historical_alarms = transform_operations.create_alarm_payloads(historical_alarms, context)
-    execute_operations.produce_kafka(producer, kafka_topic, historical_alarms)
+    historical_alarms = create_alarm_payloads(historical_alarms, context)
+    produce_kafka(producer, kafka_topic, historical_alarms)
 
 
 @op
@@ -228,38 +227,38 @@ def elaborate_solution4(incoming_data, producer, service_config):
     kafka_topic = service_config["kafka_topic"]
 
     context = incoming_data["@context"]
-    values = monitor_operations.get_data_from_notification(incoming_data, attrs)
+    values = get_data_from_notification(incoming_data, attrs)
 
     historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity"]
-    historical_data = monitor_operations.get_data(historical_data_url)
+    historical_data = get_data(historical_data_url)
 
     attrs_clean = clean_names(attrs)
     periods_list, ack_list, previous_list, old_values, historical_context = (
-        transform_operations.retrieve_values_from_historical_data(historical_data, attrs_clean))
+        retrieve_values_from_historical_data(historical_data, attrs_clean))
 
-    pct_expand = transform_operations.expand_threshold(pct_change, len(attrs))
-    lower_thresholds, upper_thresholds = transform_operations.get_threshold_from_pct_range(old_values, pct_expand)
-    results_threshold = analysis_operations.discriminate_thresholds(lower_thresholds, upper_thresholds, values)
+    pct_expand = expand_threshold(pct_change, len(attrs))
+    lower_thresholds, upper_thresholds = get_threshold_from_pct_range(old_values, pct_expand)
+    results_threshold = discriminate_thresholds(lower_thresholds, upper_thresholds, values)
 
     # Analyze Historical Data
-    historical_alarms_analysis, historical_current_status = analysis_operations.analyze_historical_data(
+    historical_alarms_analysis, historical_current_status = analyze_historical_data(
         periods_list, ack_list, results_threshold, patience
     )
 
     # Update Historical Data
-    update_payload = plan_operations.update_historical_data(
+    update_payload = update_historical_data(
         historical_current_status, periods_list, ack_list, previous_list,
         values, attrs_clean, historical_context
     )
-    execute_operations.patch_orion(historical_data_url, update_payload)
+    patch_orion(historical_data_url, update_payload)
 
     # Send Alarm To Kafka
     historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
-    historical_alarms = plan_operations.create_alarm_history(
+    historical_alarms = create_alarm_history(
         "Solution 4", alarm_type, attrs_clean, historical_alarms_analysis, periods_list, ack_list
     )
-    historical_alarms = transform_operations.create_alarm_payloads(historical_alarms, context)
-    execute_operations.produce_kafka(producer, kafka_topic, historical_alarms)
+    historical_alarms = create_alarm_payloads(historical_alarms, context)
+    produce_kafka(producer, kafka_topic, historical_alarms)
 
 
 @job

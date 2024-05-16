@@ -1,16 +1,15 @@
 import numpy as np
-from commons.monitor_operations import get_data_from_notification, get_data_from_wp3
 from kafka import KafkaProducer
 
-from commons import (
-                     analysis_operations,
-                     transform_operations,
-                     plan_operations,
-                     execute_operations)
-from .pharma_operations import compute_OCT_probe_status, create_probe_status_payload
 from dagster import job, op
 
-from commons.utils import update_data
+from .pharma_operations import compute_OCT_probe_status, create_probe_status_payload
+from dagster_service.commons.monitor_operations import get_data_from_notification, get_data_from_wp3
+from dagster_service.commons.utils import update_data
+from dagster_service.commons.analysis_operations import discriminate_thresholds
+from dagster_service.commons.execute_operations import produce_kafka
+from dagster_service.commons.plan_operations import create_alarm_threshold
+from dagster_service.commons.transform_operations import get_threshold_values_from_entity
 
 
 @op
@@ -23,11 +22,11 @@ def elaborate_solution1(data: dict, producer: KafkaProducer, service_config: dic
     values = get_data_from_notification(data, attrs)
 
     if len(values) > 1:
-        alarms = analysis_operations.discriminate_thresholds(lowers, uppers, values)
+        alarms = discriminate_thresholds(lowers, uppers, values)
         new_status = compute_OCT_probe_status(alarms)
         values[0] = new_status
         payload = create_probe_status_payload(values, attrs, data['@context'])
-        execute_operations.produce_kafka(producer, topic, [payload])
+        produce_kafka(producer, topic, [payload])
 
 
 @op
@@ -44,18 +43,18 @@ def elaborate_solution2(data: dict, producer: KafkaProducer, service_config: dic
 
     if len(values_1) > 0 and data['id'] == service_config["wp3_alarms"]:
         payload = update_data(values_1, attrs_1, data['@context'])
-        execute_operations.produce_kafka(producer, topic, [payload])
+        produce_kafka(producer, topic, [payload])
 
     print(values_2)
     if len(values_2) > 0 and data['id'] == service_config["small_window"]:
-        _, upper_thresh_2 = transform_operations.get_threshold_values_from_entity(data, [], uppers)
+        _, upper_thresh_2 = get_threshold_values_from_entity(data, [], uppers)
         up_val = upper_thresh_2[0] * pct[0] / 100
         lowers = [-np.inf]
         uppers = [up_val]
-        alarms = analysis_operations.discriminate_thresholds(lowers, uppers, values_2)
-        payloads = plan_operations.create_alarm_threshold("Solution 2", alarm_type_2, attrs_2,
-                                                          alarms, values_2, lowers, uppers)
-        execute_operations.produce_kafka(producer, topic, payloads)
+        alarms = discriminate_thresholds(lowers, uppers, values_2)
+        payloads = create_alarm_threshold("Solution 2", alarm_type_2, attrs_2,
+                                          alarms, values_2, lowers, uppers)
+        produce_kafka(producer, topic, payloads)
 
 
 @op
@@ -70,7 +69,7 @@ def elaborate_solution3(data: dict, producer: KafkaProducer, service_config: dic
 
     if len(values) > 0:
         payload = update_data(values, attrs, data['@context'])
-        execute_operations.produce_kafka(producer, topic, [payload])
+        produce_kafka(producer, topic, [payload])
 
 
 @op
@@ -84,7 +83,7 @@ def elaborate_solution4(data: dict, producer: KafkaProducer, service_config: dic
 
     if len(values) > 0:
         payload = update_data(values, attrs, data['@context'])
-        execute_operations.produce_kafka(producer, topic, [payload])
+        produce_kafka(producer, topic, [payload])
 
 
 @op
@@ -98,12 +97,11 @@ def elaborate_solution5(data: dict, producer: KafkaProducer, service_config: dic
 
     if len(values) > 0:
         payload = update_data(values, attrs, data['@context'])
-        execute_operations.produce_kafka(producer, topic, [payload])
+        produce_kafka(producer, topic, [payload])
 
 
 @job
 def process_pharma(incoming_data, producer, service_config):
-
     # SOLUTION 1
     elaborate_solution1(incoming_data, producer, service_config)
 

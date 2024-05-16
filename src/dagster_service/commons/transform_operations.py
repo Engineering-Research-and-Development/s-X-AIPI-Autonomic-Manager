@@ -6,12 +6,11 @@ from .utils import *
 
 @op
 def expand_threshold(value: list[float], number: int) -> list[float]:
-    '''
-
+    """
     @param value: threshold value
     @param number: number of times threshold should be repeated
     @return: list of threshold
-    '''
+    """
     return value * number
 
 
