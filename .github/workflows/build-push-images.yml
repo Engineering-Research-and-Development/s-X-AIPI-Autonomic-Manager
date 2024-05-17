@@ -8,11 +8,11 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
+  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+        
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -28,6 +28,8 @@ jobs:
 
       - name: Build and push Dagster Service
         uses: docker/build-push-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           push: true
           file: src/dagster_service/Dockerfile_dagster
@@ -35,6 +37,8 @@ jobs:
 
       - name: Build and push Orion Catcher
         uses: docker/build-push-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           context: src
           push: true
