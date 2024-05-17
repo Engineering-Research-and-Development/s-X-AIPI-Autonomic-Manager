@@ -22,19 +22,21 @@ jobs:
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          registry: github.com
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Dagster Service
         uses: docker/build-push-action@v4
         with:
+          push: true
           file: src/dagster_service/Dockerfile_dagster
-          tags: github.com/eng_autonomic_manager/dagster_service:latest
+          tags: ghcr.io/eng_autonomic_manager/dagster_service:latest
 
       - name: Build and push Orion Catcher
         uses: docker/build-push-action@v4
         with:
           context: src
+          push: true
           file: src/Dockerfile
-          tags: github.com/eng_autonomic_manager/orion_catcher:latest
+          tags: ghcr.io/eng_autonomic_manager/orion_catcher:latest
