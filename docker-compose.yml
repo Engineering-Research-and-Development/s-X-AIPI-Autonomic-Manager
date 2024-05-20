@@ -7,22 +7,8 @@ networks:
 
 volumes:
   redpanda-0: null
-  postgres-db-volume:
 
 services:
-
-  postgres:
-    image: postgres:16
-    environment:
-      POSTGRES_USER: s-x-aipi
-      POSTGRES_PASSWORD: s-x-aipi
-      POSTGRES_DB: s-x-aipi
-    volumes:
-      - postgres-db-volume:/var/lib/postgresql/data
-    restart: always
-    networks:
-      - s-x-aipi
-
 
   redpanda-0:
     command:
@@ -86,7 +72,7 @@ services:
 
   s-x-aipi-orion-catcher:
     container_name: s-x-aipi-orion-catcher
-    build: src
+    image: ghcr.io/engineering-research-and-development/s-x-aipi-autonomic-manager:orion_catcher
     networks:
       - s-x-aipi
     environment:
@@ -104,17 +90,12 @@ services:
     expose:
       - "8001"
     depends_on:
-      - redpanda-0
+      redpanda-0:
+        condition: service_started
 
-
-  # This service runs dagster_service-webserver, which loads your user code from the user code container.
-  # Since our instance uses the QueuedRunCoordinator, any runs submitted from the webserver will be put on
-  # a queue and later dequeued and launched by dagster_service-daemon.
   dagster_webservice:
-    build:
-      context: .
-      dockerfile: src/dagster_service/Dockerfile_dagster
     container_name: dagster_webserver
+    image: ghcr.io/engineering-research-and-development/s-x-aipi-autonomic-manager:dagster_service
     entrypoint:
       - dagster-webserver
       - -h
@@ -125,37 +106,69 @@ services:
       - "3000"
     ports:
       - "3000:3000"
-    environment:
-      DAGSTER_POSTGRES_USER: s-x-aipi
-      DAGSTER_POSTGRES_PASSWORD: s-x-aipi
-      DAGSTER_POSTGRES_DB: s-x-aipi
     volumes: # Make docker client accessible, so we can terminate containers from the webserver
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/io_manager_storage:/tmp/io_manager_storage
     networks:
       - s-x-aipi
-    depends_on:
-      - postgres
 
-  # This service runs the dagster_service-daemon process, which is responsible for taking runs
-  # off of the queue and launching them, as well as creating runs from schedules or sensors.
-  dagster_daemon:
-    build:
-      context: .
-      dockerfile: src/dagster_service/Dockerfile_dagster
-    entrypoint:
-      - dagster-daemon
-      - run
-    container_name: dagster_daemon
-    restart: on-failure
-    environment:
-      DAGSTER_POSTGRES_USER: s-x-aipi
-      DAGSTER_POSTGRES_PASSWORD: s-x-aipi
-      DAGSTER_POSTGRES_DB: s-x-aipi
-    volumes: # Make docker client accessible, so we can launch containers using host docker
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /tmp/io_manager_storage:/tmp/io_manager_storage
+  quantumleap:
+    image: orchestracities/quantumleap:latest
+    ports:
+      - "8668:8668"
+    depends_on:
+      - crate
     networks:
       - s-x-aipi
+    environment:
+      - CRATE_HOST=${CRATE_HOST:-crate}
+      - USE_GEOCODING=True
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - LOGLEVEL=DEBUG
+      - TZ=Europe/Rome
+    logging:
+      options:
+        max-size: "200m"
+
+  crate:
+    image: crate:latest
+    command: crate -Cauth.host_based.enabled=false
+      -Ccluster.name=democluster -Chttp.cors.enabled=true -Chttp.cors.allow-origin="*"
+    environment:
+      - LOG4J_FORMAT_MSG_NO_LOOKUPS=true
     depends_on:
-      - postgres
+      - timescale
+      - redis
+    networks:
+      - s-x-aipi
+    ports:
+      # Admin UI
+      - "4200:4200"
+      # Transport protocol
+      - "4300:4300"
+    logging:
+      options:
+        max-size: "200m"
+
+  timescale:
+    image: timescale/timescaledb-ha:pg16-all-amd64
+    environment:
+      POSTGRES_PASSWORD: s-x-aipi
+    ports:
+      - "5432:5432"
+    networks:
+      - s-x-aipi
+    logging:
+      options:
+        max-size: "200m"
+
+  redis:
+    image: redis:latest
+    logging:
+      options:
+        max-size: "200m"
+    ports:
+      - "6379:6379"
+    networks:
+      - s-x-aipi
