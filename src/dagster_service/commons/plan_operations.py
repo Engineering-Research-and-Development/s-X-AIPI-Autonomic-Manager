@@ -1,4 +1,4 @@
-from commons.utils import build_historical_data_attribute_names, UNCONFIRMED, update_data, THRESHOLD_OK
+from .utils import build_historical_data_attribute_names, UNCONFIRMED, update_data, THRESHOLD_OK
 from dagster import op
 
 
