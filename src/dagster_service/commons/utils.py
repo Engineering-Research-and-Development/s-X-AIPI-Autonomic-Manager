@@ -19,20 +19,27 @@ HISTORICAL_DATA_SUFFIXES = ["_periods", "_status", "_previous", "old_val"]
 
 def build_historical_data_attribute_names(attribute_name) -> list[str]:
     """
-    Programmatically builds attribute names from the historical data to gather
+    Programmatically builds attribute names from the historical data to gather.
 
+    @param attribute_name: The base attribute name.
+    @return: List of attribute names with suffixes.
     """
+
     names = [attribute_name + suffix for suffix in HISTORICAL_DATA_SUFFIXES]
     return names
 
 
 def pick_historical_data_values(names: list[str], entity: dict) -> list[int | str]:
     """
+    Pick historical data values from the entity based on the provided attribute names.
 
-    @param names: list of names from which to pick data
-    @param entity: json payload from Orion Context Broker
-    @return: List[float] containing periods_in_state, acknowledgement_status, previous_state
+    @param names: List of attribute names to pick values from.
+    @param entity: Dictionary containing historical data.
+
+    @return: List of historical data values.
+    @raise KeyError: If any attribute name is not found in the entity.
     """
+
     try:
         return [entity[name]["value"]["value"] for name in names]
     except KeyError:
@@ -41,13 +48,16 @@ def pick_historical_data_values(names: list[str], entity: dict) -> list[int | st
 
 def add_param_to_body(body: dict, param_name: str, param_value, now: str):
     """
-    Updates an NGSI-LD payload with new attributes
-    :param body: starting object to populate
-    :param param_name: attribute name to add
-    :param param_value: value of the attribute
-    :param now: ISO Time stringed date
-    :return: (dict) -> Updated object
+    Add a parameter with its value and timestamp to the body of a request.
+
+    @param body: Dictionary representing the body of the request.
+    @param param_name: Name of the parameter to be added.
+    @param param_value: Value of the parameter to be added.
+    @param now: Current timestamp.
+
+    @return: Updated body dictionary with the added parameter.
     """
+
     if param_value is not None:
         body[param_name] = {}
         body[param_name]["type"] = "Property"
@@ -60,13 +70,13 @@ def add_param_to_body(body: dict, param_name: str, param_value, now: str):
 
 def update_data(values: [], names: [str], payload_context: str):
     """
-    Update data in Orion Context Broker upon change detection
+    Update data with values and corresponding names into a payload body.
 
-    :param values: contains values for a body to be updated
-    :param names: contains names of parameters
-    :param payload_context: NGSI-LD context
+    @param values: List of values to be updated.
+    @param names: List of names corresponding to the values.
+    @param payload_context: Context for the payload.
 
-    values contains updated period, acknowledgement status and status (if historical data)
+    @return: Updated payload body.
     """
 
     now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")

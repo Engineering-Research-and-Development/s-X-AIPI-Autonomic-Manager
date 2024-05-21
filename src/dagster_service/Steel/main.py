@@ -32,6 +32,21 @@ def sub_solution_check_zero_nans(incoming_data: dict,
                                  upper_threshold: str,
                                  alarm_type_name: str,
                                  kafka_topic: str):
+    """
+    Check for zero or NaN values in the incoming data and trigger alarms accordingly for the specified solution.
+
+    @param incoming_data: Dictionary containing incoming data.
+    @param producer: KafkaProducer instance used for producing messages.
+    @param service_config: Dictionary containing configuration for the service.
+    @param attrs_name: Name of the attribute list in the service configuration.
+    @param solution: Name of the solution to be checked.
+    @param lower_threshold: Name of the lower threshold in the service configuration.
+    @param upper_threshold: Name of the upper threshold in the service configuration.
+    @param alarm_type_name: Name of the alarm type in the service configuration.
+    @param kafka_topic: Kafka topic to produce messages to.
+
+    @return: None
+    """
 
     attrs = service_config[solution][attrs_name]
     alarm_type = service_config[solution][alarm_type_name]
@@ -41,7 +56,7 @@ def sub_solution_check_zero_nans(incoming_data: dict,
     lower_thresholds = expand_threshold(service_config[solution][lower_threshold], len(values))
     results = discriminate_thresholds(lower_thresholds, upper_thresholds, values)
     payloads_zeros = create_alarm_threshold("Solution 1", alarm_type, attrs, results, values,
-                                                            lower_thresholds, upper_thresholds)
+                                            lower_thresholds, upper_thresholds)
     produce_kafka(producer, kafka_topic, payloads_zeros)
 
 
@@ -58,6 +73,23 @@ def sub_solution_material_used(incoming_data: dict,
                                alarm_type: str,
                                kafka_topic: str
                                ):
+    """
+    Check material usage for a sub-solution, analyze historical data, and send alarms to Kafka.
+
+    @param incoming_data: Dictionary containing incoming data.
+    @param producer: KafkaProducer instance used for producing messages.
+    @param service_config: Dictionary containing configuration for the service.
+    @param historical_data_url: URL for retrieving historical data.
+    @param attrs_max_name: Name of the attributes representing maximum value for a material in current period.
+    @param attrs_zeros_name: Name of the attributes representing number of zero values for a material in current period.
+    @param nr_heats_name: Name of the attribute representing number of heats in the analyzed period.
+    @param patience: Number of periods to wait before raising an alarm.
+    @param solution: Name of the solution.
+    @param alarm_type: Type of the alarm to be sent.
+    @param kafka_topic: Kafka topic to produce messages to.
+
+    @return: None
+    """
 
     attrs_zeros = service_config[solution][attrs_zeros_name]
     attrs_max = service_config[solution][attrs_max_name]
