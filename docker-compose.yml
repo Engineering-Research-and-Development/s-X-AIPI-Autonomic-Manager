@@ -77,7 +77,7 @@ services:
       - s-x-aipi
     environment:
        KAFKA-BROKER: redpanda-0:9092
-       ORION-CONFIG: "orion_catcher/solutions_configs"
+       ORION-CONFIG: "orion_catcher/solution_configs"
     command:
       - "uvicorn"
       - "orion_catcher.main:orion_catcher"
@@ -97,7 +97,7 @@ services:
       interval: 30s
       timeout: 5s
     #volumes:
-    #  - ./solution_configs:/orion_catcher/solutions_configs
+    #  - ./solution_configs:/orion_catcher/additional_solution_configs
 
   dagster_webservice:
     container_name: dagster_webserver
