@@ -9,14 +9,13 @@ def discriminate_thresholds(lower_thresholds: list[float],
                             values: list[float]
                             ) -> list[str]:
     """
-    Function to discriminate if values are in threshold
+    Discriminate thresholds based on the provided values.
 
-    :param values: (list[float]) values from OCB entity to be checked
-    :param lower_thresholds: (list[float]) list of ordered lower thresholds to be respected
-    :param upper_thresholds: (list[float]) list of ordered upper thresholds to be respected
+    @param lower_thresholds: List of lower thresholds for attributes.
+    @param upper_thresholds: List of upper thresholds for attributes.
+    @param values: List of current values for attributes.
 
-    :return result_list: (list[str]) list of results from the previous analysis
-
+    @return: List of threshold discrimination results (THRESHOLD_HIGH, THRESHOLD_LOW, THRESHOLD_OK).
     """
 
     result_list = []
@@ -43,15 +42,15 @@ def merge_thresholds_and(first_group: list[str],
                          second_group: list[str],
                          ) -> list[str]:
     """
-    Checks two groups of threshold results applying a logical AND
+    Merge two groups of threshold results using logical AND operation.
 
-    @param first_group: first set of results from threhshold
-    @param second_group: second set of results from threshold
+    @param first_group: First group of threshold results.
+    @param second_group: Second group of threshold results.
 
-    :return result_list: (list[str]) list of results from the previous analysis
-
-
+    @return: Merged list of threshold results where THRESHOLD_OK is preserved only if both groups are THRESHOLD_OK,
+             otherwise THRESHOLD_BROKEN is set.
     """
+
     result_list = []
     try:
         if len(first_group) != len(second_group):
@@ -77,13 +76,14 @@ def analyze_historical_data(periods_in_state_list: list[float],
                             patience: int
                             ) -> tuple[list[str], list[str]]:
     """
-    Confront current values versus previous value to check for alarm generation
+    Analyze historical data and determine alarm conditions.
 
-    @param acknowledgement_status_list: list of values for acknowledgement status for each attribute
-    @param periods_in_state_list: list of values for periods_in_state status for each attribute
-    @param rules_status: results from threshold analysis
-    @param patience: number of periods for status
-    @return: list(str) It might return "No Alarm", "Good Change", "Bad Change"
+    @param periods_in_state_list: List of periods in which the previous status is held for each attribute.
+    @param acknowledgement_status_list: List of acknowledgement status for each attribute.
+    @param rules_status: List of rule status (e.g., THRESHOLD_OK, THRESHOLD_HIGH, THRESHOLD_LOW) for each attribute.
+    @param patience: Number of periods to wait before raising an alarm.
+
+    @return: Tuple containing alarm list and current status list.
     """
 
     alarm_list = []

@@ -12,14 +12,20 @@ def update_historical_data(current_status_list: list[str],
                            payload_context: str,
                            ) -> dict:
     """
-        :param current_status_list: current status of a monitored system for each attribute
-        :param payload_context: context for NGSI-LD entity to update
-        :param periods_in_state_list: periods in which current status is hold
-        :param acknowledgement_status_list: current acknowledgement status from HITL
-        :param previous_status_list: previous status to confront
-        :param old_value_list: list of new values
-        :param attribute_names: base attribute name to "develop" into history parameters
-        """
+    Updates the historical data of a monitored system's attributes based on their current and previous statuses,
+    periods in which the current status is held, and acknowledgment status. This function constructs a payload
+    to update the NGSI-LD entity context.
+
+    @param current_status_list: List of current statuses of a monitored system for each attribute.
+    @param periods_in_state_list: List of periods in which the current status is held for each attribute.
+    @param acknowledgement_status_list: List of current acknowledgment statuses from Human-In-The-Loop (HITL) for each attribute.
+    @param previous_status_list: List of previous statuses to compare against the current statuses for each attribute.
+    @param old_value_list: List of new values (presumably old values from a previous state) for each attribute.
+    @param attribute_names: List of base attribute names to develop into history parameters.
+    @param payload_context: Context for NGSI-LD entity to update, typically a JSON-LD payload context.
+
+    @return: A dictionary representing the payload for updating the NGSI-LD entity context.
+    """
 
     try:
         if (len(attribute_names) != len(periods_in_state_list) or
@@ -63,17 +69,18 @@ def create_alarm_threshold(solution_name: str,
                            upper_thresholds: list[float]
                            ) -> list[dict]:
     """
+    Generate a list of alarms based on the provided thresholds and rule results for each attribute.
 
-    Args:
-        solution_name: name of solution which triggers the alarm
-        alarm_type: type or types of the caused alarm. Some solution may have multiple alarm types
-        attribute_names: names of attributes from solution
-        rule_results: results of RBE
-        values: current values of attributes
-        lower_thresholds: lower threshold of attributes
-        upper_thresholds: upper threshold of attributes
 
-    Returns: list[dict] list of alarms to send
+    @param solution_name: The name of the solution which triggers the alarm.
+    @param alarm_type: The type of the caused alarm.
+    @param attribute_names: The names of the attributes from the solution.
+    @param rule_results: The results of the Rule-Based Engine (RBE) for each attribute.
+    @param values: The current values of the attributes.
+    @param lower_thresholds: The lower thresholds for the attributes.
+    @param upper_thresholds: The upper thresholds for the attributes.
+
+    @return: A list of dictionaries representing the alarms to be sent.
 
     """
 
@@ -106,17 +113,16 @@ def create_alarm_history(solution_name: str,
                          acknowledged_status_list: list[str]
                          ) -> list[dict]:
     """
+    Generate a list of historical alarms based on the provided rule results and other parameters.
 
-    Args:
-        solution_name: name of solution which triggers the alarm
-        alarm_type: type or types of the caused alarm. Some solution may have multiple alarm types
-        attribute_names: names of attributes from solution
-        rule_results: results of RBE
-        periods: periods in which the current status changed
-        acknowledged_status_list: list of acknowledge status
+    @param solution_name: The name of the solution which triggers the alarm.
+    @param alarm_type: The types of the caused alarm.
+    @param attribute_names: The names of the attributes from the solution.
+    @param rule_results: The results of the Rule-Based Engine (RBE) for each attribute.
+    @param periods: The periods in which the current status is held for each attribute.
+    @param acknowledged_status_list: The current acknowledgement status for each attribute.
 
-    Returns: list[dict] list of alarms to send
-
+    @return: A list of dictionaries representing the historical alarms.
     """
 
     list_results = []

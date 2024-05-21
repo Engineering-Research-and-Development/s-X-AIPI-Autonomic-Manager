@@ -7,9 +7,12 @@ import re
 def get_data(source_url: str
              ) -> dict:
     """
-    Function taking as input an entity url and retrieving data
+    Retrieve data from a given URL and return it as a dictionary.
 
-    @param source_url: url from which to get historical source entity from Orion
+    @param source_url: The URL to fetch data from.
+
+    @return: A dictionary containing the retrieved data if the request is successful;
+             otherwise, an empty dictionary.
     """
 
     response = requests.get(source_url)
@@ -28,12 +31,14 @@ def get_data_from_notification(data_source: dict,
                                attributes: list[str],
                                ) -> list[float]:
     """
-    Get data from received notification, returning valuable information
-    @param data_source: dictionary containing data payload from notification
-    @param attributes: list of attribute names from which to gather values
+    Get data from received notification, returning valuable information.
 
-    @return: relevant attribute values
+    @param data_source: Dictionary containing data payload from notification.
+    @param attributes: List of attribute names from which to gather values.
+
+    @return: Relevant attribute values.
     """
+
     values = []
     for attribute in attributes:
         try:
@@ -49,11 +54,12 @@ def get_data_from_wp3(data_source: dict,
                       attributes: list[str]
                       ) -> list[dict]:
     """
-    Get data from received notification, returning valuable information
-    @param data_source: dictionary containing data payload from notification
-    @param attributes: list of attribute names from which to gather values
+    Get data from received notification, returning valuable information.
 
-    @return: relevant attribute values
+    @param data_source: Dictionary containing data payload from notification.
+    @param attributes: List of attribute names from which to gather values.
+
+    @return: Relevant attribute values.
     """
 
     values = []

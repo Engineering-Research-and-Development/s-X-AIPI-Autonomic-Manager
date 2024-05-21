@@ -7,10 +7,14 @@ from .utils import update_data, build_historical_data_attribute_names, pick_hist
 @op
 def expand_threshold(value: list[float], number: int) -> list[float]:
     """
-    @param value: threshold value
-    @param number: number of times threshold should be repeated
-    @return: list of threshold
+    Expand a threshold value by repeating it a certain number of times.
+
+    @param value: Threshold value to be expanded.
+    @param number: Number of times the threshold should be repeated.
+
+    @return: List of threshold values.
     """
+
     return value * number
 
 
@@ -20,12 +24,15 @@ def get_threshold_values_from_entity(data_source: dict,
                                      upper_names: list[str]
                                      ) -> tuple[list[float], list[float]]:
     """
-    Get data from received notification, returning valuable information
-    @param upper_names: names of attributes containing upper thresholds
-    @param lower_names: names of attributes containing lower thresholds
-    @param data_source: dictionary containing data payload from notification
-    @return: relevant attribute values
+    Retrieve lower and upper threshold values from the entity data source.
+
+    @param data_source: Dictionary containing data payload from the entity.
+    @param lower_names: List of attribute names representing lower thresholds.
+    @param upper_names: List of attribute names representing upper thresholds.
+
+    @return: Tuple containing lists of lower and upper threshold values.
     """
+
     try:
         upper_thresholds = [float(data_source[attribute]["value"]["value"]) for attribute in upper_names]
         lower_thresholds = [float(data_source[attribute]["value"]["value"]) for attribute in lower_names]
@@ -40,11 +47,14 @@ def get_threshold_from_pct_range(values: list[float],
                                  pct_list: list[float]
                                  ) -> tuple[list[float], list[float]]:
     """
+    Calculate threshold ranges based on percentage change from the provided values.
 
-    @param values: list of values from which to compute percentage
-    @param pct_list: list of percentages to use for computing thresholds
-    @return: list of upper and lower thresholds
+    @param values: List of values to calculate thresholds from.
+    @param pct_list: List of percentages representing the range of threshold values.
+
+    @return: Tuple containing lists of lower and upper threshold values.
     """
+
     lowers = []
     uppers = []
     try:
@@ -69,12 +79,14 @@ def retrieve_values_from_historical_data(historical_data: dict,
                                          attribute_names: list[str],
                                          ) -> tuple[list[int], list[str], list[str], list[float], str]:
     """
-    Function to gather values for historical data given retrieved payload
+    Retrieve values from historical data for the given attribute names.
 
-    @param historical_data: historical entity data
-    @param attribute_names: attributes to search in the historical entity
-    @return: list of values (periods_in_state, acknowledgement_status, previous_state) and its context value
+    @param historical_data: Dictionary containing historical data.
+    @param attribute_names: List of attribute names for which values are to be retrieved.
+
+    @return: Tuple containing lists of periods, acknowledgment statuses, previous statuses, old values, and historical context.
     """
+
     periods_list = []
     ack_list = []
     previous_list = []
@@ -99,14 +111,14 @@ def retrieve_values_from_historical_data(historical_data: dict,
 def create_alarm_payloads(values: list[dict],
                           payload_context: str) -> list[dict]:
     """
-    Takes a list of alarm results [any] and returns a list of payloads for OCB
-    Args:
-        values: list of alarm value dictionaries
-        payload_context: inject context of alarm entity
+    Create alarm payloads based on the provided values and payload context.
 
-    Returns: list of payloads
+    @param values: List of dictionaries representing alarm values.
+    @param payload_context: Context for NGSI-LD entity to update.
 
+    @return: List of dictionaries representing the alarm payloads.
     """
+
     payloads = []
 
     for val in values:
