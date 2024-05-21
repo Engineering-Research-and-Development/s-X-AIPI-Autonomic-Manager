@@ -5,7 +5,7 @@ __pycache__/
 .experimental_playground
 *.egg-info
 
-src/orion_catcher/config.env
+/src/orion_catcher/config.env
 /src/dagster_service/dist/
 /src/dagster_service/build/
 /.actrc
