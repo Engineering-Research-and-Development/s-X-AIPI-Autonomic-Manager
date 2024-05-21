@@ -77,7 +77,7 @@ services:
       - s-x-aipi
     environment:
        KAFKA-BROKER: redpanda-0:9092
-       ORION-CONFIG: "orion_catcher/solutions_config.yml"
+       ORION-CONFIG: "orion_catcher/solutions_configs"
     command:
       - "uvicorn"
       - "orion_catcher.main:orion_catcher"
@@ -92,6 +92,12 @@ services:
     depends_on:
       redpanda-0:
         condition: service_started
+    healthcheck:
+      test: wget --no-verbose -O /dev/null --tries=1 http://localhost:8001/healthcheck || exit 1
+      interval: 30s
+      timeout: 5s
+    #volumes:
+    #  - ./solution_configs:/orion_catcher/solutions_configs
 
   dagster_webservice:
     container_name: dagster_webserver

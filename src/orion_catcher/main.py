@@ -8,18 +8,31 @@ from dagster_service.Asphalt.main import process_asphalt
 from dagster_service.Aluminium.main import process_aluminium
 
 from kafka import KafkaProducer
-from orion_catcher.subscription import check_existing_subscriptions, subscribe
+from orion_catcher.orion_subscription import check_existing_subscriptions, subscribe
 
-config_file = os.getenv('ORION-CONFIG')
+config_folder = os.getenv('ORION-CONFIG')
 producer = KafkaProducer(bootstrap_servers=os.getenv('KAFKA-BROKER'))
 topics = {}
 service_config = {}
 
 
+def merge_yaml_files(folder_path):
+    merged_dict = {}
+
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.yaml') or filename.endswith('.yml'):
+            file_path = os.path.join(folder_path, filename)
+            with open(file_path, 'r') as file:
+                content = yaml.safe_load(file)
+                if content:
+                    merged_dict.update(content)
+
+    return merged_dict
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    with open(config_file, "r") as f:
-        config = yaml.safe_load(f)
+    config = merge_yaml_files(config_folder)
 
     for k in config.keys():
         service = config[k]
@@ -38,7 +51,7 @@ orion_catcher = FastAPI(lifespan=lifespan)
 
 
 @orion_catcher.post("/pharma")
-async def webhook_handler(data: dict):
+async def pharma_handler(data: dict):
     result = process_pharma.execute_in_process(input_values={"incoming_data": data,
                                                              "producer": producer,
                                                              "service_config": service_config["pharma"]})
@@ -49,7 +62,7 @@ async def webhook_handler(data: dict):
 
 
 @orion_catcher.post("/asphalt")
-async def webhook_handler(data: dict):
+async def asphalt_handler(data: dict):
     result = process_asphalt.execute_in_process(input_values={"incoming_data": data,
                                                               "producer": producer,
                                                               "service_config": service_config["asphalt"]})
@@ -60,7 +73,7 @@ async def webhook_handler(data: dict):
 
 
 @orion_catcher.post("/steel")
-async def webhook_handler(data: dict):
+async def steel_handler(data: dict):
     result = process_steel.execute_in_process(input_values={"incoming_data": data,
                                                             "producer": producer,
                                                             "service_config": service_config["steel"]})
@@ -71,7 +84,7 @@ async def webhook_handler(data: dict):
 
 
 @orion_catcher.post("/aluminium")
-async def webhook_handler(data: dict):
+async def aluminum_handler(data: dict):
     result = process_aluminium.execute_in_process(input_values={"incoming_data": data,
                                                                 "producer": producer,
                                                                 "service_config": service_config["aluminium"]})
@@ -79,6 +92,11 @@ async def webhook_handler(data: dict):
         return {"message": "Pipeline executed successfully", "details": str(result)}
     else:
         raise HTTPException(status_code=500, detail="Failed to execute pipeline")
+
+
+@orion_catcher.get("/healthcheck")
+def get_healthcheck():
+    return "Ok"
 
 
 # For debug purposes

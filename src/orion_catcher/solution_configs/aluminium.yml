@@ -1,0 +1,35 @@
+aluminium:
+  notification:
+    url: "http://0.0.0.0:8000/asphalt"
+    attrs: ["attribute1", "attribute2"]
+    metadata: ["dateCreated", "dateModified"]
+
+  entity: "EntityType"
+  orion_endpoint: "http://orion_host:port/v2/subscriptions"
+  kafka_topic: "aluminium"
+
+  dag_config:
+    base_url: "http://0.0.0.0:1026/ngsi-ld/v1/entities/"
+    small_window: "urn:ngsi-ld:IDALSA_smaller_time_window:001"
+    large_window: "urn:ngsi-ld:IDALSA_greater_time_window:001"
+    wp3_alarms: "urn:ngsi-ld:IDALSA_alarms:001"
+    output_entity: "urn:ngsi-ld:IDALSA_solution_output_1:001"
+
+    solution_2:
+      alarm_type_heats: "Heat Lenght Error"
+      alarm_type_materials: "Material Deviation Error"
+
+      inputs_heats: ["dataExploration_mergedheatsGeneral_mean_duration_of_heats"]
+      upper_threshold_heats: [270.0]
+      lower_threshold_heats : [-.inf]
+
+      input_materials: ["dataExploration_mergedheatsGeneral_mean_consumption_NaCl", "dataExploration_mergedheatsGeneral_mean_gas_consumption",
+        "dataExploration_mergedheatsGeneral_mean_oxygen_consumption"]
+      pct_change_materials: 5
+
+
+    solution_3:
+      alarm_type: "Human Dissatisfaction Detected"
+      inputs: ["modelTraining_mergedheatsGeneral_feedback_model_1", "modelTraining_mergedheatsGeneral_feedback_model_2"]
+      upper_thresholds: [ .inf, .inf ]
+      lower_thresholds: [ 70.0 70.0]
