@@ -16,18 +16,14 @@ topics = {}
 service_config = {}
 
 
-def merge_yaml_files(folder_path) -> dict:
+def merge_yaml_files(folder_path: str) -> dict:
     """
-    Merge yaml files found in a folder into a single data structure
+    Merge YAML files from a given folder into a single dictionary.
 
-
-    Args:
-        folder_path (str): the folder to analyse
-
-
-    Returns:
-        A dictionary with the folder structure
+    @param folder_path: The path to the folder containing YAML files.
+    @return: A dictionary containing the merged content of all YAML files.
     """
+
     merged_dict = {}
 
     for filename in os.listdir(folder_path):
@@ -41,31 +37,16 @@ def merge_yaml_files(folder_path) -> dict:
     return merged_dict
 
 
-def read_configs(folder_path) -> dict:
-    """
-    Reads the folder with the configuration of the solutions as well as the additional one
-
-    Args:
-        folder_path (str): the folder to analyse
-
-
-    Returns:
-        A dictionary with the folder structure
-    """
-    config = merge_yaml_files(folder_path)
-    try:
-        additional_config = merge_yaml_files("additional_" + folder_path)
-        config.update(additional_config)
-        print("Additional configuration folder loaded")
-    except FileNotFoundError:
-        pass
-
-    return config
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    config = read_configs(folder_path=config_folder)
+    """
+    Manage the lifespan of an application asynchronously.
+
+    @param app: The FastAPI application instance.
+    @return: None
+    """
+
+    config = merge_yaml_files(config_folder)
 
     for k in config.keys():
         service = config[k]

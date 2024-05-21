@@ -9,7 +9,7 @@ pharma:
   kafka_topic: "pharma"
 
   dag_config:
-    base_url: "http://0.0.0.0:1026/ngsi-ld/v1/entities/"
+    base_url: "http://136.243.156.113:1026/ngsi-ld/v1/entities/"
     small_window: "urn:ngsi-ld:Pharma_smaller_time_window:001"
     large_window: "urn:ngsi-ld:Pharma_greater_time_window:001"
     wp3_alarms: "urn:ngsi-ld:Pharma_alarms:001"

@@ -1,5 +1,36 @@
 from .utils import build_historical_data_attribute_names, UNCONFIRMED, update_data, THRESHOLD_OK
 from dagster import op
+import numpy as np
+
+
+@op
+def create_historical_entity(id: str,
+                             attribute_names: list[str],
+                             payload_context: str,
+                             ) -> dict:
+    """
+    @param id: id of the newly created entity
+    @param attribute_names: attribute names for the historical entity
+    @param payload_context: context for NGSI-LD payload
+
+    @return: dictionary to post on OCB
+    """
+
+    payload = {}
+    for idx, attribute_name in enumerate(attribute_names):
+
+        update_names = build_historical_data_attribute_names(attribute_name)
+        current_status = "CREATED"
+        acknowledgement_status = UNCONFIRMED
+        periods_in_state = 0
+        old_value = np.inf
+
+        new_values = [periods_in_state, acknowledgement_status, current_status, old_value]
+        payload = update_data(new_values, update_names, payload_context)
+
+    payload['id'] = id
+
+    return payload
 
 
 @op
