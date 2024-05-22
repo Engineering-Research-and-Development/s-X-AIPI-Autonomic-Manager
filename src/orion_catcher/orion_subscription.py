@@ -1,5 +1,6 @@
 import requests
 import logging
+import json
 
 
 def check_existing_subscriptions(orion_endpoint: str, entity_id: str, callback_url: str, attrs: list[str]) -> bool:
@@ -68,11 +69,13 @@ def subscribe(entity_id: str, entity_type: str, attrs: list[str], notification_u
                 "accept": "application/json"
             },
             "format": "normalized",
-            "attributes": attrs,
         },
         "throttling": throttling,
         "expires": "2099-01-01T14:00:00.00Z"
     }
+
+    if len(attrs) > 0:
+        subscription_payload["notification"]["attributes"] = attrs
 
     if len(condition_attrs) > 0:
         subscription_payload["watchedAttributes"] = condition_attrs
@@ -80,8 +83,9 @@ def subscribe(entity_id: str, entity_type: str, attrs: list[str], notification_u
     headers = {
         "Content-Type": "application/ld+json",
     }
-
-    response = requests.post(orion_host, json=subscription_payload, headers=headers)
+    response = requests.post(orion_host, data=json.dumps(subscription_payload), headers=headers)
+    print(response.status_code)
+    print(json.dumps(subscription_payload))
 
     if response.status_code == 201:
         logging.info("Subscription created successfully.")
