@@ -308,6 +308,14 @@ def elaborate_solution4(incoming_data, producer, service_config):
     produce_kafka(producer, kafka_topic, historical_alarms)
 
 
+@op
+def alarm_redirection_wp3(incoming_data, producer, service_config):
+    if incoming_data["id"] == service_config["wp3_alarms"]:
+        return
+
+
+
+
 @job
 def process_steel(incoming_data, producer, service_config):
     # incoming_data, producer, service_config = unpack_data()
@@ -323,3 +331,6 @@ def process_steel(incoming_data, producer, service_config):
 
     # SOLUTION 4
     elaborate_solution4(incoming_data, producer, service_config)
+
+    #Alarm redirection
+    alarm_redirection_wp3(incoming_data, producer, service_config)

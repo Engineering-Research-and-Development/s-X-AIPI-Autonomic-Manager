@@ -5,18 +5,15 @@ asphalt:
     subscription_ld_endpoint: "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions"
     context: "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     notification_endpoint: "http://0.0.0.0:8000/asphalt"
-    to_subscribe: [
-      small_window:
-        id: "urn:ngsi-ld:asphalt_smaller_time_window:001"
+    to_subscribe:
+      - id: "urn:ngsi-ld:asphalt_smaller_time_window:001"
         type: "factory"
         attrs: [ ]
-        conditions: [ ] ,
-      wp3_alarm:
-        id: "urn:ngsi-ld:asphalt_alarms:001"
+        conditions: [ ]
+      - id: "urn:ngsi-ld:asphalt_alarms:001"
         type: "asphalt_alarms"
         attrs: [ ]
         conditions: [ ]
-    ]
 
   kafka_topic: "asphalt"
 
