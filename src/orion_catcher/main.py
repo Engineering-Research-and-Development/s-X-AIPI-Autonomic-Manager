@@ -55,6 +55,7 @@ async def lifespan(app: FastAPI):
         subscription_config = service["subscriptions"]
 
         orion_endpoint = subscription_config["orion_endpoint"]
+        print(orion_endpoint)
         subscription_endpoint = subscription_config["subscription_ld_endpoint"]
         notification_endpoint = subscription_config["notification_endpoint"]
         context = subscription_config["context"]
