@@ -2,7 +2,7 @@ aluminium:
 
   subscriptions:
     orion_endpoint: "http://orion_host:port/v2/subscriptions"
-    subscription_ld_endpoint: "http://orion_host:port/ngsi-ld/v1/subscriptions"
+    subscription_ld_endpoint: "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions"
     context: "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     notification_endpoint: "http://0.0.0.0:8000/aluminium"
     to_subscribe: [

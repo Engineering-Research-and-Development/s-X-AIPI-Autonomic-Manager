@@ -75,8 +75,6 @@ services:
     image: ghcr.io/engineering-research-and-development/s-x-aipi-autonomic-manager:orion_catcher
     networks:
       - s-x-aipi
-    env_file:
-      - config.env
     environment:
        KAFKA-BROKER: redpanda-0:9092
        ORION-CONFIG: "orion_catcher/solution_configs"
