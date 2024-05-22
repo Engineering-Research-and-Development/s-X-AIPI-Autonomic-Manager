@@ -52,12 +52,19 @@ async def lifespan(app: FastAPI):
         service = config[k]
         topics[k] = service["kafka_topic"]
         service_config[k] = service["dag_config"]
+        subscription_config = service["subscriptions"]
 
-    #         if not check_existing_subscriptions(service["orion_endpoint"], service["entity"],
-    #                                             service["notification"]["url"]):
-    #             await subscribe(service["entity"], service["attrs"], service["notification"]["url"],
-    #                             service["notification"]["attrs"], service["notification"]["metadata"],
-    #                             service["orion-host"])
+        orion_endpoint = subscription_config["orion_endpoint"]
+        subscription_endpoint = subscription_config["subscription_ld_endpoint"]
+        notification_endpoint = subscription_config["notification_endpoint"]
+        context = subscription_config["context"]
+        for entity in subscription_config["to_subscribe"]:
+            print(entity)
+
+            if not check_existing_subscriptions(orion_endpoint, entity['id'], notification_endpoint, entity['attrs']):
+                subscribe(entity['id'], entity['type'], entity['attrs'], notification_endpoint, entity['conditions'],
+                          subscription_endpoint, context, 5)
+
     yield
 
 

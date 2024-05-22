@@ -1,11 +1,22 @@
 pharma:
-  notification:
-    url: "http://0.0.0.0:8000/pharma"
-    attrs: ["attribute1", "attribute2"]
-    metadata: ["dateCreated", "dateModified"]
+  subscriptions:
+    orion_endpoint: "http://orion_host:port/v2/subscriptions"
+    subscription_ld_endpoint: "http://orion_host:port/ngsi-ld/v1/subscriptions"
+    context: "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    notification_endpoint : "http://0.0.0.0:8000/pharma"
+    to_subscribe: [
+      small_window:
+        id: "urn:ngsi-ld:Pharma_smaller_time_window:001"
+        type: "factory"
+        attrs: []
+        conditions: [] ,
+      wp3_alarm:
+        id : "urn:ngsi-ld:Pharma_alarms:001"
+        type: "Pharma_alarms"
+        attrs: []
+        conditions: []
+    ]
 
-  entity: "EntityType"
-  orion_endpoint: "http://orion_host:port/v2/subscriptions"
   kafka_topic: "pharma"
 
   dag_config:
