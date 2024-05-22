@@ -60,8 +60,6 @@ async def lifespan(app: FastAPI):
         notification_endpoint = subscription_config["notification_endpoint"]
         context = subscription_config["context"]
         for entity in subscription_config["to_subscribe"]:
-            print(entity)
-
             if not check_existing_subscriptions(orion_endpoint, entity['id'], notification_endpoint, entity['attrs']):
                 subscribe(entity['id'], entity['type'], entity['attrs'], notification_endpoint, entity['conditions'],
                           subscription_endpoint, context, 5)

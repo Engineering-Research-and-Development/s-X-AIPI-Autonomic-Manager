@@ -20,8 +20,6 @@ def check_existing_subscriptions(orion_endpoint: str, entity_id: str, callback_u
         'Accept': 'application/json'
     }
 
-    print(orion_endpoint)
-
     # Make a GET request to retrieve existing subscriptions
     response = requests.get(orion_endpoint, headers=headers)
 
