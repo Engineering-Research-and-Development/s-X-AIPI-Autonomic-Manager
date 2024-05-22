@@ -68,7 +68,7 @@ def subscribe(entity_id: str, entity_type: str, attrs: list[str], notification_u
                 "accept": "application/json"
             },
             "format": "normalized",
-            "attrs": attrs,
+            "attributes": attrs,
         },
         "throttling": throttling,
         "expires": "2099-01-01T14:00:00.00Z"
