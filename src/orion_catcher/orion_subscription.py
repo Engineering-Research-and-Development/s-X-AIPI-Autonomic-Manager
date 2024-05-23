@@ -100,15 +100,19 @@ def subscribe(entity_id: str, entity_type: str, attrs: list[str], notification_u
         return None
 
 
-def clean_subscriptions(sub_id_list: list[str], url: str) -> None:
+def clean_subscriptions(sub_id_list: list[str], url: str) -> bool:
     """
     Clean previously created subscriptions
 
     @param sub_id_list: list of previously created subscriptions
     @param url: url of the context broker
+    @return True if all subs are deleted successfully, false otherwise
     """
 
-    for sub_id in sub_id_list:
-        requests.delete(f"{url}{sub_id}")
+    try:
+        for sub_id in sub_id_list:
+            requests.delete(f"{url}{sub_id}")
+    except requests.exceptions.RequestException as e:
+        return False
 
     return True

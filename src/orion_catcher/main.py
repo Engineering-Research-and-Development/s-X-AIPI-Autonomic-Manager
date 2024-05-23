@@ -79,6 +79,8 @@ async def lifespan(app: FastAPI):
         for key, value in created_subs_ids.items():
             if clean_subscriptions(value['sub_ids'], value["orion_endpoint"]):
                 print(f"Successfully deleted {key} subscriptions")
+            else:
+                print(f"Something went wrong while deleting {key} subscriptions")
     except asyncio.exceptions.CancelledError or KeyboardInterrupt as e:
         print("Program Killed")
 
