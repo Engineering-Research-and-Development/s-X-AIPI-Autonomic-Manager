@@ -1,3 +1,4 @@
+import asyncio.exceptions
 import os
 import yaml
 from fastapi import FastAPI, HTTPException
@@ -8,12 +9,13 @@ from dagster_service.Asphalt.main import process_asphalt
 from dagster_service.Aluminium.main import process_aluminium
 
 from kafka import KafkaProducer
-from orion_catcher.orion_subscription import check_existing_subscriptions, subscribe
+from orion_catcher.orion_subscription import check_existing_subscriptions, subscribe, clean_subscriptions
 
 config_folder = os.getenv('ORION-CONFIG')
 producer = KafkaProducer(bootstrap_servers=os.getenv('KAFKA-BROKER'))
 topics = {}
 service_config = {}
+created_subs_ids ={}
 
 
 def merge_yaml_files(folder_path: str) -> dict:
@@ -47,6 +49,7 @@ async def lifespan(app: FastAPI):
     """
 
     config = merge_yaml_files(config_folder)
+    created_subs_ids = {}
 
     for k in config.keys():
         service = config[k]
@@ -58,12 +61,26 @@ async def lifespan(app: FastAPI):
         subscription_endpoint = subscription_config["subscription_ld_endpoint"]
         notification_endpoint = subscription_config["notification_endpoint"]
         context = subscription_config["context"]
+
+        created_subs_ids[k] = {"orion_endpoint": orion_endpoint,
+                               "sub_ids": []}
         for entity in subscription_config["to_subscribe"]:
             if not check_existing_subscriptions(orion_endpoint, entity['id'], notification_endpoint, entity['attrs']):
-                subscribe(entity['id'], entity['type'], entity['attrs'], notification_endpoint, entity['conditions'],
-                          subscription_endpoint, context, 5)
+                sub_id = subscribe(entity['id'], entity['type'], entity['attrs'], notification_endpoint,
+                                   entity['conditions'],
+                                   subscription_endpoint, context, 5)
+                created_subs_ids[k]['sub_ids'].append(sub_id.split("/")[-1])
 
     yield
+
+    try:
+
+        print("Gracefully Stopping...")
+        for key, value in created_subs_ids.items():
+            if clean_subscriptions(value['sub_ids'], value["orion_endpoint"]):
+                print(f"Successfully deleted {key} subscriptions")
+    except asyncio.exceptions.CancelledError or KeyboardInterrupt as e:
+        print("Program Killed")
 
 
 orion_catcher = FastAPI(lifespan=lifespan)

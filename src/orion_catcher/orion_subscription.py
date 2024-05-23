@@ -47,7 +47,7 @@ def check_existing_subscriptions(orion_endpoint: str, entity_id: str, callback_u
 
 
 def subscribe(entity_id: str, entity_type: str, attrs: list[str], notification_url: str, condition_attrs: list[str],
-              orion_host: str, context: str, throttling: int = 60) -> None:
+              orion_host: str, context: str, throttling: int = 60) -> str | None:
     """
     Create a subscription in Orion Context Broker for a given entity.
 
@@ -94,5 +94,21 @@ def subscribe(entity_id: str, entity_type: str, attrs: list[str], notification_u
 
     if response.status_code == 201:
         logging.info("Subscription created successfully.")
+        return response.headers['Location']
     else:
         logging.error(f"Failed to create subscription: {response.text}")
+        return None
+
+
+def clean_subscriptions(sub_id_list: list[str], url: str) -> None:
+    """
+    Clean previously created subscriptions
+
+    @param sub_id_list: list of previously created subscriptions
+    @param url: url of the context broker
+    """
+
+    for sub_id in sub_id_list:
+        requests.delete(f"{url}{sub_id}")
+
+    return True
