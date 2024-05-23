@@ -4,12 +4,32 @@ import numpy as np
 
 
 @op
-def create_historical_entity(id: str,
+def create_output_entity(entity_id: str,
+                         payload_context: str,
+                         ) -> dict:
+    """
+    @param entity_id: id of the newly created entity
+    @param payload_context: context for NGSI-LD payload
+
+    @return: dictionary to post on OCB
+    """
+
+    update_names = ["AM_Generated_Alarm"]
+    new_values = [{}]
+    payload = update_data(new_values, update_names, payload_context)
+
+    payload['id'] = entity_id
+
+    return payload
+
+
+@op
+def create_historical_entity(entity_id: str,
                              attribute_names: list[str],
                              payload_context: str,
                              ) -> dict:
     """
-    @param id: id of the newly created entity
+    @param entity_id: id of the newly created entity
     @param attribute_names: attribute names for the historical entity
     @param payload_context: context for NGSI-LD payload
 
@@ -18,7 +38,6 @@ def create_historical_entity(id: str,
 
     payload = {}
     for idx, attribute_name in enumerate(attribute_names):
-
         update_names = build_historical_data_attribute_names(attribute_name)
         current_status = "CREATED"
         acknowledgement_status = UNCONFIRMED
@@ -28,7 +47,7 @@ def create_historical_entity(id: str,
         new_values = [periods_in_state, acknowledgement_status, current_status, old_value]
         payload = update_data(new_values, update_names, payload_context)
 
-    payload['id'] = id
+    payload['id'] = entity_id
 
     return payload
 

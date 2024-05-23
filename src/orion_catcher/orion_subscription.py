@@ -112,7 +112,7 @@ def clean_subscriptions(sub_id_list: list[str], url: str) -> bool:
     try:
         for sub_id in sub_id_list:
             requests.delete(f"{url}{sub_id}")
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException:
         return False
 
     return True

@@ -1,8 +1,8 @@
 import numpy as np
 
-from dagster_service.commons.execute_operations import produce_orion_multi_message
+from dagster_service.commons.execute_operations import produce_orion_multi_message, patch_orion
 from dagster_service.commons.monitor_operations import get_data_from_notification, get_data
-from dagster_service.commons.plan_operations import create_alarm_threshold
+from dagster_service.commons.plan_operations import create_alarm_threshold, create_output_entity
 from dagster_service.commons.transform_operations import (
     expand_threshold, create_alarm_payloads, get_threshold_values_from_entity, get_threshold_from_pct_range)
 from dagster_service.commons.analysis_operations import (
@@ -52,6 +52,11 @@ def elaborate_solution2(incoming_data: dict, producer: KafkaProducer, service_co
                                               threshold_materials_results, values_materials,
                                               lower_thresholds_materials, upper_thresholds_materials)
     payloads_materials = create_alarm_payloads(alarms_materials, context)
+
+    output_entity = get_data(update_url)
+    if output_entity == {}:
+        out_entity = create_output_entity(service_config['output_entity'], context)
+        patch_orion(update_url, out_entity)
     produce_orion_multi_message(update_url, payloads_materials)
 
 
@@ -72,6 +77,11 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
     alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
                                     values, lowers, uppers)
     payloads = create_alarm_payloads(alarms, context)
+
+    output_entity = get_data(update_url)
+    if output_entity == {}:
+        out_entity = create_output_entity(service_config['output_entity'], context)
+        patch_orion(update_url, out_entity)
     produce_orion_multi_message(update_url, payloads)
 
 

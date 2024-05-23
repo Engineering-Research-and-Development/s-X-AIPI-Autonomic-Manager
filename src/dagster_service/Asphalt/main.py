@@ -2,9 +2,9 @@ from dagster import job, op
 from kafka import KafkaProducer
 
 from dagster_service.commons.analysis_operations import discriminate_thresholds, merge_thresholds_and
-from dagster_service.commons.execute_operations import produce_orion_multi_message
-from dagster_service.commons.monitor_operations import get_data_from_notification
-from dagster_service.commons.plan_operations import create_alarm_threshold
+from dagster_service.commons.execute_operations import produce_orion_multi_message, patch_orion
+from dagster_service.commons.monitor_operations import get_data_from_notification, get_data
+from dagster_service.commons.plan_operations import create_alarm_threshold, create_output_entity
 from dagster_service.commons.transform_operations import create_alarm_payloads
 from dagster_service.commons.utils import THRESHOLD_OK
 
@@ -39,6 +39,12 @@ def elaborate_solution1(incoming_data: dict, producer: KafkaProducer, service_co
         alarms = create_alarm_threshold("Solution 1", alarm_type, attrs, thresholds,
                                                         values, lowers, uppers)
         payloads = create_alarm_payloads(alarms, context)
+
+        output_entity = get_data(update_url)
+        if output_entity == {}:
+            out_entity = create_output_entity(service_config['output_entity'], context)
+            patch_orion(update_url, out_entity)
+
         produce_orion_multi_message(update_url, payloads)
 
 
@@ -57,6 +63,11 @@ def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_co
     alarms = create_alarm_threshold("Solution 4", alarm_type, attrs, thresholds,
                                                     values, lowers, uppers)
     payloads = create_alarm_payloads(alarms, context)
+
+    output_entity = get_data(update_url)
+    if output_entity == {}:
+        out_entity = create_output_entity(service_config['output_entity'], context)
+        patch_orion(update_url, out_entity)
     produce_orion_multi_message(update_url, payloads)
 
 
