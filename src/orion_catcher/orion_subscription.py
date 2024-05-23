@@ -3,12 +3,15 @@ import logging
 import json
 
 
-def check_existing_subscriptions(orion_endpoint: str, entity_id: str, callback_url: str, attrs: list[str]) -> bool:
+def check_existing_subscriptions(orion_endpoint: str, entity_id: str, callback_url: str, attrs: list[str],
+                                 offset=0, limit=200) -> bool:
     """
     @param orion_endpoint: The endpoint of the Orion Context Broker.
     @param entity_id: The id of the entity to check for subscription.
     @param callback_url: The callback URL to check for subscription.
     @param attrs: attributes to check in subscriptions
+    @param limit: number of subscription shown inside the GET requests
+    @param offset: starting subscription
 
     @return:
         True if an active subscription matching the provided entity_type and callback_url is found.
@@ -20,6 +23,8 @@ def check_existing_subscriptions(orion_endpoint: str, entity_id: str, callback_u
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     }
+
+    orion_endpoint = orion_endpoint + f"?offset={offset}&limit={limit}"
 
     # Make a GET request to retrieve existing subscriptions
     response = requests.get(orion_endpoint, headers=headers)
