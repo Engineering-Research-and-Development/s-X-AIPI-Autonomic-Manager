@@ -15,7 +15,7 @@ config_folder = os.getenv('ORION-CONFIG')
 producer = KafkaProducer(bootstrap_servers=os.getenv('KAFKA-BROKER'))
 topics = {}
 service_config = {}
-created_subs_ids ={}
+created_subs_ids = {}
 
 
 def merge_yaml_files(folder_path: str) -> dict:
