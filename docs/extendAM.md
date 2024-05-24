@@ -22,6 +22,13 @@ def process_custom(incoming_data, producer, service_config):
 ```
 Here you can implement your logic, handling the `incoming_data` from orion_catcher, the `producer`, which is the Kafka instance and `service_config` that contains all the configuration you can use in the solution development
 
+Finally, it is necessary to declare the job in `__init__.py` file:
+```python
+from .main import process_custom
+
+Definitions(jobs=[process_custom])
+```
+
 ## 2) Include the new module into the dagster configuration
 
 Edit the file `dagster_service/workspace.yaml` and append your `CustomSolution` module:
