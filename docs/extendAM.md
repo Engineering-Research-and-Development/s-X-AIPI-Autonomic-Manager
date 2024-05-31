@@ -96,3 +96,10 @@ async def custom_solution_handler(data: dict):
     else:
         raise HTTPException(status_code=500, detail="Failed to execute pipeline")
 ```
+## 5) Enable the new module in the Docker-compose
+The last step involves to enable of the module in the docker compose file.
+To do so, you can un-comment the part that binds the `additional_solutions` to the container:
+```yaml
+    volumes:
+      - ./solution_configs:/orion_catcher/additional_solution_configs
+```

@@ -1,0 +1,128 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
+
+# Dataset Definition
+ex:Pharma_smaller_time_window001 a dcat:Dataset ;
+    dct:identifier "urn:ngsi-ld:Pharma_smaller_time_window:001" ;
+    dct:title "Pharma Smaller Time Window Dataset" ;
+    dct:description "This dataset contains factory data with a smaller time window for data ingestion and processing metrics." ;
+    dct:issued "2024-04-29T16:21:16Z"^^xsd:dateTime ;
+    dct:modified "2024-04-29T16:21:16Z"^^xsd:dateTime ;
+    dcat:keyword "Pharma", "data ingestion", "factory", "smaller time window" ;
+    dcat:distribution [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion IR Frequency" ;
+        ex:value "10.23"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion IR Number of Values" ;
+        ex:value "10"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion IR PLS Model Reliability" ;
+        ex:value "10.23"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion OCT Probe Position Evaluation" ;
+        ex:value "1"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion OCT Signal Quality Check Max Signal Intensity" ;
+        ex:value "200"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion PWR Frequency" ;
+        ex:value "10.23"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion PWR Number of Values" ;
+        ex:value "10"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Model Learning Offline Model Params Model Used" ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Runtime AI Processing Prediction Steps" ;
+        ex:value "20"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Runtime AI Processing Prediction Time" ;
+        ex:value "30"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Model Learning Offline Model Params Number of Training Exp" ;
+        ex:value "15"^^xsd:integer ;
+        ex:dateObserved "2024-04-23T16:08:35Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Model Learning Offline Model Params Number of Data Rows" ;
+        ex:value "2155"^^xsd:integer ;
+        ex:dateObserved "2024-04-23T16:08:36Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Model Learning Offline Model Params Training MSE" ;
+        ex:value "0.004598"^^xsd:decimal ;
+        ex:dateObserved "2024-04-23T16:08:36Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Model Learning Offline Model Params Validation MSE" ;
+        ex:value "0.003991"^^xsd:decimal ;
+        ex:dateObserved "2024-04-23T16:08:36Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion OCT Image Classification Number of Good Images" ;
+        ex:value "100"^^xsd:integer ;
+        ex:dateObserved "2024-04-29T15:59:14Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion OCT Image Classification Number of Bad Images" ;
+        ex:value "20"^^xsd:integer ;
+        ex:dateObserved "2024-04-29T15:59:15Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Runtime AI Processing Prediction MSE" ;
+        ex:value "10"^^xsd:integer ;
+        ex:dateObserved "2024-04-29T16:16:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion OCT Probe Position X Position" ;
+        ex:value "100"^^xsd:integer ;
+        ex:dateObserved "2024-04-29T16:21:16Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ], [
+        a dcat:Distribution ;
+        dct:description "Data Ingestion OCT Probe Position Y Position" ;
+        ex:value "10"^^xsd:integer ;
+        ex:dateObserved "2024-04-29T16:21:16Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "5"^^xsd:integer
+    ] .

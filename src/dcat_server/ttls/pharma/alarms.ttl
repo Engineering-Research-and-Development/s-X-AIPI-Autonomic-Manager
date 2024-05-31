@@ -1,0 +1,22 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
+
+# Dataset Definition
+ex:Pharma_alarms001 a dcat:Dataset ;
+    dct:identifier "urn:ngsi-ld:Pharma_alarms:001" ;
+    dct:title "Pharma Alarms Dataset" ;
+    dct:description "This dataset contains Pharma alarms related to data ingestion and image classification." ;
+    dct:issued "2024-04-29T15:59:15Z"^^xsd:dateTime ;
+    dct:modified "2024-04-29T15:59:15Z"^^xsd:dateTime ;
+    dcat:keyword "Pharma", "alarms", "data ingestion", "image classification" ;
+    dcat:distribution [
+        a dcat:Distribution ;
+        dct:description "Pharma Data Ingestion OCT Image Classification numBadImg" ;
+        ex:longer_avg_period_value "2.000"^^xsd:decimal ;
+        ex:smaller_avg_period_value "20.000"^^xsd:decimal ;
+        ex:dateObserved "2024-04-29T15:59:15Z"^^xsd:dateTime ;
+        ex:alarmType "stabilityAlarm" ;
+        ex:percentage "900.000"^^xsd:decimal
+    ] .
