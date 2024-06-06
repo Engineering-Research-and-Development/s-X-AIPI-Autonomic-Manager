@@ -9,3 +9,4 @@ __pycache__/
 /src/dagster_service/dist/
 /src/dagster_service/build/
 /.actrc
+/src/dcat_server/data.json
