@@ -27,7 +27,7 @@ steel:
     kafka_wp3: "steel-alerts-wp3"
 
     solution_1:
-      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_1:001"
+      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_1:001"
       historical_patience: 1
       zeros_inputs: [
         "transformation_scrap_tot_zeros", "transformation_lime_sum_lime_basket_zeros", "transformation_lime_coke_sum_cok_lim_melting_zeros",
@@ -97,7 +97,7 @@ steel:
       "alarm_type": "Outliers Detected"
 
     solution_3:
-      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_3:001"
+      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_3:001"
       historical_patience: 1
       alarm_type: "Model Accuracy Degradation"
       inputs: [ "modeling_LinearRegression_MAE" ]
@@ -105,7 +105,7 @@ steel:
       pct_change: [15]
 
     solution_4:
-      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_Status_4:001"
+      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_4:001"
       historical_patience: 1
       alarm_type: "Coefficient Instability"
       inputs: ["train_models_coef_Sustitutivos", "train_models_coef_scrap14", "train_models_coef_scrap19", "train_models_coef_scrap04",
