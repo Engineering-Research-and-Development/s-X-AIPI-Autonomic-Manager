@@ -2,7 +2,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ex: <http://example.org/> .
 
-ex:IDALSA_greater_time_window:001 a ex:factory ;
+ex:001 a ex:factory ;
     ex:dataExploration_mergedheatsGeneral_max_consumption_NaCl [
         a dcat:Property ;
         ex:value "0.153"^^xsd:decimal ;
@@ -11,19 +11,19 @@ ex:IDALSA_greater_time_window:001 a ex:factory ;
     ] ;
     ex:dataExploration_mergedheatsGeneral_max_duration_of_heats [
         a dcat:Property ;
-        ex:value "495.0"^^xsd:decimal ;
+        ex:value "495"^^xsd:integer ;
         ex:dateObserved "2024-02-29T00:00:00Z"^^xsd:dateTime ;
         ex:timeWindowLengthMinutes "43834"^^xsd:integer
     ] ;
     ex:dataExploration_mergedheatsGeneral_max_gas_consumption [
         a dcat:Property ;
-        ex:value "1073.0"^^xsd:decimal ;
+        ex:value "1073"^^xsd:integer ;
         ex:dateObserved "2024-02-29T00:00:00Z"^^xsd:dateTime ;
         ex:timeWindowLengthMinutes "43834"^^xsd:integer
     ] ;
     ex:dataExploration_mergedheatsGeneral_max_oxygen_consumption [
         a dcat:Property ;
-        ex:value "1504.0"^^xsd:decimal ;
+        ex:value "1504"^^xsd:integer ;
         ex:dateObserved "2024-02-29T00:00:00Z"^^xsd:dateTime ;
         ex:timeWindowLengthMinutes "43834"^^xsd:integer
     ] ;
@@ -59,19 +59,19 @@ ex:IDALSA_greater_time_window:001 a ex:factory ;
     ] ;
     ex:dataExploration_mergedheatsGeneral_min_duration_of_heats [
         a dcat:Property ;
-        ex:value "175.0"^^xsd:decimal ;
+        ex:value "175"^^xsd:integer ;
         ex:dateObserved "2024-02-29T00:00:00Z"^^xsd:dateTime ;
         ex:timeWindowLengthMinutes "43834"^^xsd:integer
     ] ;
     ex:dataExploration_mergedheatsGeneral_min_gas_consumption [
         a dcat:Property ;
-        ex:value "245.0"^^xsd:decimal ;
+        ex:value "245"^^xsd:integer ;
         ex:dateObserved "2024-02-29T00:00:00Z"^^xsd:dateTime ;
         ex:timeWindowLengthMinutes "43834"^^xsd:integer
     ] ;
     ex:dataExploration_mergedheatsGeneral_min_oxygen_consumption [
         a dcat:Property ;
-        ex:value "242.0"^^xsd:decimal ;
+        ex:value "242"^^xsd:integer ;
         ex:dateObserved "2024-02-29T00:00:00Z"^^xsd:dateTime ;
         ex:timeWindowLengthMinutes "43834"^^xsd:integer
     ] ;
@@ -89,7 +89,7 @@ ex:IDALSA_greater_time_window:001 a ex:factory ;
     ] ;
     ex:modelTraining_mergedheatsGeneral_feedback_model_2 [
         a dcat:Property ;
-        ex:value "100.0"^^xsd:decimal ;
+        ex:value "100"^^xsd:integer ;
         ex:dateObserved "2024-02-29T00:00:00Z"^^xsd:dateTime ;
         ex:timeWindowLengthMinutes "43834"^^xsd:integer
     ] .

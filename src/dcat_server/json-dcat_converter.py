@@ -4,7 +4,7 @@ import requests
 
 collection_path = 'collection.json'
 orion_ip = "136.243.156.113"
-output_folder = './outputs'
+output_folder = './ttls'
 
 
 def load_postman_collection(file_path):
@@ -115,7 +115,7 @@ def main():
         responses = make_requests(requests_with_window, orion_ip)
         for url, status_code, text, json_response in responses:
             turtle_data = json_to_turtle(json_response)
-            output_file = f"{output_folder}/{extract_after_urn(url)}.ttl"
+            output_file = f"{output_folder}/{extract_after_urn(url)}.ttl".replace(":", "_")
             with open(output_file, 'w') as file:
                 file.write(turtle_data)
 

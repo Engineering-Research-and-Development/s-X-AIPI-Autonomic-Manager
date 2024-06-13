@@ -1,0 +1,116 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/> .
+
+ex:001 a ex:factory ;
+    ex:DataIngestion_IR_frequency [
+        a dcat:Property ;
+        ex:value "10.23"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_IR_numberOfValues [
+        a dcat:Property ;
+        ex:value "10"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_IR_plsModelReliability [
+        a dcat:Property ;
+        ex:value "10.23"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_OCT_imageClassification_numBadImg [
+        a dcat:Property ;
+        ex:value "2"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_OCT_imageClassification_numGoodImg [
+        a dcat:Property ;
+        ex:value "10"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_OCT_probePositionEvaluation [
+        a dcat:Property ;
+        ex:value "1"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_OCT_probePosition_xPos [
+        a dcat:Property ;
+        ex:value "0.98123"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_OCT_probePosition_yPos [
+        a dcat:Property ;
+        ex:value "1.98123"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_OCT_signalQualityCheck_maxSignalIntensity [
+        a dcat:Property ;
+        ex:value "3"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_PWR_frequency [
+        a dcat:Property ;
+        ex:value "10.23"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:DataIngestion_PWR_numberOfValues [
+        a dcat:Property ;
+        ex:value "10"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:ModelLearningOffline_ModelParams_ModelUsed [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:ModelLearningOffline_ModelParams_NumberOfDataRows [
+        a dcat:Property ;
+        ex:value "4200"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:ModelLearningOffline_ModelParams_TrainingMSE [
+        a dcat:Property ;
+        ex:value "0.89"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:ModelLearningOffline_ModelParams_ValidationMSE [
+        a dcat:Property ;
+        ex:value "0.76"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:RuntimeAIProcessing_Prediction_MSE [
+        a dcat:Property ;
+        ex:value "0.123"^^xsd:decimal ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer ;
+        ex:upperLimit "1" ;
+        ex:lowerLimit "0" ;
+        ex:targetValue "0.1"
+    ] ;
+    ex:RuntimeAIProcessing_Prediction_steps [
+        a dcat:Property ;
+        ex:value "20"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] ;
+    ex:RuntimeAIProcessing_Prediction_time [
+        a dcat:Property ;
+        ex:value "30"^^xsd:integer ;
+        ex:dateObserved "2023-12-10T15:46:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "50"^^xsd:integer
+    ] .
