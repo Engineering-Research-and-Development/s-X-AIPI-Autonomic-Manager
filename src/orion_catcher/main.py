@@ -12,6 +12,7 @@ from kafka import KafkaProducer
 from orion_catcher.orion_subscription import check_existing_subscriptions, subscribe, clean_subscriptions
 
 config_folder = os.getenv('ORION-CONFIG')
+print(os.getenv('KAFKA-BROKER'))
 producer = KafkaProducer(bootstrap_servers=os.getenv('KAFKA-BROKER'))
 topics = {}
 service_config = {}
