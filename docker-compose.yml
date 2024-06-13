@@ -8,7 +8,6 @@ networks:
 volumes:
   redpanda-0: null
 
-# WARNING: For S-X-AIPI Kafka internal/external ports are swapped!!!
 services:
 
   redpanda-0:
@@ -43,7 +42,7 @@ services:
     ports:
       - "18081:18081"
       - "18082:18082"
-      - "9092:9092"
+      - "19092:19092"
       - "19644:9644"
 
 
