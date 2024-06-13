@@ -1,9 +1,4 @@
 load_from:
-  # Each entry here corresponds to a service in the docker-compose file that exposes user code.
-  #- grpc_server:
-  #    host: localhost
-  #    port: 4000
-  #    location_name: "localhost"
   - python_module: Pharma
   - python_module: Steel
   - python_module: Asphalt

@@ -2,14 +2,14 @@ import numpy as np
 from kafka import KafkaProducer
 from dagster import job, op
 
-from dagster_service.commons.analysis_operations import discriminate_thresholds, merge_thresholds_and, \
+from commons.analysis_operations import discriminate_thresholds, merge_thresholds_and, \
     analyze_historical_data
-from dagster_service.commons.execute_operations import produce_kafka, patch_orion
-from dagster_service.commons.monitor_operations import get_data_from_notification, get_data
-from dagster_service.commons.plan_operations import create_alarm_threshold, update_historical_data, \
+from commons.execute_operations import produce_kafka, patch_orion
+from commons.monitor_operations import get_data_from_notification, get_data
+from commons.plan_operations import create_alarm_threshold, update_historical_data, \
     create_alarm_history, \
     create_historical_entity
-from dagster_service.commons.transform_operations import expand_threshold, retrieve_values_from_historical_data, \
+from commons.transform_operations import expand_threshold, retrieve_values_from_historical_data, \
     create_alarm_payloads, get_threshold_values_from_entity, get_threshold_from_pct_range
 
 

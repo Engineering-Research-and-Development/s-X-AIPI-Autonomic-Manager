@@ -7,7 +7,7 @@ COPY . .
 
 RUN pip3 install --upgrade pip
 RUN pip3 install -r ./requirements.txt
-RUN pip3 install -e .
-RUN pip3 install -e ./dagster_service
+RUN pip3 install .
+RUN pip3 install ./dagster_service
 
 CMD ["uvicorn", "orion_catcher.main:orion_catcher", "--host", "0.0.0.0", "--port", "8001"]

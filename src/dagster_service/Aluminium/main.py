@@ -1,11 +1,11 @@
 import numpy as np
 
-from dagster_service.commons.execute_operations import produce_orion_multi_message, patch_orion
-from dagster_service.commons.monitor_operations import get_data_from_notification, get_data
-from dagster_service.commons.plan_operations import create_alarm_threshold, create_output_entity
-from dagster_service.commons.transform_operations import (
+from commons.execute_operations import produce_orion_multi_message, patch_orion
+from commons.monitor_operations import get_data_from_notification, get_data
+from commons.plan_operations import create_alarm_threshold, create_output_entity
+from commons.transform_operations import (
     expand_threshold, create_alarm_payloads, get_threshold_values_from_entity, get_threshold_from_pct_range)
-from dagster_service.commons.analysis_operations import (
+from commons.analysis_operations import (
     discriminate_thresholds)
 
 from dagster import job, op

@@ -1,12 +1,12 @@
 from dagster import job, op
 from kafka import KafkaProducer
 
-from dagster_service.commons.analysis_operations import discriminate_thresholds, merge_thresholds_and
-from dagster_service.commons.execute_operations import produce_orion_multi_message, patch_orion
-from dagster_service.commons.monitor_operations import get_data_from_notification, get_data
-from dagster_service.commons.plan_operations import create_alarm_threshold, create_output_entity
-from dagster_service.commons.transform_operations import create_alarm_payloads
-from dagster_service.commons.utils import THRESHOLD_OK
+from commons.analysis_operations import discriminate_thresholds, merge_thresholds_and
+from commons.execute_operations import produce_orion_multi_message, patch_orion
+from commons.monitor_operations import get_data_from_notification, get_data
+from commons.plan_operations import create_alarm_threshold, create_output_entity
+from commons.transform_operations import create_alarm_payloads
+from commons.utils import THRESHOLD_OK
 
 
 @op

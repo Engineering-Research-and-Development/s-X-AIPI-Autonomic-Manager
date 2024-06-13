@@ -1,4 +1,0 @@
-dagster
-numpy~=1.26.4
-dagster-webserver
-kafka-python

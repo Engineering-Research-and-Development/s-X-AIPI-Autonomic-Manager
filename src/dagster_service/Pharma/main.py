@@ -4,12 +4,12 @@ from kafka import KafkaProducer
 from dagster import job, op
 
 from .pharma_operations import compute_OCT_probe_status, create_probe_status_payload
-from dagster_service.commons.monitor_operations import get_data_from_notification, get_data_from_wp3
-from dagster_service.commons.utils import update_data
-from dagster_service.commons.analysis_operations import discriminate_thresholds
-from dagster_service.commons.execute_operations import produce_kafka
-from dagster_service.commons.plan_operations import create_alarm_threshold
-from dagster_service.commons.transform_operations import get_threshold_values_from_entity
+from commons.monitor_operations import get_data_from_notification, get_data_from_wp3
+from commons.utils import update_data
+from commons.analysis_operations import discriminate_thresholds
+from commons.execute_operations import produce_kafka
+from commons.plan_operations import create_alarm_threshold
+from commons.transform_operations import get_threshold_values_from_entity
 
 
 @op
