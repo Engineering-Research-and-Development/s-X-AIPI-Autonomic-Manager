@@ -4,7 +4,7 @@ asphalt:
     orion_endpoint: "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/"
     subscription_ld_endpoint: "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions"
     context: "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
-    notification_endpoint: "http://0.0.0.0:8000/asphalt"
+    notification_endpoint: "http://0.0.0.0:8001/asphalt"
     to_subscribe:
       - id: "urn:ngsi-ld:asphalt_smaller_time_window:001"
         type: "factory"
