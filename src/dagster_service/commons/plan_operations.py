@@ -147,8 +147,8 @@ def create_alarm_threshold(solution_name: str,
             "attribute": attr,
             "cause": result,
             "deviation": value,
-            "lowerThresh": lt,
-            "upperThresh": ut
+            "lowerThresh": float(lt),
+            "upperThresh": float(ut)
         }
         list_results.append(obj)
 

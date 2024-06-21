@@ -67,7 +67,6 @@ def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_co
     payloads = create_alarm_payloads(alarms, context)
 
     output_entity = get_data(update_url)
-    print(output_entity)
     if output_entity == {}:
         out_entity = create_output_entity(service_config['output_entity'], context)
         patch_orion(update_url, out_entity)
