@@ -91,10 +91,15 @@ async def lifespan(app: FastAPI):
 
 orion_catcher = FastAPI(lifespan=lifespan)
 
+def pack_data(data: dict):
+    ent_data = data["data"][0]
+    context = data["@context"]
+    ent_data["@context"] = context
+    return ent_data
 
 @orion_catcher.post("/pharma")
 async def pharma_handler(data: dict):
-    data = data["data"][0]
+    data = pack_data(data)
     result = process_pharma.execute_in_process(input_values={"incoming_data": data,
                                                              "producer": producer,
                                                              "service_config": service_config["pharma"]})
@@ -106,7 +111,7 @@ async def pharma_handler(data: dict):
 
 @orion_catcher.post("/asphalt")
 async def asphalt_handler(data: dict):
-    data = data["data"][0]
+    data = pack_data(data)
     result = process_asphalt.execute_in_process(input_values={"incoming_data": data,
                                                               "producer": producer,
                                                               "service_config": service_config["asphalt"]})
@@ -118,7 +123,7 @@ async def asphalt_handler(data: dict):
 
 @orion_catcher.post("/steel")
 async def steel_handler(data: dict):
-    data = data["data"][0]
+    data = pack_data(data)
     print(data)
     result = process_steel.execute_in_process(input_values={"incoming_data": data,
                                                             "producer": producer,
@@ -131,7 +136,7 @@ async def steel_handler(data: dict):
 
 @orion_catcher.post("/aluminium")
 async def aluminum_handler(data: dict):
-    data = data["data"][0]
+    data = pack_data(data)
     result = process_aluminium.execute_in_process(input_values={"incoming_data": data,
                                                                 "producer": producer,
                                                                 "service_config": service_config["aluminium"]})
