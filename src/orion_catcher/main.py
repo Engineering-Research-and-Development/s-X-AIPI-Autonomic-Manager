@@ -62,8 +62,8 @@ async def lifespan(app: FastAPI):
 
         orion_endpoint = subscription_config["orion_endpoint"]
         subscription_endpoint = subscription_config["subscription_ld_endpoint"]
-        # notification_endpoint = subscription_config["notification_endpoint"]
-        notification_endpoint = f"http://{socket.gethostbyname(socket.gethostname())}/{k}"
+        notification_endpoint = subscription_config["notification_endpoint"]
+        notification_endpoint = f"http://{socket.gethostbyname(socket.gethostname())}{notification_endpoint}"
         context = subscription_config["context"]
 
         created_subs_ids[k] = {"orion_endpoint": orion_endpoint,
