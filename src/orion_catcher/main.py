@@ -1,5 +1,7 @@
 import asyncio.exceptions
 import os
+import socket
+
 import yaml
 from fastapi import FastAPI, HTTPException
 from contextlib import asynccontextmanager
@@ -60,7 +62,8 @@ async def lifespan(app: FastAPI):
 
         orion_endpoint = subscription_config["orion_endpoint"]
         subscription_endpoint = subscription_config["subscription_ld_endpoint"]
-        notification_endpoint = subscription_config["notification_endpoint"]
+        # notification_endpoint = subscription_config["notification_endpoint"]
+        notification_endpoint = f"http://{socket.gethostbyname(socket.gethostname())}/{k}"
         context = subscription_config["context"]
 
         created_subs_ids[k] = {"orion_endpoint": orion_endpoint,
