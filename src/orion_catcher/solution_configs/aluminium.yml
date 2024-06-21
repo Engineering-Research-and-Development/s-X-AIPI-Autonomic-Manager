@@ -35,7 +35,7 @@ aluminium:
       upper_threshold_heats: [270.0]
       lower_threshold_heats : [-.inf]
 
-      input_materials: ["dataExploration_mergedheatsGeneral_mean_consumption_NaCl", "dataExploration_mergedheatsGeneral_mean_gas_consumption",
+      inputs_materials: ["dataExploration_mergedheatsGeneral_mean_consumption_NaCl", "dataExploration_mergedheatsGeneral_mean_gas_consumption",
         "dataExploration_mergedheatsGeneral_mean_oxygen_consumption"]
       pct_change_materials: 5
 
