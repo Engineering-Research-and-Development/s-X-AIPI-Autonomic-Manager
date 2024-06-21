@@ -157,7 +157,7 @@ def create_alarm_threshold(solution_name: str,
 
 @op
 def create_alarm_history(solution_name: str,
-                         alarm_type: list[str],
+                         alarm_type: str,
                          attribute_names: list[str],
                          rule_results: list[str],
                          periods: list[int],
@@ -167,7 +167,7 @@ def create_alarm_history(solution_name: str,
     Generate a list of historical alarms based on the provided rule results and other parameters.
 
     @param solution_name: The name of the solution which triggers the alarm.
-    @param alarm_type: The types of the caused alarm.
+    @param alarm_type: The type of the caused alarm.
     @param attribute_names: The names of the attributes from the solution.
     @param rule_results: The results of the Rule-Based Engine (RBE) for each attribute.
     @param periods: The periods in which the current status is held for each attribute.

@@ -92,7 +92,7 @@ async def lifespan(app: FastAPI):
 orion_catcher = FastAPI(lifespan=lifespan)
 
 def pack_data(data: dict):
-    print(data)
+    # print(data)
     ent_data = data["data"][0]
     ent_data["@context"] = "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     return ent_data
