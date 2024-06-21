@@ -37,7 +37,7 @@ def elaborate_solution1(incoming_data: dict, producer: KafkaProducer, service_co
             values = values.pop()
 
         alarms = create_alarm_threshold("Solution 1", alarm_type, attrs, thresholds,
-                                                        values, lowers, uppers)
+                                        values, lowers, uppers)
         payloads = create_alarm_payloads(alarms, context)
 
         output_entity = get_data(update_url)
@@ -62,13 +62,13 @@ def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_co
     values = get_data_from_notification(incoming_data, attrs)
     thresholds = discriminate_thresholds(lowers, uppers, values)
     alarms = create_alarm_threshold("Solution 4", alarm_type, attrs, thresholds,
-                                                    values, lowers, uppers)
+                                    values, lowers, uppers)
+
     payloads = create_alarm_payloads(alarms, context)
 
     output_entity = get_data(update_url)
     print(output_entity)
     if output_entity == {}:
-        print("In Output Entity")
         out_entity = create_output_entity(service_config['output_entity'], context)
         patch_orion(update_url, out_entity)
     produce_orion_multi_message(update_url, payloads)
@@ -76,7 +76,6 @@ def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_co
 
 @job
 def process_asphalt(incoming_data, producer, service_config):
-
     # SOLUTION 1
     elaborate_solution1(incoming_data, producer, service_config)
 
