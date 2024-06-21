@@ -154,6 +154,10 @@ def sub_solution_material_used(incoming_data: dict,
 
 @op
 def elaborate_solution1(incoming_data, producer, service_config):
+
+    if incoming_data['id'] != service_config["small_window"]:
+        return
+
     solution = "solution_1"
     kafka_topic = service_config["kafka_topic"]
     alarm_type_materials = service_config[solution]["alarm_type_materials"]
@@ -171,11 +175,8 @@ def elaborate_solution1(incoming_data, producer, service_config):
                                  kafka_topic)
 
     # Checking first scrap group
-    attr_group_0_zeros = service_config["solution_1"]["scrapzeros_inputs_0"]
-    attr_group_0_max = service_config["solution_1"]["scrapmax_inputs_0"]
-    attr_heats_0 = service_config["solution_1"]["nrheats_scrap"]
     sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
-                               attr_group_0_max, attr_group_0_zeros, attr_heats_0, patience, "solution_1",
+                               "scrapmax_inputs_0", "scrapzeros_inputs_0", "nrheats_scrap", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking second scrap group
@@ -196,6 +197,9 @@ def elaborate_solution1(incoming_data, producer, service_config):
 
 @op
 def elaborate_solution2(incoming_data, producer, service_config):
+    if incoming_data['id'] != service_config["small_window"]:
+        return
+
     solution = "solution_2"
     attrs = service_config[solution]["inputs"]
     alarm_type = service_config[solution]["alarm_type"]
@@ -215,6 +219,9 @@ def elaborate_solution2(incoming_data, producer, service_config):
 
 @op
 def elaborate_solution3(incoming_data, producer, service_config):
+    if incoming_data['id'] != service_config["small_window"]:
+        return
+
     solution = "solution_3"
     attrs = service_config[solution]["inputs"]
     pct_change = service_config[solution]["pct_change"]
@@ -262,6 +269,9 @@ def elaborate_solution3(incoming_data, producer, service_config):
 
 @op
 def elaborate_solution4(incoming_data, producer, service_config):
+    if incoming_data['id'] != service_config["small_window"]:
+        return
+
     solution = "solution_4"
     attrs = service_config[solution]["inputs"]
     pct_change = service_config[solution]["pct_change"]
@@ -310,10 +320,13 @@ def elaborate_solution4(incoming_data, producer, service_config):
 
 @op
 def alarm_redirection_wp3(incoming_data, producer, service_config):
-    kafka_topic = service_config["kafka_wp3"]
-    if incoming_data["id"] == service_config["wp3_alarms"]:
-        produce_kafka(producer, kafka_topic, incoming_data)
+
+    if incoming_data["id"] != service_config["wp3_alarms"]:
         return
+
+    kafka_topic = service_config["kafka_wp3"]
+    produce_kafka(producer, kafka_topic, incoming_data)
+
 
 
 
