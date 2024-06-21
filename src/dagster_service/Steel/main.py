@@ -51,7 +51,7 @@ def sub_solution_check_zero_nans(incoming_data: dict,
     """
 
     attrs = service_config[solution][attrs_name]
-    alarm_type = service_config[solution][alarm_type_name]
+    alarm_type = alarm_type_name
 
     values = get_data_from_notification(incoming_data, attrs)
     upper_thresholds = expand_threshold(service_config[solution][upper_threshold], len(values))
@@ -310,7 +310,9 @@ def elaborate_solution4(incoming_data, producer, service_config):
 
 @op
 def alarm_redirection_wp3(incoming_data, producer, service_config):
+    kafka_topic = service_config["kafka_wp3"]
     if incoming_data["id"] == service_config["wp3_alarms"]:
+        produce_kafka(producer, kafka_topic, incoming_data)
         return
 
 
