@@ -37,7 +37,7 @@ aluminium:
 
       inputs_materials: ["dataExploration_mergedheatsGeneral_mean_consumption_NaCl", "dataExploration_mergedheatsGeneral_mean_gas_consumption",
         "dataExploration_mergedheatsGeneral_mean_oxygen_consumption"]
-      pct_change_materials: 5
+      pct_change_materials: 5.0
 
 
     solution_3:
