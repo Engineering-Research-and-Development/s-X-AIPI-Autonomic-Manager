@@ -94,8 +94,7 @@ orion_catcher = FastAPI(lifespan=lifespan)
 def pack_data(data: dict):
     print(data)
     ent_data = data["data"][0]
-    context = data["@context"]
-    ent_data["@context"] = context
+    ent_data["@context"] = "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     return ent_data
 
 @orion_catcher.post("/pharma")
