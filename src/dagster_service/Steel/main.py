@@ -154,6 +154,7 @@ def sub_solution_material_used(incoming_data: dict,
 
 @op
 def elaborate_solution1(incoming_data, producer, service_config):
+    print(incoming_data['id'])
 
     if incoming_data['id'] != service_config["small_window"]:
         return

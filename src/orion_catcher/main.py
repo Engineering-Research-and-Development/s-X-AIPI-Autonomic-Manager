@@ -116,6 +116,7 @@ async def asphalt_handler(data: dict):
 
 @orion_catcher.post("/steel")
 async def steel_handler(data: dict):
+    print(data)
     result = process_steel.execute_in_process(input_values={"incoming_data": data,
                                                             "producer": producer,
                                                             "service_config": service_config["steel"]})
