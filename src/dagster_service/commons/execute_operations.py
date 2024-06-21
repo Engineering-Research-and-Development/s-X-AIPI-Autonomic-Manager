@@ -56,7 +56,7 @@ def produce_orion_multi_message(url: str,
     headers = {"Content-Type": "application/ld+json"}
 
     for message in messages:
-        print(message)
+        print(json.dumps(message))
         try:
             response = requests.post(url, headers=headers, data=json.dumps(message))
             print(response.text, response.status_code)
