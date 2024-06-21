@@ -38,7 +38,7 @@ def get_threshold_values_from_entity(data_source: dict,
         lower_thresholds = [float(data_source[attribute]["value"]["value"]) for attribute in lower_names]
         return lower_thresholds, upper_thresholds
     except KeyError as e:
-        print(e)
+        print("An error occurred while transforming data: get_threshold_values_from_entity failed", e)
         return [], []
 
 
@@ -70,7 +70,7 @@ def get_threshold_from_pct_range(values: list[float],
 
         return lowers, uppers
     except ValueError as e:
-        print(e)
+        print("An error occurred while transforming data: get_threshold_from_pct_range failed", e)
         return [], []
 
 
@@ -103,7 +103,7 @@ def retrieve_values_from_historical_data(historical_data: dict,
         return periods_list, ack_list, previous_list, old_value_list, historical_context
 
     except KeyError as e:
-        print(e)
+        print("An error occurred while transforming data: retrieve_values_from_historical_data failed", e)
         return [], [], [], [], "None"
 
 

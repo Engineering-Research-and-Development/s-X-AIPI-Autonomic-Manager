@@ -20,7 +20,7 @@ def patch_orion(url: str, payload):
     try:
         requests.post(url, headers=headers, data=json.dumps(payload))
     except requests.exceptions.RequestException as e:
-        print(e)
+        print("An error occurred while posting new data on Orion:", e)
 
 
 @op
@@ -59,4 +59,4 @@ def produce_orion_multi_message(url: str,
         try:
             requests.post(url, headers=headers, data=json.dumps(message))
         except requests.exceptions.RequestException as e:
-            print(e)
+            print("An error occurred while posting multiple new data on Orion:", e)

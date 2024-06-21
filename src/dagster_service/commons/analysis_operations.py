@@ -32,7 +32,7 @@ def discriminate_thresholds(lower_thresholds: list[float],
                 result_list.append(THRESHOLD_OK)
     except IndexError as e:
         # TODO: decide if insert error alarm or not
-        print(e)
+        print("An error occurred while discriminating thresholds:", e)
 
     return result_list
 
@@ -64,7 +64,7 @@ def merge_thresholds_and(first_group: list[str],
 
     except IndexError as e:
         # TODO: decide if insert error alarm or not
-        print(e)
+        print("An error occurred while merging thresholds:", e)
 
     return result_list
 

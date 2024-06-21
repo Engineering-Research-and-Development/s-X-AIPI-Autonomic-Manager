@@ -85,7 +85,8 @@ def update_historical_data(current_status_list: list[str],
                 len(attribute_names) != len(old_value_list)):
             raise IndexError("list values are not the same")
     except IndexError as e:
-        print(e)
+        print("An error occurred while comparing attribute names in historical entity", e)
+        return {}
 
     payload = {}
     for idx, attribute_name in enumerate(attribute_names):

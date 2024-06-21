@@ -21,7 +21,7 @@ def get_data(source_url: str
 
         return data
     else:
-        print("Failed to retrieve data. Status code:", response.status_code)
+        print("Failed to retrieve data from Orion. Status code:", response.status_code)
         print("Response:", response.text)
         return {}
 
@@ -44,7 +44,7 @@ def get_data_from_notification(data_source: dict,
         try:
             values.append(float(data_source[attribute]["value"]["value"]))
         except KeyError as e:
-            print(e)
+            print("An error occurred while retrieving data from notification", e)
 
     return values
 
@@ -68,6 +68,6 @@ def get_data_from_wp3(data_source: dict,
         try:
             values.append(data_source[attr]["value"])
         except KeyError as e:
-            print(e)
+            print("An error occurred while retrieving data from WP3 notification", e)
 
     return values
