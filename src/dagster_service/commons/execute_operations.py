@@ -57,6 +57,7 @@ def produce_orion_multi_message(url: str,
 
     for message in messages:
         try:
-            requests.post(url, headers=headers, data=json.dumps(message))
+            response = requests.post(url, headers=headers, data=json.dumps(message))
+            print(response.text, response.status_code)
         except requests.exceptions.RequestException as e:
             print("An error occurred while posting multiple new data on Orion:", e)
