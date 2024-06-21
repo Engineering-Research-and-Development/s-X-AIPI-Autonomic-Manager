@@ -326,7 +326,7 @@ def alarm_redirection_wp3(incoming_data, producer, service_config):
         return
 
     kafka_topic = service_config["kafka_wp3"]
-    produce_kafka(producer, kafka_topic, incoming_data)
+    produce_kafka(producer, kafka_topic, [incoming_data])
 
 
 
