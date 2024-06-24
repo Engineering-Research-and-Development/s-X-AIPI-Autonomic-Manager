@@ -121,7 +121,9 @@ def sub_solution_material_used(incoming_data: dict,
     results_threshold = merge_thresholds_and(results_max, results_nrheats)
 
     # Retrieving the data from historical storage
+    print(attrs_zeros)
     attrs_clean = clean_names(attrs_zeros)
+    print(attrs_clean)
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs_clean, context)
@@ -157,7 +159,6 @@ def sub_solution_material_used(incoming_data: dict,
 
 @op
 def elaborate_solution1(incoming_data, producer, service_config):
-    print(incoming_data['id'])
 
     if incoming_data['id'] != service_config["small_window"]:
         return
