@@ -12,6 +12,8 @@ from commons.plan_operations import create_alarm_threshold, update_historical_da
 from commons.transform_operations import expand_threshold, retrieve_values_from_historical_data, \
     create_alarm_payloads, get_threshold_values_from_entity, get_threshold_from_pct_range
 
+from dagster_service.commons.execute_operations import post_orion
+
 
 def clean_names(names: [str]):
     new_names = [name.split("_zero")[0] if "_zero" in name else name for name in names]
@@ -121,16 +123,13 @@ def sub_solution_material_used(incoming_data: dict,
     results_threshold = merge_thresholds_and(results_max, results_nrheats)
 
     # Retrieving the data from historical storage
-    print(attrs_zeros)
     attrs_clean = clean_names(attrs_zeros)
-    print(attrs_clean)
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs_clean, context)
         print(new_entity)
-        patch_orion(historical_data_url, new_entity)
+        post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
-        print(historical_data)
 
     periods_list, ack_list, previous_list, old_values, historical_context = (
         retrieve_values_from_historical_data(historical_data, attrs_clean))
@@ -246,7 +245,7 @@ def elaborate_solution3(incoming_data, producer, service_config):
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs, context)
-        patch_orion(historical_data_url, new_entity)
+        post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
     periods_list, ack_list, previous_list, old_values, historical_context = (
@@ -292,7 +291,7 @@ def elaborate_solution4(incoming_data, producer, service_config):
     attrs_clean = clean_names(attrs)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs_clean, context)
-        patch_orion(historical_data_url, new_entity)
+        post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
     periods_list, ack_list, previous_list, old_values, historical_context = (

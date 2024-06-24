@@ -5,6 +5,26 @@ from kafka import KafkaProducer
 
 
 @op
+def post_orion(url: str, payload):
+    """
+    Patch the Orion Context Broker with the provided payload for updating a historical entity.
+
+    @param url: URL of the historical entity to update.
+    @param payload: Payload to pass for update.
+
+    @return: None
+    """
+    headers = {"Content-Type": "application/ld+json"}
+
+    try:
+        response = requests.post(url, headers=headers, data=json.dumps(payload))
+        print("Results from posting new data on Orion:")
+        print(response.text, response.status_code)
+    except requests.exceptions.RequestException as e:
+        print("An error occurred while posting new data on Orion:", e)
+
+
+@op
 def patch_orion(url: str, payload):
     """
     Patch the Orion Context Broker with the provided payload for updating a historical entity.
@@ -19,7 +39,7 @@ def patch_orion(url: str, payload):
 
     try:
         response = requests.post(url, headers=headers, data=json.dumps(payload))
-        print("Results from posting new data on Orion:")
+        print("Results from patching attributes on Orion:")
         print(response.text, response.status_code)
     except requests.exceptions.RequestException as e:
         print("An error occurred while posting new data on Orion:", e)
