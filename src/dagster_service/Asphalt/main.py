@@ -30,7 +30,7 @@ def elaborate_solution1(incoming_data: dict, producer: KafkaProducer, service_co
         if len(thresholds) == 2:
             if thresholds[0] != THRESHOLD_OK:
                 continue
-            thresholds = merge_thresholds_and(thresholds[0], thresholds[1])
+            thresholds = merge_thresholds_and([thresholds[0]], [thresholds[1]])
             attrs = attrs.pop()
             lowers = lowers.pop()
             uppers = uppers.pop()
