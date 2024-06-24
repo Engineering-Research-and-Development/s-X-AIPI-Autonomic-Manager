@@ -104,6 +104,7 @@ def sub_solution_material_used(incoming_data: dict,
     lower_threshold_max = [-np.inf]
     upper_threshold_max = service_config[solution]['scapmax_lower']
     context = incoming_data["@context"]
+    print(context)
 
     # Checking rules for max content values
     values_max = get_data_from_notification(incoming_data, attrs_max)
@@ -127,8 +128,10 @@ def sub_solution_material_used(incoming_data: dict,
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs_clean, context)
+        print(new_entity)
         patch_orion(historical_data_url, new_entity)
         historical_data = get_data(historical_data_url)
+        print(historical_data)
 
     periods_list, ack_list, previous_list, old_values, historical_context = (
         retrieve_values_from_historical_data(historical_data, attrs_clean))
