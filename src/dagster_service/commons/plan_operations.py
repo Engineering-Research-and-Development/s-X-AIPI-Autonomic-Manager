@@ -48,6 +48,7 @@ def create_historical_entity(entity_id: str,
         payload = update_data(new_values, update_names, payload_context)
 
     payload['id'] = entity_id
+    payload['type'] = "factory"
 
     return payload
 
@@ -88,7 +89,8 @@ def update_historical_data(current_status_list: list[str],
         print("An error occurred while comparing attribute names in historical entity", e)
         return {}
 
-    payload = {}
+    new_values = []
+    update_names = []
     for idx, attribute_name in enumerate(attribute_names):
 
         update_names = build_historical_data_attribute_names(attribute_name)
@@ -104,8 +106,10 @@ def update_historical_data(current_status_list: list[str],
         else:
             periods_in_state += 1
 
-        new_values = [periods_in_state, acknowledgement_status, current_status, old_value]
-        payload = update_data(new_values, update_names, payload_context)
+        update_names.extend(update_names)
+        new_values.extend([periods_in_state, acknowledgement_status, current_status, old_value])
+
+    payload = update_data(new_values, update_names, payload_context)
 
     return payload
 

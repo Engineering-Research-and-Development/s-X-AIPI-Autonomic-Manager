@@ -19,6 +19,7 @@ def patch_orion(url: str, payload):
 
     try:
         response = requests.post(url, headers=headers, data=json.dumps(payload))
+        print("Results from posting new data on Orion:")
         print(response.text, response.status_code)
     except requests.exceptions.RequestException as e:
         print("An error occurred while posting new data on Orion:", e)
