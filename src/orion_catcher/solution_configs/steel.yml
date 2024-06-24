@@ -102,7 +102,7 @@ steel:
       alarm_type: "Model Accuracy Degradation"
       inputs: [ "modeling_LinearRegression_MAE" ]
       thresholds: ["transformation_analysis_Cu_mean"]
-      pct_change: [15]
+      pct_change: [15.0]
 
     solution_4:
       historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_4:001"
@@ -111,4 +111,4 @@ steel:
       inputs: ["train_models_coef_Sustitutivos", "train_models_coef_scrap14", "train_models_coef_scrap19", "train_models_coef_scrap04",
         "train_models_coef_scrap21", "train_models_coef_scrap16", "train_models_coef_scrap18", "train_models_coef_scrap17", "train_models_coef_scrap03",
         "train_models_coef_scrap20", "train_models_coef_scrap12", "train_models_coef_scrap11"]
-      pct_change: [15]
+      pct_change: [15.0]
