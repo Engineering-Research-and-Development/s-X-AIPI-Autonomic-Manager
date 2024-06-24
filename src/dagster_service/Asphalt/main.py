@@ -36,7 +36,7 @@ def elaborate_solution1(incoming_data: dict, producer: KafkaProducer, service_co
             uppers = uppers.pop()
             values = values.pop()
 
-        alarms = create_alarm_threshold("Solution 1", alarm_type, [attrs], [thresholds],
+        alarms = create_alarm_threshold("Solution 1", alarm_type, [attrs], thresholds,
                                         [values], [lowers], [uppers])
         payloads = create_alarm_payloads(alarms, context)
 
