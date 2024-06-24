@@ -53,12 +53,9 @@ def sub_solution_check_zero_nans(incoming_data: dict,
     attrs = service_config[solution][attrs_name]
     alarm_type = alarm_type_name
 
-    print(attrs)
     values = get_data_from_notification(incoming_data, attrs)
-    print(values)
     upper_thresholds = expand_threshold(service_config[solution][upper_threshold], len(values))
     lower_thresholds = expand_threshold(service_config[solution][lower_threshold], len(values))
-    print(upper_thresholds, lower_thresholds)
     results = discriminate_thresholds(lower_thresholds, upper_thresholds, values)
     payloads_zeros = create_alarm_threshold("Solution 1", alarm_type, attrs, results, values,
                                             lower_thresholds, upper_thresholds)
@@ -101,7 +98,7 @@ def sub_solution_material_used(incoming_data: dict,
     nr_heats = service_config[solution][nr_heats_name]
 
     # Setting useful values
-    lower_threshold_max = [-np.inf]
+    lower_threshold_max = [-999999.9]
     upper_threshold_max = service_config[solution]['scapmax_lower']
     context = incoming_data["@context"]
     print(context)
@@ -115,7 +112,7 @@ def sub_solution_material_used(incoming_data: dict,
     # Checking rules for number of zeros
     values_zeros = get_data_from_notification(incoming_data, attrs_zeros)
     values_nrheats = get_data_from_notification(incoming_data, nr_heats)
-    upper_threshold_nrheats = expand_threshold([np.inf], len(values_zeros))
+    upper_threshold_nrheats = expand_threshold([999999.9], len(values_zeros))
     lower_threshold_nrheats = expand_threshold(values_nrheats, len(values_zeros))
     results_nrheats = discriminate_thresholds(
         lower_threshold_nrheats, upper_threshold_nrheats, values_zeros)
@@ -215,7 +212,7 @@ def elaborate_solution2(incoming_data, producer, service_config):
     context = incoming_data["@context"]
     values = get_data_from_notification(incoming_data, attrs)
     upper_thresholds = service_config[solution]["thresholds"]
-    lower_thresholds = expand_threshold([-np.inf], len(upper_thresholds))
+    lower_thresholds = expand_threshold([-999999.9], len(upper_thresholds))
     results_threshold = discriminate_thresholds(lower_thresholds, upper_thresholds, values)
 
     alarms = create_alarm_threshold(
@@ -242,7 +239,7 @@ def elaborate_solution3(incoming_data, producer, service_config):
     _, threshold_high = get_threshold_values_from_entity(
         incoming_data, threshold_names, threshold_names)
     _, threshold_high = get_threshold_from_pct_range(threshold_high, pct_change)
-    results_threshold = discriminate_thresholds([-np.inf], threshold_high, values)
+    results_threshold = discriminate_thresholds([-999999.9], threshold_high, values)
 
     historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity"]
     historical_data = get_data(historical_data_url)

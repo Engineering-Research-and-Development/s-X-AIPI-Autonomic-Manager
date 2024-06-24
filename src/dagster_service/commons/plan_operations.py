@@ -42,7 +42,7 @@ def create_historical_entity(entity_id: str,
         current_status = "CREATED"
         acknowledgement_status = UNCONFIRMED
         periods_in_state = 0
-        old_value = np.inf
+        old_value = 9999999.9
 
         new_values = [periods_in_state, acknowledgement_status, current_status, old_value]
         payload = update_data(new_values, update_names, payload_context)
