@@ -31,19 +31,19 @@ steel:
       historical_patience: 1
       zeros_inputs: [
         "transformation_scrap_tot_zeros", "transformation_lime_sum_lime_basket_zeros", "transformation_lime_coke_sum_cok_lim_melting_zeros",
-         "transformation_analysis_Mn_zeros", "transformation_analysis_P_zeros", "transformation_analysis_S_zeros", "transformation_analysis_Cr_zeros",
-         "transformation_analysis_Ni_zeros", "transformation_analysis_Mo_zeros", "transformation_analysis_Cu_zeros", "transformation_analysis_Sn_zeros"
+         "transformation_analysis_mn_zeros", "transformation_analysis_p_zeros", "transformation_analysis_s_zeros", "transformation_analysis_cr_zeros",
+         "transformation_analysis_ni_zeros", "transformation_analysis_mo_zeros", "transformation_analysis_cu_zeros", "transformation_analysis_sn_zeros"
       ]
       zero_inputs_upper_threshold : [0.0]
       zero_inputs_lower_threshold: [-1.0]
 
       alarm_type_zeros: "Zero Detected"
       nan_inputs: [
-        "transformation_eaf_eaf14_Nan", "transformation_eaf_kwhorno_Nan", "transformation_eaf_eaf07_Nan", "transformation_eaf_eaf08_Nan",
-        "transformation_eaf_eaf09_Nan", "transformation_eaf_eaf10_Nan", "transformation_eaf_eaf11_Nan", "transformation_eaf_eaf12_Nan",
-        "transformation_eaf_eaf03_Nan", "transformation_eaf_eaf04_Nan", "transformation_eaf_eaf05_Nan", "transformation_eaf_eaf01_Nan",
-        "transformation_eaf_eaf02_Nan", "transformation_eaf_eaf064_Nan", "transformation_eaf_sum_eaf17_Nan", "transformation_eaf_sum_eaf18_Nan",
-        "transformation_eaf_sum_eaf16_Nan", "transformation_eaf_sum_eaf15_Nan"
+        "transformation_eaf_eaf14_nan", "transformation_eaf_kwhorno_nan", "transformation_eaf_eaf07_nan", "transformation_eaf_eaf08_nan",
+        "transformation_eaf_eaf09_nan", "transformation_eaf_eaf10_nan", "transformation_eaf_eaf11_nan", "transformation_eaf_eaf12_nan",
+        "transformation_eaf_eaf03_nan", "transformation_eaf_eaf04_nan", "transformation_eaf_eaf05_nan", "transformation_eaf_eaf01_nan",
+        "transformation_eaf_eaf02_nan", "transformation_eaf_eaf064_nan", "transformation_eaf_sum_eaf17_nan", "transformation_eaf_sum_eaf18_nan",
+        "transformation_eaf_sum_eaf16_nan", "transformation_eaf_sum_eaf15_nan"
       ]
       nan_inputs_upper_threshold: [ 0.0 ]
       nan_inputs_lower_threshold: [ -1.0 ]
@@ -84,15 +84,15 @@ steel:
         "transformation_lime_coke_limecoke04_zeros", "transformation_lime_coke_limecoke05_zeros"
       ]
       scapmax_lower: [0.0]
-      nrheats_scrap: ["transformation_scrap_Nr_heats"]
-      nrheats_lime: ["transformation_lime_Nr_heats"]
-      nrheats_limecoke: ["transformation_lime_coke_Nr_heats"]
+      nrheats_scrap: ["transformation_scrap_nr_heats"]
+      nrheats_lime: ["transformation_lime_nr_heats"]
+      nrheats_limecoke: ["transformation_lime_coke_nr_heats"]
       alarm_type_materials: "Material Content Changed"
 
 
     solution_2:
-      inputs: [ "exploration_analysis_Nr_anomalies_Cu", "exploration_eaf_Nr_anomalies_eaf14", "exploration_eaf_Nr_anomalies_kwhorno",
-      "exploration_lime_coke_Nr_outliers_sum_lim_melting", "exploration_lime_coke_Nr_outliers_sum_cok_melting", "exploration_analysis_upper_boundary_Cu" ]
+      inputs: [ "exploration_analysis_Nr_anomalies_cu", "exploration_eaf_nr_anomalies_eaf14", "exploration_eaf_nr_anomalies_kwhorno",
+      "exploration_lime_coke_nr_outliers_sum_lim_melting", "exploration_lime_coke_nr_outliers_sum_cok_melting", "exploration_analysis_upper_boundary_cu" ]
       "thresholds": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.4]
       "alarm_type": "Outliers Detected"
 
@@ -101,7 +101,7 @@ steel:
       historical_patience: 1
       alarm_type: "Model Accuracy Degradation"
       inputs: [ "modeling_LinearRegression_MAE" ]
-      thresholds: ["transformation_analysis_Cu_mean"]
+      thresholds: ["transformation_analysis_cu_mean"]
       pct_change: [15.0]
 
     solution_4:
