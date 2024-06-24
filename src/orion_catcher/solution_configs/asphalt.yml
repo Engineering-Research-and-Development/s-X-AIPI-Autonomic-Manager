@@ -30,26 +30,26 @@ asphalt:
         rpa_0700:
           attrs: ["DataIngestion_production_t_RPBCount", "DataIngestion_production_RPA0700_max"]
           uppers: [0.0, 0.0]
-          lowers: [-.inf, 0.0]
+          lowers: [-999999.9, 0.0]
         st_frames:
           attrs: ["DataIngestion_production_t_SPCount", "DataIngestion_production_t_STCount"]
           uppers: [ 0.0, 0.0 ]
-          lowers: [ -.inf, 0.0 ]
+          lowers: [ -999999.9, 0.0 ]
         rt_frames:
           attrs: ["DataIngestion_production_t_RTCount", "DataIngestion_production_t_RPBCount" ]
           uppers: [ 0.0, 0.0 ]
-          lowers: [ -.inf, 0.0 ]
+          lowers: [ -999999.9, 0.0 ]
         rpa_2000:
           attrs: ["DataIngestion_production_RPA2000_min"]
-          uppers: [.inf]
+          uppers: [999999.9]
           lowers: [0.0]
         rpa_2100:
           attrs: [ "DataIngestion_production_RPA2100_min" ]
-          uppers: [ .inf ]
+          uppers: [ 999999.9 ]
           lowers: [ 0.0 ]
         rpa_1000:
           attrs: [ "DataIngestion_production_RPA1000_min" ]
-          uppers: [ .inf ]
+          uppers: [ 999999.9 ]
           lowers: [ 0.0 ]
 
 
@@ -57,5 +57,5 @@ asphalt:
       alarm_type: "D.APA Change Error / Laboratory Error"
       inputs: [ "DataIngestion_laboratory_DAPA_max", "DataIngestion_laboratory_DAPA_min",
                   "DataIngestion_laboratory_16mm_max", "DataIngestion_laboratory_0,063mm_max" ]
-      upper_thresholds: [ 3.0, .inf, 100.0, 100.0 ]
-      lower_thresholds: [ -.inf, 2.0, -.inf, -.inf]
+      upper_thresholds: [ 3.0, 999999.9, 100.0, 100.0 ]
+      lower_thresholds: [ -999999.9, 2.0, -999999.9, -999999.9]
