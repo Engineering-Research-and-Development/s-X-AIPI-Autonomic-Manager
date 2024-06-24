@@ -53,9 +53,12 @@ def sub_solution_check_zero_nans(incoming_data: dict,
     attrs = service_config[solution][attrs_name]
     alarm_type = alarm_type_name
 
+    print(incoming_data)
     values = get_data_from_notification(incoming_data, attrs)
+    print(values)
     upper_thresholds = expand_threshold(service_config[solution][upper_threshold], len(values))
     lower_thresholds = expand_threshold(service_config[solution][lower_threshold], len(values))
+    print(upper_thresholds, lower_thresholds)
     results = discriminate_thresholds(lower_thresholds, upper_thresholds, values)
     payloads_zeros = create_alarm_threshold("Solution 1", alarm_type, attrs, results, values,
                                             lower_thresholds, upper_thresholds)
