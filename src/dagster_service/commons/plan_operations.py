@@ -109,6 +109,7 @@ def update_historical_data(current_status_list: list[str],
         update_names.extend(update_names)
         new_values.extend([periods_in_state, acknowledgement_status, current_status, old_value])
 
+    print(update_names, new_values)
     payload = update_data(new_values, update_names, payload_context)
 
     return payload
