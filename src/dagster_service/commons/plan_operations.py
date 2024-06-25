@@ -101,7 +101,7 @@ def update_historical_data(current_status_list: list[str],
         previous_status = previous_status_list[idx]
         acknowledgement_status = acknowledgement_status_list[idx]
         periods_in_state = periods_in_state_list[idx]
-        old_value = old_value_list[idx]
+        old_value = float(old_value_list[idx])
 
         if current_status != previous_status:
             periods_in_state = 1
