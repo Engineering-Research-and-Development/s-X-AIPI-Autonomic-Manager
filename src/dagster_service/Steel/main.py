@@ -127,7 +127,6 @@ def sub_solution_material_used(incoming_data: dict,
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs_clean, context)
-        print(new_entity)
         post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
@@ -244,6 +243,7 @@ def elaborate_solution3(incoming_data, producer, service_config):
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs, context)
+        print(new_entity)
         post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
