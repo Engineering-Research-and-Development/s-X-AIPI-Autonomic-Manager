@@ -29,7 +29,7 @@ def build_historical_data_attribute_names(attribute_name) -> list[str]:
     return names
 
 
-def pick_historical_data_values(names: list[str], entity: dict) -> list[int | str]:
+def pick_historical_data_values(names: list[str], entity: dict) -> list[int | str | float]:
     """
     Pick historical data values from the entity based on the provided attribute names.
 

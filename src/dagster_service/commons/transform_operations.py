@@ -99,7 +99,7 @@ def retrieve_values_from_historical_data(historical_data: dict,
             periods_list.append(periods)
             ack_list.append(ack)
             previous_list.append(previous)
-            old_value_list.append(old_value)
+            old_value_list.append(float(old_value))
         return periods_list, ack_list, previous_list, old_value_list, historical_context
 
     except KeyError as e:
