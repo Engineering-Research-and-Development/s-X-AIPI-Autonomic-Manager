@@ -45,7 +45,8 @@ def get_data_from_notification(data_source: dict,
             val = data_source[attribute]["value"]["value"]
             values.append(float(val))
         except (KeyError, ValueError) as e:
-            print(f"An error occurred while retrieving data from notification: attribute {attribute} has value {data_source[attribute]["value"]["value"]}")
+            val = data_source[attribute]["value"]["value"]
+            print(f"An error occurred while retrieving data from notification: attribute {attribute} has value {val}")
 
     return values
 
