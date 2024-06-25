@@ -58,7 +58,7 @@ def create_historical_entity(entity_id: str,
 
 @op
 def update_historical_data(current_status_list: list[str],
-                           periods_in_state_list: list[float],
+                           periods_in_state_list: list[int],
                            acknowledgement_status_list: list[str],
                            previous_status_list: list[str],
                            old_value_list: list[float],

@@ -158,7 +158,6 @@ def sub_solution_material_used(incoming_data: dict,
 
 @op
 def elaborate_solution1(incoming_data, producer, service_config):
-
     if incoming_data['id'] != service_config["small_window"]:
         return
 
@@ -324,15 +323,11 @@ def elaborate_solution4(incoming_data, producer, service_config):
 
 @op
 def alarm_redirection_wp3(incoming_data, producer, service_config):
-
     if incoming_data["id"] != service_config["wp3_alarms"]:
         return
 
     kafka_topic = service_config["kafka_wp3"]
     produce_kafka(producer, kafka_topic, [incoming_data])
-
-
-
 
 
 @job
@@ -351,5 +346,5 @@ def process_steel(incoming_data, producer, service_config):
     # SOLUTION 4
     elaborate_solution4(incoming_data, producer, service_config)
 
-    #Alarm redirection
+    # Alarm redirection
     alarm_redirection_wp3(incoming_data, producer, service_config)
