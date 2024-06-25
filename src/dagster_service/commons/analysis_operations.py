@@ -70,7 +70,7 @@ def merge_thresholds_and(first_group: list[str],
 
 
 @op
-def analyze_historical_data(periods_in_state_list: list[float],
+def analyze_historical_data(periods_in_state_list: list[int],
                             acknowledgement_status_list: list[str],
                             rules_status: list[str],
                             patience: int
