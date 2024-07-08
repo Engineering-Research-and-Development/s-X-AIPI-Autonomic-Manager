@@ -54,6 +54,7 @@ def sub_solution_check_zero_nans(incoming_data: dict,
 
     attrs = service_config[solution][attrs_name]
     alarm_type = alarm_type_name
+    context = incoming_data["@context"]
 
     values = get_data_from_notification(incoming_data, attrs)
     upper_thresholds = expand_threshold(service_config[solution][upper_threshold], len(values))
@@ -61,7 +62,8 @@ def sub_solution_check_zero_nans(incoming_data: dict,
     results = discriminate_thresholds(lower_thresholds, upper_thresholds, values)
     payloads_zeros = create_alarm_threshold("Solution 1", alarm_type, attrs, results, values,
                                             lower_thresholds, upper_thresholds)
-    produce_kafka(producer, kafka_topic, payloads_zeros)
+    payloadas_alarms = create_alarm_payloads(payloads_zeros, context)
+    produce_kafka(producer, kafka_topic, payloadas_alarms)
 
 
 @op
