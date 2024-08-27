@@ -2,7 +2,7 @@ import numpy as np
 from kafka import KafkaProducer
 from dagster import job, op
 
-from commons.analysis_operations import discriminate_thresholds, merge_thresholds_and, \
+from commons.analysis_operations import discriminate_thresholds, merge_thresholds, \
     analyze_historical_data
 from commons.execute_operations import produce_kafka, patch_orion
 from commons.monitor_operations import get_data_from_notification, get_data
@@ -122,7 +122,7 @@ def sub_solution_material_used(incoming_data: dict,
         lower_threshold_nrheats, upper_threshold_nrheats, values_zeros)
 
     # Merging rules from two sources
-    results_threshold = merge_thresholds_and(results_max, results_nrheats)
+    results_threshold = merge_thresholds(results_max, results_nrheats, "X_AND_Y")
 
     # Retrieving the data from historical storage
     attrs_clean = clean_names(attrs_zeros)
