@@ -1,0 +1,1895 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/> .
+
+ex:001 a ex:factory ;
+    ex:DataIngestion_laboratory_0,063mm_25% [
+        a dcat:Property ;
+        ex:value "3.467"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_0,063mm_50% [
+        a dcat:Property ;
+        ex:value "3.9"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_0,063mm_75% [
+        a dcat:Property ;
+        ex:value "4"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_0,063mm_count [
+        a dcat:Property ;
+        ex:value "5.333"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_0,063mm_max [
+        a dcat:Property ;
+        ex:value "4.267"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_0,063mm_mean [
+        a dcat:Property ;
+        ex:value "3.674"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_0,063mm_min [
+        a dcat:Property ;
+        ex:value "2.567"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_0,063mm_std [
+        a dcat:Property ;
+        ex:value "0.591"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_16mm_25% [
+        a dcat:Property ;
+        ex:value "60.667"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_16mm_50% [
+        a dcat:Property ;
+        ex:value "61.333"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_16mm_75% [
+        a dcat:Property ;
+        ex:value "62.667"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_16mm_count [
+        a dcat:Property ;
+        ex:value "5.333"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_16mm_max [
+        a dcat:Property ;
+        ex:value "66.333"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_16mm_mean [
+        a dcat:Property ;
+        ex:value "62.256"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_16mm_min [
+        a dcat:Property ;
+        ex:value "59.333"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_16mm_std [
+        a dcat:Property ;
+        ex:value "2.346"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_DAPA_25% [
+        a dcat:Property ;
+        ex:value "1.526"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_DAPA_50% [
+        a dcat:Property ;
+        ex:value "1.536"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_DAPA_75% [
+        a dcat:Property ;
+        ex:value "1.543"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_DAPA_count [
+        a dcat:Property ;
+        ex:value "2.667"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_DAPA_max [
+        a dcat:Property ;
+        ex:value "1.551"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_DAPA_mean [
+        a dcat:Property ;
+        ex:value "1.534"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_DAPA_min [
+        a dcat:Property ;
+        ex:value "1.517"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_DAPA_std [
+        a dcat:Property ;
+        ex:value "0.021"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ESTM_25% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ESTM_50% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ESTM_75% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ESTM_count [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ESTM_max [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ESTM_mean [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ESTM_min [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ESTM_std [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ITSR_25% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ITSR_50% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ITSR_75% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ITSR_count [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ITSR_max [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ITSR_mean [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ITSR_min [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_ITSR_std [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_Vm_25% [
+        a dcat:Property ;
+        ex:value "6.967"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_Vm_50% [
+        a dcat:Property ;
+        ex:value "7.283"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_Vm_75% [
+        a dcat:Property ;
+        ex:value "7.625"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_Vm_count [
+        a dcat:Property ;
+        ex:value "2.667"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_Vm_max [
+        a dcat:Property ;
+        ex:value "7.967"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_Vm_mean [
+        a dcat:Property ;
+        ex:value "7.3"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_Vm_min [
+        a dcat:Property ;
+        ex:value "6.667"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_Vm_std [
+        a dcat:Property ;
+        ex:value "0.891"^^xsd:decimal ;
+        ex:dateObserved "2024-04-02T07:33:11Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_laboratory_count [
+        a dcat:Property ;
+        ex:value "35"^^xsd:integer ;
+        ex:dateObserved "2024-04-02T06:18:02Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "129600"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_IoTCount [
+        a dcat:Property ;
+        ex:value "60785.345"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:02:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA0700_25% [
+        a dcat:Property ;
+        ex:value "130.69"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA0700_50% [
+        a dcat:Property ;
+        ex:value "137.621"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA0700_75% [
+        a dcat:Property ;
+        ex:value "143.621"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA0700_count [
+        a dcat:Property ;
+        ex:value "2068"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA0700_max [
+        a dcat:Property ;
+        ex:value "151.793"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA0700_mean [
+        a dcat:Property ;
+        ex:value "136.797"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA0700_min [
+        a dcat:Property ;
+        ex:value "116"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA0700_std [
+        a dcat:Property ;
+        ex:value "9.511"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1000_25% [
+        a dcat:Property ;
+        ex:value "116.909"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1000_50% [
+        a dcat:Property ;
+        ex:value "166.053"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1000_75% [
+        a dcat:Property ;
+        ex:value "177.822"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1000_count [
+        a dcat:Property ;
+        ex:value "2068"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1000_max [
+        a dcat:Property ;
+        ex:value "218.507"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1000_mean [
+        a dcat:Property ;
+        ex:value "125.822"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1000_min [
+        a dcat:Property ;
+        ex:value "-1113.279"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1000_std [
+        a dcat:Property ;
+        ex:value "193.629"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1300_25% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1300_50% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1300_75% [
+        a dcat:Property ;
+        ex:value "6.459"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1300_count [
+        a dcat:Property ;
+        ex:value "19014"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1300_max [
+        a dcat:Property ;
+        ex:value "41.466"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1300_mean [
+        a dcat:Property ;
+        ex:value "4.706"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1300_min [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1300_std [
+        a dcat:Property ;
+        ex:value "10.511"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1500_25% [
+        a dcat:Property ;
+        ex:value "23.142"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1500_50% [
+        a dcat:Property ;
+        ex:value "36.534"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1500_75% [
+        a dcat:Property ;
+        ex:value "53.593"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1500_count [
+        a dcat:Property ;
+        ex:value "19014"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1500_max [
+        a dcat:Property ;
+        ex:value "77.948"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1500_mean [
+        a dcat:Property ;
+        ex:value "38.754"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1500_min [
+        a dcat:Property ;
+        ex:value "15.303"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA1500_std [
+        a dcat:Property ;
+        ex:value "17.303"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2000_25% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2000_50% [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2000_75% [
+        a dcat:Property ;
+        ex:value "1.793"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2000_count [
+        a dcat:Property ;
+        ex:value "19014"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2000_max [
+        a dcat:Property ;
+        ex:value "22.934"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2000_mean [
+        a dcat:Property ;
+        ex:value "1.04"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2000_min [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2000_std [
+        a dcat:Property ;
+        ex:value "2.155"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2100_25% [
+        a dcat:Property ;
+        ex:value "-11416.411"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2100_50% [
+        a dcat:Property ;
+        ex:value "122.634"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2100_75% [
+        a dcat:Property ;
+        ex:value "137.572"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2100_count [
+        a dcat:Property ;
+        ex:value "19014"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2100_max [
+        a dcat:Property ;
+        ex:value "203.79"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2100_mean [
+        a dcat:Property ;
+        ex:value "-2925.23"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2100_min [
+        a dcat:Property ;
+        ex:value "-11435.438"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RPA2100_std [
+        a dcat:Property ;
+        ex:value "5104.942"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0800_25% [
+        a dcat:Property ;
+        ex:value "10.897"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0800_50% [
+        a dcat:Property ;
+        ex:value "11.069"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0800_75% [
+        a dcat:Property ;
+        ex:value "11.069"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0800_count [
+        a dcat:Property ;
+        ex:value "151"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0800_max [
+        a dcat:Property ;
+        ex:value "11.069"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0800_mean [
+        a dcat:Property ;
+        ex:value "10.972"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0800_min [
+        a dcat:Property ;
+        ex:value "10.552"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0800_std [
+        a dcat:Property ;
+        ex:value "0.173"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0900_25% [
+        a dcat:Property ;
+        ex:value "15.931"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0900_50% [
+        a dcat:Property ;
+        ex:value "16.138"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0900_75% [
+        a dcat:Property ;
+        ex:value "16.517"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0900_count [
+        a dcat:Property ;
+        ex:value "151"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0900_max [
+        a dcat:Property ;
+        ex:value "17.207"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0900_mean [
+        a dcat:Property ;
+        ex:value "16.251"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0900_min [
+        a dcat:Property ;
+        ex:value "15.724"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA0900_std [
+        a dcat:Property ;
+        ex:value "0.508"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1100_25% [
+        a dcat:Property ;
+        ex:value "35.96"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1100_50% [
+        a dcat:Property ;
+        ex:value "36.224"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1100_75% [
+        a dcat:Property ;
+        ex:value "37.315"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1100_count [
+        a dcat:Property ;
+        ex:value "151"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1100_max [
+        a dcat:Property ;
+        ex:value "100.766"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1100_mean [
+        a dcat:Property ;
+        ex:value "38.145"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1100_min [
+        a dcat:Property ;
+        ex:value "31.231"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1100_std [
+        a dcat:Property ;
+        ex:value "7.743"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1300_25% [
+        a dcat:Property ;
+        ex:value "106.303"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1300_50% [
+        a dcat:Property ;
+        ex:value "109.522"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1300_75% [
+        a dcat:Property ;
+        ex:value "112.231"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1300_count [
+        a dcat:Property ;
+        ex:value "151"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1300_max [
+        a dcat:Property ;
+        ex:value "119.041"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1300_mean [
+        a dcat:Property ;
+        ex:value "108.963"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1300_min [
+        a dcat:Property ;
+        ex:value "90.145"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1300_std [
+        a dcat:Property ;
+        ex:value "5.021"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1400_25% [
+        a dcat:Property ;
+        ex:value "2559.528"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1400_50% [
+        a dcat:Property ;
+        ex:value "2641.05"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1400_75% [
+        a dcat:Property ;
+        ex:value "2713.581"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1400_count [
+        a dcat:Property ;
+        ex:value "151"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1400_max [
+        a dcat:Property ;
+        ex:value "2923.328"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1400_mean [
+        a dcat:Property ;
+        ex:value "2629.349"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1400_min [
+        a dcat:Property ;
+        ex:value "1876.972"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_RTA1400_std [
+        a dcat:Property ;
+        ex:value "152.847"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:06:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s1_crest_mean [
+        a dcat:Property ;
+        ex:value "173"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s1_friction_mean [
+        a dcat:Property ;
+        ex:value "144"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s1_shock_count [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2023-11-02T11:45:53Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "1440"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s1_shock_mean [
+        a dcat:Property ;
+        ex:value "176"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s1_temperature_mean [
+        a dcat:Property ;
+        ex:value "160"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s1_vibration_mean [
+        a dcat:Property ;
+        ex:value "157"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s2_crest_mean [
+        a dcat:Property ;
+        ex:value "114"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s2_friction_mean [
+        a dcat:Property ;
+        ex:value "163"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s2_shock_mean [
+        a dcat:Property ;
+        ex:value "183"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s2_temperature_mean [
+        a dcat:Property ;
+        ex:value "172"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s2_vibration_mean [
+        a dcat:Property ;
+        ex:value "137"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s3_crest_mean [
+        a dcat:Property ;
+        ex:value "135"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s3_friction_mean [
+        a dcat:Property ;
+        ex:value "133"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s3_shock_mean [
+        a dcat:Property ;
+        ex:value "111"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s3_temperature_mean [
+        a dcat:Property ;
+        ex:value "134"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s3_vibration_mean [
+        a dcat:Property ;
+        ex:value "164"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s4_crest_mean [
+        a dcat:Property ;
+        ex:value "146"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s4_friction_mean [
+        a dcat:Property ;
+        ex:value "104"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s4_shock_mean [
+        a dcat:Property ;
+        ex:value "160"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s4_temperature_mean [
+        a dcat:Property ;
+        ex:value "101"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_bf_s4_vibration_mean [
+        a dcat:Property ;
+        ex:value "170"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s1_crest_mean [
+        a dcat:Property ;
+        ex:value "163"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s1_friction_mean [
+        a dcat:Property ;
+        ex:value "137"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s1_shock_mean [
+        a dcat:Property ;
+        ex:value "114"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s1_temperature_mean [
+        a dcat:Property ;
+        ex:value "150"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s1_vibration_mean [
+        a dcat:Property ;
+        ex:value "162"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s2_crest_mean [
+        a dcat:Property ;
+        ex:value "155"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s2_friction_mean [
+        a dcat:Property ;
+        ex:value "112"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s2_shock_mean [
+        a dcat:Property ;
+        ex:value "132"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s2_temperature_mean [
+        a dcat:Property ;
+        ex:value "197"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_sensors_dry_s2_vibration_mean [
+        a dcat:Property ;
+        ex:value "183"^^xsd:integer ;
+        ex:dateObserved "2024-04-07T18:24:40Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_t_RPBCount [
+        a dcat:Property ;
+        ex:value "2068.379"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:02:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_t_RPCount [
+        a dcat:Property ;
+        ex:value "19014.517"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:02:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_t_RTCount [
+        a dcat:Property ;
+        ex:value "151.276"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:02:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_t_SPCount [
+        a dcat:Property ;
+        ex:value "59.621"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:02:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:DataIngestion_production_t_STCount [
+        a dcat:Property ;
+        ex:value "33.276"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:02:04Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DAPA_EVS [
+        a dcat:Property ;
+        ex:value "0.2881095467023682"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DAPA_MAE [
+        a dcat:Property ;
+        ex:value "0.016011751083624803"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DAPA_MSE [
+        a dcat:Property ;
+        ex:value "0.00043850150747078197"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DAPA_R2 [
+        a dcat:Property ;
+        ex:value "0.11337891957801438"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DEFM_EVS [
+        a dcat:Property ;
+        ex:value "0.9577489630305988"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DEFM_MAE [
+        a dcat:Property ;
+        ex:value "0.0911407810491994"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DEFM_MSE [
+        a dcat:Property ;
+        ex:value "0.011686724927810203"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DEFM_R2 [
+        a dcat:Property ;
+        ex:value "0.8539159384023725"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DMAX_EVS [
+        a dcat:Property ;
+        ex:value "0.6059683020618982"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DMAX_MAE [
+        a dcat:Property ;
+        ex:value "0.015477318832004785"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DMAX_MSE [
+        a dcat:Property ;
+        ex:value "0.00047499637637106674"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_DMAX_R2 [
+        a dcat:Property ;
+        ex:value "0.5588181937993005"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_ESTM_EVS [
+        a dcat:Property ;
+        ex:value "0.9293781853289386"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_ESTM_MAE [
+        a dcat:Property ;
+        ex:value "0.1744000000000078"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_ESTM_MSE [
+        a dcat:Property ;
+        ex:value "0.09231560000000169"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_ESTM_R2 [
+        a dcat:Property ;
+        ex:value "0.90596842148494"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_VFB_EVS [
+        a dcat:Property ;
+        ex:value "0.6870146300572026"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_VFB_MAE [
+        a dcat:Property ;
+        ex:value "1.889406079605522"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_VFB_MSE [
+        a dcat:Property ;
+        ex:value "4.597124578278921"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_VFB_R2 [
+        a dcat:Property ;
+        ex:value "0.6590403712644224"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_VMA_EVS [
+        a dcat:Property ;
+        ex:value "0.7750141927952496"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_VMA_MAE [
+        a dcat:Property ;
+        ex:value "0.2836866351475649"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_VMA_MSE [
+        a dcat:Property ;
+        ex:value "0.1514226685745877"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_VMA_R2 [
+        a dcat:Property ;
+        ex:value "0.7734889026558152"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_Vm_EVS [
+        a dcat:Property ;
+        ex:value "0.7799451459155057"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_Vm_MAE [
+        a dcat:Property ;
+        ex:value "0.34138740558772823"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_Vm_MSE [
+        a dcat:Property ;
+        ex:value "0.17665924464123"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AD20CI_Vm_R2 [
+        a dcat:Property ;
+        ex:value "0.7776472691740339"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DAPA_EVS [
+        a dcat:Property ;
+        ex:value "0.3819127020987271"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DAPA_MAE [
+        a dcat:Property ;
+        ex:value "0.017215378620136505"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DAPA_MSE [
+        a dcat:Property ;
+        ex:value "0.0005259370461520144"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DAPA_R2 [
+        a dcat:Property ;
+        ex:value "0.2273966762513694"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DEFM_EVS [
+        a dcat:Property ;
+        ex:value "0.4738701757323657"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DEFM_MAE [
+        a dcat:Property ;
+        ex:value "0.27689785714285753"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DEFM_MSE [
+        a dcat:Property ;
+        ex:value "0.13958063132993234"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DEFM_R2 [
+        a dcat:Property ;
+        ex:value "0.4738266654229296"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DMAX_EVS [
+        a dcat:Property ;
+        ex:value "0.48759701600094796"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DMAX_MAE [
+        a dcat:Property ;
+        ex:value "0.008115611111111242"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DMAX_MSE [
+        a dcat:Property ;
+        ex:value "0.00010946498655554134"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_DMAX_R2 [
+        a dcat:Property ;
+        ex:value "0.4835803148521184"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_ESTM_EVS [
+        a dcat:Property ;
+        ex:value "0.3522829225350743"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_ESTM_MAE [
+        a dcat:Property ;
+        ex:value "1.399676793380305"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_ESTM_MSE [
+        a dcat:Property ;
+        ex:value "2.8860299750997287"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_ESTM_R2 [
+        a dcat:Property ;
+        ex:value "0.3403171576102795"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_ITSR_EVS [
+        a dcat:Property ;
+        ex:value "0.9978127882857111"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_ITSR_MAE [
+        a dcat:Property ;
+        ex:value "0.057086650531203986"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_ITSR_MSE [
+        a dcat:Property ;
+        ex:value "0.004926027042207625"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_ITSR_R2 [
+        a dcat:Property ;
+        ex:value "0.9935372823061416"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_VFB_EVS [
+        a dcat:Property ;
+        ex:value "0.014022781366227477"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_VFB_MAE [
+        a dcat:Property ;
+        ex:value "2.7880509405544114"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_VFB_MSE [
+        a dcat:Property ;
+        ex:value "13.29405201179724"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_VFB_R2 [
+        a dcat:Property ;
+        ex:value "0.01326984724404201"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_VMA_EVS [
+        a dcat:Property ;
+        ex:value "0.32765131595156016"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_VMA_MAE [
+        a dcat:Property ;
+        ex:value "0.3856540317189844"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_VMA_MSE [
+        a dcat:Property ;
+        ex:value "0.2296962664337848"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_VMA_R2 [
+        a dcat:Property ;
+        ex:value "0.2285144440418958"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_Vm_EVS [
+        a dcat:Property ;
+        ex:value "0.2915749683007747"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_Vm_MAE [
+        a dcat:Property ;
+        ex:value "0.520915085074448"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_Vm_MSE [
+        a dcat:Property ;
+        ex:value "0.3834542947010329"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_Vm_R2 [
+        a dcat:Property ;
+        ex:value "0.20189095731944728"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_WTS_EVS [
+        a dcat:Property ;
+        ex:value "0.9681230769230774"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_WTS_MAE [
+        a dcat:Property ;
+        ex:value "0.0013666666666667011"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_WTS_MSE [
+        a dcat:Property ;
+        ex:value "1.95986666666676e-06"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR5070_WTS_R2 [
+        a dcat:Property ;
+        ex:value "0.3215846153845844"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DAPA_EVS [
+        a dcat:Property ;
+        ex:value "0.16281604927584226"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DAPA_MAE [
+        a dcat:Property ;
+        ex:value "0.019005880000000246"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DAPA_MSE [
+        a dcat:Property ;
+        ex:value "0.0006700009740266843"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DAPA_R2 [
+        a dcat:Property ;
+        ex:value "0.1624911592750653"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DEFM_EVS [
+        a dcat:Property ;
+        ex:value "-0.06230751321632266"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DEFM_MAE [
+        a dcat:Property ;
+        ex:value "0.315525651488553"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DEFM_MSE [
+        a dcat:Property ;
+        ex:value "0.15062521335314408"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DEFM_R2 [
+        a dcat:Property ;
+        ex:value "-0.10364973817412904"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DMAX_EVS [
+        a dcat:Property ;
+        ex:value "0.025646226147039597"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DMAX_MAE [
+        a dcat:Property ;
+        ex:value "0.019858779245282995"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DMAX_MSE [
+        a dcat:Property ;
+        ex:value "0.0005668791236620721"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_DMAX_R2 [
+        a dcat:Property ;
+        ex:value "0.019513611825505373"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_ESTM_EVS [
+        a dcat:Property ;
+        ex:value "0.01792394371863526"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_ESTM_MAE [
+        a dcat:Property ;
+        ex:value "2.6297979568854575"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_ESTM_MSE [
+        a dcat:Property ;
+        ex:value "27.975752642014335"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_ESTM_R2 [
+        a dcat:Property ;
+        ex:value "0.01561104888310938"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_ITSR_EVS [
+        a dcat:Property ;
+        ex:value "0.046753972164246926"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_ITSR_MAE [
+        a dcat:Property ;
+        ex:value "5.2907481776001"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_ITSR_MSE [
+        a dcat:Property ;
+        ex:value "55.214301147384624"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_ITSR_R2 [
+        a dcat:Property ;
+        ex:value "0.04588110140740387"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_VFB_EVS [
+        a dcat:Property ;
+        ex:value "0.200957555556732"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_VFB_MAE [
+        a dcat:Property ;
+        ex:value "3.291473878784154"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_VFB_MSE [
+        a dcat:Property ;
+        ex:value "17.824915629718255"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_VFB_R2 [
+        a dcat:Property ;
+        ex:value "0.20048291973515076"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_VMA_EVS [
+        a dcat:Property ;
+        ex:value "0.14784473657094066"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_VMA_MAE [
+        a dcat:Property ;
+        ex:value "0.6958167353971814"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_VMA_MSE [
+        a dcat:Property ;
+        ex:value "0.7576047483800514"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_VMA_R2 [
+        a dcat:Property ;
+        ex:value "0.1471932076785576"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_Vm_EVS [
+        a dcat:Property ;
+        ex:value "0.19047604712919397"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_Vm_MAE [
+        a dcat:Property ;
+        ex:value "0.6944690552432247"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_Vm_MSE [
+        a dcat:Property ;
+        ex:value "0.8406531661646081"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_Vm_R2 [
+        a dcat:Property ;
+        ex:value "0.18676688582377654"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_WTS_EVS [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_WTS_MAE [
+        a dcat:Property ;
+        ex:value "0.01467195767195767"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_WTS_MSE [
+        a dcat:Property ;
+        ex:value "0.00031488813303098996"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS12CR_WTS_R2 [
+        a dcat:Property ;
+        ex:value "-1.1707181936604414"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DAPA_EVS [
+        a dcat:Property ;
+        ex:value "0.4248649793127398"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DAPA_MAE [
+        a dcat:Property ;
+        ex:value "0.01968115548111176"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DAPA_MSE [
+        a dcat:Property ;
+        ex:value "0.0005180483623171918"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DAPA_R2 [
+        a dcat:Property ;
+        ex:value "0.39124284621138516"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DEFM_EVS [
+        a dcat:Property ;
+        ex:value "0.3101138757150247"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DEFM_MAE [
+        a dcat:Property ;
+        ex:value "0.21050167280824228"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DEFM_MSE [
+        a dcat:Property ;
+        ex:value "0.09585834236007053"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DEFM_R2 [
+        a dcat:Property ;
+        ex:value "-0.0031686991170174483"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DMAX_EVS [
+        a dcat:Property ;
+        ex:value "0.34751431005596245"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DMAX_MAE [
+        a dcat:Property ;
+        ex:value "0.00961870848221924"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DMAX_MSE [
+        a dcat:Property ;
+        ex:value "0.00013576918887592973"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_DMAX_R2 [
+        a dcat:Property ;
+        ex:value "0.3296305054514126"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_ESTM_EVS [
+        a dcat:Property ;
+        ex:value "0.6753101116105147"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_ESTM_MAE [
+        a dcat:Property ;
+        ex:value "0.7720680113958037"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_ESTM_MSE [
+        a dcat:Property ;
+        ex:value "0.6538978776178151"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_ESTM_R2 [
+        a dcat:Property ;
+        ex:value "0.6748322578232383"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_ITSR_EVS [
+        a dcat:Property ;
+        ex:value "0.15868117733319176"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_ITSR_MAE [
+        a dcat:Property ;
+        ex:value "3.4146666666666903"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_ITSR_MSE [
+        a dcat:Property ;
+        ex:value "19.67334666666675"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_ITSR_R2 [
+        a dcat:Property ;
+        ex:value "0.07269236409342761"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_VFB_EVS [
+        a dcat:Property ;
+        ex:value "0.10443143873336591"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_VFB_MAE [
+        a dcat:Property ;
+        ex:value "2.9914557291190897"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_VFB_MSE [
+        a dcat:Property ;
+        ex:value "14.214363505954541"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_VFB_R2 [
+        a dcat:Property ;
+        ex:value "0.019284973540169337"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_VMA_EVS [
+        a dcat:Property ;
+        ex:value "0.5729081199105357"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_VMA_MAE [
+        a dcat:Property ;
+        ex:value "0.407886168047869"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_VMA_MSE [
+        a dcat:Property ;
+        ex:value "0.2825935551291634"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_VMA_R2 [
+        a dcat:Property ;
+        ex:value "0.48447192102274694"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_Vm_EVS [
+        a dcat:Property ;
+        ex:value "0.3072941514168104"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_Vm_MAE [
+        a dcat:Property ;
+        ex:value "0.612577432206159"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_Vm_MSE [
+        a dcat:Property ;
+        ex:value "0.41976680722276827"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_Vm_R2 [
+        a dcat:Property ;
+        ex:value "0.2999124045637972"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_WTS_EVS [
+        a dcat:Property ;
+        ex:value "0"^^xsd:integer ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_WTS_MAE [
+        a dcat:Property ;
+        ex:value "0.005166666666666669"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_WTS_MSE [
+        a dcat:Property ;
+        ex:value "3.758333333333339e-05"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_AS20OR5070_WTS_R2 [
+        a dcat:Property ;
+        ex:value "-0.8585164835164856"^^xsd:decimal ;
+        ex:dateObserved "2024-06-01T06:28:32Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_CA_Accuracy [
+        a dcat:Property ;
+        ex:value "100"^^xsd:integer ;
+        ex:dateObserved "2024-05-31T11:57:17Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_GD_Accuracy [
+        a dcat:Property ;
+        ex:value "100"^^xsd:integer ;
+        ex:dateObserved "2024-05-31T11:57:17Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_MA_Accuracy [
+        a dcat:Property ;
+        ex:value "100"^^xsd:integer ;
+        ex:dateObserved "2024-05-31T11:57:17Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_MP_Accuracy [
+        a dcat:Property ;
+        ex:value "100"^^xsd:integer ;
+        ex:dateObserved "2024-05-31T11:57:17Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] ;
+    ex:ModelTraining_MT_Accuracy [
+        a dcat:Property ;
+        ex:value "99.35"^^xsd:decimal ;
+        ex:dateObserved "2024-05-31T11:57:17Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "43200"^^xsd:integer
+    ] .

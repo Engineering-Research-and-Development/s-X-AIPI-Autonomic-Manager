@@ -1,0 +1,104 @@
+asphalt:
+
+  subscriptions:
+    orion_endpoint: "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/"
+    subscription_ld_endpoint: "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions"
+    context: "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    notification_endpoint: ":8001/asphalt"
+    to_subscribe:
+      - id: "urn:ngsi-ld:asphalt_smaller_time_window:001"
+        type: "factory"
+        attrs: [ ]
+        conditions: [ ]
+      - id: "urn:ngsi-ld:asphalt_smaller_time_window:002"
+        type: "factory"
+        attrs: [ ]
+        conditions: [ ]
+      - id: "urn:ngsi-ld:asphalt_alarms:001"
+        type: "asphalt_alarms"
+        attrs: [ ]
+        conditions: [ ]
+
+  kafka_topic: "asphalt"
+
+  dag_config:
+    base_url: "http://136.243.156.113:1026/ngsi-ld/v1/entities/"
+    small_window: "urn:ngsi-ld:asphalt_smaller_time_window:001"
+    large_window: "urn:ngsi-ld:asphalt_greater_time_window:001"
+    small_laboratory: "urn:ngsi-ld:asphalt_smaller_time_window:002"
+    large_laboratory: "urn:ngsi-ld:asphalt_greater_time_window:002"
+    wp3_alarms: "urn:ngsi-ld:asphalt_alarms:001"
+    output_entity: "urn:ngsi-ld:Asphalt_solution_output_1:001"
+
+    solution_1:
+      alarm_type: "Sensor Error"
+      inputs:
+        rpa_0700:
+          attrs: ["DataIngestion_production_t_RPBCount", "DataIngestion_production_RPA0700_max"]
+          uppers: [0.0, 0.0]
+          lowers: [-999999.9, 0.0]
+          mode: ["X_AND_NOT_Y"]
+        st_frames:
+          attrs: ["DataIngestion_production_t_SPCount", "DataIngestion_production_t_STCount"]
+          uppers: [ 0.0, 0.0 ]
+          lowers: [ -999999.9, 0.0 ]
+          mode: ["X_AND_NOT_Y"]
+        rt_frames:
+          attrs: ["DataIngestion_production_t_RTCount", "DataIngestion_production_t_RPBCount" ]
+          uppers: [ 0.0, 0.0 ]
+          lowers: [ -999999.9, 0.0 ]
+          mode: ["X_AND_NOT_Y"]
+        rpa_2000:
+          attrs: ["DataIngestion_production_RPA2000_min", "DataIngestion_production_RPA2000_max"]
+          uppers: [999999.9, 10.0]
+          lowers: [0.0, -999999.9]
+          mode: ["X_OR_Y"]
+        rpa_1500:
+          attrs: [ "DataIngestion_production_RPA1500_max"]
+          uppers: [ 200.0]
+          lowers: [ -999999.9 ]
+          mode: [ "X_OR_Y" ]
+        rta_1300:
+          attrs: [ "DataIngestion_production_RTA1300_max" ]
+          uppers: [ 180.0 ]
+          lowers: [ -999999.9 ]
+          mode: [ "X_OR_Y" ]
+        rta_1300_2:
+          attrs: [ "DataIngestion_production_RTA1300_min", "DataIngestion_production_RTA1300_mean" ]
+          uppers: [ 999999.9, 0.0]
+          lowers: [ 150.0, 0.0 ]
+          mode: [ "X_AND_NOT_Y" ]
+        rpa_1000:
+          attrs: [ "DataIngestion_production_RPA1000_min" ]
+          uppers: [ 999999.9 ]
+          lowers: [ 0.0 ]
+          mode: ["X_AND_NOT_Y"]
+        rpa_2100:
+          attrs: [ "DataIngestion_production_RPA2100_min", "DataIngestion_production_RPA2100_min" ]
+          uppers: [ 999999.9, -334233.6 ]
+          lowers: [ 0.0, -334233.6 ]
+          mode: ["X_AND_NOT_Y"]
+
+      alarm_type_AI: "Retrain Alarm"
+      inputs_AI: [ "ModelTraining_CA_Accuracy", "ModelTraining_MP_Accuracy",
+                   "ModelTraining_MT_Accuracy", "ModelTraining_MA_Accuracy" ]
+      upper_thresholds_AI: [ 999999.9, 999999.9, 999999.9, 999999.9 ]
+      lower_thresholds_AI: [ 70.0, 70.0, 70.0, 70.0 ]
+
+
+    solution_2:
+      alarm_type: "Sensor Alarm"
+      inputs: [ "DataIngestion_production_sensors_shock_mean", "DataIngestion_production_sensors_vibration_mean",
+                "DataIngestion_production_sensors_crest_mean", "DataIngestion_production_sensors_friction_mean",
+                "DataIngestion_production_sensors_temperature_mean"]
+      upper_thresholds: [ 490.999999, 0.099999, 50.0, 490.999999, 80.0 ]
+      lower_thresholds: [ 0.0, 0.0, 0.0, 0.0, 15.0 ]
+
+
+
+    solution_4:
+      alarm_type: "D.APA Change Error / Laboratory Error"
+      inputs: [ "DataIngestion_laboratory_DAPA_max", "DataIngestion_laboratory_DAPA_min",
+                  "DataIngestion_laboratory_16mm_max", "DataIngestion_laboratory_0,063mm_max" ]
+      upper_thresholds: [ 3.0, 999999.9, 100.0, 100.0 ]
+      lower_thresholds: [ -999999.9, 2.0, -999999.9, -999999.9]

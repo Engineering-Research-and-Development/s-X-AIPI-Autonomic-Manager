@@ -1,0 +1,53 @@
+pharma:
+  subscriptions:
+    orion_endpoint: "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions/"
+    subscription_ld_endpoint: "http://136.243.156.113:1026/ngsi-ld/v1/subscriptions"
+    context: "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    notification_endpoint : ":8001/pharma"
+    to_subscribe:
+      - id: "urn:ngsi-ld:Pharma_smaller_time_window:001"
+        type: "factory"
+        attrs: []
+        conditions: []
+      - id : "urn:ngsi-ld:Pharma_alarms:001"
+        type: "Pharma_alarms"
+        attrs: []
+        conditions: []
+
+  kafka_topic: "pharma"
+
+  dag_config:
+    base_url: "http://136.243.156.113:1026/ngsi-ld/v1/entities/"
+    small_window: "urn:ngsi-ld:Pharma_smaller_time_window:001"
+    large_window: "urn:ngsi-ld:Pharma_greater_time_window:001"
+    wp3_alarms: "urn:ngsi-ld:Pharma_alarms:001"
+    output_entity: "urn:ngsi-ld:Pharma_solution_output_1:001"
+
+    solution_1:
+      inputs: [ "DataIngestion_OCT_probePositionEvaluation", "DataIngestion_OCT_probePosition_xPos", "DataIngestion_OCT_probePosition_yPos" ]
+      lower_thresholds: [ 0.5, 400.0, 50.0 ]
+      upper_thresholds: [ 999.9, 900.0, 200.0 ]
+      alarm_type: "OCT Position Deviation"
+      kafka_topic: "pharma_alerts-solution1"
+
+    solution_2:
+      inputs_1: [ "DataIngestion_OCT_signalQualityCheck_maxSignalIntensity" ]
+      inputs_2: [ "DataIngestion_OCT_imageClassification_numBadImg" ]
+      upper_thresholds_2: [ "DataIngestion_OCT_imageClassification_numGoodImg" ]
+      pct_change_2: [ 10 ]
+      alarm_type_1: "Poor Signal Quality"
+      alarm_type_2: "Bad Image increase"
+      kafka_topic: "pharma_alerts-solution2"
+
+    solution_3:
+      inputs: [ "DataIngestion_IR_numberOfValues", "DataIngestion_IR_plsModelReliability", "DataIngestion_IR_frequency"]
+      kafka_topic: "pharma_alerts-solution3"
+
+    solution_4:
+      inputs: [ "DataIngestion_PWR_numberOfValues", "DataIngestion_PWR_frequency"]
+      kafka_topic: "pharma_alerts-solution4"
+
+    solution_5:
+      inputs: ["RuntimeAIProcessing_Prediction_MSE", "RuntimeAIProcessing_Prediction_time",
+      "RuntimeAIProcessing_Prediction_steps" ]
+      kafka_topic: "pharma_alerts-solution5"

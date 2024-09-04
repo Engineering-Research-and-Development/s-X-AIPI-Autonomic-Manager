@@ -1,0 +1,46 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - Dag01
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Dagster Service
+        uses: docker/build-push-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          push: true
+          file: src/dagster_service/Dockerfile_dagster
+          tags: ghcr.io/engineering-research-and-development/s-x-aipi-autonomic-manager:dagster_service
+
+      - name: Build and push Orion Catcher
+        uses: docker/build-push-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          context: src
+          push: true
+          file: src/Dockerfile
+          tags: ghcr.io/engineering-research-and-development/s-x-aipi-autonomic-manager:orion_catcher

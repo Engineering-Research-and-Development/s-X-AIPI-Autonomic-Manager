@@ -1,0 +1,5 @@
+load_from:
+  - python_module: Pharma
+  - python_module: Steel
+  - python_module: Asphalt
+  - python_module: Aluminium

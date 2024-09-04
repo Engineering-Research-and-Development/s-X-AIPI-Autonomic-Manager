@@ -1,6 +1,6 @@
 ## Prerequisites
 
-### Docker and Docker Compose
+## Docker and Docker Compose
 
 **Docker** is an open platform for developing, shipping, and running applications. **Docker Compose** is a tool for defining and running multi-container Docker applications. To keep things simple both components will be run using [Docker](https://www.docker.com). **Docker** is a container technology which allows to different components isolated into their respective environments. 
 
@@ -12,19 +12,19 @@ A docker-compose.yml file is used configure the required services for the applic
 
 You can check your current **Docker** and **Docker Compose** versions using the following commands:
 
-```bash
+```shell
 docker-compose -v
 docker version
 ```
 
-### Postman
-
-**Postman** is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration, therefore you can create better APIs—faster. To install Postman, follow the instructions [here](https://www.postman.com/downloads).
-A postman collection is shared in this folder to facilitate the interaction with the main functionalities of AM.
-
 ### Run AM
-Once setup the configuration from .env file, the AM can start to work executing:
+The entire AM ecosystem is stored in a single docker-compose file: 
 
-```bash
+* Download the docker-compose file with the following command:
+```shell
+wget -o https://raw.githubusercontent.com/Engineering-Research-and-Development/s-X-AIPI-Autonomic-Manager/main/docker-compose.yml
+```
+* Run the docker compose
+```shell
 docker-compose up
 ```

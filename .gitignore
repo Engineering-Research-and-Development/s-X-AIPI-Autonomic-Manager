@@ -1,0 +1,12 @@
+.idea
+.venv
+__pycache__/
+*.pyc
+.experimental_playground
+*.egg-info
+
+/src/orion_catcher/config.env
+/src/dagster_service/dist/
+/src/dagster_service/build/
+/.actrc
+/src/dcat_server/collection.json

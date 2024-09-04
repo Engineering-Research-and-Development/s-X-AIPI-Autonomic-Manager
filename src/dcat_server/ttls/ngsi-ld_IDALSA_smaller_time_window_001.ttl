@@ -1,0 +1,101 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/> .
+
+ex:001 a ex:factory ;
+    ex:dataExploration_mergedheatsGeneral_index [
+        a dcat:Property ;
+        ex:value "111"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_max_consumption_NaCl [
+        a dcat:Property ;
+        ex:value "0.148"^^xsd:decimal ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_max_duration_of_heats [
+        a dcat:Property ;
+        ex:value "445"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_max_gas_consumption [
+        a dcat:Property ;
+        ex:value "970"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_max_oxygen_consumption [
+        a dcat:Property ;
+        ex:value "1203"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_mean_consumption_NaCl [
+        a dcat:Property ;
+        ex:value "0.109"^^xsd:decimal ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_mean_duration_of_heats [
+        a dcat:Property ;
+        ex:value "400"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_mean_gas_consumption [
+        a dcat:Property ;
+        ex:value "601.054"^^xsd:decimal ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_mean_oxygen_consumption [
+        a dcat:Property ;
+        ex:value "982.149"^^xsd:decimal ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_min_consumption_NaCl [
+        a dcat:Property ;
+        ex:value "0.022"^^xsd:decimal ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_min_duration_of_heats [
+        a dcat:Property ;
+        ex:value "190"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_min_gas_consumption [
+        a dcat:Property ;
+        ex:value "328"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_min_oxygen_consumption [
+        a dcat:Property ;
+        ex:value "754"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:dataExploration_mergedheatsGeneral_num_of_heats [
+        a dcat:Property ;
+        ex:value "71"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:modelTraining_mergedheatsGeneral_feedback_model_1 [
+        a dcat:Property ;
+        ex:value "100"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] ;
+    ex:modelTraining_mergedheatsGeneral_feedback_model_2 [
+        a dcat:Property ;
+        ex:value "100"^^xsd:integer ;
+        ex:dateObserved "2024-02-26T00:00:00Z"^^xsd:dateTime ;
+        ex:timeWindowLengthMinutes "10080"^^xsd:integer
+    ] .
