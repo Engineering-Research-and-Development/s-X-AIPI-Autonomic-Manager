@@ -1,0 +1,19 @@
+pharma:
+  small1: "urn:ngsi-ld:Pharma_smaller_time_window:001"
+  small2: "urn:ngsi-ld:Pharma_smaller_time_window:002"
+  large1: "urn:ngsi-ld:Pharma_greater_time_window:001"
+  large2: "urn:ngsi-ld:Pharma_greater_time_window:002"
+
+asphalt:
+  small1: "urn:ngsi-ld:asphalt_smaller_time_window:001"
+  small2: "urn:ngsi-ld:asphalt_smaller_time_window:002"
+  large1: "urn:ngsi-ld:asphalt_greater_time_window:001"
+  large2: "urn:ngsi-ld:asphalt_greater_time_window:002"
+
+aluminium:
+  small1: "urn:ngsi-ld:IDALSA_smaller_time_window:001"
+  large1: "urn:ngsi-ld:IDALSA_greater_time_window:001"
+
+steel:
+  small1: "urn:ngsi-ld:sidenor_shorter_time_window:001"
+  large1: "urn:ngsi-ld:sidenor_longer_time_window:001"

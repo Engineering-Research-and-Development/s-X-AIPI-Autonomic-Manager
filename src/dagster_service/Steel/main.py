@@ -236,9 +236,10 @@ def elaborate_solution3(incoming_data, producer, service_config):
     context = incoming_data["@context"]
     values = get_data_from_notification(incoming_data, attrs)
     threshold_names = service_config[solution]["thresholds"]
+    pct_expand = expand_threshold(pct_change, len(attrs))
     _, threshold_high = get_threshold_values_from_entity(
         incoming_data, threshold_names, threshold_names)
-    _, threshold_high = get_threshold_from_pct_range(threshold_high, pct_change)
+    _, threshold_high = get_threshold_from_pct_range(threshold_high, pct_expand)
     results_threshold = discriminate_thresholds([-999999.9], threshold_high, values)
 
     historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity"]

@@ -39,10 +39,7 @@ steel:
 
       alarm_type_zeros: "Zero Detected"
       nan_inputs: [
-        "transformation_eaf_eaf14_nan", "transformation_eaf_kwhorno_nan", "transformation_eaf_eaf07_nan", "transformation_eaf_eaf08_nan",
-        "transformation_eaf_eaf09_nan", "transformation_eaf_eaf10_nan", "transformation_eaf_eaf11_nan", "transformation_eaf_eaf12_nan",
-        "transformation_eaf_eaf03_nan", "transformation_eaf_eaf04_nan", "transformation_eaf_eaf05_nan", "transformation_eaf_eaf01_nan",
-        "transformation_eaf_eaf02_nan", "transformation_eaf_eaf064_nan", "transformation_eaf_sum_eaf17_nan", "transformation_eaf_sum_eaf18_nan",
+        "transformation_eaf_eaf14_nan", "transformation_eaf_kwhorno_nan", "transformation_eaf_sum_eaf17_nan", "transformation_eaf_sum_eaf18_nan",
         "transformation_eaf_sum_eaf16_nan", "transformation_eaf_sum_eaf15_nan"
       ]
       nan_inputs_upper_threshold: [ 0.0 ]
@@ -91,7 +88,7 @@ steel:
 
 
     solution_2:
-      inputs: [ "exploration_analysis_Nr_anomalies_cu", "exploration_eaf_nr_anomalies_eaf14", "exploration_eaf_nr_anomalies_kwhorno",
+      inputs: [ "exploration_analysis_Nr_anomalies_cu", "exploration_eaf_nr_anomalies_eaf14",
       "exploration_lime_coke_nr_outliers_sum_lim_melting", "exploration_lime_coke_nr_outliers_sum_cok_melting", "exploration_analysis_upper_boundary_cu" ]
       "thresholds": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.4]
       "alarm_type": "Outliers Detected"
@@ -100,8 +97,8 @@ steel:
       historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_3:001"
       historical_patience: 1
       alarm_type: "Model Accuracy Degradation"
-      inputs: [ "modeling_LinearRegression_MAE" ]
-      thresholds: ["transformation_analysis_cu_mean"]
+      inputs: [ "RandomForestRegressor_all_Cu_MAE", "RandomForestRegressor_all_P_MAE", "RandomForestRegressor_all_kwhorno_MAE"]
+      thresholds: ["transformation_analysis_cu_mean", ]
       pct_change: [15.0]
 
     solution_4:
