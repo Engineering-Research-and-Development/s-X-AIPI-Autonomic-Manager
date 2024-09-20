@@ -11,3 +11,5 @@ __pycache__/
 /.actrc
 /src/dcat_converter/collection.json
 /qodana.yaml
+/docs/NGSI Entities/windows_downloader.py
+/docs/NGSI Entities/config.yml
