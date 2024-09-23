@@ -9,6 +9,32 @@ from commons.transform_operations import create_alarm_payloads
 from commons.utils import THRESHOLD_OK
 
 
+def analyze_full_input(item: dict, incoming_data: dict):
+    """
+    Merges threshold from
+    @param item:
+    @param incoming_data:
+    @return:
+    """
+    attrs = item["attrs"]
+    lowers = item["lowers"]
+    uppers = item["uppers"]
+    mode = item["mode"]
+    values = get_data_from_notification(incoming_data, attrs)
+    thresholds = discriminate_thresholds(lowers, uppers, values)
+
+    # One or two values. If two values, the condition == 0 on second threshold is checked.
+    # If condition is met, then delete last attribute (condition attr) and send alarm.
+    if len(thresholds) == 2:
+        thresholds = merge_thresholds([thresholds[0]], [thresholds[1]], mode)
+        attrs.pop()
+        lowers.pop()
+        uppers.pop()
+        values.pop()
+
+    return thresholds, attrs, lowers, uppers, values
+
+
 @op
 def elaborate_solution1(incoming_data: dict, producer: KafkaProducer, service_config: dict):
     solution = "solution_1"
@@ -20,35 +46,19 @@ def elaborate_solution1(incoming_data: dict, producer: KafkaProducer, service_co
         update_url = service_config['base_url'] + service_config['output_entity']
         context = incoming_data["@context"]
 
-        # Solution to check for thresholds with met conditions
-        for _, value in inputs.items():
-            attrs = value["attrs"]
-            lowers = value["lowers"]
-            uppers = value["uppers"]
-            mode = value["mode"]
-            values = get_data_from_notification(incoming_data, attrs)
-            thresholds = discriminate_thresholds(lowers, uppers, values)
+        output_entity = get_data(update_url)
+        if output_entity == {}:
+            out_entity = create_output_entity(service_config['output_entity'], context)
+            patch_orion(update_url, out_entity)
 
-            # One or two values. If two values, the condition == 0 on second threshold is checked.
-            # If condition is met, then delete last attribute (condition attr) and send alarm.
-            if len(thresholds) == 2:
-                thresholds = merge_thresholds([thresholds[0]], [thresholds[1]], mode)
-                attrs.pop()
-                lowers.pop()
-                uppers.pop()
-                values.pop()
+        # Solution to check for thresholds with met conditions
+        for _, item in inputs.items():
+            thresholds, attrs, lowers, uppers, values = analyze_full_input(item, incoming_data)
 
             alarms = create_alarm_threshold("Solution 1", alarm_type, attrs, thresholds,
                                             values, lowers, uppers)
 
             payloads = create_alarm_payloads(alarms, context)
-
-            output_entity = get_data(update_url)
-
-            if output_entity == {}:
-                out_entity = create_output_entity(service_config['output_entity'], context)
-                patch_orion(update_url, out_entity)
-
             produce_orion_multi_message(update_url, payloads)
 
     # Sub Solution for AI Retraining on second window
@@ -129,6 +139,25 @@ def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_co
         out_entity = create_output_entity(service_config['output_entity'], context)
         patch_orion(update_url, out_entity)
     produce_orion_multi_message(update_url, payloads)
+
+    # AI Analysis
+    alarm_type = service_config[solution]["alarm_type_AI"]
+    attrs_ai = service_config[solution]["inputs_AI"]
+    uppers_ai = service_config[solution]["upper_thresholds_AI"]
+    lowers_ai = service_config[solution]["lower_thresholds_AI"]
+
+    values_ai = get_data_from_notification(incoming_data, attrs_ai)
+    thresholds_ai = discriminate_thresholds(lowers_ai, uppers_ai, values_ai)
+    alarms_ai = create_alarm_threshold("Solution 1", alarm_type, attrs_ai, thresholds_ai,
+                                       values_ai, lowers_ai, uppers_ai)
+
+    payloads_ai = create_alarm_payloads(alarms_ai, context)
+
+    output_entity = get_data(update_url)
+    if output_entity == {}:
+        out_entity = create_output_entity(service_config['output_entity'], context)
+        patch_orion(update_url, out_entity)
+    produce_orion_multi_message(update_url, payloads_ai)
 
 
 @job

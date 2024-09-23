@@ -32,7 +32,7 @@ def elaborate_solution2(incoming_data: dict, producer: KafkaProducer, service_co
                                           threshold_heats_results, values_heats, lower_threshold_heats,
                                           upper_threshold_heats)
     payloads_heats = create_alarm_payloads(alarms_heats, context)
-    produce_orion_multi_message(update_url, payloads_heats)
+
 
     large_window_url = service_config['base_url'] + service_config['large_window']
     large_window = get_data(large_window_url)
@@ -57,6 +57,8 @@ def elaborate_solution2(incoming_data: dict, producer: KafkaProducer, service_co
     if output_entity == {}:
         out_entity = create_output_entity(service_config['output_entity'], context)
         patch_orion(update_url, out_entity)
+
+    produce_orion_multi_message(update_url, payloads_heats)
     produce_orion_multi_message(update_url, payloads_materials)
 
 
