@@ -102,3 +102,8 @@ asphalt:
                   "DataIngestion_laboratory_16mm_max", "DataIngestion_laboratory_0,063mm_max" ]
       upper_thresholds: [ 3.0, 999999.9, 100.0, 100.0 ]
       lower_thresholds: [ -999999.9, 2.0, -999999.9, -999999.9]
+
+      alarm_type_AI: "Retrain Gradation Deviation Model"
+      inputs_AI: [ "ModelTraining_GD_Accuracy"]
+      upper_thresholds_AI: [ 999999.9 ]
+      lower_thresholds_AI: [ 70.0 ]
