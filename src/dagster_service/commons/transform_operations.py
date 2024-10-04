@@ -109,19 +109,23 @@ def retrieve_values_from_historical_data(historical_data: dict,
 
 @op
 def create_alarm_payloads(values: list[dict],
-                          payload_context: str) -> list[dict]:
+                          payload_context: str,
+                          metadata = None) -> list[dict]:
     """
     Create alarm payloads based on the provided values and payload context.
 
     @param values: List of dictionaries representing alarm values.
     @param payload_context: Context for NGSI-LD entity to update.
+    @param metadata (optional): if present, list of additional data to add payload
 
     @return: List of dictionaries representing the alarm payloads.
     """
 
     payloads = []
 
-    for val in values:
+    for idx, val in enumerate(values):
         obj = update_data([val], ["AM_Generated_Alarm"], payload_context)
+        if metadata:
+            obj["AM_Generated_Alarm"]["metadata"] = metadata
         payloads.append(obj)
     return payloads
