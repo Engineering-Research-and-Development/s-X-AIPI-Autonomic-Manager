@@ -2,6 +2,8 @@ from dagster import op
 import requests
 import re
 
+from dagster_service.commons.utils import get_value_from_data
+
 
 @op
 def get_data(source_url: str
@@ -45,14 +47,7 @@ def get_data_from_notification(data_source: dict,
     for attribute in attributes:
         try:
             # Search for any key containing "value". useful to distinguish between "avgValue" and "value"
-            # TO IMPROVE
-            labels = [re.search("value", key, re.IGNORECASE) for key in data_source[attribute]["value"].keys()]
-            if "value" in labels:
-                label = "value"
-            elif "avgValue" in labels:
-                label = "avgValue"
-            else:
-                continue
+            label = get_value_from_data(data_source[attribute])
 
             val = data_source[attribute]["value"][label]
             values.append(float(val))

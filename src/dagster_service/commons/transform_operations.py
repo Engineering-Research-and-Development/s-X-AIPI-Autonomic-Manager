@@ -1,7 +1,7 @@
 from dagster import op
 import numpy as np
 
-from .utils import update_data, build_historical_data_attribute_names, pick_historical_data_values
+from .utils import update_data, build_historical_data_attribute_names, pick_historical_data_values, get_value_from_data
 
 
 @op
@@ -34,8 +34,9 @@ def get_threshold_values_from_entity(data_source: dict,
     """
 
     try:
-        upper_thresholds = [float(data_source[attribute]["value"]["value"]) for attribute in upper_names]
-        lower_thresholds = [float(data_source[attribute]["value"]["value"]) for attribute in lower_names]
+        labels = [get_value_from_data(data_source[upper_name]) for upper_name in upper_names]
+        upper_thresholds = [float(data_source[attribute]["value"][labels[idx]]) for idx, attribute in enumerate(upper_names)]
+        lower_thresholds = [float(data_source[attribute]["value"][labels[idx]]) for idx, attribute in enumerate(lower_names)]
         return lower_thresholds, upper_thresholds
     except KeyError as e:
         print("An error occurred while transforming data: get_threshold_values_from_entity failed", e)
