@@ -91,6 +91,8 @@ services:
     depends_on:
       redpanda-0:
         condition: service_started
+      dagster_webservice:
+        condition: service_started
     healthcheck:
       test: wget --no-verbose -O /dev/null --tries=1 http://localhost:8001/healthcheck || exit 1
       interval: 30s
