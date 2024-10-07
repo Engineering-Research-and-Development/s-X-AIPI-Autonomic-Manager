@@ -27,6 +27,8 @@ def test_single_response():
     msg = f"Response single request: {timing}\n"
     with open(out_file, "w") as f:
         f.write(msg)
+
+    print(msg)
     assert response == 200, f"Request error {response}"
 
 def test_total_time():
@@ -44,6 +46,7 @@ def test_total_time():
     with open(out_file, "a") as f:
         f.write(msg)
 
+    print(msg)
     assert average_time > 0, "Average time must be greater than 0"
 
 
@@ -60,5 +63,6 @@ def test_error_rate():
     msg = f"Error rate: {error_rate}/{int(max_requests/2)}\n"
     with open(out_file, "a") as f:
         f.write(msg)
+    print(msg)
 
     assert error_rate == int(max_requests / 2), "Error rate mismatch"
