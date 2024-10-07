@@ -1,11 +1,14 @@
 import json
 import requests
 import time
+import logging
 
 endpoint= "http://localhost:8001/steel"
 max_requests = 100
 json_test_wrong = "test_wrong.json"
 json_test_correct = "test_correct.json"
+logging_level = logging.DEBUG
+out_file = "test_results.txt"
 
 
 def get_response(data, endpoint_url):
@@ -21,7 +24,9 @@ def test_single_response():
     with open(json_test_correct, 'r') as file:
         data = json.load(file)
     response, timing = get_response(data, endpoint)
-    print(f"Response single request: {timing}")
+    msg = f"Response single request: {timing}\n"
+    with open(out_file, "w") as f:
+        f.write(msg)
     assert response == 200, f"Request error {response}"
 
 def test_total_time():
@@ -35,7 +40,9 @@ def test_total_time():
             total_time += timing
 
     average_time = total_time / (max_requests / 2)
-    print(f"Average time: {average_time}")
+    msg = f"Average time: {average_time}\n"
+    with open(out_file, "a") as f:
+        f.write(msg)
 
     assert average_time > 0, "Average time must be greater than 0"
 
@@ -50,6 +57,8 @@ def test_error_rate():
         if wrong_response != 200:
             error_rate += 1
 
-    print(f"Error rate: {error_rate}/{int(max_requests/2)}")
+    msg = f"Error rate: {error_rate}/{int(max_requests/2)}\n"
+    with open(out_file, "a") as f:
+        f.write(msg)
 
     assert error_rate == int(max_requests / 2), "Error rate mismatch"

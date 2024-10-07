@@ -2,7 +2,7 @@ from dagster import op
 import requests
 import re
 
-from dagster_service.commons.utils import get_value_from_data
+from utils import get_value_from_data
 
 
 @op
