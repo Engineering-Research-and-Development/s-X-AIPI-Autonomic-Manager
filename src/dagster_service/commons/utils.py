@@ -91,7 +91,9 @@ def update_data(values: [], names: [str], payload_context: str):
 
 def get_value_from_data(data_dict):
 
-    labels = [re.search("value", key, re.IGNORECASE) for key in data_dict["value"].keys()]
+    labels = [re.search("value", key, re.IGNORECASE) for key in list(data_dict["value"].keys())]
+    print(list(data_dict["value"].keys()))
+    print(labels)
     if "value" in labels:
         return "value"
     elif "avgValue" in labels:

@@ -48,7 +48,6 @@ def get_data_from_notification(data_source: dict,
         try:
             # Search for any key containing "value". useful to distinguish between "avgValue" and "value"
             label = get_value_from_data(data_source[attribute])
-            print(label)
 
             val = data_source[attribute]["value"][label]
             values.append(float(val))
