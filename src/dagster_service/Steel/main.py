@@ -12,7 +12,7 @@ from commons.plan_operations import create_alarm_threshold, update_historical_da
 from commons.transform_operations import expand_threshold, retrieve_values_from_historical_data, \
     create_alarm_payloads, get_threshold_values_from_entity, get_threshold_from_pct_range
 
-from dagster_service.commons.execute_operations import post_orion
+from commons.execute_operations import post_orion
 
 
 def clean_names(names: [str]):
