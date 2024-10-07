@@ -30,7 +30,7 @@ steel:
       historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_1:001"
       historical_patience: 1
       zeros_inputs: [
-        "transformation_scrap_tot_zeros", "transformation_lime_sum_lime_basket_zeros", "transformation_lime_coke_sum_cok_lim_melting_zeros",
+        "transformation_scrap_tot_zeros", "transformation_basket_sum_lime_basket_zeros", "transformation_melting_sum_cok_lim_melting_zeros",
          "transformation_analysis_mn_zeros", "transformation_analysis_p_zeros", "transformation_analysis_s_zeros", "transformation_analysis_cr_zeros",
          "transformation_analysis_ni_zeros", "transformation_analysis_mo_zeros", "transformation_analysis_cu_zeros", "transformation_analysis_sn_zeros"
       ]
@@ -99,7 +99,7 @@ steel:
       historical_patience: 1
       alarm_type: "Model Accuracy Degradation"
       inputs: [ "modeling_randomforestregressor_all_cu_mae", "modeling_randomforestregressor_all_p_mae", "modeling_randomforestregressor_all_kwhorno_mae"]
-      thresholds: ["transformation_analysis_cu",  "transformation_analysis_p", "transformation_analysis_kwhorno"]
+      thresholds: ["transformation_analysis_cu",  "transformation_analysis_p", "transformation_eaf_kwhorno"]
       pct_change: [15.0]
 
     solution_4:
