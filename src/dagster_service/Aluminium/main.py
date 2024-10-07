@@ -25,21 +25,21 @@ def elaborate_solution2(incoming_data: dict, producer: KafkaProducer, service_co
     attrs_heats = service_config[solution]["inputs_heats"]
     upper_threshold_heats = service_config[solution]["upper_threshold_heats"]
     lower_threshold_heats = service_config[solution]["lower_threshold_heats"]
-    values_heats = get_data_from_notification(incoming_data, attrs_heats)
+    values_heats, _ = get_data_from_notification(incoming_data, attrs_heats)
     threshold_heats_results = discriminate_thresholds(lower_threshold_heats,
                                                       upper_threshold_heats, values_heats)
     alarms_heats = create_alarm_threshold("Solution 2", alarm_type_heats, attrs_heats,
                                           threshold_heats_results, values_heats, lower_threshold_heats,
                                           upper_threshold_heats)
     payloads_heats = create_alarm_payloads(alarms_heats, context)
-    produce_orion_multi_message(update_url, payloads_heats)
+
 
     large_window_url = service_config['base_url'] + service_config['large_window']
     large_window = get_data(large_window_url)
     attrs_materials = service_config[solution]["inputs_materials"]
     pct_change_materials = service_config[solution]["pct_change_materials"]
     pct_changes = expand_threshold([pct_change_materials], len(attrs_materials))
-    values_materials = get_data_from_notification(incoming_data, attrs_materials)
+    values_materials, _ = get_data_from_notification(incoming_data, attrs_materials)
     _, threshold_base_materials = get_threshold_values_from_entity(large_window,
                                                                    attrs_materials,
                                                                    attrs_materials)
@@ -57,6 +57,8 @@ def elaborate_solution2(incoming_data: dict, producer: KafkaProducer, service_co
     if output_entity == {}:
         out_entity = create_output_entity(service_config['output_entity'], context)
         patch_orion(update_url, out_entity)
+
+    produce_orion_multi_message(update_url, payloads_heats)
     produce_orion_multi_message(update_url, payloads_materials)
 
 
@@ -72,7 +74,7 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
     context = incoming_data["@context"]
     update_url = service_config['base_url'] + service_config['output_entity']
 
-    values = get_data_from_notification(incoming_data, attrs)
+    values, _ = get_data_from_notification(incoming_data, attrs)
     thresholds = discriminate_thresholds(lowers, uppers, values)
     alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
                                     values, lowers, uppers)

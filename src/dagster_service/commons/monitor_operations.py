@@ -2,6 +2,8 @@ from dagster import op
 import requests
 import re
 
+from .utils import get_value_from_data
+
 
 @op
 def get_data(source_url: str
@@ -29,25 +31,34 @@ def get_data(source_url: str
 @op
 def get_data_from_notification(data_source: dict,
                                attributes: list[str],
-                               ) -> list[float]:
+                               ) -> tuple[list[float], list[dict]]:
     """
     Get data from received notification, returning valuable information.
 
     @param data_source: Dictionary containing data payload from notification.
     @param attributes: List of attribute names from which to gather values.
 
-    @return: Relevant attribute values.
+    @return: Relevant attribute values + metadata
     """
 
     values = []
+    metadata_list = []
+
     for attribute in attributes:
         try:
-            val = data_source[attribute]["value"]["value"]
+            # Search for any key containing "value". useful to distinguish between "avgValue" and "value"
+            label = get_value_from_data(data_source[attribute])
+
+            val = data_source[attribute]["value"][label]
             values.append(float(val))
+            metadata = {}
+            if "metadata" in data_source[attribute]["value"].keys():
+                metadata = data_source[attribute]["value"]["metadata"]
+            metadata_list.append(metadata)
         except (KeyError, ValueError) as e:
             print(f"An error occurred while retrieving data from notification: attribute {attribute}")
 
-    return values
+    return values, metadata_list
 
 
 @op

@@ -19,7 +19,7 @@ def elaborate_solution1(data: dict, producer: KafkaProducer, service_config: dic
     lowers = service_config[solution]["lower_thresholds"]
     uppers = service_config[solution]["upper_thresholds"]
     topic = service_config[solution]["kafka_topic"]
-    values = get_data_from_notification(data, attrs)
+    values, _ = get_data_from_notification(data, attrs)
 
     if len(values) > 1:
         alarms = discriminate_thresholds(lowers, uppers, values)
@@ -38,7 +38,7 @@ def elaborate_solution2(data: dict, producer: KafkaProducer, service_config: dic
     pct = service_config[solution]["pct_change_2"]
     topic = service_config[solution]["kafka_topic"]
     values_1 = get_data_from_wp3(data, attrs_1)
-    values_2 = get_data_from_notification(data, attrs_2)
+    values_2, _ = get_data_from_notification(data, attrs_2)
     alarm_type_2 = service_config[solution]["alarm_type_2"]
 
     if len(values_1) > 0 and data['id'] == service_config["wp3_alarms"]:
@@ -106,7 +106,7 @@ def process_pharma(incoming_data, producer, service_config):
     elaborate_solution1(incoming_data, producer, service_config)
 
     # SOLUTION 2
-    elaborate_solution2(incoming_data, producer, service_config)
+    # elaborate_solution2(incoming_data, producer, service_config)
 
     # SOLUTION 3
     elaborate_solution3(incoming_data, producer, service_config)

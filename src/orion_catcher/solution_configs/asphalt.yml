@@ -102,3 +102,46 @@ asphalt:
                   "DataIngestion_laboratory_16mm_max", "DataIngestion_laboratory_0,063mm_max" ]
       upper_thresholds: [ 3.0, 999999.9, 100.0, 100.0 ]
       lower_thresholds: [ -999999.9, 2.0, -999999.9, -999999.9]
+
+      alarm_type_coeff: "Model Coefficient Instability"
+      historical_entity : "urn:ngsi-ld:asphalt_solution_HITL_History_4:001"
+      input_coeff: [ "ModelTraining_AD20CI_DAPA_EVS", "ModelTraining_AD20CI_DAPA_MAE", "ModelTraining_AD20CI_DAPA_MSE", "ModelTraining_AD20CI_DAPA_R2",
+                     "ModelTraining_AD20CI_DEFM_EVS", "ModelTraining_AD20CI_DEFM_MAE", "ModelTraining_AD20CI_DEFM_MSE", "ModelTraining_AD20CI_DEFM_R2",
+                     "ModelTraining_AD20CI_DMAX_EVS", "ModelTraining_AD20CI_DMAX_MAE", "ModelTraining_AD20CI_DMAX_MSE", "ModelTraining_AD20CI_DMAX_R2",
+                     "ModelTraining_AD20CI_ESTM_EVS", "ModelTraining_AD20CI_ESTM_MAE", "ModelTraining_AD20CI_ESTM_MSE", "ModelTraining_AD20CI_ESTM_R2",
+                     "ModelTraining_AD20CI_VFB_EVS", "ModelTraining_AD20CI_VFB_MAE", "ModelTraining_AD20CI_VFB_MSE", "ModelTraining_AD20CI_VFB_R2",
+                     "ModelTraining_AD20CI_VMA_EVS", "ModelTraining_AD20CI_VMA_MAE", "ModelTraining_AD20CI_VMA_MSE", "ModelTraining_AD20CI_VMA_R2",
+                     "ModelTraining_AD20CI_Vm_EVS", "ModelTraining_AD20CI_Vm_MAE", "ModelTraining_AD20CI_Vm_MSE", "ModelTraining_AD20CI_Vm_R2",
+                     "ModelTraining_AS12CR5070_DAPA_EVS", "ModelTraining_AS12CR5070_DAPA_MAE", "ModelTraining_AS12CR5070_DAPA_MSE", "ModelTraining_AS12CR5070_DAPA_R2",
+                     "ModelTraining_AS12CR5070_DEFM_EVS", "ModelTraining_AS12CR5070_DEFM_MAE", "ModelTraining_AS12CR5070_DEFM_MSE", "ModelTraining_AS12CR5070_DEFM_R2",
+                     "ModelTraining_AS12CR5070_DMAX_EVS", "ModelTraining_AS12CR5070_DMAX_MAE", "ModelTraining_AS12CR5070_DMAX_MSE", "ModelTraining_AS12CR5070_DMAX_R2",
+                     "ModelTraining_AS12CR5070_ESTM_EVS", "ModelTraining_AS12CR5070_ESTM_MAE", "ModelTraining_AS12CR5070_ESTM_MSE", "ModelTraining_AS12CR5070_ESTM_R2",
+                     "ModelTraining_AS12CR5070_ITSR_EVS", "ModelTraining_AS12CR5070_ITSR_MAE", "ModelTraining_AS12CR5070_ITSR_MSE", "ModelTraining_AS12CR5070_ITSR_R2",
+                     "ModelTraining_AS12CR5070_VFB_EVS", "ModelTraining_AS12CR5070_VFB_MAE", "ModelTraining_AS12CR5070_VFB_MSE", "ModelTraining_AS12CR5070_VFB_R2",
+                     "ModelTraining_AS12CR5070_VMA_EVS", "ModelTraining_AS12CR5070_VMA_MAE", "ModelTraining_AS12CR5070_VMA_MSE", "ModelTraining_AS12CR5070_VMA_R2",
+                     "ModelTraining_AS12CR5070_Vm_EVS", "ModelTraining_AS12CR5070_Vm_MAE", "ModelTraining_AS12CR5070_Vm_MSE", "ModelTraining_AS12CR5070_Vm_R2",
+                     "ModelTraining_AS12CR5070_WTS_EVS", "ModelTraining_AS12CR5070_WTS_MAE", "ModelTraining_AS12CR5070_WTS_MSE", "ModelTraining_AS12CR5070_WTS_R2",
+                     "ModelTraining_AS12CR_DAPA_EVS", "ModelTraining_AS12CR_DAPA_MAE", "ModelTraining_AS12CR_DAPA_MSE", "ModelTraining_AS12CR_DAPA_R2",
+                     "ModelTraining_AS12CR_DEFM_EVS", "ModelTraining_AS12CR_DEFM_MAE", "ModelTraining_AS12CR_DEFM_MSE", "ModelTraining_AS12CR_DEFM_R2",
+                     "ModelTraining_AS12CR_DMAX_EVS", "ModelTraining_AS12CR_DMAX_MAE", "ModelTraining_AS12CR_DMAX_MSE", "ModelTraining_AS12CR_DMAX_R2",
+                     "ModelTraining_AS12CR_ESTM_EVS", "ModelTraining_AS12CR_ESTM_MAE", "ModelTraining_AS12CR_ESTM_MSE", "ModelTraining_AS12CR_ESTM_R2",
+                     "ModelTraining_AS12CR_ITSR_EVS", "ModelTraining_AS12CR_ITSR_MAE", "ModelTraining_AS12CR_ITSR_MSE", "ModelTraining_AS12CR_ITSR_R2",
+                     "ModelTraining_AS12CR_VFB_EVS", "ModelTraining_AS12CR_VFB_MAE", "ModelTraining_AS12CR_VFB_MSE", "ModelTraining_AS12CR_VFB_R2",
+                     "ModelTraining_AS12CR_VMA_EVS", "ModelTraining_AS12CR_VMA_MAE", "ModelTraining_AS12CR_VMA_MSE", "ModelTraining_AS12CR_VMA_R2",
+                     "ModelTraining_AS12CR_Vm_EVS", "ModelTraining_AS12CR_Vm_MAE", "ModelTraining_AS12CR_Vm_MSE", "ModelTraining_AS12CR_Vm_R2",
+                     "ModelTraining_AS12CR_WTS_EVS", "ModelTraining_AS12CR_WTS_MAE", "ModelTraining_AS12CR_WTS_MSE", "ModelTraining_AS12CR_WTS_R2",
+                     "ModelTraining_AS20OR5070_DAPA_EVS", "ModelTraining_AS20OR5070_DAPA_MAE", "ModelTraining_AS20OR5070_DAPA_MSE", "ModelTraining_AS20OR5070_DAPA_R2",
+                     "ModelTraining_AS20OR5070_DEFM_EVS", "ModelTraining_AS20OR5070_DEFM_MAE", "ModelTraining_AS20OR5070_DEFM_MSE", "ModelTraining_AS20OR5070_DEFM_R2",
+                     "ModelTraining_AS20OR5070_DMAX_EVS", "ModelTraining_AS20OR5070_DMAX_MAE", "ModelTraining_AS20OR5070_DMAX_MSE", "ModelTraining_AS20OR5070_DMAX_R2",
+                     "ModelTraining_AS20OR5070_ESTM_EVS", "ModelTraining_AS20OR5070_ESTM_MAE", "ModelTraining_AS20OR5070_ESTM_MSE", "ModelTraining_AS20OR5070_ESTM_R2",
+                     "ModelTraining_AS20OR5070_ITSR_EVS", "ModelTraining_AS20OR5070_ITSR_MAE", "ModelTraining_AS20OR5070_ITSR_MSE", "ModelTraining_AS20OR5070_ITSR_R2",
+                     "ModelTraining_AS20OR5070_VFB_EVS", "ModelTraining_AS20OR5070_VFB_MAE", "ModelTraining_AS20OR5070_VFB_MSE", "ModelTraining_AS20OR5070_VFB_R2",
+                     "ModelTraining_AS20OR5070_VMA_EVS", "ModelTraining_AS20OR5070_VMA_MAE", "ModelTraining_AS20OR5070_VMA_MSE", "ModelTraining_AS20OR5070_VMA_R2",
+                     "ModelTraining_AS20OR5070_Vm_EVS", "ModelTraining_AS20OR5070_Vm_MAE", "ModelTraining_AS20OR5070_Vm_MSE", "ModelTraining_AS20OR5070_Vm_R2",
+                     "ModelTraining_AS20OR5070_WTS_EVS", "ModelTraining_AS20OR5070_WTS_MAE", "ModelTraining_AS20OR5070_WTS_MSE", "ModelTraining_AS20OR5070_WTS_R2" ]
+      pct_change_coeff: [10.0]
+
+      alarm_type_AI: "Retrain Gradation Deviation Model"
+      inputs_AI: [ "ModelTraining_GD_Accuracy"]
+      upper_thresholds_AI: [ 999999.9 ]
+      lower_thresholds_AI: [ 70.0 ]

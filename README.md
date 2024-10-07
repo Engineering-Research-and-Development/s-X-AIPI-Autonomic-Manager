@@ -14,7 +14,7 @@ The idea is to listen to events coming from context information to identify patt
 
 ## Project reference architecture
 
-![AM architecture](docs/imgs/Autonomic_Manager.png)
+![AM architecture](docs/imgs/AM-beta.png)
 
 The AM architecture is shown in the image above: it encompasses multiple data-provider (producers) that stream their data to a Fiware Orion server.
 The entry-point of the architecture is the FastAPI server, namely "orion catcher".
