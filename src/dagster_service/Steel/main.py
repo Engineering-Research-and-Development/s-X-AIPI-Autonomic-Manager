@@ -274,7 +274,7 @@ def elaborate_solution3(incoming_data, producer, service_config):
 
 
 @op
-def elaborate_solution4(incoming_data, producer, service_config):
+def elaborate_solution4_1(incoming_data, producer, service_config):
     if incoming_data['id'] != service_config["small_window"]:
         return
 
@@ -325,6 +325,58 @@ def elaborate_solution4(incoming_data, producer, service_config):
 
 
 @op
+def elaborate_solution4_2(incoming_data, producer, service_config):
+    if incoming_data['id'] != service_config["small_window"]:
+        return
+
+    solution = "solution_4"
+    attrs = service_config[solution]["inputs_2"]
+    pct_change = service_config[solution]["pct_change_2"]
+    patience = service_config[solution]["historical_patience"]
+    alarm_type = service_config[solution]["alarm_type_2"]
+    kafka_topic = service_config["kafka_topic"]
+
+    context = incoming_data["@context"]
+    values, metadata = get_data_from_notification(incoming_data, attrs)
+    threshold_names = service_config[solution]["thresholds_2"]
+    pct_expand = expand_threshold(pct_change, len(attrs))
+    _, threshold_high = get_threshold_values_from_entity(
+        incoming_data, threshold_names, threshold_names)
+    _, threshold_high = get_threshold_from_pct_range(threshold_high, pct_expand)
+    results_threshold = discriminate_thresholds([-999999.9], threshold_high, values)
+
+    historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity_2"]
+    historical_data = get_data(historical_data_url)
+    if historical_data == {}:
+        new_entity = create_historical_entity(service_config[solution]["historical_entity_2"], attrs, context)
+        print(new_entity)
+        post_orion(service_config["base_url"], new_entity)
+        historical_data = get_data(historical_data_url)
+
+    periods_list, ack_list, previous_list, old_values, historical_context = (
+        retrieve_values_from_historical_data(historical_data, attrs))
+
+    historical_alarms_analysis, historical_current_status = analyze_historical_data(
+        periods_list, ack_list, results_threshold, patience
+    )
+
+    # Update Historical Data
+    update_payload = update_historical_data(
+        historical_current_status, periods_list, ack_list, previous_list,
+        values, attrs, historical_context
+    )
+    patch_orion(historical_data_url, update_payload)
+
+    # Send Alarm To Kafka
+    historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
+    historical_alarms = create_alarm_history(
+        "Solution 3", alarm_type, attrs, historical_alarms_analysis, periods_list, ack_list
+    )
+    historical_alarms = create_alarm_payloads(historical_alarms, context, metadata)
+    produce_kafka(producer, kafka_topic, historical_alarms)
+
+
+@op
 def alarm_redirection_wp3(incoming_data, producer, service_config):
     if incoming_data["id"] != service_config["wp3_alarms"]:
         return
@@ -347,7 +399,9 @@ def process_steel(incoming_data, producer, service_config):
     elaborate_solution3(incoming_data, producer, service_config)
 
     # SOLUTION 4
-    elaborate_solution4(incoming_data, producer, service_config)
+    elaborate_solution4_1(incoming_data, producer, service_config)
+    elaborate_solution4_2(incoming_data, producer, service_config)
+
 
     # Alarm redirection
     alarm_redirection_wp3(incoming_data, producer, service_config)

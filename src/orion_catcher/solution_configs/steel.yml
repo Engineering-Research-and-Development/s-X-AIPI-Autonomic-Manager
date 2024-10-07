@@ -54,14 +54,14 @@ steel:
         "transformation_scrap_scrap19_max", "transformation_scrap_scrap12_max", "transformation_scrap_scrap20_max", "transformation_scrap_scrap16_max",
         "transformation_scrap_scrap21_max", "transformation_scrap_scrap14_max", "transformation_scrap_scrap11_max", "transformation_scrap_scrap04_max",
         "transformation_scrap_scrap17_max", "transformation_scrap_scrap03_max", "transformation_scrap_scrap01_max", "transformation_scrap_scrap13_max",
-        "transformation_scrap_scrap15_max", "transformation_scrap_scrap02_max", "transformation_scrap_scrap18_max", "transformation_scrap_Estanado_max"
+        "transformation_scrap_scrap15_max", "transformation_scrap_scrap02_max", "transformation_scrap_scrap18_max", "transformation_scrap_scrap23_max"
       ]
       scrapmax_inputs_2: [
-        "transformation_lime_limecoke01_max", "transformation_lime_limecoke02_max"
+        "transformation_basket_lime01_max", "transformation_basket_lime02_max"
       ]
       scrapmax_inputs_3: [
-        "transformation_lime_coke_limecoke01_max", "transformation_lime_coke_limecoke02_max", "transformation_lime_coke_limecoke03_max",
-        "transformation_lime_coke_limecoke04_max", "transformation_lime_coke_limecoke05_max"
+        "transformation_melting_lime01_max", "transformation_melting_lime02_max", "transformation_melting_lime03_max",
+        "transformation_melting_coke01_max", "transformation_melting_coke02_max"
       ]
       scrapzeros_inputs_0: [
         "transformation_scrap_scrap10_zeros", "transformation_scrap_scrap09_zeros", "transformation_scrap_scrap08_zeros",
@@ -71,41 +71,58 @@ steel:
         "transformation_scrap_scrap19_zeros", "transformation_scrap_scrap12_zeros", "transformation_scrap_scrap20_zeros", "transformation_scrap_scrap16_zeros",
         "transformation_scrap_scrap21_zeros", "transformation_scrap_scrap14_zeros", "transformation_scrap_scrap11_zeros", "transformation_scrap_scrap04_zeros",
         "transformation_scrap_scrap17_zeros", "transformation_scrap_scrap03_zeros", "transformation_scrap_scrap01_zeros", "transformation_scrap_scrap13_zeros",
-        "transformation_scrap_scrap15_zeros", "transformation_scrap_scrap02_zeros", "transformation_scrap_scrap18_zeros", "transformation_scrap_Estanado_zeros"
+        "transformation_scrap_scrap15_zeros", "transformation_scrap_scrap02_zeros", "transformation_scrap_scrap18_zeros", "transformation_scrap_scrap23_zeros"
       ]
       scrapzeros_inputs_2: [
-        "transformation_lime_limecoke01_zeros", "transformation_lime_limecoke02_zeros"
+        "transformation_basket_lime01_zeros", "transformation_basket_lime02_zeros"
       ]
       scrapzeros_inputs_3: [
-        "transformation_lime_coke_limecoke01_zeros", "transformation_lime_coke_limecoke02_zeros", "transformation_lime_coke_limecoke03_zeros",
-        "transformation_lime_coke_limecoke04_zeros", "transformation_lime_coke_limecoke05_zeros"
+        "transformation_melting_lime01_zeros", "transformation_melting_lime02_zeros", "transformation_melting_lime03_zeros",
+        "transformation_melting_coke01_zeros", "transformation_melting_coke02_zeros"
       ]
+
       scapmax_lower: [0.0]
       nrheats_scrap: ["transformation_scrap_nr_heats"]
-      nrheats_lime: ["transformation_lime_nr_heats"]
-      nrheats_limecoke: ["transformation_lime_coke_nr_heats"]
+      nrheats_lime: ["transformation_basket_nr_heats"]
+      nrheats_limecoke: ["transformation_melting_nr_heats"]
       alarm_type_materials: "Material Content Changed"
 
 
     solution_2:
-      inputs: [ "exploration_analysis_Nr_anomalies_cu", "exploration_eaf_nr_anomalies_eaf14",
-      "exploration_lime_coke_nr_outliers_sum_lim_melting", "exploration_lime_coke_nr_outliers_sum_cok_melting", "exploration_analysis_upper_boundary_cu" ]
-      "thresholds": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.4]
+      inputs: [ "exploration_analysis_nr_anomalies_cu", "exploration_eaf_nr_anomalies_eaf14",
+      "exploration_melting_nr_outliers_sum_lim_melting", "exploration_melting_nr_outliers_sum_cok_melting"]
+      "thresholds": [ 0.0, 0.0, 0.0, 0.0, 0.0]
       "alarm_type": "Outliers Detected"
 
     solution_3:
       historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_3:001"
       historical_patience: 1
       alarm_type: "Model Accuracy Degradation"
-      inputs: [ "RandomForestRegressor_all_Cu_MAE", "RandomForestRegressor_all_P_MAE", "RandomForestRegressor_all_kwhorno_MAE"]
-      thresholds: ["transformation_analysis_cu_mean", ]
+      inputs: [ "modeling_randomforestregressor_all_cu_mae", "modeling_randomforestregressor_all_p_mae", "modeling_randomforestregressor_all_kwhorno_mae"]
+      thresholds: ["transformation_analysis_cu",  "transformation_analysis_p", "transformation_analysis_kwhorno"]
       pct_change: [15.0]
 
     solution_4:
       historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_4:001"
       historical_patience: 1
       alarm_type: "Coefficient Instability"
-      inputs: ["train_models_coef_Sustitutivos", "train_models_coef_scrap14", "train_models_coef_scrap19", "train_models_coef_scrap04",
-        "train_models_coef_scrap21", "train_models_coef_scrap16", "train_models_coef_scrap18", "train_models_coef_scrap17", "train_models_coef_scrap03",
-        "train_models_coef_scrap20", "train_models_coef_scrap12", "train_models_coef_scrap11"]
+      inputs: [ 'trainmodels_linearregression_cu_scrap_coefscrap03', 'trainmodels_linearregression_cu_scrap_coefscrap04',
+                'trainmodels_linearregression_cu_scrap_coefscrap11','trainmodels_linearregression_cu_scrap_coefscrap12',
+                'trainmodels_linearregression_cu_scrap_coefscrap14','trainmodels_linearregression_cu_scrap_coefscrap16',
+                'trainmodels_linearregression_cu_scrap_coefscrap17','trainmodels_linearregression_cu_scrap_coefscrap18',
+                'trainmodels_linearregression_cu_scrap_coefscrap19','trainmodels_linearregression_cu_scrap_coefscrap20',
+                'trainmodels_linearregression_cu_scrap_coefscrap21','trainmodels_linearregression_cu_scrap_coefsustitutivos',
+                'trainmodels_linearregression_p_scrap_coefscrap03','trainmodels_linearregression_p_scrap_coefscrap04',
+                'trainmodels_linearregression_p_scrap_coefscrap11','trainmodels_linearregression_p_scrap_coefscrap12',
+                'trainmodels_linearregression_p_scrap_coefscrap14', 'trainmodels_linearregression_p_scrap_coefscrap16',
+                'trainmodels_linearregression_p_scrap_coefscrap17', 'trainmodels_linearregression_p_scrap_coefscrap18',
+                'trainmodels_linearregression_p_scrap_coefscrap19', 'trainmodels_linearregression_p_scrap_coefscrap20',
+                'trainmodels_linearregression_p_scrap_coefscrap21', 'trainmodels_linearregression_p_scrap_coefsustitutivos'
+      ]
       pct_change: [15.0]
+
+      historical_entity_2: "urn:ngsi-ld:sidenor_solution_HITL_History_4:002"
+      alarm_type_2: "Model Accuracy Degradation"
+      inputs_2: [ "modeling_randomforestregressor_all_temp_mae", "modeling_randomforestregressor_all_ppmox_mae"]
+      thresholds_2: [ "transformation_temp_temp",  "transformation_ppmox_ppmox" ]
+      pct_change_2: [ 15.0 ]
