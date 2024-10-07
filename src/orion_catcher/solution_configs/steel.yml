@@ -91,7 +91,7 @@ steel:
     solution_2:
       inputs: [ "exploration_analysis_nr_anomalies_cu", "exploration_eaf_nr_anomalies_eaf14",
       "exploration_melting_nr_outliers_sum_lim_melting", "exploration_melting_nr_outliers_sum_cok_melting"]
-      "thresholds": [ 0.0, 0.0, 0.0, 0.0, 0.0]
+      "thresholds": [ 0.0, 0.0, 0.0, 0.0]
       "alarm_type": "Outliers Detected"
 
     solution_3:
