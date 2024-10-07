@@ -2,7 +2,7 @@ import json
 import requests
 import time
 
-endpoint= "http://localhost:8001/pharma"
+endpoint= "http://localhost:8001/steel"
 max_requests = 100
 json_test_wrong = "test_wrong.json"
 json_test_correct = "test_correct.json"

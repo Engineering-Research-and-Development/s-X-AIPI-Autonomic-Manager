@@ -31,7 +31,7 @@ def get_data(source_url: str
 @op
 def get_data_from_notification(data_source: dict,
                                attributes: list[str],
-                               ) -> tuple(list[float], list[dict]):
+                               ) -> tuple[list[float], list[dict]]:
     """
     Get data from received notification, returning valuable information.
 
