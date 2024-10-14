@@ -124,7 +124,9 @@ custom_solution:
       # Alternative Threshold (OCB Max/Min Attribute):
       Threshold Attribute:
       # Use an OCB attribute to set thresholds
+      max_attribute:
       # Example: max_value: ["ModelTraining_CA_Accuracy_maxDesiredValue"]
+      min_attribute:
       # Example: low_value: ["ModelTraining_CA_Accuracy_minDesiredValue"]
 
       # Alternative Threshold (OCB Attribute + percent change):
