@@ -127,6 +127,6 @@ def create_alarm_payloads(values: list[dict],
     for idx, val in enumerate(values):
         obj = update_data([val], ["AM_Generated_Alarm"], payload_context)
         if metadata:
-            obj["AM_Generated_Alarm"]["metadata"] = metadata
+            obj["AM_Generated_Alarm"]["metadata"] = metadata[idx]
         payloads.append(obj)
     return payloads
