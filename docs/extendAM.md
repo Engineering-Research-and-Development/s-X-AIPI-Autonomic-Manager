@@ -105,11 +105,36 @@ custom_solution:
     solution_1:
 
       # Any additional parameters specific to this solution.
-      useful_param_1:
+      # Parameters are solution-specific to the solution, but the following example parameters may be useful:
+
+      alarm_type:
+      # String containing the alarm type to raise. 
       # Example: alarm_type_heats: "Heat Length Error"
 
-      useful_param_2:
-      # Example: alarm_type_materials: "Material Deviation Error"
+      inputs:
+      # List of OCB attributes for the monitored source. 
+      # Example: inputs_AI: [ "ModelTraining_CA_Accuracy", "ModelTraining_MP_Accuracy", "ModelTraining_MT_Accuracy", "ModelTraining_MA_Accuracy" ]
+      upper_thresholds:
+      # List of float values. These thresholds are used to compare attributes from inputs to threshold values. Use 999999.9 to set "+inf"
+      # Example: upper_thresholds_AI: [ 999999.9, 999999.9, 999999.9, 999999.9 ]
+      lower_thresholds:
+      # List of float values. These thresholds are used to compare attributes from inputs to threshold values. Use -999999.9 to set "-inf"
+      # Example: lower_thresholds_AI: [ 70.0, 70.0, 70.0, 70.0 ]
+
+      # Alternative Threshold (OCB Max/Min Attribute):
+      Threshold Attribute:
+      # Use an OCB attribute to set thresholds
+      # Example: max_value: ["ModelTraining_CA_Accuracy_maxDesiredValue"]
+      # Example: low_value: ["ModelTraining_CA_Accuracy_minDesiredValue"]
+
+      # Alternative Threshold (OCB Attribute + percent change):
+      # Use an OCB value to set a particular baseline + a percentage change based on this value
+      reference_value:
+      # Use a OCB attribute to set a value, pass as list
+      # Example: base_value: ["ModelTraining_CA_Accuracy_baseVal"]
+      threshold_pct_change:
+      # List of float numbers to set a percentage to apply to reference value.
+      # Example: pct_change_coeff: [10.0]
 ```
 
 ## 4) Catch the data from Orion
