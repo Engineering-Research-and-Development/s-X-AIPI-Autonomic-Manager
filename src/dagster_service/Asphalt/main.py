@@ -7,8 +7,7 @@ from commons.monitor_operations import get_data_from_notification, get_data
 from commons.plan_operations import create_alarm_threshold, create_output_entity, create_historical_entity, \
     update_historical_data
 from commons.transform_operations import create_alarm_payloads, expand_threshold, retrieve_values_from_historical_data, \
-    get_threshold_from_pct_range
-from commons.utils import THRESHOLD_OK
+    get_threshold_from_pct_range, get_threshold_values_from_entity
 
 
 def analyze_full_input(item: dict, incoming_data: dict):
@@ -113,36 +112,76 @@ def elaborate_solution2(incoming_data: dict, producer: KafkaProducer, service_co
     produce_orion_multi_message(update_url, payloads)
 
 
-
-
 @op
-def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_config: dict):
-
+def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_config: dict):
     if incoming_data['id'] != service_config["small_laboratory"]:
         return
 
-    solution = "solution_4"
-    alarm_type = service_config[solution]["alarm_type"]
-    attrs = service_config[solution]["inputs"]
-    uppers = service_config[solution]["upper_thresholds"]
-    lowers = service_config[solution]["lower_thresholds"]
+    solution = "solution_3"
+    alarm_type = service_config[solution]["alarm_type_2"]
+    attrs = service_config[solution]["inputs_2"]
+    pct_change = service_config[solution]["pct_change_2"]
     context = incoming_data["@context"]
     update_url = service_config['base_url'] + service_config['output_entity']
-
-    values, _ = get_data_from_notification(incoming_data, attrs)
-    thresholds = discriminate_thresholds(lowers, uppers, values)
-    alarms = create_alarm_threshold("Solution 4", alarm_type, attrs, thresholds,
-                                    values, lowers, uppers)
-
-    payloads = create_alarm_payloads(alarms, context)
 
     output_entity = get_data(update_url)
     if output_entity == {}:
         out_entity = create_output_entity(service_config['output_entity'], context)
         patch_orion(update_url, out_entity)
+
+    values = get_data_from_notification(incoming_data, attrs)
+    large_window_entity = get_data(service_config["base_url"] + service_config["large_laboratory"])
+    _, threshold = get_threshold_values_from_entity(large_window_entity, attrs, attrs)
+    pct_expand = expand_threshold(pct_change, len(attrs))
+    threshold_low, threshold_high = get_threshold_from_pct_range(threshold, pct_expand)
+    thresholds = discriminate_thresholds(threshold_low, threshold_high, values)
+
+    alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
+                                    values, threshold_low, threshold_high)
+    payloads = create_alarm_payloads(alarms, context)
     produce_orion_multi_message(update_url, payloads)
 
-    # Coefficient Analysis
+    # SENSOR DATA ANALYSIS
+    alarm_type = service_config[solution]["alarm_type"]
+    inputs = service_config[solution]["inputs"]
+    for _, item in inputs.items():
+        thresholds, attrs, lowers, uppers, values = analyze_full_input(item, incoming_data)
+
+        alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
+                                        values, lowers, uppers)
+
+        payloads = create_alarm_payloads(alarms, context)
+        produce_orion_multi_message(update_url, payloads)
+
+
+
+
+@op
+def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_config: dict):
+    if incoming_data['id'] != service_config["small_laboratory"]:
+        return
+
+    solution = "solution_4"
+    alarm_type = service_config[solution]["alarm_type"]
+    context = incoming_data["@context"]
+    update_url = service_config['base_url'] + service_config['output_entity']
+
+    output_entity = get_data(update_url)
+    if output_entity == {}:
+        out_entity = create_output_entity(service_config['output_entity'], context)
+        patch_orion(update_url, out_entity)
+
+    inputs = service_config[solution]["inputs"]
+    for _, item in inputs.items():
+        thresholds, attrs, lowers, uppers, values = analyze_full_input(item, incoming_data)
+
+        alarms = create_alarm_threshold("Solution 4", alarm_type, attrs, thresholds,
+                                        values, lowers, uppers)
+
+        payloads = create_alarm_payloads(alarms, context)
+        produce_orion_multi_message(update_url, payloads)
+
+    # COEFFICIENT ANALYSIS
     alarm_type = service_config[solution]["alarm_type_coeff"]
     attrs_coeff = service_config[solution]["inputs_coeff"]
     pct_change = service_config[solution]["pct_change_coeff"]
@@ -164,8 +203,8 @@ def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_co
     results_threshold = discriminate_thresholds(lower_thresholds, upper_thresholds, values_coeff)
 
     # Alarm Creation
-    alarms = create_alarm_threshold("Solution 4", alarm_type, attrs_coeff, thresholds,
-                                    values_coeff, lowers, uppers)
+    alarms = create_alarm_threshold("Solution 4", alarm_type, attrs_coeff, results_threshold,
+                                    values_coeff, lower_thresholds, upper_thresholds)
     payloads = create_alarm_payloads(alarms, context)
     output_entity = get_data(update_url)
     if output_entity == {}:
@@ -183,10 +222,7 @@ def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_co
     )
     patch_orion(historical_data_url, update_payload)
 
-
-
-
-    # AI Analysis
+    # AI ANALYSIS
     alarm_type = service_config[solution]["alarm_type_AI"]
     attrs_ai = service_config[solution]["inputs_AI"]
     uppers_ai = service_config[solution]["upper_thresholds_AI"]
@@ -213,6 +249,9 @@ def process_asphalt(incoming_data, producer, service_config):
 
     # SOLUTION 2
     elaborate_solution2(incoming_data, producer, service_config)
+
+    # SOLUTION 3
+    elaborate_solution3(incoming_data, producer, service_config)
 
     # SOLUTION 4
     elaborate_solution4(incoming_data, producer, service_config)

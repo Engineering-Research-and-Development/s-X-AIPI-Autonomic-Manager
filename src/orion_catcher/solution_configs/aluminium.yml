@@ -31,17 +31,17 @@ aluminium:
       alarm_type_heats: "Heat Lenght Error"
       alarm_type_materials: "Material Deviation Error"
 
-      inputs_heats: ["dataExploration_mergedheatsGeneral_mean_duration_of_heats"]
+      inputs_heats: ["dataExploration_mergedheatsGeneral_duration_of_heats"]
       upper_threshold_heats: [270.0]
       lower_threshold_heats : [-999999.9]
 
-      inputs_materials: ["dataExploration_mergedheatsGeneral_mean_consumption_NaCl", "dataExploration_mergedheatsGeneral_mean_gas_consumption",
-        "dataExploration_mergedheatsGeneral_mean_oxygen_consumption"]
+      inputs_materials: ["dataExploration_mergedheatsGeneral_consumption_NaCl", "dataExploration_mergedheatsGeneral_gas_consumption",
+        "dataExploration_mergedheatsGeneral_oxygen_consumption"]
       pct_change_materials: 5.0
 
 
     solution_3:
       alarm_type: "Human Dissatisfaction Detected"
-      inputs: ["modelTraining_mergedheatsGeneral_feedback_model_1", "modelTraining_mergedheatsGeneral_feedback_model_2"]
+      inputs: ["realWordlUse_chemicalanalysispredictorGeneral_rating", "modelTraining_mergedheatsGeneral_feedback_model_2"]
       upper_thresholds: [ 999999.9, 999999.9 ]
       lower_thresholds: [ 70.0, 70.0]
