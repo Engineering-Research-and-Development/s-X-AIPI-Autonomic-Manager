@@ -95,13 +95,70 @@ asphalt:
       lower_thresholds: [ 0.0, 0.0, 0.0, 0.0, 15.0 ]
 
 
+    solution_3:
+      alarm_type_2: "Model Coefficient"
+      inputs_2: [ "ModelTraining_Paving_R2", "ModelTraining_Paving_MAE", "ModelTraining_Paving_MSE ", "ModelTraining_Paving_EVS"]
+      pct_change_2: [10.0]
+
+      alarm_type: "Sensor Error"
+      inputs:
+        RTA1300_max:
+          attrs: [ "DataIngestion_production_RTA1300_max" ]
+          uppers: [ 180.0]
+          lowers: [ -999999.9]
+          mode: [ "X_OR_Y" ]
+        RTA1300_min:
+          attrs: [ "DataIngestion_production_RTA1300_min", "DataIngestion_production_RTA1300_mean" ]
+          uppers: [ 999999.9, 0.0 ]
+          lowers: [ 150.0, 0.0 ]
+          mode: [ "X_AND_NOT_Y" ]
+        pirometer_max:
+          attrs: [ "DataIngestion_Paving_temperature_pirometer_max" ]
+          uppers: [ 185.0 ]
+          lowers: [ -999999.9 ]
+          mode: [ "X_OR_Y" ]
+        pirometer_min:
+          attrs: [ "DataIngestion_Paving_temperature_pirometer_min" ]
+          uppers: [ 999999.9  ]
+          lowers: [ -130.0 ]
+          mode: [ "X_OR_Y" ]
+        contact_max:
+          attrs: [ "DataIngestion_Paving_temperature_contact_max" ]
+          uppers: [ 185.0 ]
+          lowers: [ -999999.9 ]
+          mode: [ "X_OR_Y" ]
+        contact_min:
+          attrs: [ "DataIngestion_Paving_temperature_contact_min" ]
+          uppers: [ 999999.9 ]
+          lowers: [ -130.0 ]
+          mode: [ "X_OR_Y" ]
+
+
 
     solution_4:
       alarm_type: "D.APA Change Error / Laboratory Error"
-      inputs: [ "DataIngestion_laboratory_DAPA_max", "DataIngestion_laboratory_DAPA_min",
-                  "DataIngestion_laboratory_16mm_max", "DataIngestion_laboratory_0,063mm_max" ]
-      upper_thresholds: [ 3.0, 999999.9, 100.0, 100.0 ]
-      lower_thresholds: [ -999999.9, 2.0, -999999.9, -999999.9]
+      inputs:
+        DAPA_MAX:
+          attrs: [ "DataIngestion_laboratory_DAPA_max", "DataIngestion_laboratory_DAPA_count"]
+          uppers: [ 3.0, 0.0 ]
+          lowers: [ -999999.9, 0.0 ]
+          mode: [ "X_AND_NOT_Y" ]
+        DAPA_MIN:
+          attrs: [ "DataIngestion_laboratory_DAPA_min", "DataIngestion_production_t_STCount" ]
+          uppers: [ 999999.9, 0.0 ]
+          lowers: [ 2.0, 0.0 ]
+          mode: [ "X_AND_NOT_Y" ]
+        rt_frames:
+          attrs: [ "DataIngestion_laboratory_16mm_max" ]
+          uppers: [ 100.0 ]
+          lowers: [ -999999.9 ]
+          mode: [ "X_AND_NOT_Y" ]
+        rpa_2000:
+          attrs: [ "DataIngestion_laboratory_0,063mm_max" ]
+          uppers: [ 100.0 ]
+          lowers: [-999999.9 ]
+          mode: [ "X_OR_Y" ]
+
 
       alarm_type_coeff: "Model Coefficient Instability"
       historical_entity : "urn:ngsi-ld:asphalt_solution_HITL_History_4:001"
