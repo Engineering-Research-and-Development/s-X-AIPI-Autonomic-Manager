@@ -8,7 +8,6 @@ from commons.plan_operations import create_alarm_threshold, create_output_entity
     update_historical_data
 from commons.transform_operations import create_alarm_payloads, expand_threshold, retrieve_values_from_historical_data, \
     get_threshold_from_pct_range, get_threshold_values_from_entity
-from commons.utils import THRESHOLD_OK
 
 
 def analyze_full_input(item: dict, incoming_data: dict):
