@@ -70,7 +70,7 @@ def sub_solution_check_zero_nans(incoming_data: dict,
 def sub_solution_material_used(incoming_data: dict,
                                producer: KafkaProducer,
                                service_config: dict,
-                               historical_data_url: str,
+                               historical_data_key: str,
                                attrs_max_name: str,
                                attrs_zeros_name: str,
                                nr_heats_name: str,
@@ -96,6 +96,8 @@ def sub_solution_material_used(incoming_data: dict,
 
     @return: None
     """
+
+    historical_data_url = service_config["base_url"] + service_config["solution_1"][historical_data_key]
 
     attrs_zeros = service_config[solution][attrs_zeros_name]
     attrs_max = service_config[solution][attrs_max_name]
@@ -128,7 +130,7 @@ def sub_solution_material_used(incoming_data: dict,
     attrs_clean = clean_names(attrs_zeros)
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
-        new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs_clean, context)
+        new_entity = create_historical_entity(service_config[solution][historical_data_key], attrs_clean, context)
         post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
@@ -181,26 +183,22 @@ def elaborate_solution1(incoming_data, producer, service_config):
                                  kafka_topic)
 
     # Checking first scrap group
-    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity_0"]
-    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, "historical_entity_0",
                                "scrapmax_inputs_0", "scrapzeros_inputs_0", "nrheats_scrap", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking second scrap group
-    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity_1"]
-    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, "historical_entity_1",
                                "scrapmax_inputs_1", "scrapzeros_inputs_1", "nrheats_scrap", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking lime content
-    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity_2"]
-    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, "historical_entity_2",
                                "scrapmax_inputs_2", "scrapzeros_inputs_2", "nrheats_lime", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking lime content
-    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity_3"]
-    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, "historical_entity_3",
                                "scrapmax_inputs_3", "scrapzeros_inputs_3", "nrheats_limecoke", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
