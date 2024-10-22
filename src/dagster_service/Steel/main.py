@@ -107,7 +107,6 @@ def sub_solution_material_used(incoming_data: dict,
     lower_threshold_max = [-999999.9]
     upper_threshold_max = service_config[solution]['scapmax_lower']
     context = incoming_data["@context"]
-    print(context)
 
     # Checking rules for max content values
     values_max, metadata = get_data_from_notification(incoming_data, attrs_max)
@@ -125,9 +124,6 @@ def sub_solution_material_used(incoming_data: dict,
 
     # Merging rules from two sources
     results_threshold = merge_thresholds(results_max, results_nrheats, "X_AND_Y")
-    #TODO: Check Results of this merging
-    print(len(results_max), len(results_nrheats))
-    print(results_threshold)
 
     # Retrieving the data from historical storage
     attrs_clean = clean_names(attrs_zeros)
@@ -144,12 +140,10 @@ def sub_solution_material_used(incoming_data: dict,
     historical_alarms_analysis, historical_current_status = analyze_historical_data(
         periods_list, ack_list, results_threshold, patience
     )
-    print(historical_alarms_analysis, historical_current_status)
 
     # Update Historical Data
     mock_values = expand_threshold([0.0], len(values_zeros))
 
-    print(len(historical_current_status), len(periods_list), len(ack_list), len(previous_list), len(mock_values), len(attrs_clean))
     update_payload = update_historical_data(
         historical_current_status, periods_list, ack_list, previous_list,
         mock_values, attrs_clean, historical_context
@@ -247,13 +241,12 @@ def elaborate_solution3(incoming_data, producer, service_config):
     _, threshold_high = get_threshold_values_from_entity(
         incoming_data, threshold_names, threshold_names)
     _, threshold_high = get_threshold_from_pct_range(threshold_high, pct_expand)
-    results_threshold = discriminate_thresholds([-999999.9], threshold_high, values)
+    results_threshold = discriminate_thresholds([-999999.9]*len(attrs), threshold_high, values)
 
     historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity"]
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs, context)
-        print(new_entity)
         post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
@@ -350,13 +343,12 @@ def elaborate_solution4_2(incoming_data, producer, service_config):
     _, threshold_high = get_threshold_values_from_entity(
         incoming_data, threshold_names, threshold_names)
     _, threshold_high = get_threshold_from_pct_range(threshold_high, pct_expand)
-    results_threshold = discriminate_thresholds([-999999.9], threshold_high, values)
+    results_threshold = discriminate_thresholds([-999999.9]*len(attrs), threshold_high, values)
 
     historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity_2"]
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity_2"], attrs, context)
-        print(new_entity)
         post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
