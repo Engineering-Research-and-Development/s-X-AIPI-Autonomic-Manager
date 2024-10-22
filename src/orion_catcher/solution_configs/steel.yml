@@ -27,7 +27,6 @@ steel:
     kafka_wp3: "steel-alerts-wp3"
 
     solution_1:
-      historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_1:001"
       historical_patience: 1
       zeros_inputs: [
         "transformation_scrap_tot_zeros", "transformation_basket_sum_lime_basket_zeros", "transformation_melting_sum_cok_lim_melting_zeros",
@@ -46,19 +45,27 @@ steel:
       nan_inputs_lower_threshold: [ -1.0 ]
 
       alarm_type_nans : "Missing Values Detected"
+
+      historical_entity_0: "urn:ngsi-ld:sidenor_solution_HITL_History_1:001"
       scrapmax_inputs_0: [
         "transformation_scrap_scrap10_max", "transformation_scrap_scrap09_max", "transformation_scrap_scrap08_max",
         "transformation_scrap_scrap07_max", "transformation_scrap_scrap06_max", "transformation_scrap_scrap22_max"
       ]
+
+      historical_entity_1: "urn:ngsi-ld:sidenor_solution_HITL_History_1:002"
       scrapmax_inputs_1: [
         "transformation_scrap_scrap19_max", "transformation_scrap_scrap12_max", "transformation_scrap_scrap20_max", "transformation_scrap_scrap16_max",
         "transformation_scrap_scrap21_max", "transformation_scrap_scrap14_max", "transformation_scrap_scrap11_max", "transformation_scrap_scrap04_max",
         "transformation_scrap_scrap17_max", "transformation_scrap_scrap03_max", "transformation_scrap_scrap01_max", "transformation_scrap_scrap13_max",
         "transformation_scrap_scrap15_max", "transformation_scrap_scrap02_max", "transformation_scrap_scrap18_max", "transformation_scrap_scrap23_max"
       ]
+
+      historical_entity_2: "urn:ngsi-ld:sidenor_solution_HITL_History_1:003"
       scrapmax_inputs_2: [
         "transformation_basket_lime01_max", "transformation_basket_lime02_max"
       ]
+
+      historical_entity_3: "urn:ngsi-ld:sidenor_solution_HITL_History_1:004"
       scrapmax_inputs_3: [
         "transformation_melting_lime01_max", "transformation_melting_lime02_max", "transformation_melting_lime03_max",
         "transformation_melting_coke01_max", "transformation_melting_coke02_max"

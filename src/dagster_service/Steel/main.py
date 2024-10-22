@@ -139,6 +139,7 @@ def sub_solution_material_used(incoming_data: dict,
     historical_alarms_analysis, historical_current_status = analyze_historical_data(
         periods_list, ack_list, results_threshold, patience
     )
+    print(historical_alarms_analysis, historical_current_status)
 
     # Update Historical Data
     mock_values = expand_threshold([0.0], len(values_zeros))
@@ -167,7 +168,6 @@ def elaborate_solution1(incoming_data, producer, service_config):
     solution = "solution_1"
     kafka_topic = service_config["kafka_topic"]
     alarm_type_materials = service_config[solution]["alarm_type_materials"]
-    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity"]
     patience = service_config[solution]["historical_patience"]
 
     # Checking for zeros
@@ -181,21 +181,25 @@ def elaborate_solution1(incoming_data, producer, service_config):
                                  kafka_topic)
 
     # Checking first scrap group
+    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity_0"]
     sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
                                "scrapmax_inputs_0", "scrapzeros_inputs_0", "nrheats_scrap", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking second scrap group
+    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity_1"]
     sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
                                "scrapmax_inputs_1", "scrapzeros_inputs_1", "nrheats_scrap", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking lime content
+    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity_2"]
     sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
                                "scrapmax_inputs_2", "scrapzeros_inputs_2", "nrheats_lime", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking lime content
+    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity_3"]
     sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
                                "scrapmax_inputs_3", "scrapzeros_inputs_3", "nrheats_limecoke", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
