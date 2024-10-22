@@ -142,6 +142,8 @@ def sub_solution_material_used(incoming_data: dict,
 
     # Update Historical Data
     mock_values = expand_threshold([0.0], len(values_zeros))
+
+    print(len(historical_current_status), len(periods_list), len(ack_list), len(previous_list), len(mock_values), len(attrs_clean))
     update_payload = update_historical_data(
         historical_current_status, periods_list, ack_list, previous_list,
         mock_values, attrs_clean, historical_context
