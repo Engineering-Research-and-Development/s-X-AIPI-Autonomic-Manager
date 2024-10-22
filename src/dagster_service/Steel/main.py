@@ -137,6 +137,7 @@ def sub_solution_material_used(incoming_data: dict,
     periods_list, ack_list, previous_list, old_values, historical_context = (
         retrieve_values_from_historical_data(historical_data, attrs_clean))
 
+    print(len(periods_list), len(ack_list), len(results_threshold))
     # Analyze Historical Data
     historical_alarms_analysis, historical_current_status = analyze_historical_data(
         periods_list, ack_list, results_threshold, patience
