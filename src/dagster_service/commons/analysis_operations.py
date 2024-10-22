@@ -64,14 +64,17 @@ def merge_thresholds(first_group: list[str],
     @return: Merged list of threshold results where THRESHOLD_OK is preserved only if both groups are THRESHOLD_OK,
              otherwise THRESHOLD_BROKEN is set.
     """
-    result_list = [THRESHOLD_ERROR]
+
+    result_list = [THRESHOLD_ERROR] * len(first_group)
 
     try:
         if len(first_group) != len(second_group):
             raise IndexError("Misconfiguration: list lengths are not equal")
 
-        for first_result, second_result in zip(first_group, second_group):
+        for idx in range(len(first_group)):
             result = THRESHOLD_BROKEN
+            first_result = first_group[idx]
+            second_result = second_group[idx]
             # This wants first threshold to be ok, second threshold to be broken (if broken is ok)
             if mode == "X_AND_NOT_Y":
                 if (first_result == THRESHOLD_OK) and (second_result != THRESHOLD_OK):
@@ -85,7 +88,7 @@ def merge_thresholds(first_group: list[str],
             else:
                 raise IndexError("Configured Mode does not Exist")
 
-            result_list = [result]
+            result_list[idx] = result
 
     except IndexError as e:
         # TODO: decide if insert error alarm or not
