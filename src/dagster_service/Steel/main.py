@@ -109,14 +109,14 @@ def sub_solution_material_used(incoming_data: dict,
     context = incoming_data["@context"]
 
     # Checking rules for max content values
-    values_max, metadata = get_data_from_notification(incoming_data, attrs_max)
+    values_max, _ = get_data_from_notification(incoming_data, attrs_max)
     lower_threshold_max = expand_threshold(lower_threshold_max, len(values_max))
     upper_threshold_max = expand_threshold(upper_threshold_max, len(values_max))
     results_max = discriminate_thresholds(lower_threshold_max, upper_threshold_max, values_max)
 
     # Checking rules for number of zeros
     values_zeros, metadata = get_data_from_notification(incoming_data, attrs_zeros)
-    values_nrheats, metadata = get_data_from_notification(incoming_data, nr_heats)
+    values_nrheats, _ = get_data_from_notification(incoming_data, nr_heats)
     upper_threshold_nrheats = expand_threshold([999999.9], len(values_zeros))
     lower_threshold_nrheats = expand_threshold(values_nrheats, len(values_zeros))
     results_nrheats = discriminate_thresholds(
@@ -155,6 +155,8 @@ def sub_solution_material_used(incoming_data: dict,
     historical_alarms = create_alarm_history(
         "Solution 1", alarm_type, attrs_clean, historical_alarms_analysis, periods_list, ack_list
     )
+
+    print(len(metadata), len(historical_alarms))
     historical_alarms = create_alarm_payloads(historical_alarms, context, metadata)
     produce_kafka(producer, kafka_topic, historical_alarms)
 
