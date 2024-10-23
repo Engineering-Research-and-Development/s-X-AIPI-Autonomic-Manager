@@ -139,4 +139,6 @@ def analyze_historical_data(periods_in_state_list: list[int],
                     alarm_list.append(THRESHOLD_OK)
                     print("No Alarm")
 
+    print(len(alarm_list), alarm_list)
+
     return alarm_list, current_status_list
