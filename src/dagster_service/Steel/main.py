@@ -156,7 +156,6 @@ def sub_solution_material_used(incoming_data: dict,
         "Solution 1", alarm_type, attrs_clean, historical_alarms_analysis, periods_list, ack_list
     )
 
-    print(len(metadata), len(historical_alarms))
     historical_alarms = create_alarm_payloads(historical_alarms, context, metadata)
     produce_kafka(producer, kafka_topic, historical_alarms)
 
@@ -267,7 +266,6 @@ def elaborate_solution3(incoming_data, producer, service_config):
     patch_orion(historical_data_url, update_payload)
 
     # Send Alarm To Kafka
-    historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
     historical_alarms = create_alarm_history(
         "Solution 3", alarm_type, attrs, historical_alarms_analysis, periods_list, ack_list
     )
@@ -369,9 +367,8 @@ def elaborate_solution4_2(incoming_data, producer, service_config):
     patch_orion(historical_data_url, update_payload)
 
     # Send Alarm To Kafka
-    historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
     historical_alarms = create_alarm_history(
-        "Solution 3", alarm_type, attrs, historical_alarms_analysis, periods_list, ack_list
+        "Solution 4", alarm_type, attrs, historical_alarms_analysis, periods_list, ack_list
     )
     historical_alarms = create_alarm_payloads(historical_alarms, context, metadata)
     produce_kafka(producer, kafka_topic, historical_alarms)
