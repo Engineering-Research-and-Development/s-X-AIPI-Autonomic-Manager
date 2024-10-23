@@ -124,13 +124,19 @@ def analyze_historical_data(periods_in_state_list: list[int],
         current_status = STATUS_GOOD if result == THRESHOLD_OK else STATUS_BAD
         current_status_list.append(current_status)
 
+        #TODO: Check and delete
+        print(periods_in_state, acknowledgement_status, result)
+
         if periods_in_state > patience:
+            print("Periods are greater than patience")
             if current_status not in acknowledgement_status or acknowledgement_status == UNCONFIRMED:
+                print("Status not acknowledged")
                 if current_status == STATUS_BAD:
                     alarm_list.append(HISTORY_BAD)
                 elif current_status == STATUS_GOOD:
                     alarm_list.append(HISTORY_GOOD)
                 else:
                     alarm_list.append(THRESHOLD_OK)
+                    print("No Alarm")
 
     return alarm_list, current_status_list
