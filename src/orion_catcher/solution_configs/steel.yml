@@ -107,7 +107,7 @@ steel:
       alarm_type: "Model Accuracy Degradation"
       inputs: [ "modeling_randomforestregressor_all_cu_mae", "modeling_randomforestregressor_all_p_mae", "modeling_randomforestregressor_all_kwhorno_mae"]
       thresholds: ["transformation_analysis_cu",  "transformation_analysis_p", "transformation_eaf_kwhorno"]
-      pct_change: [15.0]
+      pct_change: [10.0]
 
     solution_4:
       historical_entity: "urn:ngsi-ld:sidenor_solution_HITL_History_4:001"
@@ -132,4 +132,4 @@ steel:
       alarm_type_2: "Model Accuracy Degradation"
       inputs_2: [ "modeling_randomforestregressor_all_temp_mae", "modeling_randomforestregressor_all_ppmox_mae"]
       thresholds_2: [ "transformation_temp_temp",  "transformation_ppmox_ppmox" ]
-      pct_change_2: [ 15.0 ]
+      pct_change_2: [ 10.0 ]
