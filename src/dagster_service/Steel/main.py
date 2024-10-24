@@ -316,7 +316,6 @@ def elaborate_solution4_1(incoming_data, producer, service_config):
     patch_orion(historical_data_url, update_payload)
 
     # Send Alarm To Kafka
-    historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
     historical_alarms = create_alarm_history(
         "Solution 4", alarm_type, attrs_clean, historical_alarms_analysis, periods_list, ack_list
     )
