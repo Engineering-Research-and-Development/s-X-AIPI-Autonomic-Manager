@@ -29,9 +29,7 @@ steel:
     solution_1:
       historical_patience: 1
       zeros_inputs: [
-        "transformation_scrap_tot_zeros", "transformation_basket_sum_lime_basket_zeros", "transformation_melting_sum_cok_lim_melting_zeros",
-         "transformation_analysis_mn_zeros", "transformation_analysis_p_zeros", "transformation_analysis_s_zeros", "transformation_analysis_cr_zeros",
-         "transformation_analysis_ni_zeros", "transformation_analysis_mo_zeros", "transformation_analysis_cu_zeros", "transformation_analysis_sn_zeros"
+        "transformation_scrap_tot_zeros", "transformation_basket_sum_lime_basket_zeros", "transformation_melting_sum_cok_lim_melting_zeros"
       ]
       zero_inputs_upper_threshold : [0.0]
       zero_inputs_lower_threshold: [-1.0]
@@ -51,6 +49,10 @@ steel:
         "transformation_scrap_scrap10_max", "transformation_scrap_scrap09_max", "transformation_scrap_scrap08_max",
         "transformation_scrap_scrap07_max", "transformation_scrap_scrap06_max", "transformation_scrap_scrap22_max"
       ]
+      scrapzeros_inputs_0: [
+        "transformation_scrap_scrap10_zeros", "transformation_scrap_scrap09_zeros", "transformation_scrap_scrap08_zeros",
+        "transformation_scrap_scrap07_zeros", "transformation_scrap_scrap06_zeros", "transformation_scrap_scrap22_zeros"
+      ]
 
       historical_entity_1: "urn:ngsi-ld:sidenor_solution_HITL_History_1:002"
       scrapmax_inputs_1: [
@@ -59,34 +61,22 @@ steel:
         "transformation_scrap_scrap17_max", "transformation_scrap_scrap03_max", "transformation_scrap_scrap01_max", "transformation_scrap_scrap13_max",
         "transformation_scrap_scrap15_max", "transformation_scrap_scrap02_max", "transformation_scrap_scrap18_max", "transformation_scrap_scrap23_max"
       ]
-
-      historical_entity_2: "urn:ngsi-ld:sidenor_solution_HITL_History_1:003"
-      scrapmax_inputs_2: [
-        "transformation_basket_lime01_max", "transformation_basket_lime02_max"
-      ]
-
-      historical_entity_3: "urn:ngsi-ld:sidenor_solution_HITL_History_1:004"
-      scrapmax_inputs_3: [
-        "transformation_melting_lime01_max", "transformation_melting_lime02_max", "transformation_melting_lime03_max",
-        "transformation_melting_coke01_max", "transformation_melting_coke02_max"
-      ]
-      scrapzeros_inputs_0: [
-        "transformation_scrap_scrap10_zeros", "transformation_scrap_scrap09_zeros", "transformation_scrap_scrap08_zeros",
-        "transformation_scrap_scrap07_zeros", "transformation_scrap_scrap06_zeros", "transformation_scrap_scrap22_zeros"
-      ]
       scrapzeros_inputs_1: [
         "transformation_scrap_scrap19_zeros", "transformation_scrap_scrap12_zeros", "transformation_scrap_scrap20_zeros", "transformation_scrap_scrap16_zeros",
         "transformation_scrap_scrap21_zeros", "transformation_scrap_scrap14_zeros", "transformation_scrap_scrap11_zeros", "transformation_scrap_scrap04_zeros",
         "transformation_scrap_scrap17_zeros", "transformation_scrap_scrap03_zeros", "transformation_scrap_scrap01_zeros", "transformation_scrap_scrap13_zeros",
         "transformation_scrap_scrap15_zeros", "transformation_scrap_scrap02_zeros", "transformation_scrap_scrap18_zeros", "transformation_scrap_scrap23_zeros"
       ]
-      scrapzeros_inputs_2: [
-        "transformation_basket_lime01_zeros", "transformation_basket_lime02_zeros"
-      ]
-      scrapzeros_inputs_3: [
-        "transformation_melting_lime01_zeros", "transformation_melting_lime02_zeros", "transformation_melting_lime03_zeros",
-        "transformation_melting_coke01_zeros", "transformation_melting_coke02_zeros"
-      ]
+
+
+      historical_entity_2: "urn:ngsi-ld:sidenor_solution_HITL_History_1:003"
+      scrapmax_inputs_2: ["transformation_basket_sum_lime_basket_max"]
+      scrapzeros_inputs_2: ["transformation_basket_sum_lime_basket_zeros"]
+
+
+      historical_entity_3: "urn:ngsi-ld:sidenor_solution_HITL_History_1:004"
+      scrapmax_inputs_3: ["transformation_melting_sum_cok_melting_max", "transformation_melting_sum_lim_melting_max"]
+      scrapzeros_inputs_3: ["transformation_melting_sum_cok_melting_zeros", "transformation_melting_sum_lim_melting_zeros"]
 
       scapmax_lower: [0.0]
       nrheats_scrap: ["transformation_scrap_nr_heats"]
@@ -126,7 +116,7 @@ steel:
                 'trainmodels_linearregression_p_scrap_coefscrap19', 'trainmodels_linearregression_p_scrap_coefscrap20',
                 'trainmodels_linearregression_p_scrap_coefscrap21', 'trainmodels_linearregression_p_scrap_coefsustitutivos'
       ]
-      pct_change: [15.0]
+      pct_change: [10.0]
 
       historical_entity_2: "urn:ngsi-ld:sidenor_solution_HITL_History_4:002"
       alarm_type_2: "Model Accuracy Degradation"
