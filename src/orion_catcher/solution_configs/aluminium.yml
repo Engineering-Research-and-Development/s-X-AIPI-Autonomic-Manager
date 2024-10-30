@@ -14,6 +14,14 @@ aluminium:
         type: "factory"
         attrs: [ ]
         conditions: [ ]
+      - id: "urn:ngsi-ld:IDALSA_smaller_time_window:002"
+        type: "factory"
+        attrs: [ ]
+        conditions: [ ]
+      - id: "urn:ngsi-ld:IDALSA_greater_time_window:002"
+        type: "factory"
+        attrs: [ ]
+        conditions: [ ]
       - id: "urn:ngsi-ld:IDALSA_alarms:001"
         type: "IDALSA_alarms"
         attrs: [ ]
@@ -24,6 +32,8 @@ aluminium:
     base_url: "http://136.243.156.113:1026/ngsi-ld/v1/entities/"
     small_window: "urn:ngsi-ld:IDALSA_smaller_time_window:001"
     large_window: "urn:ngsi-ld:IDALSA_greater_time_window:001"
+    small_window_2: "urn:ngsi-ld:IDALSA_smaller_time_window:002"
+    large_window_2: "urn:ngsi-ld:IDALSA_greater_time_window:002"
     wp3_alarms: "urn:ngsi-ld:IDALSA_alarms:001"
     output_entity: "urn:ngsi-ld:IDALSA_solution_output_1:001"
 
