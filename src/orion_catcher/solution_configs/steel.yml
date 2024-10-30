@@ -20,6 +20,7 @@ steel:
   dag_config:
     base_url: "http://136.243.156.113:1026/ngsi-ld/v1/entities/"
     small_window: "urn:ngsi-ld:sidenor_shorter_time_window:001"
+    trainmodels_window: "urn:ngsi-ld:sidenor_trainmodels:001"
     large_window: "urn:ngsi-ld:sidenor_longer_time_window:001"
     wp3_alarms: "urn:ngsi-ld:sidenor_alarms:001"
     output_entity: "urn:ngsi-ld:sidenor_solution_output_1:001"

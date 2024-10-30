@@ -275,7 +275,7 @@ def elaborate_solution3(incoming_data, producer, service_config):
 
 @op
 def elaborate_solution4_1(incoming_data, producer, service_config):
-    if incoming_data['id'] != service_config["small_window"]:
+    if incoming_data['id'] != service_config["trainmodels_window"]:
         return
 
     solution = "solution_4"
