@@ -64,7 +64,7 @@ def elaborate_solution2(incoming_data: dict, producer: KafkaProducer, service_co
 
 @op
 def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_config: dict):
-    if incoming_data['id'] != service_config["large_window"]:
+    if incoming_data['id'] != service_config["large_window_2"]:
         return
     solution = "solution_3"
     alarm_type = service_config[solution]["alarm_type"]

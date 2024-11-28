@@ -70,7 +70,7 @@ def sub_solution_check_zero_nans(incoming_data: dict,
 def sub_solution_material_used(incoming_data: dict,
                                producer: KafkaProducer,
                                service_config: dict,
-                               historical_data_url: str,
+                               historical_data_key: str,
                                attrs_max_name: str,
                                attrs_zeros_name: str,
                                nr_heats_name: str,
@@ -97,6 +97,8 @@ def sub_solution_material_used(incoming_data: dict,
     @return: None
     """
 
+    historical_data_url = service_config["base_url"] + service_config["solution_1"][historical_data_key]
+
     attrs_zeros = service_config[solution][attrs_zeros_name]
     attrs_max = service_config[solution][attrs_max_name]
     nr_heats = service_config[solution][nr_heats_name]
@@ -105,17 +107,16 @@ def sub_solution_material_used(incoming_data: dict,
     lower_threshold_max = [-999999.9]
     upper_threshold_max = service_config[solution]['scapmax_lower']
     context = incoming_data["@context"]
-    print(context)
 
     # Checking rules for max content values
-    values_max, metadata = get_data_from_notification(incoming_data, attrs_max)
+    values_max, _ = get_data_from_notification(incoming_data, attrs_max)
     lower_threshold_max = expand_threshold(lower_threshold_max, len(values_max))
     upper_threshold_max = expand_threshold(upper_threshold_max, len(values_max))
     results_max = discriminate_thresholds(lower_threshold_max, upper_threshold_max, values_max)
 
     # Checking rules for number of zeros
     values_zeros, metadata = get_data_from_notification(incoming_data, attrs_zeros)
-    values_nrheats, metadata = get_data_from_notification(incoming_data, nr_heats)
+    values_nrheats, _ = get_data_from_notification(incoming_data, nr_heats)
     upper_threshold_nrheats = expand_threshold([999999.9], len(values_zeros))
     lower_threshold_nrheats = expand_threshold(values_nrheats, len(values_zeros))
     results_nrheats = discriminate_thresholds(
@@ -128,7 +129,7 @@ def sub_solution_material_used(incoming_data: dict,
     attrs_clean = clean_names(attrs_zeros)
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
-        new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs_clean, context)
+        new_entity = create_historical_entity(service_config[solution][historical_data_key], attrs_clean, context)
         post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
@@ -142,6 +143,7 @@ def sub_solution_material_used(incoming_data: dict,
 
     # Update Historical Data
     mock_values = expand_threshold([0.0], len(values_zeros))
+
     update_payload = update_historical_data(
         historical_current_status, periods_list, ack_list, previous_list,
         mock_values, attrs_clean, historical_context
@@ -153,6 +155,7 @@ def sub_solution_material_used(incoming_data: dict,
     historical_alarms = create_alarm_history(
         "Solution 1", alarm_type, attrs_clean, historical_alarms_analysis, periods_list, ack_list
     )
+
     historical_alarms = create_alarm_payloads(historical_alarms, context, metadata)
     produce_kafka(producer, kafka_topic, historical_alarms)
 
@@ -165,7 +168,6 @@ def elaborate_solution1(incoming_data, producer, service_config):
     solution = "solution_1"
     kafka_topic = service_config["kafka_topic"]
     alarm_type_materials = service_config[solution]["alarm_type_materials"]
-    historical_data_url = service_config["base_url"] + service_config["solution_1"]["historical_entity"]
     patience = service_config[solution]["historical_patience"]
 
     # Checking for zeros
@@ -179,22 +181,22 @@ def elaborate_solution1(incoming_data, producer, service_config):
                                  kafka_topic)
 
     # Checking first scrap group
-    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, "historical_entity_0",
                                "scrapmax_inputs_0", "scrapzeros_inputs_0", "nrheats_scrap", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking second scrap group
-    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, "historical_entity_1",
                                "scrapmax_inputs_1", "scrapzeros_inputs_1", "nrheats_scrap", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking lime content
-    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, "historical_entity_2",
                                "scrapmax_inputs_2", "scrapzeros_inputs_2", "nrheats_lime", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
     # Checking lime content
-    sub_solution_material_used(incoming_data, producer, service_config, historical_data_url,
+    sub_solution_material_used(incoming_data, producer, service_config, "historical_entity_3",
                                "scrapmax_inputs_3", "scrapzeros_inputs_3", "nrheats_limecoke", patience, "solution_1",
                                alarm_type_materials, kafka_topic)
 
@@ -240,13 +242,12 @@ def elaborate_solution3(incoming_data, producer, service_config):
     _, threshold_high = get_threshold_values_from_entity(
         incoming_data, threshold_names, threshold_names)
     _, threshold_high = get_threshold_from_pct_range(threshold_high, pct_expand)
-    results_threshold = discriminate_thresholds([-999999.9], threshold_high, values)
+    results_threshold = discriminate_thresholds([-999999.9]*len(attrs), threshold_high, values)
 
     historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity"]
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs, context)
-        print(new_entity)
         post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
@@ -265,7 +266,6 @@ def elaborate_solution3(incoming_data, producer, service_config):
     patch_orion(historical_data_url, update_payload)
 
     # Send Alarm To Kafka
-    historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
     historical_alarms = create_alarm_history(
         "Solution 3", alarm_type, attrs, historical_alarms_analysis, periods_list, ack_list
     )
@@ -275,7 +275,7 @@ def elaborate_solution3(incoming_data, producer, service_config):
 
 @op
 def elaborate_solution4_1(incoming_data, producer, service_config):
-    if incoming_data['id'] != service_config["small_window"]:
+    if incoming_data['id'] != service_config["trainmodels_window"]:
         return
 
     solution = "solution_4"
@@ -316,7 +316,6 @@ def elaborate_solution4_1(incoming_data, producer, service_config):
     patch_orion(historical_data_url, update_payload)
 
     # Send Alarm To Kafka
-    historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
     historical_alarms = create_alarm_history(
         "Solution 4", alarm_type, attrs_clean, historical_alarms_analysis, periods_list, ack_list
     )
@@ -343,13 +342,12 @@ def elaborate_solution4_2(incoming_data, producer, service_config):
     _, threshold_high = get_threshold_values_from_entity(
         incoming_data, threshold_names, threshold_names)
     _, threshold_high = get_threshold_from_pct_range(threshold_high, pct_expand)
-    results_threshold = discriminate_thresholds([-999999.9], threshold_high, values)
+    results_threshold = discriminate_thresholds([-999999.9]*len(attrs), threshold_high, values)
 
     historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity_2"]
     historical_data = get_data(historical_data_url)
     if historical_data == {}:
         new_entity = create_historical_entity(service_config[solution]["historical_entity_2"], attrs, context)
-        print(new_entity)
         post_orion(service_config["base_url"], new_entity)
         historical_data = get_data(historical_data_url)
 
@@ -368,9 +366,8 @@ def elaborate_solution4_2(incoming_data, producer, service_config):
     patch_orion(historical_data_url, update_payload)
 
     # Send Alarm To Kafka
-    historical_alarms_analysis = adjust_alarm_type(historical_alarms_analysis)
     historical_alarms = create_alarm_history(
-        "Solution 3", alarm_type, attrs, historical_alarms_analysis, periods_list, ack_list
+        "Solution 4", alarm_type, attrs, historical_alarms_analysis, periods_list, ack_list
     )
     historical_alarms = create_alarm_payloads(historical_alarms, context, metadata)
     produce_kafka(producer, kafka_topic, historical_alarms)

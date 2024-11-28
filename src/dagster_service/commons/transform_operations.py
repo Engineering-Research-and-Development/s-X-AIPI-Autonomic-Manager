@@ -96,6 +96,7 @@ def retrieve_values_from_historical_data(historical_data: dict,
         historical_context = historical_data["@context"]
         for attribute_name in attribute_names:
             names = [n for n in build_historical_data_attribute_names(attribute_name)]
+            # TODO: Remove
             periods, ack, previous, old_value = pick_historical_data_values(names, historical_data)
             periods_list.append(periods)
             ack_list.append(ack)
