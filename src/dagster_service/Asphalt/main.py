@@ -41,7 +41,7 @@ def elaborate_solution1(incoming_data: dict, producer: KafkaProducer, service_co
     solution = "solution_1"
 
     # Sub Solution Sensor Alarms on first window
-    if incoming_data['id'] != service_config["small_window"]:
+    if incoming_data['id'] == service_config["small_window"]:
         alarm_type = service_config[solution]["alarm_type"]
         inputs = service_config[solution]["inputs"]
         update_url = service_config['base_url'] + service_config['output_entity']
@@ -63,7 +63,7 @@ def elaborate_solution1(incoming_data: dict, producer: KafkaProducer, service_co
             produce_orion_multi_message(update_url, payloads)
 
     # Sub Solution for AI Retraining on second window
-    if incoming_data['id'] != service_config["small_laboratory"]:
+    if incoming_data['id'] == service_config["small_laboratory"]:
         alarm_type = service_config[solution]["alarm_type_AI"]
         attrs = service_config[solution]["inputs_AI"]
         uppers = service_config[solution]["upper_thresholds_AI"]
