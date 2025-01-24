@@ -27,7 +27,7 @@ def analyze_full_input(item: dict, incoming_data: dict):
     # One or two values. If two values, the condition == 0 on second threshold is checked.
     # If condition is met, then delete last attribute (condition attr) and send alarm.
     if len(thresholds) == 2:
-        thresholds = merge_thresholds([thresholds[0]], [thresholds[1]], mode)
+        thresholds = merge_thresholds([thresholds[0]], [thresholds[1]], mode[0])
         attrs.pop()
         lowers.pop()
         uppers.pop()
