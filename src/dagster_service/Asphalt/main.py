@@ -129,11 +129,13 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
         out_entity = create_output_entity(service_config['output_entity'], context)
         patch_orion(update_url, out_entity)
 
-    values = get_data_from_notification(incoming_data, attrs)
+    values, _ = get_data_from_notification(incoming_data, attrs)
     large_window_entity = get_data(service_config["base_url"] + service_config["large_laboratory"])
     _, threshold = get_threshold_values_from_entity(large_window_entity, attrs, attrs)
     pct_expand = expand_threshold(pct_change, len(attrs))
     threshold_low, threshold_high = get_threshold_from_pct_range(threshold, pct_expand)
+
+    print(threshold_low, threshold_high, values)
     thresholds = discriminate_thresholds(threshold_low, threshold_high, values)
 
     alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
@@ -183,7 +185,7 @@ def elaborate_solution4(incoming_data: dict, producer: KafkaProducer, service_co
 
     # COEFFICIENT ANALYSIS
     alarm_type = service_config[solution]["alarm_type_coeff"]
-    attrs_coeff = service_config[solution]["inputs_coeff"]
+    attrs_coeff = service_config[solution]["input_coeff"]
     pct_change = service_config[solution]["pct_change_coeff"]
     context = incoming_data["@context"]
     values_coeff, _ = get_data_from_notification(incoming_data, attrs_coeff)

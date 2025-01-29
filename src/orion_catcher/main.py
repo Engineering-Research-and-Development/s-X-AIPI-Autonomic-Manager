@@ -15,7 +15,8 @@ from orion_catcher.orion_subscription import check_existing_subscriptions, subsc
 
 config_folder = os.getenv('ORION-CONFIG')
 print(os.getenv('KAFKA-BROKER'))
-producer = KafkaProducer(bootstrap_servers=os.getenv('KAFKA-BROKER'))
+#producer = KafkaProducer(bootstrap_servers=os.getenv('KAFKA-BROKER'))
+producer = KafkaProducer(bootstrap_servers='136.243.156.113:9092')
 topics = {}
 service_config = {}
 created_subs_ids = {}
