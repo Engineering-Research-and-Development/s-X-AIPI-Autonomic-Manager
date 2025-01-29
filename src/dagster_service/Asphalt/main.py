@@ -114,8 +114,6 @@ def elaborate_solution2(incoming_data: dict, producer: KafkaProducer, service_co
 
 @op
 def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_config: dict):
-    if incoming_data['id'] != service_config["small_laboratory"]:
-        return
 
     solution = "solution_3"
     alarm_type = service_config[solution]["alarm_type_2"]
@@ -129,31 +127,34 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
         out_entity = create_output_entity(service_config['output_entity'], context)
         patch_orion(update_url, out_entity)
 
-    values, _ = get_data_from_notification(incoming_data, attrs)
-    large_window_entity = get_data(service_config["base_url"] + service_config["large_laboratory"])
-    _, threshold = get_threshold_values_from_entity(large_window_entity, attrs, attrs)
-    pct_expand = expand_threshold(pct_change, len(attrs))
-    threshold_low, threshold_high = get_threshold_from_pct_range(threshold, pct_expand)
+    # MODEL COEFFICIENT ANALYSIS
+    if incoming_data['id'] == service_config["small_laboratory"]:
+        values, _ = get_data_from_notification(incoming_data, attrs)
+        large_window_entity = get_data(service_config["base_url"] + service_config["large_laboratory"])
+        _, threshold = get_threshold_values_from_entity(large_window_entity, attrs, attrs)
+        pct_expand = expand_threshold(pct_change, len(attrs))
+        threshold_low, threshold_high = get_threshold_from_pct_range(threshold, pct_expand)
 
-    print(threshold_low, threshold_high, values)
-    thresholds = discriminate_thresholds(threshold_low, threshold_high, values)
-
-    alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
-                                    values, threshold_low, threshold_high)
-    payloads = create_alarm_payloads(alarms, context)
-    produce_orion_multi_message(update_url, payloads)
-
-    # SENSOR DATA ANALYSIS
-    alarm_type = service_config[solution]["alarm_type"]
-    inputs = service_config[solution]["inputs"]
-    for _, item in inputs.items():
-        thresholds, attrs, lowers, uppers, values = analyze_full_input(item, incoming_data)
+        print(threshold_low, threshold_high, values)
+        thresholds = discriminate_thresholds(threshold_low, threshold_high, values)
 
         alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
-                                        values, lowers, uppers)
-
+                                        values, threshold_low, threshold_high)
         payloads = create_alarm_payloads(alarms, context)
         produce_orion_multi_message(update_url, payloads)
+
+    # SENSOR DATA ANALYSIS
+    if incoming_data['id'] == service_config["small_window"]:
+        alarm_type = service_config[solution]["alarm_type"]
+        inputs = service_config[solution]["inputs"]
+        for _, item in inputs.items():
+            thresholds, attrs, lowers, uppers, values = analyze_full_input(item, incoming_data)
+
+            alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
+                                            values, lowers, uppers)
+
+            payloads = create_alarm_payloads(alarms, context)
+            produce_orion_multi_message(update_url, payloads)
 
 
 
