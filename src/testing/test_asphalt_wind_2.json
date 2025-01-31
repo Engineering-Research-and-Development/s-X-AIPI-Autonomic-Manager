@@ -1,0 +1,1485 @@
+{"data" : [
+    {
+    "@context": "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "id": "urn:ngsi-ld:asphalt_smaller_time_window:002",
+    "type": "factory",
+    "ModelTraining_GD_Accuracy": {
+        "type": "Property",
+        "value": {
+            "value": "100",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_CA_Accuracy": {
+        "type": "Property",
+        "value": {
+            "value": "100",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_MA_Accuracy": {
+        "type": "Property",
+        "value": {
+            "value": "100",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_MT_Accuracy": {
+        "type": "Property",
+        "value": {
+            "value": "100",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_MP_Accuracy": {
+        "type": "Property",
+        "value": {
+            "value": "100",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DMAX_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.04275293954237558",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DMAX_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.0180207481509519",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DMAX_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.0005236451631454038",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DMAX_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.05410005152098363",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DAPA_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.1259790416628691",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DAPA_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.019121817773866148",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DAPA_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.0006539936572550094",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DAPA_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.13167918123670497",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_ESTM_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.022755876765560457",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_ESTM_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "2.635220965702448",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_ESTM_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "27.832256444222544",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_ESTM_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.025043652392197524",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DEFM_R2": {
+        "type": "Property",
+        "value": {
+            "value": "-0.012843667790525926",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DEFM_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.3073849136585628",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DEFM_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.13997995182990278",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_DEFM_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.12098222950186055",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_Vm_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.16218333179535482",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_Vm_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.6460092089385959",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_Vm_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.7788561904879167",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_Vm_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.16323950159466738",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_VMA_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.1884916267983423",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_VMA_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.6143160879893818",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_VMA_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.6804587627121187",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_VMA_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.19343971327390486",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_VFB_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.306231138117919",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_VFB_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "2.8758479525975034",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_VFB_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "14.10572747753581",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_VFB_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.31690233500540377",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_ITSR_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.0037318693885730614",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_ITSR_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "5.274865018471157",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_ITSR_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "57.65345248717213",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_ITSR_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.004370717723841677",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_WTS_R2": {
+        "type": "Property",
+        "value": {
+            "value": "-1.1707181936604414",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_WTS_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.01467195767195767",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_WTS_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.00031488813303098996",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR_WTS_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DMAX_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.2783971230236749",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DMAX_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.006809654579822598",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DMAX_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.0001040684875115595",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DMAX_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.2883617100862257",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DAPA_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.15856877038643924",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DAPA_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.013428113638363886",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DAPA_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.0004663726642673487",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DAPA_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.25740021504452115",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_ESTM_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.215285975614677",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_ESTM_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "1.4491360897031502",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_ESTM_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "3.48057943731049",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_ESTM_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.21561113426545975",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DEFM_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.371087499559567",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DEFM_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.3670221606492204",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DEFM_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.20142495107855965",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_DEFM_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.38061402890026985",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_Vm_R2": {
+        "type": "Property",
+        "value": {
+            "value": "-0.045916303839941275",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_Vm_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.58569505799564",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_Vm_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.5191160103956608",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_Vm_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "-0.007118321536676575",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_VMA_R2": {
+        "type": "Property",
+        "value": {
+            "value": "-0.5846798188131721",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_VMA_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.46318636293062393",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_VMA_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.4082077719210349",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_VMA_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "-0.391046413739069",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_VFB_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.020650267121790855",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_VFB_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "3.0391718465023363",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_VFB_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "14.81740600610876",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_VFB_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.058640473845651964",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_ITSR_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.9935372823061416",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_ITSR_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.057086650531203986",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_ITSR_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.004926027042207625",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_ITSR_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.9978127882857111",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_WTS_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.3215846153845844",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_WTS_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.0013666666666667011",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_WTS_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "1.95986666666676e-06",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS12CR5070_WTS_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.9681230769230774",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DMAX_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.5467043615229253",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DMAX_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.016594735192733356",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DMAX_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.0004871488760070338",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DMAX_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.595838751648927",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DAPA_R2": {
+        "type": "Property",
+        "value": {
+            "value": "-0.10524323806720104",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DAPA_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.01662220879925518",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DAPA_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.000551578269416862",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DAPA_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.20408546827434193",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_ESTM_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.90596842148494",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_ESTM_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.1744000000000078",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_ESTM_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.09231560000000169",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_ESTM_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.9293781853289386",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DEFM_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.8539159384023725",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DEFM_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.0911407810491994",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DEFM_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.011686724927810203",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_DEFM_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.9577489630305988",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_Vm_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.11365230463679143",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_Vm_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.67845524211969",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_Vm_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.7042032439660693",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_Vm_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.1531580461227865",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_VMA_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.03430109479410748",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_VMA_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.5791811395439875",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_VMA_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.6942409429525164",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_VMA_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.12611762037702134",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_VFB_R2": {
+        "type": "Property",
+        "value": {
+            "value": "-0.2915909051493655",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_VFB_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "3.010585895392551",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_VFB_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "17.168472106697944",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AD20CI_VFB_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "-0.2669052341980527",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DMAX_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.4195870286250116",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DMAX_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.006415920780563929",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DMAX_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "6.044549664559436e-05",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DMAX_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.43580574601666755",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DAPA_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.4053592325919353",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DAPA_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.01662085534700892",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DAPA_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.0004252164480897151",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DAPA_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.5364644364593185",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_ESTM_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.6748322578232383",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_ESTM_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.7720680113958037",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_ESTM_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.6538978776178151",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_ESTM_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.6753101116105147",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DEFM_R2": {
+        "type": "Property",
+        "value": {
+            "value": "-0.0031686991170174483",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DEFM_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.21050167280824228",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DEFM_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.09585834236007053",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_DEFM_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.3101138757150247",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_Vm_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.2890257686570532",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_Vm_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.6031444003135136",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_Vm_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.4158473769446706",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_Vm_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.31611973308062014",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_VMA_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.48100376156900304",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_VMA_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.40231539894692353",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_VMA_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "0.28237632074633406",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_VMA_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.5656517365788705",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_VFB_R2": {
+        "type": "Property",
+        "value": {
+            "value": "-0.026764193554760896",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_VFB_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "2.8220069274915067",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_VFB_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "13.999196376123782",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_VFB_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.09572449545358175",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_ITSR_R2": {
+        "type": "Property",
+        "value": {
+            "value": "0.07269236409342761",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_ITSR_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "3.4146666666666903",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_ITSR_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "19.67334666666675",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_ITSR_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.15868117733319176",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_WTS_R2": {
+        "type": "Property",
+        "value": {
+            "value": "-0.8585164835164856",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_WTS_MAE": {
+        "type": "Property",
+        "value": {
+            "value": "0.005166666666666669",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_WTS_MSE": {
+        "type": "Property",
+        "value": {
+            "value": "3.758333333333339e-05",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "ModelTraining_AS20OR5070_WTS_EVS": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_16mm": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "stdDevValue": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "stdDevValue": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ESTM": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "stdDevValue": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ITSR": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "stdDevValue": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_Vm": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "stdDevValue": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_DAPA": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "stdDevValue": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_16mm_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_Vm_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_count": {
+        "type": "Property",
+        "value": {
+            "value": "0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_16mm_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_Vm_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_min": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_16mm_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_Vm_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_25%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_16mm_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_Vm_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_50%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_16mm_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_Vm_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_75%": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_16mm_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_0,063mm_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ESTM_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_ITSR_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_Vm_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    },
+    "DataIngestion_laboratory_DAPA_max": {
+        "type": "Property",
+        "value": {
+            "value": "0.0",
+            "dateObserved": "2025-01-27T04:06:57Z",
+            "timeWindowLengthMinutes": "10080"
+        }
+    }
+}
+]}

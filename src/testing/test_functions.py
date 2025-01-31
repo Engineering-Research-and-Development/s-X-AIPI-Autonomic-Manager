@@ -6,7 +6,7 @@ import logging
 endpoint= "http://localhost:8001/steel"
 max_requests = 100
 json_test_wrong = "test_wrong.json"
-json_test_correct = "test_correct.json"
+json_test_correct = "test_asphalt_wind_2.json"
 logging_level = logging.DEBUG
 out_file = "test_results.txt"
 
