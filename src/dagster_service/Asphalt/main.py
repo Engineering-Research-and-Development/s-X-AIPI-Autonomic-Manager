@@ -127,7 +127,8 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
         out_entity = create_output_entity(service_config['output_entity'], context)
         patch_orion(update_url, out_entity)
 
-    # MODEL COEFFICIENT ANALYSIS
+
+        # MODEL COEFFICIENT ANALYSIS
     if incoming_data['id'] == service_config["small_laboratory"]:
         values, _ = get_data_from_notification(incoming_data, attrs)
         large_window_entity = get_data(service_config["base_url"] + service_config["large_laboratory"])
@@ -155,7 +156,6 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
 
             payloads = create_alarm_payloads(alarms, context)
             produce_orion_multi_message(update_url, payloads)
-
 
 
 
