@@ -103,6 +103,7 @@ asphalt:
 
       alarm_type: "Sensor Error"
       inputs:
+
         RTA1300_max:
           attrs: [ "DataIngestion_production_RTA1300_max" ]
           uppers: [ 180.0]

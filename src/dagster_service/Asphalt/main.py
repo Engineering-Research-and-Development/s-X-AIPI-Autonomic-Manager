@@ -149,6 +149,15 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
         print(threshold_low, threshold_high, values)
         thresholds = discriminate_thresholds(threshold_low, threshold_high, values)
 
+        historical_alarms_analysis, historical_current_status = analyze_historical_data(
+            periods_list, ack_list, thresholds, 1
+        )
+        update_payload = update_historical_data(
+            historical_current_status, periods_list, ack_list, previous_list,
+            values, attrs, historical_context
+        )
+        patch_orion(historical_data_url, update_payload)
+
         alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
                                         values, threshold_low, threshold_high)
         payloads = create_alarm_payloads(alarms, context)
