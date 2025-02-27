@@ -98,6 +98,7 @@ asphalt:
     solution_3:
       alarm_type_2: "Model Coefficient"
       inputs_2: [ "ModelTraining_Paving_R2", "ModelTraining_Paving_MAE", "ModelTraining_Paving_MSE ", "ModelTraining_Paving_EVS"]
+      historical_entity: "urn:ngsi-ld:asphalt_solution_HITL_History_3:001"
       pct_change_2: [10.0]
 
       alarm_type: "Sensor Error"

@@ -128,13 +128,23 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
         patch_orion(update_url, out_entity)
 
 
-        # MODEL COEFFICIENT ANALYSIS
+    # MODEL COEFFICIENT ANALYSIS
+    values, _ = get_data_from_notification(incoming_data, attrs)
     if incoming_data['id'] == service_config["small_laboratory"]:
-        values, _ = get_data_from_notification(incoming_data, attrs)
-        large_window_entity = get_data(service_config["base_url"] + service_config["large_laboratory"])
-        _, threshold = get_threshold_values_from_entity(large_window_entity, attrs, attrs)
+        historical_data_url = service_config["base_url"] + service_config[solution]["historical_entity"]
+        historical_data = get_data(historical_data_url)
+
+        if historical_data == {}:
+            new_entity = create_historical_entity(service_config[solution]["historical_entity"], attrs, context)
+            post_orion(service_config["base_url"], new_entity)
+            historical_data = get_data(historical_data_url)
+
+        periods_list, ack_list, previous_list, old_values, historical_context = (
+            retrieve_values_from_historical_data(historical_data, attrs))
+
+
         pct_expand = expand_threshold(pct_change, len(attrs))
-        threshold_low, threshold_high = get_threshold_from_pct_range(threshold, pct_expand)
+        threshold_low, threshold_high = get_threshold_from_pct_range(old_values, pct_expand)
 
         print(threshold_low, threshold_high, values)
         thresholds = discriminate_thresholds(threshold_low, threshold_high, values)
@@ -143,6 +153,7 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
                                         values, threshold_low, threshold_high)
         payloads = create_alarm_payloads(alarms, context)
         produce_orion_multi_message(update_url, payloads)
+
 
     # SENSOR DATA ANALYSIS
     if incoming_data['id'] == service_config["small_window"]:
