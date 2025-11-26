@@ -163,6 +163,18 @@ def elaborate_solution3(incoming_data: dict, producer: KafkaProducer, service_co
         payloads = create_alarm_payloads(alarms, context)
         produce_orion_multi_message(update_url, payloads)
 
+    # SENSOR DATA ANALYSIS
+    if incoming_data['id'] == service_config["small_window"]:
+        alarm_type = service_config[solution]["alarm_type"]
+        inputs = service_config[solution]["inputs"]
+        for _, item in inputs.items():
+            thresholds, attrs, lowers, uppers, values = analyze_full_input(item, incoming_data)
+
+            alarms = create_alarm_threshold("Solution 3", alarm_type, attrs, thresholds,
+                                            values, lowers, uppers)
+
+            payloads = create_alarm_payloads(alarms, context)
+            produce_orion_multi_message(update_url, payloads)
 
     # SENSOR DATA ANALYSIS
     if incoming_data['id'] == service_config["small_window"]:
