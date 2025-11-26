@@ -52,6 +52,6 @@ aluminium:
 
     solution_3:
       alarm_type: "Human Dissatisfaction Detected"
-      inputs: ["realWordlUse_chemicalanalysispredictorGeneral_rating", "modelTraining_mergedheatsGeneral_feedback_model_2"]
+      inputs: ["realWorldUse_chemicalanalysispredictorGeneral_rating", "realWorldUse_mlrecipegeneratorGeneral_rating"]
       upper_thresholds: [ 999999.9, 999999.9 ]
       lower_thresholds: [ 70.0, 70.0]
